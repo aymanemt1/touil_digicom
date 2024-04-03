@@ -15,7 +15,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React 
+          Touil DIGICOM
         </a>
       </header>
     </div>
