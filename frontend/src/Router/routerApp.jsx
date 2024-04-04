@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from '../Partials/Navbar/navbar';
+import { LandingPage } from '../LandingPage/LandingPage';
 
 export default function RouterApp(){
     return (
@@ -11,7 +11,7 @@ export default function RouterApp(){
                         path='/'
                         element={
                             <Fragment>
-                                <Navbar />
+                                <LandingPage />
                             </Fragment>
                         }
                     />
