@@ -1,0 +1,292 @@
+:root {
+    --orangeTouil : #E8451E;
+    --blueTouil : #1B67B0;
+    --cremaTouil : #F2F2F2;
+}
+
+.ParentHome {
+    overflow: hidden;
+}
+
+.ParentIllustrationIcons {
+    overflow: hidden;
+}
+
+.ParentText  h1{
+    font-family: "Raleway", sans-serif;
+    font-size: 3.6rem;
+    padding-top: 1rem;
+    width: 70%;
+}
+.ParentText  p{
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    color: rgb(63, 63, 63);
+    width: 40%;
+    margin-top: -0.7rem;
+}
+
+.ParentText .btnScroll {
+    background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
+    color: white;
+    font-family: "Raleway", sans-serif;
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 1rem;
+    transform: all .3s;
+}
+
+.btnScroll:hover {
+    outline: 0.1rem solid var(--orangeTouil);
+    background: transparent;
+    color: var(--orangeTouil);
+}
+.ParentIllustration {
+    width: 70%;
+    margin: auto;
+    padding: 0;
+    margin-top: -2rem;
+    z-index: 2;
+}
+
+
+.i1 {
+    position: absolute;
+    width: 100px;
+    top: 9rem;
+    left: 6rem;
+    rotate:-10deg;
+}
+.i5 {
+    position: absolute;
+    width: 100px;
+    top: 21rem;
+    left: 15rem;
+    rotate:10deg;
+    filter: blur(1px);
+}
+.i2 {
+    position: absolute;
+    width: 120px;
+    top: 21rem;
+    left: 11rem;
+    -webkit-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 2;
+}
+.i3 {
+    position: absolute;
+    width: 110px;
+    top: 9rem;
+    right: 6rem;
+    rotate:-10deg;
+}
+.i7 {
+    position: absolute;
+    width: 320px;
+    top: 15rem;
+    right: 4rem;
+    rotate:10deg;
+}
+.i8 {
+    position: absolute;
+    width: 150px;
+    top: 26rem;
+    right: 9rem;
+    rotate:10deg;
+}
+
+
+.bigImgIll {
+    width: 700px;
+    margin-top: -0.7rem;
+    margin-left: -4rem;
+}
+
+.VectorArrow {
+    width: 120px;
+    display: block;
+    margin: 0;
+}
+
+@media (max-width:1029px) {
+    .bigImgIll {
+        width: 600px;
+    }
+    .i1 {
+        width: 100px;
+        top: 8rem;
+        left: 2rem;
+    }
+    .i7 {
+        width: 270px;
+        top: 14rem;
+        right: 1rem;
+    }
+    .i8 {
+        width: 90px;
+        top: 24rem;
+        right: 5rem;
+    }
+    .i2 {
+        width: 120px;
+        top: 19rem;
+        left: 2rem;
+    }
+    .i5 {
+        width: 90px;
+        top: 19rem;
+        left: 7rem;
+    }
+}
+@media (max-width:650px) {
+    .bigImgIll {
+        width: 600px;
+    }
+    .i3 {
+        position: absolute;
+        width: 110px;
+        top: 7rem;
+        right: 1rem;
+        rotate:-10deg;
+    }
+    .i1 {
+        width: 100px;
+        top: 8rem;
+        left: 2rem;
+    }
+    .i7 {
+        width: 270px;
+        top: 14rem;
+        right: 0rem;
+    }
+    .i8 {
+        width: 90px;
+        top: 24rem;
+        right: 5rem;
+    }
+    .i2 {
+        width: 120px;
+        top: 19rem;
+        left: 2rem;
+    }
+    .i5 {
+        width: 90px;
+        top: 19rem;
+        left: 7rem;
+    }
+}
+
+
+@media (max-width:776px) {
+    .bigImgIll {
+        width: 500px;
+    }
+}
+
+
+@media (max-width:585px) {
+    .bigImgIll {
+        width: 400px;
+    }
+    
+    .ParentText  h1{
+        font-size: 3rem;
+        padding-top: 1rem;
+        width: 90%;
+    }
+    .ParentText  p{
+        font-size: 0.7rem;
+        padding-top: 1rem;
+        width: 60%;
+    }
+
+    .i3 {
+        position: absolute;
+        width: 70px;
+        top: 7rem;
+        right: 1rem;
+        rotate:-10deg;
+    }
+    .i1 {
+        width: 60px;
+        top: 8rem;
+        left: 2rem;
+    }
+    .i7 {
+        width: 180px;
+        top: 14rem;
+        right: 1rem;
+    }
+    .i8 {
+        width: 50px;
+        top: 21rem;
+        right: 1.5rem;
+    }
+    .i2 {
+        width: 70px;
+        top: 19rem;
+        left: 1rem;
+    }
+    .i5 {
+        width: 50px;
+        top: 19rem;
+        left: 4rem;
+    }
+}
+
+@media (max-width:450px) {
+    .bigImgIll {
+        width: 400px;
+    }
+    
+    .ParentText  h1{
+        font-size: 3rem;
+        padding-top: 1.2rem;
+        width: 90%;
+    }
+    .ParentText  p{
+        font-size: 0.7rem;
+        padding-top: 1rem;
+        width: 60%;
+    }
+
+    .i3 {
+        position: absolute;
+        width: 50px;
+        top: 7rem;
+        right: 0.5rem;
+        rotate:-10deg;
+    }
+    .i1 {
+        width: 40px;
+        top: 8rem;
+        left: 1rem;
+    }
+    .i7 {
+        width: 110px;
+        top: 14rem;
+        right: 1rem;
+    }
+    .i8 {
+        width: 50px;
+        top: 18rem;
+        right: 1.7rem;
+    }
+    .i2 {
+        width: 70px;
+        top: 19rem;
+        left: 1rem;
+    }
+    .i5 {
+        width: 50px;
+        top: 19rem;
+        left: 4rem;
+    }
+}

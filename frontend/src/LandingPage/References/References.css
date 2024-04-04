@@ -1,0 +1,86 @@
+:root {
+    --orangeTouil : #E8451E;
+    --blueTouil : #1B67B0;
+    --cremaTouil : #F2F2F2;
+}
+
+.parentReferences {
+    background-image: linear-gradient(37deg, rgb(54,143,219),rgb(56,70,184));
+    /* width: 200vw; */
+    position: relative;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    /* left: -53vw;     */
+    bottom: 2rem;
+    padding: 3rem;
+}
+
+.arrayReferences {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    gap: 1rem;
+    margin-left: 4rem;
+    padding-bottom: 1rem;
+}
+
+.imgLogoRefe{
+    width: 110px;
+    object-fit: contain;
+    aspect-ratio: 3/2;
+    filter: brightness(0) invert(1);
+    transition: all .2s;
+    margin: 1rem;
+}
+
+.imgLogoRefe:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    filter:  brightness(0) invert(1) drop-shadow(0 0 10px white);
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+    .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 5rem;
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; 
+    margin-bottom: 5px;
+    transition: all .1s;
+  }
+    .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  /* .parentRefLine {
+    width: 100vw;
+    overflow: hidden;
+  } */
+
+
+@media (max-width : 742px) { 
+    .imgLogoRefe {
+        width: 50px;
+    }
+}
+@media (max-width : 468px) { 
+    .imgLogoRefe {
+        width: 40px;
+        margin: 0;
+    }
+}
