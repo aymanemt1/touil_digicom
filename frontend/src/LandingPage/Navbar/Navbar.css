@@ -1,28 +1,26 @@
 
 .FixedNav {
-    position: fixed;
-    display: block;
-    top: 15px;
-    left: 0;
-    width: 60%;
+    width: 100%;
     background-color: transparent; 
-    /* box-shadow: rgba(17, 12, 46, 0.15) -33px 48px 180px 0px; */
-   justify-content: center;
-   margin: 0 18%;
-   border-radius: 5rem;
    backdrop-filter: blur(10px);
 }
   
   #navbar {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 90%;
     text-align: center; 
   }
+
+  .links {
+    width: 80%;
+  }
   
+  .logo {
+    justify-content: left;
+  }
   #navbar li {
     display: inline-block;
    
@@ -30,11 +28,31 @@
   
   #navbar a {
     display: block;
+    color: #FF5601;
     padding: 0 15px;
     text-decoration: none;
-    color: #333; 
   }
   #navbar a img {
     width: 100px;
   }
-  
+
+  .right{
+    align-items: center;
+    width: 30%;
+    justify-content: space-around;
+    display: flex;
+  }
+
+.button {
+  background-color: #4D4AE8;
+  border: none;
+  border-radius: 1rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  padding: .5rem 1rem;
+  text-align: center;
+}
