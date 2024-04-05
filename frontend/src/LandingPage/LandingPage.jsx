@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Home } from './Home/Home'
 import References from './References/References'
 import { Navbar } from './Navbar/Navbar'
+import { Adn } from './Adn/Adn'
 
 export const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ export const LandingPage = () => {
       <Navbar />
       <Home />
       <References /> 
+      <Adn/>
       </div>
       {/* Other components here */}
     </Fragment>
