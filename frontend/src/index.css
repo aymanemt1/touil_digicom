@@ -1,5 +1,15 @@
+:root {
+    --orangeTouil : #E8451E;
+    --blueTouil : #1B67B0;
+    --cremaTouil : #F2F2F2;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.App{
+    font-family: "Raleway", sans-serif;
 }
