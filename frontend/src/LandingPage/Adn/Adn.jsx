@@ -6,25 +6,25 @@ export const Adn = () => {
     <div className='adn'>
         <div className='AdnShape'>
           
-        <div class="notification" id="ceo">
+        <div className="notification" id="ceo">
         <div className='img'></div>
-        <div class="content">
+        <div className="content">
           <h2>Omar Touil</h2>
           <p>Ceo & Formateur</p>
         </div>
       </div>
 
-      <div class="notification" id="com">
+      <div className="notification" id="com">
         <div className='img'></div>
-        <div class="content">
+        <div className="content">
           <h2>Douae Frihi</h2>
           <p>Responsable de la communication</p>
         </div>
       </div>
 
-      <div class="notification" id="design">
+      <div className="notification" id="design">
         <div className='img'></div>
-        <div class="content">
+        <div className="content">
           <h2>Sohaib Frihi</h2>
           <p>Videographer/Graphic designer</p>
         </div>
