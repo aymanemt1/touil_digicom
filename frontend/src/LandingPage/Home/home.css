@@ -112,7 +112,6 @@ width: 42rem;
     line-height: 4rem;
     margin-top: 1rem;
 }
-
 .parentText p {
     width: 82%;
     margin: 0.3rem;
@@ -166,7 +165,6 @@ width: 42rem;
 
 .btnScrollV2:active {
     border: 0.12rem solid var(--orangeTouil);
-
 }
 
 .pointV2 {
