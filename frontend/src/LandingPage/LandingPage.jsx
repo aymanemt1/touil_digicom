@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import Navbar from "./Navbar/navbar";
-import Home from "./Home/home";
 import './LandingPage.css';
-
+import Home from "./Home/home";
 
 
 export const LandingPage = () => {
+
 
   return (
     <Fragment>

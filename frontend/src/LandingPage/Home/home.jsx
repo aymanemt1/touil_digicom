@@ -1,6 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
+import { Translate } from "./homeTranslate";
+import { LangueContext } from "../../Context/LangueContext";
 
 export default function Home() {
   function handleScroll() {
@@ -8,25 +10,30 @@ export default function Home() {
     scrollTarget.scrollIntoView({ behavior: "smooth" });
   }
 
+  const {langue}=useContext(LangueContext)
+  
+  const Home = Translate.Home.find((lang)=>(
+     lang.id == langue
+   ))
+
+
   return (
     <Fragment>
-      <div className="parentHomev2">
+      <div className={`parentHomev2 ${langue === 'ar' ? 'reverseContent' : ''}` } >
         <div className="parentText">
             <img src="./assets/illustrationsRemoveBg/Vector6.png" className="vector1" />
             <img src="./assets/illustrationsRemoveBg/Vector7.png" className="vector2" />
-          <h6>TOUIL DIGICOM</h6>
+          <h3>{Home.sous_title}</h3>
           <h1>
-            Votre Aventure Digital <br /> Commencez Ici.
+           {Home.title}
           </h1>
           <p>
-            Votre partenaire de réussite digitale : Marketing, communication,
-            événementiel, et des solutions de développement des compétences en
-            un seul endroit.
+           {Home.text}
           </p>
           <div className="parentBtnsV2">
 
           <Link to="/">
-            <button className="btnSeeMoreServices">voir nos prestations</button>
+            <button className="btnSeeMoreServices">{Home.btn}</button>
           </Link>
           <Link to="/">
             <button
@@ -40,7 +47,7 @@ export default function Home() {
               </div>
         </div>
         <div className="parentimg">
-          <img src="./assets/illustrationsRemoveBg/illu.webp" className="illustatorHome"/>
+          <img src="./assets/illustrationsRemoveBg/illu.webp" className={`illustatorHome ${langue === 'ar' ? 'illustatorArabe' : ''}` }/>
           
           <img src="./assets/illustrationsRemoveBg/i9.png" className="illustrator1"  />
           <img src="./assets/illustrationsRemoveBg/i9.png" className="illustrator2"  />

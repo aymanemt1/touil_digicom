@@ -25,8 +25,8 @@ export default function Navbar({link}) {
       id: 2, 
       text: `${Navbar.link2.label}`,
       dropdown: [
-        { id: 21, to: '/services/service1', text: 'Service 1' },
-        { id: 22, to: '/services/service2', text: 'Service 2' },
+        { id: 21, to: '/services/service1', text: `${Navbar.link2.dropdown[0]}` },
+        { id: 22, to: '/services/service2', text: `${Navbar.link2.dropdown[1]}` },
       ]
     },
     { id: 3, to: '/faq', text: `${Navbar.link3}` },

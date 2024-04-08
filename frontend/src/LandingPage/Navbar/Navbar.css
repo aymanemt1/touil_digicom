@@ -6,8 +6,7 @@
 }
 
 .parentNavbar {
-    width: 95%;
-    margin: auto;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -21,7 +20,7 @@
 .menuBtn {
     background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
     color: white;
-    padding: 0.2rem 0.3rem;
+    padding: 0.4rem 0.5rem;
     font-size: 1.5rem;
     border: none;
     border-radius: 5px;
@@ -40,13 +39,7 @@
 }
 
 .brandLogo {
-    width: 10rem;
-    transition: all .2s;
-}
-
-.brandLogo:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px var(--orangeTouilShadow));
+    width: 15rem;
 }
 
 .ulLinks {
@@ -74,21 +67,21 @@
 
 .parentBtns {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
-    margin-left: 1.5rem;
+    margin-left: 3rem;
 }
 
 .demandBtn {
     background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
-    background-size: 400% 400%;
     color: white;
-    padding: .4rem .6rem;
     border: none;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
     outline: none;
     font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
-    border-radius: 1rem;
-    margin: 0;
+    border-radius: 0.3rem;
+    margin: 0 15px;
     cursor: pointer;
     transition: all .1s;
 }
@@ -140,13 +133,14 @@
     position: absolute;
     top: 1.4rem;
     left: 0;
-background-color: #ededed;
+background-color: #f1f1f1;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     border-radius: 12px;
     padding: 10px 0;
+    
     min-width: 160px;
     z-index: 1;
-	backdrop-filter: blur(10px);
+    filter: drop-shadow(0px 0 3px #fff);
 
   }
   
@@ -192,13 +186,14 @@ color: #E8451E;
  
 
 @media (max-width : 644px){
+   
      .langParent{
    position: absolute;
-   left: 19.3rem;
+   left: 17.7rem;
    bottom: 0rem;
    button{
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.8rem;
+    height: 2.8rem;
    }
     }
     
@@ -225,7 +220,7 @@ color: #E8451E;
         display: block;
         position: absolute;
         left: 1rem;
-        top: 4rem;
+        top: 5rem;
     }
     .ulLinks li {
         margin: 0.6rem;
@@ -245,10 +240,9 @@ color: #E8451E;
         flex-direction: column;
     }
     .demandBtn {
-        font-size: 1.7rem;
-        border-radius: 30px;
-        width: 18rem;
-        margin-left: 7rem;
+        font-size: 1.2rem;
+        width: 14rem;
+        margin-left: 3.3rem;
         margin-top: 1rem;
         padding: 0.6rem 0.9rem;
     }

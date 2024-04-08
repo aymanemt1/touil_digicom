@@ -1,0 +1,12 @@
+  
+  .circle {
+    position: fixed;
+    height: 44px;
+    width: 44px;
+    border: 1px solid var(--blueTouil);
+    border-radius: 100%;
+    top: calc(40 / 2 * -1);
+    left: calc(40 / 2 * -1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    pointer-events: none;
+  }

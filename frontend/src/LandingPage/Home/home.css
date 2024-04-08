@@ -9,20 +9,75 @@
 
 
 .parentHomev2 {
-    width: 80%;
+    width: 84%;
     margin: auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    height: 100vh;
     margin-top: -2rem;
+}
+
+/* ARABIC STYLE */
+.reverseContent{
+    flex-direction: row-reverse;
+}
+
+.reverseContent .parentText h1{
+ width: 55rem;
+}
+
+.reverseContent .illustrator3{
+ left: 30rem;
+}
+
+.reverseContent .illustrator2{
+ left: 40rem;
+}
+
+.reverseContent .illustrator4{
+ left: 30rem;
+}
+
+.reverseContent .illustrator5{
+ left: 24rem;
+}
+.reverseContent .vector1{
+display: none;
+}
+.reverseContent .vector2{
+display: none;
+}
+.reverseContent .parentText p{
+width: 42rem;
+    
+}
+.reverseContent .parentText h3{
+    margin-left: 31rem;
+    width: 8rem;
+}
+.reverseContent .parentBtnsV2{
+   flex-direction: row-reverse;
+}
+.reverseContent .btnSeeMoreServices{
+ margin-left: 1rem;
+ padding: 0.3rem;
+ width: 8rem;
+}
+
+.reverseContent .parentBtnsV2{
+   flex-direction: row-reverse;
+   button{
+    margin-left: 1rem;
+   }
 }
 
 
 .parentText {
     width: 60%;
     margin-top: -3rem;
+   
 }
 
 .parentText h6 {
@@ -34,45 +89,49 @@
     font-size: 0.8rem; 
     font-weight: 500;
     padding-bottom: 1rem;
+
 }
 
 .vector1 {
     position: absolute;
-    width: 160px;
+    width: 10.5rem;
     margin-left: -1rem;
-    margin-top: 1.4rem;
+    margin-top: 1.7rem;
 }
 .vector2 {
     position: absolute;
     width: 160px;
     margin-left: 25.3rem;
-    margin-top: 5.1rem;
+    margin-top: 6.1rem;
 
 }
 
 .parentText h1 {
     font-size: 3.3rem; 
     font-weight: 700;
+    line-height: 4rem;
+    margin-top: 1rem;
 }
+
 .parentText p {
-    width: 90%;
+    width: 82%;
     margin: 0.3rem;
-    font-size: 0.9rem;
+    font-size:  1rem;
     color: rgb(135, 135, 135);
 }
 
 .btnSeeMoreServices {
     background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
-    background-size: 400% 400%;
     color: white;
-    font-size: 1.3rem;
-    font-weight: 500;
-    padding: 0.6rem 1rem;
-    border-radius: 25px;
     border: none;
+    font-size: 1rem;
+    padding: 0.7rem;
     outline: none;
-    margin-top: 0.5rem;
+    font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
+    border-radius: 0.3rem;
+    margin: 0 5px;
     cursor: pointer;
+    transition: all .1s;
 }
 
 .btnSeeMoreServices:hover {
@@ -85,6 +144,7 @@
 }
 .parentBtnsV2 {
     display: flex;
+    margin-top: 1.3rem;
     align-items: center;
 }
 
@@ -119,15 +179,18 @@
 
 
 .parentimg {
-    width:40%;
-    display: flex;
-    justify-content: end;
+    width:33%;
+   
 }
 
 .illustatorHome {
     width: 350px;
     margin: 0;
     filter: drop-shadow(0 0 30px var(--blueBTouilShadow));
+}
+.illustatorArabe{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 
 }
 
@@ -168,8 +231,8 @@
     filter: drop-shadow(0 0 30px var(--blueTouil));
     position: absolute;
     width: 45px;
-    top: 10rem;
-    right: 30rem;
+    top: 12rem;
+    right: 28rem;
 }
 
 @keyframes anim {
@@ -210,11 +273,16 @@
         text-align: center;
         width: 100%;
     }
+   
+    .parentText h3 {
+       display: none;
+    }
+   
 
     .illustatorHome {
-        width: 300px;
-        margin-right: -8rem;
-        margin-top: -3rem;
+        width: 24rem;
+        margin-right: -8.4rem;
+        margin-top: -1rem;
     }
     .vector1  {
         margin-left: -27rem;
@@ -229,6 +297,7 @@
 }
 
 @media (max-width : 767px){
+    
     .illustrator4 {
         width: 50px;
         left: 1rem;
@@ -241,24 +310,33 @@
 @media (max-width : 585px){
     .illustrator4 {
         width: 50px;
-        left: 1rem;
+        left: 3rem;
+        top: 15rem;
+        position: absolute;
+
     }
     .illustrator5 {
         width: 60px;
         right: 1rem;
     }
     .vector1  {
-        margin-left: -15rem;
+        display: none;
     }
     .vector2  {
-        margin-left: 3rem;
-        margin-top: 9.2rem;
+    display: none;
     }
+    .illustatorHome {
+        position: absolute;
+        right: 8.5rem;
+        top: 31rem;
+     }
 }
 @media (max-width : 426px){
     .parentText h1{
         font-size: 2.3rem;
+        line-height: 3rem;
     }
+   
     .vector1  {
         width: 100px;
         margin-left: -18rem;
@@ -269,8 +347,9 @@
        margin-left: 17rem;
     }
     .illustatorHome {
-        margin-top: -1rem;
-        margin-left: -2rem;
+       position: absolute;
+       right: 8.5rem;
+       top: 29rem;
     }
 }
 @media (max-width : 418px){
@@ -291,9 +370,8 @@
        margin-left: 1rem;
     }
     .illustatorHome {
-        width: 340px;
-        margin-right: -5rem;
-        margin-top: 3rem;
+        width: 23rem;
+        margin-left: -5rem;
     }
 }
 
