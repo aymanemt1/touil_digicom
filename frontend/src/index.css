@@ -50,3 +50,13 @@
 .App{
     font-family: "Raleway", sans-serif;
 }
+
+html::-webkit-scrollbar {
+  width: .5rem;
+  height: 0.01rem;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--blueTouil);
+  border-radius: 5rem;
+}

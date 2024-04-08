@@ -193,15 +193,7 @@
    width: 75px;
    margin-bottom: 0.25em;
  }
- html::-webkit-scrollbar {
-  width: .5rem;
-  height: 0.01rem;
-}
 
-html::-webkit-scrollbar-thumb {
-  background: var(--blueTouil);
-  border-radius: 5rem;
-}
 
 @media screen and (max-width: 768px) {
   .adn{
