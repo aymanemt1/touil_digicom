@@ -21,7 +21,10 @@ export const NavDropdown = ({ link }) => {
     >
       {link.dropdown ? (
         <div>
-          <Link className="cool-link" to={link.to}>{link.text}</Link>
+          <Link className="cool-link" to={link.to}>
+            {link.text}
+          <i className='bx bxs-down-arrow arrow'></i></Link>
+          
           {isDropdownOpen && (
             <ul>
               {link.dropdown.map((dropdownItem) => (

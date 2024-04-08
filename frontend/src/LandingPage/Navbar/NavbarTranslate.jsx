@@ -7,7 +7,7 @@ export const Translate = {
         label: 'Services',
         dropdown: ['Service 1', 'Service 2', 'Service 3'] 
       },
-      link3: 'FQA',
+      link3: 'FAQ',
       link4: 'Contact',
       btn_devis: 'Demander un devis',
       flag: './assets/Flags/franceFlag.webp'

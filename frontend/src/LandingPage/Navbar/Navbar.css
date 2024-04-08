@@ -266,6 +266,11 @@ color: #E8451E;
     }
 }
 
+.arrow {
+    font-size: 0.7rem;
+    color: var(--orangeTouil);
+    margin-left: 0.3rem;
+}
 
 @keyframes anim {
     0% {
