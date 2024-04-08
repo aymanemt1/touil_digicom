@@ -1,0 +1,62 @@
+:root {
+    --orangeTouil : #E8451E;
+    --orangeTouilOpacity : #f83200bd;
+    --blueTouil : #1B67B0;
+    --blueTouilWhite : #217bd0;
+    --cremaTouil : #F2F2F2;
+}
+
+::selection {
+    background-color: var(--orangeTouilOpacity);
+    color: var(--blueTouil);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
+
+}
+
+/* body { 
+    --sb-track-color: #e8451e;
+    --sb-thumb-color: #1b67b0;
+    --sb-size: 6px;
+} */
+
+
+/* body::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 0px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  } */
+
+.App{
+    font-family: "Raleway", sans-serif;
+}
+
+html::-webkit-scrollbar {
+  width: .5rem;
+  height: 0.01rem;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--blueTouil);
+  border-radius: 5rem;
+}
