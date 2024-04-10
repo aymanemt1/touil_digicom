@@ -1,0 +1,361 @@
+:root {
+  --orangeTouil : #E8451E;
+  --blueTouil : #1B67B0;
+  --cremaTouil : #F2F2F2;
+}
+ .adn {
+   display: flex;
+   flex-wrap: wrap;
+   width: 80%;
+   margin: auto;
+ }
+
+ .AdnText {
+   box-sizing: border-box;
+   flex: 0 0 40%;
+   padding: 20px;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-end;
+ }
+
+ .h1Adn {
+   font-family: 'Raleway', sans-serif;
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 32px;
+   margin: 0 0 72px;
+   font-size: 26px;
+   font-weight: 700;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   text-align: end;
+   white-space: nowrap; 
+ }
+ .h1 {
+  width: 100%;
+   font-family: 'Raleway', sans-serif;
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 32px;
+   margin: 30px 0 72px;
+   font-size: 26px;
+   font-weight: 700;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   text-align: start;
+   white-space: nowrap; 
+ }
+
+
+ .AdnText p {
+   font-family: 'Raleway', sans-serif;
+   font-size: 24px;
+   line-height: 35px;
+   margin: 0 0 24px;
+   text-align: justify;
+   text-justify: inter-word;
+   position: relative;
+   left: -20;
+   width: 120%;
+ }
+
+ .btnScroll {
+   background-image: linear-gradient(14deg, rgb(232, 69, 30), rgb(232, 69, 30), rgb(251, 145, 37));
+   color: white;
+   font-family: "Raleway", sans-serif;
+   padding: 0.5rem 2rem;
+   font-size: 1.2rem;
+   border-radius: 20px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   margin: 0;
+   transform: all .3s;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   line-height: 32px;
+   margin-top: 5rem;
+   
+ }
+
+ .btnScroll:hover {
+   outline: 0.1rem solid var(--orangeTouil);
+   background: transparent;
+   color: var(--orangeTouil);
+ }
+
+ .btnScroll svg {
+   fill: white;
+   width:  1.5rem;
+ }
+
+ .btnScroll:hover svg {
+  fill: var(--orangeTouil);
+}
+
+
+
+ .h1:before {
+   background-color:  var(--orangeTouil);
+   content: '';
+   display: block;
+   height: 3px;
+   width: 75px;
+   margin-bottom: 5px;
+ }
+
+ .h1:after {
+   background-color:  var(--orangeTouil);
+   content: '';
+   display: block;
+   position: relative;
+   left: 18.3rem;
+   bottom: 0;
+   height: 3px;
+   width: 75px;
+   margin-bottom: 0.25em;
+ }
+ .h1Adn:before {
+   background-color:  var(--orangeTouil);
+   content: '';
+   display: block;
+   height: 3px;
+   width: 75px;
+   margin-bottom: 5px;
+ }
+
+ .h1Adn:after {
+   background-color:  var(--orangeTouil);
+   content: '';
+   display: block;
+   position: relative;
+   left: 9rem;
+   bottom: 0;
+   height: 3px;
+   width: 75px;
+   margin-bottom: 0.25em;
+ }
+
+ .AdnContent{
+  height: 100vh;
+  background-image: url('../../../public/assets/Adn/AdnBg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  margin-top: -33px;
+  padding: 10%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.Team{
+  width: 80%;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  padding: 2em 1em;  
+  border-radius: 2em;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  display: flex;  
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 3.5vh;
+  border: white  solid 4px;
+  position: relative; /* Add relative positioning */
+  z-index: 1;
+}
+
+
+
+#com {
+  background-image: url('../../../public/assets/Adn/Douae\ FH.jpg');
+  transform: rotate(90deg);
+
+}
+#ceo {
+  background-image: url('../../../public/assets/Adn/Omar\ TL.jpg');
+  transform: rotate(5deg);
+
+}
+#design {
+  background-image: url('../../../public/assets/Adn/Sohaib\ FH.jpg');
+  transform: rotate(-90deg);
+
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.p { 
+  margin: 0.5em 0; 
+  font-size: 1em;
+  color: #71717A; 
+  font-family:  'Roboto', sans-serif;
+}
+
+
+@media screen and (max-width: 768px) {
+  .AdnText {
+    flex: 0 0 97%;
+    box-sizing: border-box;
+  }
+}
+
+.add-button {
+  cursor: pointer;
+  outline: none;
+  border: none; /* Remove default button border */
+  background-color: transparent; /* Transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, fill 0.3s ease; /* Transition for hover and active */
+}
+
+
+.add-button svg path {  /* Target all paths within the SVG */
+  stroke: #808080;  /* Set stroke color to a light gray */
+}
+
+
+.add-button:hover {
+  transform: rotate(90deg); /* Rotate on hover */
+  fill: #ccc; /* Change fill color on hover (adjust as needed) */
+}
+
+.add-button:active {
+  stroke: #222; /* Change stroke color on active (adjust as needed) */
+  fill: #ddd; /* Change fill color on active (adjust as needed) */
+}
+
+
+#borderceo{
+  width: 215px;
+  height: 215px; /* Set height equal to width for a square */
+  box-sizing: border-box;
+  padding: 7px;
+  border-radius: 50%; /* Make the element a circle */
+  background: conic-gradient(white 7deg, var(--blueTouil) 0deg);
+  transform: rotate(-5deg);
+  position: relative;
+}
+
+/* #borderceo:hover{
+  animation: rotate 5s infinite linear;
+
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+#bordercom{
+  width: 215px;
+  height: 215px; /* Set height equal to width for a square */
+  box-sizing: border-box;
+  padding: 7px;
+  border-radius: 50%; /* Make the element a circle */
+  background: conic-gradient(white 7deg, var(--orangeTouil) 0deg);
+  transform: rotate(-90deg);
+}
+#borderdesign{
+  width: 215px;
+  height: 215px; /* Set height equal to width for a square */
+  box-sizing: border-box;
+  padding: 7px;
+  border-radius: 50%; /* Make the element a circle */
+  background: conic-gradient(white 7deg, var(--orangeTouil) 0deg);
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+#design:hover #borderdesign {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+
+/* Large Screens (over 1024px) */
+@media screen and (max-width: 768px) {
+  .AdnContent {
+    width: 100%; /* Adjust width as needed */
+    background-position-x: left;
+    background-position-y: top;
+    height: fit-content;
+
+
+  }
+  .AdnText{
+    justify-content: flex-start;
+  }
+  .h1Adn, .h1 {
+    font-size: 32px; /* Increase font size */
+  }
+  .p {
+    font-size: 18px; /* Increase font size */
+
+  }
+  .AdnContent p{
+    left: 0;
+    width: 90%;
+  }
+  .Team {
+    justify-content: space-between; /* Adjust spacing between cards */
+  }
+}
+
+/* Tablets (between 768px and 1024px) */
+@media screen and (max-width: 768px){
+  .Team {
+    flex-direction: column; /* Stack cards vertically */
+    justify-content: center;
+    align-items: center;
+  }
+  .p {
+    font-size: 16px; /* Adjust font size */
+  }
+}
+
+/* Small Screens (under 768px) */
+@media screen and (max-width: 768px) {
+  .h1Adn, .h1 {
+    font-size: 28px; /* Reduce font size further */
+  }
+  .p {
+    font-size: 14px; /* Reduce font size further */
+  }
+  .card {
+    padding: 1.5em 1em; /* Increase padding */
+  }
+  /* You can add more styles here for smaller screens */
+}
