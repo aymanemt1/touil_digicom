@@ -1,17 +1,41 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./navbar.css";
+import "./Navbar.css";
+import { LangueContext } from "../../Context/LangueContext";
+import { Translate } from "./NavbarTranslate";
+import { NavDropdown } from "./NavDropdown";
 
-export default function Navbar({onSwitchLang}) {
+export default function Navbar({link}) {
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const [lang, setLang] = useState("FR");
+  const {langue,setlangue}=useContext(LangueContext)
+  
+    const Navbar = Translate.Navbar.find((lang)=>(
+       lang.id == langue
+     ))
+
   const toggleLanguage = () => {
-    setLang(lang === 'FR' ? 'MR' : 'FR');
+    setlangue(langue === 'fr' ? 'ar' : 'fr');
   };
 
-  onSwitchLang(lang);
+  const navLinks = [
+    { id: 1, to: '/a-props', text: `${Navbar.link1}` },
+    { 
+      id: 2, 
+      text: `${Navbar.link2.label}`,
+      dropdown: [
+        { id: 21, to: '/services/service1', text: `${Navbar.link2.dropdown[0]}` },
+        { id: 22, to: '/services/service2', text: `${Navbar.link2.dropdown[1]}` },
+      ]
+    },
+    { id: 3, to: '/faq', text: `${Navbar.link3}` },
+    { id: 4, to: '/contact', text: `${Navbar.link4}` },
+  ];
+  
+    const renderNavLinks = navLinks.map((link) => (
+      <NavDropdown link={link} />
+    ));
 
 
   useEffect(() => {
@@ -36,7 +60,7 @@ export default function Navbar({onSwitchLang}) {
             <li>
               <a>
                 <img
-                  src="assets/Logo/logo.svg"
+                  src="assets/Logo/logo4.png"
                   alt="Touil Digicom"
                   className="brandLogo"
                 />
@@ -45,36 +69,17 @@ export default function Navbar({onSwitchLang}) {
           </Link>
         </ul>
         <ul className={toggleMenu ? "ulLinks active" : "ulLinks"}>
-          <li className="cool-link">
-            <Link to="/a-props">
-              <a>{lang == 'FR' ? 'À propos' : 'معلومات عنا'}</a>
-            </Link>
-          </li>
-          <li className="cool-link">
-            <Link to="/services">
-              <a>{lang == 'FR' ? 'Services' : 'خدمات'}</a>
-            </Link>
-          </li>
-          <li className="cool-link">
-            <Link to="/faq">
-              <a>{lang == 'FR' ? 'FAQ' : 'التعليمات'}</a>
-            </Link>
-          </li>
-          <li className="cool-link">
-            <Link to="/contact">
-              <a>{lang == 'FR' ? 'Contact' : 'اتصال'}</a>
-            </Link>
-          </li>
+          {renderNavLinks}
           <div className="parentBtns">
             <Link to="/demand-de-devis">
-              <button className="demandBtn">{lang == 'FR' ? 'Demand de devis' : 'طلب الاقتباس'}</button>
+              <button className="demandBtn">{Navbar.btn_devis}</button>
             </Link>
             <div className="langParent">
               <button
                 className="langBtn"
                 onClick={toggleLanguage}
               >
-                <img src={lang == 'FR' ? "./assets/Flags/franceFlag.webp" : "./assets/Flags/moroccoFlag.png"} alt="FR" />
+                <img className="flag" src={Navbar.flag} alt="FR" />
               </button>
             </div>
           </div>

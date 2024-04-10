@@ -1,23 +1,17 @@
-import React, { Fragment, useState } from "react";
-import { Home } from "./Home/Home";
-import References from "./References/References";
-import { Adn } from "./Adn/Adn";
+import React, { Fragment, useEffect } from "react";
 import Navbar from "./Navbar/navbar";
-
 import './LandingPage.css';
+import Home from "./Home/home";
+
 
 export const LandingPage = () => {
 
-  const [langvalue, setLangValue] = useState('FR');
-  // console.log(langvalue);
 
   return (
     <Fragment>
       <div className="parentLandingPage">
-        <Navbar onSwitchLang={value => setLangValue(value)}/>
-        <Home lang={langvalue}/>
-        <References lang={langvalue}/>
-        <Adn lang={langvalue}/>
+        <Navbar />
+        <Home />
       </div>
     </Fragment>
   );

@@ -6,8 +6,7 @@
 }
 
 .parentNavbar {
-    width: 95%;
-    margin: auto;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -21,7 +20,7 @@
 .menuBtn {
     background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
     color: white;
-    padding: 0.2rem 0.3rem;
+    padding: 0.4rem 0.5rem;
     font-size: 1.5rem;
     border: none;
     border-radius: 5px;
@@ -40,13 +39,7 @@
 }
 
 .brandLogo {
-    width: 100px;
-    transition: all .2s;
-}
-
-.brandLogo:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px var(--orangeTouilShadow));
+    width: 15rem;
 }
 
 .ulLinks {
@@ -63,30 +56,32 @@
     font-weight: 500;
     transition: all .1s;
     font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
+    transition: all 0.7s ease;
 
 }
 
 .ulLinks li a:active {
     color: var(--blueTouil);
+
 }
 
 .parentBtns {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
-    margin-left: 1.5rem;
+    margin-left: 3rem;
 }
 
 .demandBtn {
     background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
-    background-size: 400% 400%;
     color: white;
-    padding: .4rem .6rem;
     border: none;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
     outline: none;
     font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
-    border-radius: 1rem;
-    margin: 0;
+    border-radius: 0.3rem;
+    margin: 0 15px;
     cursor: pointer;
     transition: all .1s;
 }
@@ -127,8 +122,54 @@
     background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
     transition: width .3s;
 }
+
+  
+  li {
+    display: inline-block;
+    position: relative;
+  }
+  ul ul {
+    display: none;
+    position: absolute;
+    top: 1.4rem;
+    left: 0;
+background-color: #f1f1f1;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 12px;
+    padding: 10px 0;
+    
+    min-width: 160px;
+    z-index: 1;
+    filter: drop-shadow(0px 0 3px #fff);
+
+  }
+  
+  li:hover ul {
+    display: block;
+  }
+  
+  li ul li {
+    display: block;
+list-style-type: none;
+
+  }
+  .items{
+    padding: 4px;
+    margin-left: 10px;
+  }
+  .items .cool-link-child{
+   color: black;
+   transition: all 0.7s ease;
+  }
+  
+  .items .cool-link-child:hover{
+padding-left: 5px;
+color: #E8451E;
+}
+
 .cool-link:hover::after {
     width: 100%;
+   padding-left: 5px;
     transition: width .2s;
 } 
 
@@ -145,9 +186,19 @@
  
 
 @media (max-width : 644px){
+   
+     .langParent{
+   position: absolute;
+   left: 17.7rem;
+   bottom: 0rem;
+   button{
+    width: 2.8rem;
+    height: 2.8rem;
+   }
+    }
+    
     .parentNavbar {
-        background: #003260a2 ;
-        backdrop-filter: blur(15px);
+        backdrop-filter: blur(20px);
         height: 100vh;
         position: fixed;
         z-index: 10;
@@ -172,10 +223,9 @@
         top: 5rem;
     }
     .ulLinks li {
-        margin: 1rem;
+        margin: 0.6rem;
     }
     .ulLinks li::before {
-        content: '*';
         position: relative;
         font-size: 4rem;
         top: 1.8rem;
@@ -183,35 +233,38 @@
     }
     .ulLinks li a {
         font-size: 1.5rem;
-        margin: 1rem;
+        width: 200px;
     }
     .parentBtns {
         display: flex;
         flex-direction: column;
     }
     .demandBtn {
-        font-size: 1.7rem;
-        margin: 1rem;
-        margin-left: -1rem;
-        border-radius: 30px;
+        font-size: 1.2rem;
+        width: 14rem;
+        margin-left: 3.3rem;
+        margin-top: 1rem;
         padding: 0.6rem 0.9rem;
-    }
-    .langBtn {
-        position: absolute;
-        left: 1rem;
-        top: 0rem;
     }
     .burgerMenuUl {
         display: flex;
     }
     .ulLinks.active {
         display: block;
+        width: 140px;
+        margin: 1rem 0 0 1.4rem;
+
     }
     .ulLinks {
         display: none;
     }
 }
 
+.arrow {
+    font-size: 0.7rem;
+    color: var(--orangeTouil);
+    margin-left: 0.3rem;
+}
 
 @keyframes anim {
     0% {
