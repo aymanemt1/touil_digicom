@@ -1,0 +1,156 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 50vh;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
+}
+
+.wrapper .left {
+    width: 35%;
+    background: var(--cremaTouil);
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+}
+
+.wrapper .left img {
+    margin-bottom: 1rem;
+    width: 60%;
+    height: 25vh;
+    object-fit: cover;
+    object-position: top ;
+    border-radius: 50%;
+
+}
+
+.wrapper .left h4 {
+    margin-bottom: 1rem;
+}
+
+.wrapper .left p {
+    font-size: 0.9rem;
+}
+
+.wrapper .right {
+    width: 65%;
+    background: #fff;
+    padding: 30px 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects {
+    margin-bottom: 25px;
+}
+
+.wrapper .right .info h3,
+.wrapper .right .projects h3 {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.wrapper .right .info_data,
+.wrapper .right .projects_data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data {
+    width: 100%;
+    
+}
+
+
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4 {
+    color: #353c4e;
+    margin-bottom: 5px;
+}
+
+.wrapper .right .info_data .data p,
+.wrapper .right .projects_data .data p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #919aa3;
+}
+
+.wrapper .social_media ul {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper .social_media ul li {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 45px;
+    margin-top: 1em;
+}
+
+.wrapper .social_media ul li a {
+    color: var(--blueTouil);
+    display: block;
+    font-size: 18px;
+}
+
