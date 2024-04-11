@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Adn.css';
 import { Link } from 'react-router-dom';
-import Popup from './Popup';
+import Popup from './Popup/Popup';
+import { LangueContext } from '../../Context/LangueContext';
+import { Translate } from './adntranslate';
 
 export const Adn = () => {
 
@@ -12,26 +14,44 @@ export const Adn = () => {
     setBtnPopup(true);
     setName(name)
   };
+
+  const {langue}=useContext(LangueContext)
+  
+  const Adn = Translate.Adn.find((lang)=>(
+     lang.id == langue
+   ))
+
   
 
   return (
     <>
       <div className='AdnContent'>
         <div className='AdnText'>
-          <h1 className='h1Adn'>Explorez l'ADN</h1>
-          <p>Dans les coulisses de TOUIL DIGICOM, notre équipe représente une expertise diversifiée et un dévouement permanent envers l'excellence.
-            <Link to="/"><button className="btnScroll">Voir plus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z" data-name="Right" /></svg></button></Link>
+          <h1 className='h1Adn'>{Adn.title}</h1>
+          <p>
+            {Adn.text}
+          <button className="buttonMore">
+   {Adn.btn_text}
+  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+    <path
+      clip-rule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+      fill-rule="evenodd"
+    ></path>
+  </svg>
+</button>
+
           </p>
         </div>
       </div>
       <div className='Team'>
-        <h1 className='h1'>Explorez notre équipe</h1>
+        <h1 className='h1'>{Adn.equipe_title}</h1>
         <div className='card'>
           <div id='bordercom'>
-            <div className='img' id='com'></div>
+            <div className='card-img' id='com'></div>
           </div>
           <h5 className='card-title'>Douae Frihi</h5>
-          <p className='p'>Responsable de la communication</p>
+          <p className='p'> {Adn.role[0]}</p>
           <button title="Détails" className="add-button" onClick={()=>openPopup("Douae Frihi")}>
             <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24">
               <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" fill="none" />
@@ -42,10 +62,10 @@ export const Adn = () => {
         </div>
         <div className='card'>
           <div id='borderceo'>
-            <div className='img' id='ceo'></div>
+            <div className='card-img' id='ceo'></div>
           </div>
           <h5 className='card-title'>Omar Touil</h5>
-          <p className='p'>CEO & Fondateur</p>
+          <p className='p'>{Adn.role[1]}</p>
           <button title="Détails" className="add-button" onClick={()=>openPopup("Omar Touil")}>
             <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24">
               <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" fill="none" />
@@ -56,10 +76,10 @@ export const Adn = () => {
         </div>
         <div className='card'>
           <div id='borderdesign'>
-            <div className='img' id='design'></div>
+            <div className='card-img' id='design'></div>
           </div>
           <h5 className='card-title'>Sohaib Frihi</h5>
-          <p className='p'>Videographer/ Graphic  Designer</p>
+          <p className='p'>{Adn.role[2]}</p>
           <button title="Détails" className="add-button" onClick={()=>openPopup("Sohaib Frihi")}>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24">

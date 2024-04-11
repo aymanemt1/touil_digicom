@@ -26,7 +26,7 @@
    font-size: 30px;
    font-weight: bold;
    line-height: 32px;
-   margin: 0 0 72px;
+   margin: 0 0 30px;
    font-size: 26px;
    font-weight: 700;
    letter-spacing: 1px;
@@ -40,7 +40,7 @@
    font-size: 30px;
    font-weight: bold;
    line-height: 32px;
-   margin: 30px 0 72px;
+   margin: 70px 0 42px;
    font-size: 26px;
    font-weight: 700;
    letter-spacing: 1px;
@@ -52,49 +52,81 @@
 
  .AdnText p {
    font-family: 'Raleway', sans-serif;
-   font-size: 24px;
-   line-height: 35px;
+   line-height: 30px;
+  font-size: 20px;
    margin: 0 0 24px;
    text-align: justify;
-   text-justify: inter-word;
-   position: relative;
-   left: -20;
-   width: 120%;
+   width: 28rem;
  }
+ .buttonMore {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.55rem;
+  background-color: var(--orangeTouil);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  margin-top: 35px;
+  font-size: 15px;
+}
 
- .btnScroll {
-   background-image: linear-gradient(14deg, rgb(232, 69, 30), rgb(232, 69, 30), rgb(251, 145, 37));
-   color: white;
-   font-family: "Raleway", sans-serif;
-   padding: 0.5rem 2rem;
-   font-size: 1.2rem;
-   border-radius: 20px;
-   border: none;
-   outline: none;
-   cursor: pointer;
-   margin: 0;
-   transform: all .3s;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   line-height: 32px;
-   margin-top: 5rem;
-   
- }
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
 
- .btnScroll:hover {
-   outline: 0.1rem solid var(--orangeTouil);
-   background: transparent;
-   color: var(--orangeTouil);
- }
+.buttonMore:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
 
- .btnScroll svg {
-   fill: white;
-   width:  1.5rem;
- }
+.buttonMore:hover .icon {
+  transform: translate(4px);
+}
 
- .btnScroll:hover svg {
-  fill: var(--orangeTouil);
+.buttonMore:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.buttonMore::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
 }
 
 
@@ -142,6 +174,7 @@
 
  .AdnContent{
   height: 100vh;
+  filter: drop-shadow(0 0 10px var(--blueBTouilShadow));
   background-image: url('../../../public/assets/Adn/AdnBg.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -166,15 +199,15 @@
   padding: 2em 1em;  
   border-radius: 2em;
   text-align: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  width: max-content;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 18rem;
   display: flex;  
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
 }
 
-.img {
+.card-img {
   width: 200px;
   height: 200px;
   background-size: cover;
@@ -207,6 +240,7 @@
 .card-title {
   font-weight: 700;
   font-size: 1.5em;
+  margin-top: 1rem;
 }
 
 .p { 
@@ -312,7 +346,7 @@
     background-position-x: left;
     background-position-y: top;
     height: fit-content;
-
+ margin-top: 5rem;
 
   }
   .AdnText{
@@ -355,7 +389,7 @@
     font-size: 14px; /* Reduce font size further */
   }
   .card {
-    padding: 1.5em 1em; /* Increase padding */
+    padding: 2.5em 1em; /* Increase padding */
   }
   /* You can add more styles here for smaller screens */
 }

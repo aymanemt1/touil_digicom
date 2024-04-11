@@ -49,10 +49,8 @@ export default function Home() {
         <div className="parentimg">
           <img src="./assets/illustrationsRemoveBg/illu.webp" className={`illustatorHome ${langue === 'ar' ? 'illustatorArabe' : ''}` }/>
           
-          <img src="./assets/illustrationsRemoveBg/i9.png" className="illustrator1"  />
           <img src="./assets/illustrationsRemoveBg/i9.png" className="illustrator2"  />
           <img src="./assets/illustrationsRemoveBg/i10.png" className="illustrator5"/>
-          <img src="./assets/illustrationsRemoveBg/i11.png" className="illustrator3" />
           <img src="./assets/illustrationsRemoveBg/i12.png" className="illustrator4" />
         </div>
       </div>
