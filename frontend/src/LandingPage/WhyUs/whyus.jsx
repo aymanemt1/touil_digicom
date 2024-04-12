@@ -139,8 +139,8 @@ export const WhyUs = () => {
                 <div className='section-6'>
                   <div>
                     <img src="assets/WhyUs/team-pic1.jpg" className='team-pic1' alt="" />
-                    <img src="assets/WhyUs/team-pic1.jpg" className='team-pic2' alt="" />
-                    <img src="assets/WhyUs/team-pic1.jpg" className='team-pic3' alt="" />
+                    <img src="assets/WhyUs/team-pic3.png" className='team-pic2' alt="" />
+                    <img src="assets/WhyUs/team-pic1.png" className='team-pic3' alt="" />
                     </div>
             </div>
                 </article>

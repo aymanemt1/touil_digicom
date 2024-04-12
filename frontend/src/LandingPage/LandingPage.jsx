@@ -4,6 +4,8 @@ import './LandingPage.css';
 import {Home} from "./Home/Home";
 import Adn from "./Adn/Adn";
 import { WhyUs } from "./WhyUs/whyus";
+import FAQ from "./FAQ/FAQ";
+
 
 
 export const LandingPage = () => {
@@ -18,6 +20,7 @@ export const LandingPage = () => {
         <WhyUs />
         <Home />
       </div>
+        <FAQ/>
     </Fragment>
   );
 };
