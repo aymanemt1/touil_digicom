@@ -4,7 +4,7 @@ import "./home.css";
 import { Translate } from "./homeTranslate";
 import { LangueContext } from "../../Context/LangueContext";
 
-export default function Home() {
+export const Home = () => {
   function handleScroll() {
     const scrollTarget = document.getElementById("scrolbtnFn");
     scrollTarget.scrollIntoView({ behavior: "smooth" });

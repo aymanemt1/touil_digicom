@@ -45,7 +45,7 @@ export const WhyUs = () => {
         <div className="space-holder">
           <div className="sticky">
             <div className="horizontal">
-              <section role="feed" className="cards">
+              <section  className="cards">
                 <article className="sample-card">
                   <div className='section-1'>
                     {/* <img src="assets/WhyUs/team-pic1.png" width="550px" alt="" /> */}
@@ -60,7 +60,6 @@ export const WhyUs = () => {
                 </article>
                 <article className="sample-card">
                   <div className='section-3'>
-                    <div>
                       <div className='Parentellipse'>
                         <div className="ellipses-container">
                          <img src="assets/WhyUs/icon1.svg" className='img' alt="" />
@@ -72,7 +71,6 @@ export const WhyUs = () => {
                         </div>
                         <h2 className='title'>RAPIDITÉ</h2>
                       </div>
-                    </div>
                     <div className='Parentellipse2'>
                       <div className="ellipses-container">
                       <img src="assets/WhyUs/icon2.svg" className='img' alt="" />
