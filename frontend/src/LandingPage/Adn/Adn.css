@@ -175,7 +175,7 @@
  .AdnContent{
   height: 100vh;
   filter: drop-shadow(0 0 10px var(--blueBTouilShadow));
-  background-image: url('../../../public/assets/Adn/AdnBg.png');
+  background-image: url('../../../public/assets/Adn/AdnBg1.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left;
