@@ -7,6 +7,7 @@ import { NavDropdown } from "./NavDropdown";
 
 export default function Navbar({link}) {
 
+  
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const {langue,setlangue}=useContext(LangueContext)
@@ -29,8 +30,9 @@ export default function Navbar({link}) {
         { id: 22, to: '/services/service2', text: `${Navbar.link2.dropdown[1]}` },
       ]
     },
-    { id: 3, to: '/faq', text: `${Navbar.link3}` },
-    { id: 4, to: '/contact', text: `${Navbar.link4}` },
+    { id: 3, to: '/blog', text: `${Navbar.link3}` },
+    { id: 4, to: '/faq', text: `${Navbar.link4}` },
+    { id: 5, to: '/contact', text: `${Navbar.link5}` },
   ];
   
     const renderNavLinks = navLinks.map((link) => (
@@ -54,17 +56,15 @@ export default function Navbar({link}) {
 
   return (
     <Fragment>
-      <div className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"}>
+      <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"}>
         <ul className="ulBrandLogo">
-          <Link to="/">
+        <Link to="/" id="logo">
             <li>
-              <a>
                 <img
                   src="assets/Logo/logo4.png"
                   alt="Touil Digicom"
                   className="brandLogo"
                 />
-              </a>
             </li>
           </Link>
         </ul>
@@ -100,7 +100,7 @@ export default function Navbar({link}) {
             <i className={toggleMenu ? "bx bx-x" : "bx bx-menu"}></i>
           </button>
         </ul>
-      </div>
+      </nav>
     </Fragment>
   );
 }

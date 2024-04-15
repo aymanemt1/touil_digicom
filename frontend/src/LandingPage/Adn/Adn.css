@@ -2,7 +2,9 @@
   --orangeTouil : #E8451E;
   --blueTouil : #1B67B0;
   --cremaTouil : #F2F2F2;
+
 }
+
  .adn {
    display: flex;
    flex-wrap: wrap;
@@ -26,7 +28,7 @@
    font-size: 30px;
    font-weight: bold;
    line-height: 32px;
-   margin: 0 0 30px;
+   margin: 0 0 22px;
    font-size: 26px;
    font-weight: 700;
    letter-spacing: 1px;
@@ -249,6 +251,8 @@
   color: #71717A; 
   font-family:  'Roboto', sans-serif;
 }
+
+
 
 
 @media screen and (max-width: 768px) {

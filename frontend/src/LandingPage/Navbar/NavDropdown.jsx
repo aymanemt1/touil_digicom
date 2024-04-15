@@ -29,14 +29,14 @@ export const NavDropdown = ({ link }) => {
             <ul>
               {link.dropdown.map((dropdownItem) => (
                 <li className='items' key={dropdownItem.id}>
-                  <Link className="cool-link-child" to={dropdownItem.to}>{dropdownItem.text}</Link>
+                  <Link className="cool-link-child" to={dropdownItem.to} >{dropdownItem.text}</Link>
                 </li>
               ))}
             </ul>
           )}
         </div>
       ) : (
-        <Link id={link.id} className="cool-link" to={link.to}>{link.text}</Link>
+        <Link  id={link.id} className="cool-link" to={link.to}>{link.text}</Link>
       )}
     </li>
   );

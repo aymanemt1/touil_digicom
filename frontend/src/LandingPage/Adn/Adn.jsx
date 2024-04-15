@@ -26,7 +26,7 @@ export const Adn = () => {
   return (
     <>
       <div className='AdnContent'>
-        <div className='AdnText'>
+        <div className='AdnText' data-aos="zoom-out-left" data-aos-duration="1000">
           <h1 className='h1Adn'>{Adn.title}</h1>
           <p>
             {Adn.text}
@@ -44,6 +44,7 @@ export const Adn = () => {
           </p>
         </div>
       </div>
+      
       <div className='Team'>
         <h1 className='h1'>{Adn.equipe_title}</h1>
         <div className='card'>
@@ -91,8 +92,6 @@ export const Adn = () => {
         </div>
       </div>
       <Popup trigger={btnPopup} setTrigger={setBtnPopup} name={name}>My pop up </Popup>
-
-
 
     </>
   );

@@ -1,0 +1,128 @@
+/* Container styles */
+
+.video {
+    position: relative;
+    width: 100%;
+    /* Set the width of the container */
+    height: 770px;
+    /* Adjust height as needed */
+    overflow: hidden;
+    /* Hide overflow to keep everything within the container */
+    margin-top: 100px;
+}
+
+/* Video styles */
+.video video {
+    width: 70%;
+    /* Adjust width as needed */
+    /* Adjust height as needed */
+    position: absolute;
+    top: 0;
+    left: 10rem;
+    /* Adjust the left position as needed */
+    object-fit: cover;
+    /* Cover the container with the video */
+    mask-image: url('../../../public/assets/video/img1.png');
+    mask-size: cover;
+    /* Cover the video with the mask */
+    mask-repeat: no-repeat;
+    /* Do not repeat the mask */
+    mask-position: center;
+    /* Center the mask on the video */
+}
+
+/* Video frame styles */
+.video-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    /* Adjust the width as needed */
+    height: 20%;
+    /* Adjust the height as needed */
+    z-index: 2;
+    /* Place the frame on top of the video */
+    pointer-events: none;
+    /* Prevent interaction with the frame */
+}
+
+/* Style for the outer container */
+.containerv {
+    display: flex;
+    /* Use Flexbox layout */
+    height: 100vh;
+    /* Full viewport height */
+    justify-content: start;
+    /* Center content horizontally */
+    align-items: start;
+    /* Center content vertically */
+}
+
+/* Style for the inner div */
+/* .circlev {
+    width: 8rem; 
+    height: 8rem; 
+    background-color: orange; 
+    border-radius: 50%; 
+    animation: pulse 2s infinite; 
+} */
+
+/* Keyframes for the pulse effect */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width : 965px) {
+    .video video {
+        width: 80%;
+        height: 66%;
+    }
+}
+@media (max-width : 905px) {
+    .video video {
+        width: 80%;
+        height: 60%;
+    }
+}
+
+
+@media (max-width : 767px) {
+    .video video {
+        width: 85%;
+        height: 56%;
+        margin-left: -80px;
+    }
+    .parentvideo{
+        height: 50vh;
+    }
+
+
+}
+
+@media (max-width : 585px) {
+    .video video {
+        width: 85%;
+        height: 39%;
+        margin-left: -110px;
+    }
+}
+
+@media (max-width : 426px) {
+    .video-frame {
+        width: 60%;
+        height: 60%;
+
+    }
+}
+
+@media (max-width : 418px) {}

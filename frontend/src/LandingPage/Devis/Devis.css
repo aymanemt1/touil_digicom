@@ -1,0 +1,214 @@
+:root {
+    --orangeTouil : #E8451E;
+    --blueTouil : #1B67B0;
+    --blueTouilShadow : #7116e057;
+    --blueBTouilShadow : #1b68b041;
+    --orangeTouilShadow : #e8461e72;
+    --cremaTouil : #F2F2F2;
+}
+
+
+.parentDevis {
+    height: 100vh;
+    width: 80vw;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+.colTitleDevis h1 {
+    color: var(--blueTouil);
+    line-height: 32px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: start;
+    white-space: nowrap; 
+  }
+.colTitleDevis p {
+    color: black;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    margin: 1rem;
+  }
+
+  .colTitleDevis h1:before {
+    background-color:  var(--blueTouil);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+  }
+ 
+  .colTitleDevis h1:after {
+    background-color:  var(--blueTouil);
+    content: '';
+    display: block;
+    position: relative;
+    left: 9rem;
+    bottom: 0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+  }
+
+.parentBgDevis {
+    padding: 1rem;
+    border-radius: 20px;
+    background-image: linear-gradient(37deg, rgb(27,103,176),rgb(73,168,248));
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width :70vw;
+    margin: auto;
+
+}
+
+
+.colDevis2 img {
+    width: 300px;
+}
+
+
+.inputesDevis {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    border-bottom: 0.2rem solid #ffffffdc;
+    margin: 1rem;
+}
+
+
+.inputesDevis::placeholder {
+    color: #ffffffdc;
+    font-weight: 600;
+}
+
+.selectDevis {
+    width: 94%;
+}
+
+.selectDevis  option{
+    background-color: #1B67B0;
+    font-weight: 500;
+}
+
+.imgDevis {
+    margin-right: -3rem;
+}
+
+.btnSubmitDevis {
+
+}
+
+.messageDevis {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+.btnContact{
+    background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
+    color: white;
+    border: none;
+    padding: 0.8rem 0.6rem;
+    margin-top: 3rem;
+    margin-left: 0;
+    text-align: left;
+    font-size: 1rem;
+    justify-content: center;
+    font-weight: 650;
+    outline: none;
+    font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 8rem;
+    transition: all .1s;
+}
+
+
+
+.btnContact:hover {
+    animation: anim 1s infinite ease-in-out;
+}
+.btnContact:active { 
+    background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
+    transform: scale(0.95);
+}
+
+
+.questionContact {
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.btnSendToContact {
+    background-image: linear-gradient(37deg, rgb(21,95,168),rgb(109,188,255));
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    padding: 0.2rem 0.5rem;
+    color: white;
+    border-radius: 50%;
+    margin: 1rem;   
+    transition: all .15s;
+}
+.btnContact span{
+    margin-left: 0.4rem;
+}
+
+#iconContact{
+    color: white;
+    margin-left: 0.8rem;
+    margin-top: -0.1rem;
+    font-size: 1.4rem;
+    position: absolute;
+}
+
+.btnSendToContact:hover {
+    box-shadow: 0 0 15px 10px var(--blueBTouilShadow);
+}
+@media (max-width:776px){
+    .colDevis2 {
+        display: none;
+    }
+    .colDevis1 {
+        width: 100%;
+    }
+    .parentBgDevis {
+        background: transparent;
+    }
+    .colDevis2 img{
+        display: none;
+    }
+    .formDevis {
+        width: 80vw;
+        margin: auto;
+    }
+    .form table {
+        width: 100%;
+        margin: auto;
+    }
+    .inputesDevis {
+        color: var(--blueTouil);
+        border-bottom: 0.2rem solid var(--blueTouil);
+    }
+    .inputesDevis::placeholder {
+        color: var(--blueTouil);
+    }
+}
+@media (max-width:638px){
+    .inputesDevis {
+        font-size: 0.6rem;
+    }
+}
+
+

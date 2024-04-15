@@ -1,0 +1,161 @@
+
+    .coomment{
+        margin: 6rem 1rem;
+    }
+    .entite{
+        display: flex;
+    }
+    #etape{
+        border-radius: 25px;
+        width: 400px;
+    }
+    
+    .coomment h2{
+      font-size: 34px;
+      width: 500px;
+      margin-left: 12rem;
+    }
+    .etapes{
+      left: 33rem;
+      display: block;
+      width: 30rem;
+    }
+    .etape1{
+        margin-left: 3rem;
+        margin-top: 3rem;
+      }
+      .etape2{
+        margin-left: 18rem;
+        margin-top: 5rem;
+      }
+      .etape3{
+        margin-left: 18rem;
+        margin-top: 2rem;
+    }
+    .etape5{
+       margin-left: 18rem;
+       margin-top: 6rem;
+    }
+    .bottomEtapes{
+      justify-content: space-between;
+      display: flex;
+      margin-top: 7rem;
+    }
+    .number-etape{
+      color: #1B67B0;
+      font-size: 63px;
+    
+    }
+    .title-etape{
+    
+      width: 322px;
+      font-size: 23px;
+      text-align: left;
+      padding-left: 4rem;
+      line-height: 30px;
+    }
+    
+
+    .image-comment{
+      margin-top: 2rem;
+      width: 500px;
+      position: relative;
+      border-radius: 25px;
+    }
+
+
+    
+@media (max-width : 767px){
+  .coomment{
+    margin: 0;
+}
+  .coomment h2{
+    width: 100%;
+    margin-top: 4rem;
+    margin-left: 0;
+    font-size: 28px;
+    justify-content: center;
+    text-align: center;
+}
+
+#etape{
+  border-radius: 25px;
+  width: 200px;
+}
+.image-comment{
+width: 88%;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.etapes{
+  left: 0;
+  width: 10rem;
+}
+.entite{
+    display: block;
+}
+.bottomEtapes{
+  display: block;
+  width: 90%;
+  margin-top: 2rem;
+}
+.etape2{
+  margin-left: 3rem;
+}
+  }
+@media (max-width : 1025px){
+  .coomment{
+    margin-top: 3rem;
+}
+  .coomment h2{
+    width: 100%;
+    margin-top: 4rem;
+    margin-left: 0;
+    font-size: 34px;
+    justify-content: center;
+    text-align: center;
+}
+
+#etape{
+  border-radius: 25px;
+  width: 400px;
+}
+.image-comment{
+   width: 86%;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.etapes{
+  left: 0;
+  width: 10rem;
+}
+.entite{
+    display: block;
+}
+.bottomEtapes{
+  display: block;
+  width: 95%;
+  margin-top: 2rem;
+}
+.etape1{
+  margin-left: 7rem;
+}
+.etape2{
+  margin-left: 7rem;
+}
+.etape3{
+  margin-left: 7rem;
+  margin-top: 8rem;
+}
+.etape4{
+  margin-left: 7rem;
+  margin-top: 6rem;
+}
+.etape5{
+  margin-left: 7rem;
+  margin-top: 6rem;
+}
+#Comment-image2{
+  display: none;
+}
+  }

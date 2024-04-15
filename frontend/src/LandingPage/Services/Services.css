@@ -1,0 +1,301 @@
+:root {
+    --orangeTouil : #E8451E;
+    --orangeTouilOpacity : #fc502545;
+    --orangeTouilShadow : #e8461e25;
+    --orangeTouilShadowBlue : #1056be37;
+    --blueTouil : #1B67B0;
+    --cremaTouil : #F2F2F2;
+}
+
+.wrapperServices {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(circle 8px at 80% 68%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 8px at 24% 41%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 34% 66%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 56% 55%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 11% 60%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 6% 89%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 0% 36%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 20% 56%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 44% 56%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 0% 43%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 19% 33%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle at center left, rgb(255,255,255) 0%, rgb(255,255,255) 10%,transparent 10%, transparent 90%),linear-gradient(262deg, rgb(232,69,30),rgb(255,134,0));
+    background-size: 400% 400%;
+    animation: anim 15s infinite ease-in-out;
+}
+
+.titleSectionServices {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+.titleSectionServices h1 {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: end;
+    white-space: nowrap; 
+    /* mix-blend-mode:difference; */
+    color: white;
+}
+
+.titleSectionServices h1:before {
+    background-color:  var(--cremaTouil);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100px;
+    position: absolute;
+    right: 7rem;
+    margin-top: -0.4rem;
+}
+.titleSectionServices h1:after {
+    background-color:  var(--cremaTouil);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 95px;
+    position: absolute;
+    right: 15rem;
+    margin-top: 0.1rem;
+}
+.titleSectionServices p {
+    width: 90%;
+    font-size: 0.8rem;
+    color: white;
+    margin: 1rem;
+    letter-spacing: 1px;
+    text-align: end;
+}
+
+.wrapperServices .containerServices {
+    width: 80vw;
+    height: 65vh;
+    display: flex;
+    justify-content: start;
+}
+.wrapperServices .containerServicesAr {
+    width: 80vw;
+    height: 63vh;
+    display: flex;
+    justify-content: start;
+}
+
+.cardServices {
+    width: 100px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 5px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    border: 0.02rem solid rgba(255, 220, 106, 0.728);
+    box-shadow: 0 0 10px  var(--orangeTouilShadowBlue);
+}
+
+.cardServices > .rowServices {
+    color: white;
+    display: flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    height: 130px;
+}
+
+.cardServices > .rowServicesAr {
+    color: white;
+    display:flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    height: 150px;
+    line-height: 1rem;
+}
+
+
+.cardServices > .rowServices > .iconServices {
+    background-image: repeating-linear-gradient(0deg, rgba(232,69,30, 0.19) 0px, rgba(232,69,30, 0.19) 1px,transparent 1px, transparent 21px),repeating-linear-gradient(90deg, rgba(232,69,30, 0.19) 0px, rgba(232,69,30, 0.19) 1px,transparent 1px, transparent 21px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));  
+     color: var(--orangeTouil); 
+    font-size: 2rem;
+    border-radius: 50%;
+    font-weight: 600;
+    padding-top: 0.2rem;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    padding-bottom: 2rem;
+    place-items: center;
+    margin: 15px;
+    background-size: 400% 400%;
+    animation: anim 30s infinite ease-in-out;
+
+}
+.cardServices > .rowServicesAr > .iconServices {
+    background-image: repeating-linear-gradient(0deg, rgba(232,69,30, 0.19) 0px, rgba(232,69,30, 0.19) 1px,transparent 1px, transparent 21px),repeating-linear-gradient(90deg, rgba(232,69,30, 0.19) 0px, rgba(232,69,30, 0.19) 1px,transparent 1px, transparent 21px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));  
+     color: var(--orangeTouil); 
+    font-size: 2rem;
+    border-radius: 50%;
+    font-weight: 600;
+    padding-top: 0.2rem;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    padding-bottom: 1rem;
+    place-items: center;
+    margin: 15px;
+    margin-top: 2rem;
+    background-size: 400% 400%;
+    animation: anim 30s infinite ease-in-out;
+}
+
+.cardServices > .rowServices > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 520px;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    cursor: auto;
+}
+.cardServices > .rowServicesAr > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 520px;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    cursor: auto;
+}
+
+.description p {
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+    color: rgb(255, 196, 0);
+    padding-top: 5px;
+}
+
+.description h4 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.input {
+    display: none;
+}
+
+input:checked + label {
+    width :80vw;
+    transform: scale(1.1);
+    box-shadow: 50px 0px 50px 19px rgba(232, 69, 30, 0.15);
+    border: 0.15rem solid var(--cremaTouil);
+}
+
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.cardServices[for="c1"] {
+    background: linear-gradient(19deg, rgb(232,69,30),rgba(250, 132, 22, 0.087),rgba(251, 201, 37, 0.096)), url('/public/assets/bgServices/marketing.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardServices[for="c2"] {
+    background-image: linear-gradient(10deg, rgb(27,103,176),rgba(48, 148, 255, 0.094),rgba(151, 222, 255, 0.05)), url('/public/assets/bgServices/formationk.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardServices[for="c3"] {
+    background-image: linear-gradient(5deg, rgb(232,69,30),rgba(250, 132, 22, 0.084),rgba(251, 201, 37, 0.071)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.cardServices[for="c4"] {
+    background-image: linear-gradient(10deg, rgb(27,103,176),rgba(48, 148, 255, 0.094),rgba(151, 222, 255, 0.05)), url('/public/assets/bgServices/even.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btnsServices {
+    padding: 0.5rem;
+}
+.btnMoreDetailServices {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: var(--orangeTouil);
+    text-decoration: none;
+    border: 0.02rem solid white;
+    outline: none;
+    margin: 0.3rem;
+    transition: all .15s;
+    cursor: pointer;
+}
+
+.btnMoreDetailServices:hover {
+    background-color: transparent;
+    color: white;
+    border: 0.02rem solid white;
+}
+.btnMoreDetailServices:active {
+    background-image: linear-gradient(19deg, rgb(232,69,30),rgb(255, 115, 0),rgb(255,184,48));
+    color: white;
+    border: none;
+    transform: scale(0.9);
+}
+
+.btnMoreDetailServices2 {
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 0.02rem solid white;
+    outline: none;
+    margin: 0.3rem;
+    cursor: pointer;
+    transition: all .15s;
+}
+.btnMoreDetailServices2:hover {
+    background-color: white;
+    color: var(--orangeTouil);
+}
+.btnMoreDetailServices2:active {
+    background-image: linear-gradient(19deg, rgb(232,69,30),rgb(255, 115, 0),rgb(255,184,48));
+    color: white;
+    border: none;
+    transform: scale(0.9);
+}
+
+@media (max-width:636px){
+    .containerServices {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@keyframes anim {
+    0% {
+        background-position: 0 20%;
+    }
+    50% {
+        background-position: 100% 20%;
+    }
+    100% {
+        background-position: 0 20%;
+    }
+}

@@ -7,8 +7,9 @@ export const Translate = {
         label: 'Services',
         dropdown: ['Service 1', 'Service 2', 'Service 3'] 
       },
-      link3: 'FAQ',
-      link4: 'Contact',
+      link3: 'Blogs',
+      link4: 'FAQ',
+      link5: 'Contact',
       btn_devis: 'Demander un devis',
       flag: './assets/Flags/franceFlag.webp'
     },
@@ -19,8 +20,9 @@ export const Translate = {
         label: 'خدمات',
         dropdown: ['الخدمة 1', 'الخدمة 2', 'الخدمة 3'] 
       },
-      link3: 'التعليمات',
-      link4: 'اتصال',
+      link3: 'المدونات',
+      link4: 'الأسئلة الشائعة',
+      link5: 'اتصال',
       btn_devis: 'طلب عرض أسعار',
       flag: './assets/Flags/moroccoFlag.png'
     },

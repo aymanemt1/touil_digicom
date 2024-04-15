@@ -1,0 +1,110 @@
+.statistique {
+    position: relative;
+    padding: 3rem 4rem;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    margin-top: 8rem;
+    color: white;
+    background-color: #1B67B0;
+    flex-shrink: 0;
+    margin-bottom: 4rem;
+    }
+    .counter:not(:last-child) {
+      border-right: 1px solid white;
+      padding: 0 1rem;
+    }
+    
+    
+.count1,.count2,.count3,.count4{
+      animation-duration: 1s;
+  }
+ 
+  .counter span{
+    font-size: 3rem;
+  }
+ 
+  @property --num1 {
+    syntax: '<integer>';
+    inherits: true;
+    initial-value: 59;
+  }
+  
+  .count1::before {
+    counter-reset: my-counter var(--num1);
+    content: counter(my-counter);
+    animation: count1 3s ease-in-out ;
+  }
+  
+  @keyframes count1 {
+    from { --num1: 1; }
+    to { --num1: 59; }
+  }
+  
+  
+  @property --num2 {
+    syntax: '<integer>';
+    inherits: true;
+    initial-value: 15;
+  }
+  .count2::before {
+    counter-reset: my-counter var(--num2);
+    content: counter(my-counter);
+    animation: count2 3s ease-in-out ;
+  }
+  
+  @keyframes count2 {
+    from { --num2: 1; }
+    to { --num2: 15; }
+  }
+  
+  @property --num3 {
+    syntax: '<integer>';
+    inherits: true;
+    initial-value: 78;
+  }
+  .count3::before {
+    counter-reset: my-counter var(--num3);
+    content: counter(my-counter);
+    animation: count3 3s ease-in-out ;
+  }
+  
+  @keyframes count3 {
+    from { --num3: 1; }
+    to { --num3: 78; }
+  }
+  
+  @property --num4 {
+    syntax: '<integer>';
+    inherits: true;
+    initial-value: 1112;
+  }
+  
+  .count4::before {
+    counter-reset: my-counter var(--num4);
+    content: counter(my-counter);
+    animation: count4 4s ease-in-out;
+  }
+  
+  @keyframes count4 {
+    from { --num4: 1; }
+    to { --num4: 1112; }
+  }
+
+
+  @media (max-width : 767px){
+    .statistique{
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-between;
+  }
+ 
+  .counter:not(:last-child) {
+    border-bottom: 1px solid white;
+    border-right: none;
+    padding: 2rem 0rem;
+  }
+  .counter:last-child{
+    padding: 2rem 0;
+  }
+}

@@ -65,6 +65,10 @@ width: 42rem;
  padding: 0.3rem;
  width: 8rem;
 }
+.reverseContent .union{
+    left: 3.3rem;
+
+}
 
 .reverseContent .parentBtnsV2{
    flex-direction: row-reverse;
@@ -181,8 +185,16 @@ width: 42rem;
    
 }
 
+.union{
+    width: 480px;
+    position: absolute;
+    top: 6rem;
+    right: 3.3rem;
+    opacity: 0.3;
+}
 .illustatorHome {
-    width: 350px;
+    position: relative;
+    width: 370px;
     margin: 0;
     filter: drop-shadow(0 0 30px var(--blueBTouilShadow));
 }
@@ -326,7 +338,7 @@ width: 42rem;
     .illustatorHome {
         position: absolute;
         right: 8.5rem;
-        top: 31rem;
+        top: 34rem;
      }
 }
 @media (max-width : 426px){

@@ -8,6 +8,6 @@
 
 .parentLandingPage {
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 100%);
-    width: 100vw;
-  
+    width: 100%;
 }
+

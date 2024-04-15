@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import { LandingPage } from '../LandingPage/LandingPage';
+import { Contact } from '../LandingPage/Contact/Contact';
 
 export default function RouterApp(){
     return (
-        <Fragment>
-            <BrowserRouter>
+       
                 <Routes>
                     <Route 
                         path='/'
@@ -15,8 +15,14 @@ export default function RouterApp(){
                             </Fragment>
                         }
                     />
+                    <Route 
+                        path='/contact'
+                        element={
+                                <Contact />
+                        }
+                    />
                 </Routes>
-            </BrowserRouter>
-        </Fragment>
+          
+     
     )
 }
