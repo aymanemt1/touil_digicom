@@ -1,0 +1,24 @@
+.servicedetailheader{
+    width: 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    opacity: 0.8;
+    color: white;
+    text-align: center;
+    font-size: 73px;
+    letter-spacing: 3px;
+    padding-top: 5.8rem;
+    background-image: linear-gradient(0deg, rgb(232,69,30),rgba(250, 132, 22, 0.087),rgba(251, 201, 37, 0.096)),url('../../../public/assets/bgServices/formationk.jpg');
+}
+.servicedetailcontent{
+    display: flex;
+    margin-top: 3rem;
+    width: 90%;
+    padding: 1rem 4rem;
+}
+.servicedetailtext{
+    width: 580px;
+    line-height: 28px;
+}

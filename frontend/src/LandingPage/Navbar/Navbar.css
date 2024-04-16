@@ -3,9 +3,12 @@
     --orangeTouilShadow : #e8461e25;
     --blueTouil : #1B67B0;
     --cremaTouil : #F2F2F2;
+    --bgTouil : rgb(248, 249, 251);
+
 }
 
 .parentNavbar {
+    background-color: var(--bgTouil);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -15,10 +18,9 @@
     padding: 0.3rem 1rem;
     position: sticky;
     z-index: 1501;
-    box-shadow:  rgba(241,241,241,1) 0px 4px 16px 0px;
-    background-color: transparent;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(14px);
 }
+
 .burgerMenuUl {
     display: none;
 }
@@ -197,6 +199,10 @@ color: #E8451E;
    position: absolute;
    left: 17.7rem;
    bottom: 0rem;
+   button{
+    width: 2.8rem;
+    height: 2.8rem;
+   }
     }
     
     .parentNavbar {

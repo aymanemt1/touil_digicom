@@ -114,11 +114,11 @@
 }
 
 .btnContact{
-    background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
     color: white;
+    background-color: #10154e;
     border: none;
     padding: 0.8rem 0.6rem;
-    margin-top: 3rem;
+    margin-top: 1.6rem;
     margin-left: 0;
     text-align: left;
     font-size: 1rem;
@@ -138,29 +138,20 @@
     animation: anim 1s infinite ease-in-out;
 }
 .btnContact:active { 
-    background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
+   background-color: black;
     transform: scale(0.95);
 }
 
 
 .questionContact {
-    width: 80vw;
     margin: auto;
+    background-color: white;
+    padding: 3rem 0;
+    align-items: center;
     text-align: center;
-    padding-bottom: 2rem;
 }
 
-.btnSendToContact {
-    background-image: linear-gradient(37deg, rgb(21,95,168),rgb(109,188,255));
-    font-size: 2rem;
-    border: none;
-    outline: none;
-    padding: 0.2rem 0.5rem;
-    color: white;
-    border-radius: 50%;
-    margin: 1rem;   
-    transition: all .15s;
-}
+
 .btnContact span{
     margin-left: 0.4rem;
 }
@@ -176,6 +167,7 @@
 .btnSendToContact:hover {
     box-shadow: 0 0 15px 10px var(--blueBTouilShadow);
 }
+
 @media (max-width:776px){
     .colDevis2 {
         display: none;

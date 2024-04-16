@@ -3,7 +3,7 @@ export const Translate = {
         {
           id: "fr",
           title:`NOS SERVICES`,
-          text:`- Découvrez nos quatre services de digicom : création de contenu, gestion des médias sociaux, marketing par e-mail et développement web. Nous sommes là pour booster votre présence en ligne !`,
+          text:`Découvrez nos quatre services de digicom : création de contenu, gestion des médias sociaux, marketing par e-mail et développement web. Nous sommes là pour booster votre présence en ligne !`,
           card1 : {
             title : 'MARKETING & COMMUNICATION',
             description : 'Notre département de Communication et Marketing est votre allié stratégique pour dynamiser votre marque.',

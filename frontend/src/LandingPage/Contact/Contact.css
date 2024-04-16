@@ -1,7 +1,8 @@
 .contact{
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
+
 }.contact-header{
-  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 100%);
+  background-color: rgb(248, 249, 251);
     padding: 3rem 6rem;
     display: flex;
     width: 100%;
@@ -9,6 +10,10 @@
 }
 .contact-title{
  display: block;
+}
+.contact-title h2{
+ width: 300px;
+ line-height: 30px;
 }
 .contact-text{
 width: 600px;
@@ -29,7 +34,7 @@ line-height: 26px;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 11rem;
     margin-top: 3rem;
 }
 .iconemail{
@@ -101,7 +106,8 @@ line-height: 26px;
     line-height: 20px;
     margin:  40px 5px 10px 0;
     overflow: visible;
-    padding: 7px 130px;
+    padding: 7px 10px;
+    width: 200px;
     text-align: center;
     text-transform: none;
     touch-action: manipulation;
@@ -127,6 +133,22 @@ line-height: 26px;
   .contact-button:not([disabled]):active {
     box-shadow: #fff 2px 2px 0 0;
     transform: translate(2px, 2px);
+  }
+
+  .google-map{
+    height: 30.6rem;
+  }
+
+  .e-mail,.adress,.telephone{
+    display: flex;
+  }
+  #contact-icon i{
+   font-size: 3rem;
+   margin-right: 1rem;
+
+  }
+  #contact-info p{
+  width: 270px;
   }
   
 .map{

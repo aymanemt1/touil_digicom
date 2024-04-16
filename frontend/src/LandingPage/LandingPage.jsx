@@ -18,16 +18,15 @@ export const LandingPage = () => {
   return (
     <Fragment>
       <div className="parentLandingPage">
-        <Navbar />
         <Home />
         <Adn/>
         <WhyUs />
-        <HowItWorks />
         <Statistique />
+        <HowItWorks />
         <Video />
         <Services />
-        <FAQ />
-        <Devis />
+        {/* <FAQ />
+        <Devis /> */}
         <References />
         <Footer />
       </div>

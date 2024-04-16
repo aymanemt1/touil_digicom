@@ -60,9 +60,54 @@
       margin-top: 2rem;
       width: 500px;
       position: relative;
-      border-radius: 25px;
     }
 
+    .TextHow{
+      margin: auto;
+    background-color: white;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 2rem;
+    }
+    .TextHow p{
+      margin: auto;
+      font-size: 19px;
+      text-align: center;
+      width: 490px;
+    
+    }
+
+    
+.btnToBlogs{
+  color: white;
+  background-color: #10154e;
+  border: none;
+  padding: 0.8rem 0.6rem;
+  margin-top: 1.6rem;
+  margin-left: 0;
+  text-align: center;
+  font-size: 1rem;
+  justify-content: center;
+  font-weight: 650;
+  outline: none;
+  font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 12rem;
+  transition: all .1s;
+}
+
+
+
+.btnToBlogs:hover {
+  animation: anim 1s infinite ease-in-out;
+}
+.btnToBlogs:active { 
+ background-color: black;
+  transform: scale(0.95);
+}
 
     
 @media (max-width : 767px){
@@ -81,8 +126,11 @@
 #etape{
   border-radius: 25px;
   width: 200px;
+  margin-left: 2.7rem;
 }
 .image-comment{
+  background: linear-gradient(19deg, rgb(232,69,30),rgba(250, 132, 22, 0.087),rgba(251, 201, 37, 0.096)), url('/public/assets/bgServices/marketing.jpg');
+
 width: 88%;
   margin-left: 2rem;
   margin-top: 2rem;
@@ -103,6 +151,7 @@ width: 88%;
   margin-left: 3rem;
 }
   }
+
 @media (max-width : 1025px){
   .coomment{
     margin-top: 3rem;

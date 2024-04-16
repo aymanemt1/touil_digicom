@@ -48,7 +48,7 @@ export const Statistique = () => {
       <span id='count' className={`${visible ? 'count3' : ''}`}>+</span><h3 className='count-title'>Litres de cafés consommés</h3>
         </div>
       <div className='counter' >
-      <span id='count' className={`${visible ? 'count4' : ''}`}>+</span><h3 className='count-title'>Litres de cafés consommés</h3>
+      <span id='count' className={`${visible ? 'count4' : ''}`}></span><h3 className='count-title'>Litres de cafés consommés</h3>
         </div>
       
     </div>

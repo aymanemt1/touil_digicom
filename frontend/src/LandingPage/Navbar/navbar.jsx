@@ -61,7 +61,7 @@ export default function Navbar({link}) {
         <Link to="/" id="logo">
             <li>
                 <img
-                  src="assets/Logo/logo4.png"
+                  src="/assets/Logo/logo4.png"
                   alt="Touil Digicom"
                   className="brandLogo"
                 />

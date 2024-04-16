@@ -9,23 +9,21 @@
 
 .wrapperServices {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: radial-gradient(circle 8px at 80% 68%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 8px at 24% 41%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 34% 66%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 56% 55%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 11% 60%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 6% 89%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 6px at 0% 36%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 20% 56%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 44% 56%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 0% 43%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle 12px at 19% 33%, rgb(255,255,255) 0%, rgb(255,255,255) 50%,transparent 50%, transparent 100%),radial-gradient(circle at center left, rgb(255,255,255) 0%, rgb(255,255,255) 10%,transparent 10%, transparent 90%),linear-gradient(262deg, rgb(232,69,30),rgb(255,134,0));
     background-size: 400% 400%;
     animation: anim 15s infinite ease-in-out;
 }
 
 .titleSectionServices {
     width: 80vw;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+    display: block;
     margin-top: -1rem;
     margin-bottom: 2rem;
+    margin-left: 5rem;
 }
 
 .titleSectionServices h1 {
@@ -33,45 +31,21 @@
     font-size: 30px;
     font-weight: bold;
     line-height: 32px;
+    font-size: 26px;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-align: end;
-    white-space: nowrap; 
-    /* mix-blend-mode:difference; */
-    color: white;
-}
-
-.titleSectionServices h1:before {
-    background-color:  var(--cremaTouil);
-    content: '';
-    display: block;
-    height: 3px;
-    width: 100px;
-    position: absolute;
-    right: 7rem;
-    margin-top: -0.4rem;
-}
-.titleSectionServices h1:after {
-    background-color:  var(--cremaTouil);
-    content: '';
-    display: block;
-    height: 3px;
-    width: 95px;
-    position: absolute;
-    right: 15rem;
-    margin-top: 0.1rem;
 }
 .titleSectionServices p {
-    width: 90%;
-    font-size: 0.8rem;
-    color: white;
-    margin: 1rem;
+    width: 66%;
+    font-size: 1rem;
+    margin-top: 1rem;
     letter-spacing: 1px;
-    text-align: end;
 }
 
 .wrapperServices .containerServices {
-    width: 80vw;
+    width: 86vw;
+    margin-left: 3rem;
     height: 65vh;
     display: flex;
     justify-content: start;
@@ -196,7 +170,7 @@
 input:checked + label {
     width :80vw;
     transform: scale(1.1);
-    box-shadow: 50px 0px 50px 19px rgba(232, 69, 30, 0.15);
+    filter: drop-shadow(0 0 30px var(--blueBTouilShadow));
     border: 0.15rem solid var(--cremaTouil);
 }
 

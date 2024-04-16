@@ -4,8 +4,7 @@ import Navbar from '../Navbar/navbar'
 import { Footer } from '../Footer/footer'
 export const Contact = () => {
   return (
-    <>
-      <Navbar />
+    <div className='contactParent'>
       <div className='contact'>
 
         <div className='contact-header'>
@@ -20,30 +19,43 @@ export const Contact = () => {
 
         <div className='contact-main'>
           <div className='contact-info'>
-            <div className='adress'><i className="fa-solid fa-location-dot"></i>
-              <h3>Adress</h3>
-              <p >Boulevard Mohammed V, Technopark Tangier 90000 </p>
+            <div className='adress'>
+            <div id='contact-icon'>
+            <i className='bx bx-current-location'></i>
             </div>
-            <div className='telephone'><i className="fa-solid fa-location-dot"></i>
+             <div id='contact-info'> <h3>Adress</h3>
+              <p >Boulevard Mohammed V, Technopark Tangier 90000 </p></div>
+            </div>
+            <div className='telephone'>
+            <div id='contact-icon'>
+            <i class='bx bxs-phone-call' ></i>
+              </div>
+            <div id='contact-info'>
               <h3>Téléphone</h3>
               <p>212 628.79.45.01 - 212 711-172764</p>
+              </div>
             </div>
-            <div className='e-mail'><box-icon className="iconemail" name='envelope'></box-icon>
+            <div className='e-mail'>
+            <div id='contact-icon'>
+            <i className='bx bxs-envelope'></i>
+            </div>
+            <div id='contact-info'>
               <h3>E-mail</h3>
               <p>contact@touildigicom.ma</p>
+            </div>
             </div>
           </div>
           <div className='contact-map'>
             <div className='contact-forms'>
               <h1 >Contactez-nous pour toute question</h1>
-              <div class="wave-group">
+              <div className="wave-group">
                 <input required="" name='nom' type="text" placeholder='Nom' className="input-contact" />
                 <input required="" name='prenom' type="text" placeholder='Prenom' className="input-contact" />
                 <input required="" name='email' type="text" placeholder='E-mail' className="input-contact" />
                 <input required="" name='message' type="text" placeholder='Votre Message' className="input-contact" />
                 <div>
 
-                  <button className="contact-button" role="button">Submit now </button>
+                  <button className="contact-button" role="button">Envoyer </button>
                 </div>
               </div>
             </div>
@@ -56,6 +68,6 @@ export const Contact = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
