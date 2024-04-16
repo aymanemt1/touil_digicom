@@ -24,7 +24,6 @@
  }
 
  .h1Adn {
-   font-family: 'Raleway', sans-serif;
    font-size: 30px;
    font-weight: bold;
    line-height: 32px;
@@ -38,7 +37,6 @@
  }
  .h1 {
   width: 100%;
-   font-family: 'Raleway', sans-serif;
    font-size: 30px;
    font-weight: bold;
    line-height: 32px;
@@ -53,7 +51,6 @@
 
 
  .AdnText p {
-   font-family: 'Raleway', sans-serif;
    line-height: 30px;
   font-size: 20px;
    margin: 0 0 24px;
@@ -63,19 +60,18 @@
  .buttonMore {
   position: relative;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   padding-block: 0.5rem;
   padding-inline: 1.55rem;
-  background-color: var(--orangeTouil);
-  border-radius: 9999px;
+  background-image: linear-gradient(48deg, rgb(240, 48, 0),rgb(255,159,0));
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: #ffff;
   gap: 10px;
-  font-weight: bold;
-  border: 3px solid #ffffff4d;
+  font-weight: 600;
+  border: none;
   outline: none;
   overflow: hidden;
   margin-top: 35px;
@@ -90,7 +86,6 @@
 
 .buttonMore:hover {
   transform: scale(1.05);
-  border-color: #fff9;
 }
 
 .buttonMore:hover .icon {
@@ -134,7 +129,8 @@
 
 
  .h1:before {
-   background-color:  var(--orangeTouil);
+  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
+  border-radius: 2px;
    content: '';
    display: block;
    height: 3px;
@@ -143,7 +139,8 @@
  }
 
  .h1:after {
-   background-color:  var(--orangeTouil);
+  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
+  border-radius: 2px;
    content: '';
    display: block;
    position: relative;
@@ -154,7 +151,8 @@
    margin-bottom: 0.25em;
  }
  .h1Adn:before {
-   background-color:  var(--orangeTouil);
+  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
+  border-radius: 2px;
    content: '';
    display: block;
    height: 3px;
@@ -163,7 +161,8 @@
  }
 
  .h1Adn:after {
-   background-color:  var(--orangeTouil);
+  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
+  border-radius: 2px;
    content: '';
    display: block;
    position: relative;
@@ -199,14 +198,48 @@
 
 .card {
   padding: 2em 1em;  
-  border-radius: 2em;
+  border-radius: 1em;
   text-align: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(61, 106, 151, 0.2) 0px 8px 24px;
   width: 18rem;
   display: flex;  
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
+  overflow: hidden;
+}
+
+/* 
+.card::before {
+  position: absolute;
+  z-index: 10;
+  content: '';
+  width: 10%;
+  height: 180%;
+  background-image: linear-gradient(37deg, rgb(20,91,158),rgb(53,196,255));
+  animation: animateRotate 10s ease-in-out infinite;
+}
+.card::after {
+  overflow: hidden;
+  inset: 5px;
+} */
+
+@keyframes animateRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card::before::after {
+  position: absolute;
+  content: 'Your Content';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Other styling for your content */
 }
 
 .card-img {
@@ -217,7 +250,7 @@
   margin: auto;
   margin-bottom: 3.5vh;
   border: white  solid 4px;
-  position: relative; /* Add relative positioning */
+  position: relative; 
   z-index: 1;
 }
 
@@ -250,6 +283,19 @@
   font-size: 1em;
   color: #71717A; 
   font-family:  'Roboto', sans-serif;
+  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
+  border-radius: 2px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.p-ceo { 
+  margin: 0.5em 0; 
+  font-size: 1em;
+  color: #71717A; 
+  font-family:  'Roboto', sans-serif;
+  background-image: linear-gradient(37deg, rgb(20,91,158),rgb(53,196,255));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 
@@ -265,73 +311,72 @@
 .add-button {
   cursor: pointer;
   outline: none;
-  border: none; /* Remove default button border */
-  background-color: transparent; /* Transparent background */
+  border: none;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
-  transition: transform 0.3s ease, fill 0.3s ease; /* Transition for hover and active */
+  transition: transform 0.3s ease, fill 0.3s ease; 
 }
 
+.bx-plus-circle {
+  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
+  border-radius: 2px;
+  font-size: 3rem;
+  font-weight: 400;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
 
-.add-button svg path {  /* Target all paths within the SVG */
-  stroke: #808080;  /* Set stroke color to a light gray */
+.ceo {
+  background-image: linear-gradient(37deg, rgb(20,91,158),rgb(53,196,255));
+}
+
+.add-button svg path {  
+  stroke: #808080;  
 }
 
 
 .add-button:hover {
-  transform: rotate(90deg); /* Rotate on hover */
-  fill: #ccc; /* Change fill color on hover (adjust as needed) */
+  transform: rotate(90deg); 
+  fill: #ccc; 
 }
 
 .add-button:active {
-  stroke: #222; /* Change stroke color on active (adjust as needed) */
-  fill: #ddd; /* Change fill color on active (adjust as needed) */
+  stroke: #222; 
+  fill: #ddd; 
 }
 
 
 #borderceo{
   width: 215px;
-  height: 215px; /* Set height equal to width for a square */
+  height: 215px; 
   box-sizing: border-box;
   padding: 7px;
-  border-radius: 50%; /* Make the element a circle */
+  border-radius: 50%; 
   background: conic-gradient(white 7deg, var(--blueTouil) 0deg);
   transform: rotate(-5deg);
   position: relative;
 }
 
-/* #borderceo:hover{
-  animation: rotate 5s infinite linear;
-
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 #bordercom{
   width: 215px;
-  height: 215px; /* Set height equal to width for a square */
+  height: 215px;
   box-sizing: border-box;
   padding: 7px;
-  border-radius: 50%; /* Make the element a circle */
+  border-radius: 50%; 
   background: conic-gradient(white 7deg, var(--orangeTouil) 0deg);
   transform: rotate(-90deg);
 }
 #borderdesign{
   width: 215px;
-  height: 215px; /* Set height equal to width for a square */
+  height: 215px; 
   box-sizing: border-box;
   padding: 7px;
-  border-radius: 50%; /* Make the element a circle */
-  background: conic-gradient(white 7deg, var(--orangeTouil) 0deg);
+  border-radius: 50%;
+  background: conic-gradient(rgb(255, 255, 255) 7deg, var(--orangeTouil) 0deg);
   transform: rotate(90deg);
   transition: transform 0.3s ease-in-out;
 }
@@ -343,10 +388,9 @@
 }
 
 
-/* Large Screens (over 1024px) */
 @media screen and (max-width: 768px) {
   .AdnContent {
-    width: 100%; /* Adjust width as needed */
+    width: 100%; 
     background-position-x: left;
     background-position-y: top;
     height: fit-content;
@@ -357,10 +401,10 @@
     justify-content: flex-start;
   }
   .h1Adn, .h1 {
-    font-size: 32px; /* Increase font size */
+    font-size: 32px; 
   }
   .p {
-    font-size: 18px; /* Increase font size */
+    font-size: 18px;
 
   }
   .AdnContent p{
@@ -368,32 +412,29 @@
     width: 90%;
   }
   .Team {
-    justify-content: space-between; /* Adjust spacing between cards */
+    justify-content: space-between; 
   }
 }
 
-/* Tablets (between 768px and 1024px) */
 @media screen and (max-width: 768px){
   .Team {
-    flex-direction: column; /* Stack cards vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
   }
   .p {
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px; 
   }
 }
 
-/* Small Screens (under 768px) */
 @media screen and (max-width: 768px) {
   .h1Adn, .h1 {
-    font-size: 28px; /* Reduce font size further */
+    font-size: 28px;
   }
   .p {
-    font-size: 14px; /* Reduce font size further */
+    font-size: 14px; 
   }
   .card {
-    padding: 2.5em 1em; /* Increase padding */
+    padding: 2.5em 1em; 
   }
-  /* You can add more styles here for smaller screens */
 }

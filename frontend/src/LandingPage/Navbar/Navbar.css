@@ -17,9 +17,8 @@
     z-index: 1501;
     box-shadow:  rgba(241,241,241,1) 0px 4px 16px 0px;
     background-color: transparent;
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(15px);
 }
-
 .burgerMenuUl {
     display: none;
 }
@@ -198,10 +197,6 @@ color: #E8451E;
    position: absolute;
    left: 17.7rem;
    bottom: 0rem;
-   button{
-    width: 2.8rem;
-    height: 2.8rem;
-   }
     }
     
     .parentNavbar {

@@ -3,6 +3,7 @@
     --blueTouil : #1B67B0;
     --blueTouilShadow : #7116e057;
     --blueBTouilShadow : #1b68b057;
+    --blueBTouilShadowIllu : #1b68b098;
     --orangeTouilShadow : #e8461e72;
     --cremaTouil : #F2F2F2;
 }
@@ -68,13 +69,10 @@ width: 42rem;
 .reverseContent .union{
     left: 3.3rem;
 
-}
+}   
 
 .reverseContent .parentBtnsV2{
    flex-direction: row-reverse;
-   button{
-    margin-left: 1rem;
-   }
 }
 
 
@@ -152,7 +150,6 @@ width: 42rem;
 }
 
 .btnScrollV2 {
-    margin-top:0.5rem;
     margin-left: 0.5rem;
     text-align: center;
     background: none;
@@ -164,7 +161,7 @@ width: 42rem;
 }
 
 .btnScrollV2:hover {
-    border: 0.1rem solid var(--blueTouil);
+    box-shadow: 0 0 10px var(--blueBTouilShadow);
 }
 
 .btnScrollV2:active {
@@ -196,7 +193,7 @@ width: 42rem;
     position: relative;
     width: 370px;
     margin: 0;
-    filter: drop-shadow(0 0 30px var(--blueBTouilShadow));
+    filter: drop-shadow(0 0 40px var(--blueBTouilShadowIllu));
 }
 .illustatorArabe{
     -webkit-transform: scaleX(-1);
@@ -209,9 +206,8 @@ width: 42rem;
     position: absolute;
     width: 45px;
     top: 25rem;
-    filter: drop-shadow(0 0 25px var(--orangeTouil));
+    filter: drop-shadow(0 0 20px var(--orangeTouil));
     animation: rotateAnimation 30s infinite alternate;
-
 }
 .illustrator2 {
     position: absolute;
@@ -219,7 +215,7 @@ width: 42rem;
     top: 25rem;
     right: 30rem;
     transform: rotate(-20deg);
-    filter: drop-shadow(0 0 25px var(--orangeTouil));
+    filter: drop-shadow(0 0 20px var(--orangeTouil));
 }
 .illustrator5 {
     position: absolute;
@@ -227,18 +223,18 @@ width: 42rem;
     top: 7rem;
     right: 7rem;
     transform: rotate(15deg);
-    filter: drop-shadow(0 0 20px var(--orangeTouil));
+    filter: drop-shadow(0 0 15px var(--orangeTouil));
 }
 .illustrator3 {
     position: absolute;
     width: 95px;
     top: 28rem;
     right: 35rem;
-    filter: drop-shadow(0 0 30px var(--blueTouilShadow));
+    filter: drop-shadow(0 0 20px var(--blueTouilShadow));
     transform: rotate(10deg);
 }
 .illustrator4 {
-    filter: drop-shadow(0 0 30px var(--blueTouil));
+    filter: drop-shadow(0 0 25px var(--blueTouil));
     position: absolute;
     width: 45px;
     top: 12rem;

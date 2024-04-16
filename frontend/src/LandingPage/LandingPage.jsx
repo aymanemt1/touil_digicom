@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import Navbar from "./Navbar/navbar";
 import './LandingPage.css';
-import {Home} from "./Home/Home";
+import {Home} from "./Home/home";
 import Adn from "./Adn/Adn";
 import { WhyUs } from "./WhyUs/whyus";
 import { Footer } from "./Footer/footer";
