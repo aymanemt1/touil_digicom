@@ -1,0 +1,117 @@
+.parentCardsOfPress {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 6rem;
+}
+
+
+.PresseTitle {
+    font-size: 1rem;
+    text-align: start;
+    width: 100%;
+}
+.cardsPress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90vw;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.cardPress {
+    width: 28%;
+    padding: 0.3rem;
+    border-radius: 5px;
+    background-image: linear-gradient(-45deg, rgb(255,255,255),rgb(241,242,244),rgba(38, 161, 255, 0.381));
+}
+
+.parentImgCardPress {
+    width: 100%;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background-image: radial-gradient(circle at bottom center, rgba(209,84,14, 0) 0%, rgba(209,84,14, 0) 63%,transparent 63%, transparent 100%),radial-gradient(circle at top right, rgba(195, 195, 195,0.04) 0%, rgba(195, 195, 195,0.04) 73%,transparent 73%, transparent 100%),radial-gradient(circle at center center, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 84%,transparent 84%, transparent 100%),radial-gradient(circle at center center, rgba(11, 11, 11,0.04) 0%, rgba(11, 11, 11,0.04) 28%,transparent 28%, transparent 100%),radial-gradient(circle at center center, rgb(27,103,176) 0%, rgb(27,103,176) 97%,transparent 97%, transparent 100%),linear-gradient(90deg, rgb(27,103,176),rgb(27,103,176)); background-size: 52px 52px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+}
+
+.parentImgCardPress img {
+    width: 120px;
+    filter: brightness(0) invert(1);
+
+}
+
+.cardPress h3 {
+    margin: 0.2rem;
+}
+
+.cardPress p {
+    font-size: 0.8rem;
+    color: rgb(69, 69, 69);
+    margin: 0.5rem 0.6rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 95%;
+}
+
+
+
+.cardPress a {
+    font-size: 0.9rem;
+    padding: 0.4em;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .15s;
+    text-decoration: none;
+    background-image: radial-gradient(circle at bottom center, rgba(209,84,14, 0) 0%, rgba(209,84,14, 0) 63%,transparent 63%, transparent 100%),radial-gradient(circle at top right, rgba(195, 195, 195,0.04) 0%, rgba(195, 195, 195,0.04) 73%,transparent 73%, transparent 100%),radial-gradient(circle at center center, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 84%,transparent 84%, transparent 100%),radial-gradient(circle at center center, rgba(11, 11, 11,0.04) 0%, rgba(11, 11, 11,0.04) 28%,transparent 28%, transparent 100%),radial-gradient(circle at center center, rgb(27,103,176) 0%, rgb(27,103,176) 97%,transparent 97%, transparent 100%),linear-gradient(90deg, rgb(27,103,176),rgb(27,103,176)); background-size: 52px 52px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    width: fit-content;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.cardPress a:hover {
+    box-shadow: 0 0 10px 1px rgba(91, 91, 91, 0.253) inset;
+}
+.cardPress a:active {
+    background-image: radial-gradient(circle at bottom center, rgba(209,84,14, 0) 0%, rgba(209,84,14, 0) 63%,transparent 63%, transparent 100%),radial-gradient(circle at top right, rgba(195, 195, 195,0.04) 0%, rgba(195, 195, 195,0.04) 73%,transparent 73%, transparent 100%),radial-gradient(circle at center center, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 84%,transparent 84%, transparent 100%),radial-gradient(circle at center center, rgba(11, 11, 11,0.04) 0%, rgba(11, 11, 11,0.04) 28%,transparent 28%, transparent 100%),radial-gradient(circle at center center, rgb(232,69,30) 0%, rgb(232,69,30) 97%,transparent 97%, transparent 100%),linear-gradient(90deg, rgb(232,69,30),rgb(232,69,30)); background-size: 52px 52px;
+}
+
+@media (max-width : 636px){
+
+    .parentCardsOfPress {
+        width: 100vw;
+    }
+    .cardsPress {
+        gap: 0.7rem;
+    }
+    .cardPress {
+        width: 33%;
+    }
+    .cardPress img {
+        width: 80px;
+    }
+    .cardPress a {
+        font-size: 0.7rem;
+    }
+}
+
+
+@media (max-width : 636px){
+    .PresseTitle {
+        position: relative;
+        right: 2rem;
+    }
+}
+

@@ -32,7 +32,7 @@ export default function Navbar({link}) {
         { id: 22, to: 'service/4', text: `${Navbar.link2.dropdown[3]}` },
       ]
     },
-    { id: 3, to: '/blog', text: `${Navbar.link3}` },
+    { id: 3, to: '/blogs', text: `${Navbar.link3}` },
     { id: 4, to: '/faq', text: `${Navbar.link4}` },
     { id: 5, to: '/contact', text: `${Navbar.link5}` },
   ];

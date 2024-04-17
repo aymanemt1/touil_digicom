@@ -1,0 +1,140 @@
+:root {
+    --orangeTouil : #E8451E;
+    --blueTouil : #1B67B0;
+    --blueTouilShadow : #7116e057;
+    --blueBTouilShadow : #1b68b057;
+    --blueBTouilShadowIllu : #1b68b098;
+    --orangeTouilShadow : #e8461e72;
+    --cremaTouil : #F2F2F2;
+}
+
+.parentSectionText {
+    width: 100vw;
+    background-image: linear-gradient(151deg, rgb(6,180,255),rgb(27,103,176));
+    padding: 2rem;
+    margin: 6rem 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.colTextBlogs h1 {
+    font-size: 2rem;
+    width: 90%;
+    margin-top: -4rem;
+}
+
+.text59 {
+    display: inline-block;
+    font-size: 5rem;
+    transform: rotate(10deg);
+    margin-left: 1rem;
+}
+.textPlus {
+    display: inline-block;
+    font-size: 8rem;
+    transform: rotate(10deg);
+}
+.line2SectionText {
+    position: relative;
+    bottom: 1.2rem;
+}
+
+.colBtnBlogs {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0.2rem;
+}
+.colBtnBlogs img {
+    width: 150px;
+    position: absolute;
+    margin-bottom: 3rem;
+    margin-left: 5rem;
+    display: none;
+}
+
+.btnSectionTextBlogs {
+    color: var(--blueTouil);
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    outline: none ;
+    width: fit-content;
+    padding: 0.4rem;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 0.1rem solid white;
+    transition: all .15s ease-out;
+}
+
+.btnSectionTextBlogs:hover {
+    background: transparent;
+    color: white;
+}
+
+
+
+@media (max-width : 899px){
+    .colTextBlogs h1 {
+        font-size: 1rem;
+    }
+    .text59 {
+        font-size: 3rem;
+    }
+    .textPlus {
+        font-size: 6rem;
+    }
+    .btnSectionTextBlogs {
+        font-size: 0.7rem;
+    }
+}
+@media (max-width : 552px){
+    .colTextBlogs h1 {
+        font-size: 0.7rem;
+    }
+    .text59 {
+        font-size: 2rem;
+    }
+    .textPlus {
+        font-size: 4rem;
+    }
+    .line2SectionText {
+        top: 0rem;
+    }
+    .btnSectionTextBlogs {
+        font-size: 0.5rem;
+    }
+}
+@media (max-width : 443px){
+    .colTextBlogs h1 {
+        position: relative;
+        top: 2.3rem;
+        font-size: 0.5rem;
+    }
+    .text59 {
+        font-size: 1.5rem;
+    }
+    .textPlus {
+        font-size: 2.5rem;
+    }
+    .line2SectionText {
+        top: 0rem;
+    }
+    .btnSectionTextBlogs {
+        font-size: 0.4rem;
+        padding: 0.2rem;
+    }
+}
+@media (max-width : 320px){
+
+    .text59 {
+        font-size: 1.2rem;
+    }
+    .textPlus {
+        font-size: 2rem;
+    }
+}

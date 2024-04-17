@@ -1,0 +1,68 @@
+.parentFormBlogs {
+    width: 90%;
+    margin: auto;
+}
+
+
+.formBlogs {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 0rem;
+}
+.emailBlogs, .prenomBlogs, .nomBlogs {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-bottom: 0.1rem solid black;
+    font-weight: 500;
+}
+.emailBlogs::placeholder {
+    color: black;
+}
+.prenomBlogs::placeholder {
+    color: black;
+}
+.nomBlogs::placeholder {
+    color: black;
+}
+
+.emailBlogs {
+    width: 25%;
+}
+
+.submitBlogs {
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: visible;
+    padding: 7px 10px;
+    width: 200px;
+    text-align: center;
+}
+  .submitBlogs:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+}
+  
+
+@media (max-width:644px) {
+    .formBlogs  {
+        flex-direction: column;
+    }
+    .formBlogs input{
+        width: 75%;
+    }
+}

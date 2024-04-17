@@ -1,0 +1,230 @@
+.parentModalBlogs {
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(37deg, rgba(32, 77, 145, 0.23),rgba(40,21,236, 0.28));
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 14;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+}
+
+.ModalBlogs {
+    background-color: white;
+    width: 80vw;
+    height: 75vh;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+    animation: 1s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+}
+
+.colImageModalBlogs {
+    width: 35%;
+}
+
+.colTextModalBlogs {
+    width: 65%;
+    overflow: scroll;
+    overflow-x: hidden;
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #1b67b0;
+    --sb-size: 2px;
+}
+
+.colTextModalBlogs::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+  
+  .colTextModalBlogs::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+  }
+  
+  .colTextModalBlogs::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    .colTextModalBlogs {
+        scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+
+.colImageModalBlogs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.ownerblog img {
+    width: 30px;
+}
+
+.Close {
+    width: 100%;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: end;
+}
+.Close button {
+    color: black;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: -0.2rem;
+    margin-right: -0.2rem;
+}
+.Close button i{
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all .15s;
+}
+.Close button i:active {
+    color: var(--orangeTouil);
+}
+
+.titleModal {
+    width: 95%;
+    padding: 0.2rem;
+    margin: auto;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid rgba(161, 161, 161, 0.233);
+}
+
+.infoOwner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    width: 90%;
+    margin: auto;
+}
+
+.ownerblog {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ownerblog img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.descriptionModelBlog {
+    display: flex;
+    width: 83%;
+    margin: auto;
+    gap: 1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+.lineDesign {
+    background-color: rgba(0, 0, 0, 0.276);
+    width: 0.5rem;
+    border-radius: 4px;
+}
+.descriptionModelBlog p{
+    color: rgb(62, 62, 62);
+    font-size: 0.7rem;
+}
+
+.listBlogDetails {
+    display: flex;
+    gap: 1rem;
+    width: 81%;
+    margin: auto;
+}
+.ulBlogsDetails {
+    display: flex;
+    flex-direction: column;
+    list-style-type: decimal;
+    padding-bottom: 2rem;
+}
+
+.listBlogDetails ul li {
+    font-weight: 600;
+    margin: 0.6rem;
+    width: 100%;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    overflow: hidden;
+}
+
+@media (max-width: 1029px) {
+    .listBlogDetails ul li {
+        font-size: clamp(0.4rem, 1.2vw, 0.8rem);
+        margin: 0.3rem;
+    }
+    .listBlogDetails {
+        gap: 0.3rem;
+    }
+    .descriptionModelBlog p {
+        font-size: clamp(0.3rem, 1.2vw, 0.8rem);
+    }
+    .titleModal {
+        font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+    }
+    .infoOwner {
+        font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+    }
+}
+
+
+
+
+
+@media (max-width:350px) {
+    .ModalBlogs {
+        margin-top: 0;
+        width: 80vw;
+        height: 65vh;
+    }
+}
+
+@keyframes square-in-hesitate {
+    0% {
+      clip-path: inset(100% 100% 100% 100%);
+    }
+    40% {
+      clip-path: inset(33% 33% 33% 33%);
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  [transition-style="in:square:hesitate"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+  }
+
+
+  @keyframes circle-out-hesitate {
+    0% {
+      clip-path: circle(125%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(0%);
+    }
+  }
+  
+  [transition-style="out:circle:hesitate"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-hesitate both;
+}
+
+
+.parentModalBlogsClosed {
+    animation: 1.5s cubic-bezier(.25, 1, .30, 1) circle-out-hesitate both;
+}   

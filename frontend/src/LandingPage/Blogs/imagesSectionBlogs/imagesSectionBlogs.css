@@ -1,0 +1,204 @@
+:root {
+  --h4-font-size: 0.8rem;
+  --h1-font-size: 2rem;
+  --h4-letter-spacing: .4rem;
+  --h1-letter-spacing: .4rem;
+
+  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 1100px;
+  --breakpoint-md: 922px;
+  --breakpoint-sm: 820px;
+  --breakpoint-xs: 706px;
+  --breakpoint-xxs: 618px;
+}
+
+
+.parentBlogs {
+
+  }
+  
+  .imagesSectionBlogs {
+  }
+  
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: black;
+    width: 90vw;
+    margin:auto;
+  }
+  
+  .div1 { 
+    background-image:linear-gradient(60deg, rgba(0, 68, 255, 0.443),rgba(65, 81, 170, 0.534),rgba(53, 69, 115, 0.155)),  url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+    grid-area: 1 / 1 / 2 / 2;
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    width: 97%;
+    height: 97%;
+
+    
+}
+.div2 { 
+    background-image: linear-gradient(296deg, rgba(255, 132, 0, 0.568),rgba(255, 170, 0, 0.363),rgba(255, 221, 0, 0.45)),  url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+    grid-area: 1 / 2 / 2 / 5;
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    width: 65.8%;
+    height: 97%;
+
+ }
+ .div3 {
+  grid-area: 2 / 1 / 3 / 4;
+  margin: 0.2rem;
+  border-radius: 2px;
+  padding: .2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.div3 h4 {
+  width: 100%;
+  font-size: var(--h4-font-size);
+  letter-spacing: var(--h4-letter-spacing);
+}
+
+.div3 h1 {
+  width: 100%;
+  font-size: var(--h1-font-size);
+  letter-spacing: var(--h1-letter-spacing);
+  font-weight: 800;
+}
+  .div4 { 
+    grid-area: 3 / 2 / 4 / 4; 
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    background-image: linear-gradient(296deg, rgba(255, 115, 0, 0.473),rgba(230, 130, 0, 0.432),rgba(255, 89, 0, 0.39)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+}
+  .div5 { 
+    grid-area: 4 / 2 / 6 / 3;
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    background-image: linear-gradient(296deg, rgba(0, 76, 255, 0.473),rgba(0, 73, 230, 0.432),rgba(0, 157, 255, 0.39)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+ }
+  .div6 { 
+    grid-area: 3 / 1 / 6 / 2;
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    background-image: linear-gradient(296deg, rgba(255, 132, 0, 0.514),rgba(255, 170, 0, 0.486),rgb(255,223,0)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+ }
+  .div7 { 
+    grid-area: 4 / 3 / 5 / 4; 
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    background-image: linear-gradient(296deg, rgba(255, 119, 0, 0.473),rgba(230, 84, 0, 0.432),rgba(255, 225, 0, 0.39)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+}
+  .div8 { 
+    grid-area: 5 / 3 / 6 / 4; 
+    margin: 0.2rem;
+    border-radius: 2px;
+    padding: 2.7rem;
+    background-image: linear-gradient(296deg, rgba(0, 76, 255, 0.473),rgba(0, 73, 230, 0.432),rgba(0, 157, 255, 0.39)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+}
+  .div9 { 
+    grid-area: 1 / 4 / 6 / 6; 
+    margin: 0.2rem;
+    border-radius: 5px;
+    padding: 2.7rem;
+    background-image: linear-gradient(296deg, rgba(0, 76, 255, 0.473),rgba(0, 73, 230, 0.432),rgba(0, 157, 255, 0.39)), url('/public/assets/bgServices/audiov.jpg');
+    background-size: cover;
+    /* animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both; */
+    /* border-top-right-radius: 30%; */
+    /* border-bottom-left-radius: 30%; */
+}
+
+
+
+
+
+@media (max-width: var(--breakpoint-xl)) {
+  .div3 h4 {
+    font-size: 0.7rem;
+  }
+  .div3 h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-lg)) {
+  .div3 h4 {
+    font-size: 0.8rem;
+  }
+  .div3 h1 {
+    font-size: 2rem;
+    letter-spacing: .6rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .div3 h4,
+  .div3 h1 {
+    font-size: 0.8rem;
+    letter-spacing: .4rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+  .div3 h1 {
+    font-size: 1.8rem;
+    letter-spacing: .3rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-xs)) {
+  .div3 h4 {
+    font-size: 0.6rem;
+    letter-spacing: .3rem;
+  }
+  .div3 h1 {
+    font-size: 1.7rem;
+    letter-spacing: .2rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-xxs)) {
+  .div3 h4 {
+    font-size: 0.5rem;
+    letter-spacing: .2rem;
+  }
+}
+
+
+@keyframes square-in-hesitate {
+  0% {
+    clip-path: inset(100% 100% 100% 100%);
+  }
+  40% {
+    clip-path: inset(33% 33% 33% 33%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:square:hesitate"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+}
