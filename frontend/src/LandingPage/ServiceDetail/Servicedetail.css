@@ -1,24 +1,108 @@
-.servicedetailheader{
-    width: 100%;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50vh;
-    opacity: 0.8;
-    color: white;
-    text-align: center;
-    font-size: 73px;
-    letter-spacing: 3px;
-    padding-top: 5.8rem;
-    background-image: linear-gradient(0deg, rgb(232,69,30),rgba(250, 132, 22, 0.087),rgba(251, 201, 37, 0.096)),url('../../../public/assets/bgServices/formationk.jpg');
-}
-.servicedetailcontent{
+
+.detail-top{
     display: flex;
     margin-top: 3rem;
-    width: 90%;
+    width: 97%;
+    justify-content: space-between;
     padding: 1rem 4rem;
 }
 .servicedetailtext{
-    width: 580px;
+    width: 500px;
     line-height: 28px;
+}
+.detail-bottom{
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3.4rem;
+}
+
+.left-detail{
+    display: block;
+    width: 55%;
+}
+.right-detail{
+    width: 45%;
+}
+.left-detail h1{
+    width: 700px;
+    margin-bottom: 1rem;
+}
+
+.service-img1{
+    width: 420px;
+}  
+.service-img2{
+    width: 320px;
+}  
+.btnReservation{
+    color: white;
+    background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
+    border: none;
+    padding: 0.8rem 0.2rem;
+    margin-top: 1.6rem;
+    font-size: 1rem;
+    font-weight: 650;
+    outline: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 10rem;
+    transition: all .1s;
+}
+
+.btnReservation:hover {
+    animation: anim 1s infinite ease-in-out;
+}
+.btnReservation:active { 
+   background-color: black;
+    transform: scale(0.95);
+}
+.servicedetail-types{
+    padding: 1rem;
+    border-radius: 15px;
+   background-color: white;
+   width: 350px;
+}
+
+.servicedetail-types h4{
+    margin-bottom: 1rem;
+}
+.servicedetail-types p{
+    margin-top: 1rem;
+}
+
+.servicedetail-types .title{
+   display: flex;
+   align-items: center;
+   width: 100%;
+
+}
+
+#service-icon{
+    width: 40px;
+    margin-top: -1rem;
+    align-items: center;
+    align-self: center;
+    margin-right: 0.8rem;
+}
+
+
+.lire-btn {
+  background-color: #1B67B0;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 100px;
+    outline: none;
+    font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
+    border-radius: 0.3rem;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.lire-btn:hover {
+    animation: anim 1s infinite ease-in-out;
 }

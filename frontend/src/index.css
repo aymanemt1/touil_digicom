@@ -27,17 +27,18 @@
 } */
 
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: var(--sb-size);
   }
   
   body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
+    background-color: rgb(248, 249, 251);
     border-radius: 0px;
   }
   
   body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
+    background-color: rgb(248, 249, 251);
+
     border-radius: 3px;
   }
   
@@ -46,9 +47,10 @@
         scrollbar-color: var(--sb-thumb-color)
                        var(--sb-track-color);
     }
-  } */
+  }
 
 .App{
+   background-color: rgb(248, 249, 251);
     font-family: "Raleway", sans-serif;
 }
 

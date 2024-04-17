@@ -4,7 +4,7 @@
     width: 100%;
     justify-content: space-around;
     display: flex;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     color: white;
     background-color: #1B67B0;
     flex-shrink: 0;
@@ -96,7 +96,7 @@
     .statistique{
       flex-direction: column;
       width: 100%;
-      margin-top: 2rem;
+      margin-top: 10rem;
       justify-content: space-between;
   }
  

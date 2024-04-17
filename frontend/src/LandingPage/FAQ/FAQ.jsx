@@ -1,45 +1,74 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Translate } from "./FAQTranslate";
 import { LangueContext } from "../../Context/LangueContext";
 import './FAQ.css';
 
 export default function FAQ() {
-    const { langue } = useContext(LangueContext);
-    const FAQData = Translate.FAQ.find(lang => lang.id === langue);
+    useEffect(() => {
+        const items = document.querySelectorAll(".accordion button");
 
-    const [expandedQuestion, setExpandedQuestion] = useState(null);
+        function toggleAccordion() {
+            const itemToggle = this.getAttribute('aria-expanded');
 
-    const toggleQuestion = (index) => {
-        if (expandedQuestion === index) {
-            setExpandedQuestion(null);
-        } else {
-            setExpandedQuestion(index);
+            for (let i = 0; i < items.length; i++) { // Declare 'i' using 'let'
+                items[i].setAttribute('aria-expanded', 'false');
+            }
+
+            if (itemToggle == 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            }
         }
-    };
 
+        items.forEach(item => item.addEventListener('click', toggleAccordion));
+    }, []);
+
+    const {langue}=useContext(LangueContext)
+  
+    const faq = Translate.FAQ.find((lang)=>(
+       lang.id == langue
+     ))
+  
+  
     return (
-        <Fragment>
-            <div className="parentSectionFAQ">
-                <div className="colImagesFAQ">
-                    <img src="./assets/illustrationsRemoveBg/i15.png" alt="FAQ" className="imgFAQ1"/>
-                    <img src="./assets/illustrationsRemoveBg/i16.png" alt="FAQ" className="imgFAQ2"/>
-                </div>
-                <div className="colTextFAQ">
-                    <h1>{FAQData.title}</h1>
-                    <ul className="ulFAQuestions">
-                        {Object.keys(FAQData.Questions).map((key, index) => (
-                            <li key={index}>
-                                <button onClick={() => toggleQuestion(index)} className="btnFAQ">
-                                    {FAQData.Questions[key]} <i className='bx bx-chevrons-down'></i>
-                                </button>
-                                <p className={`descriptionResponse ${expandedQuestion === index ? 'slideDownAnimation' : ''}`}>
-                                    {expandedQuestion === index && FAQData.Responses[`R${index + 1}`]}
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </Fragment>
+        <div className="faq">
+  <h2>Faq</h2>
+     <div className="FAQ-content">
+  <div className="accordion">
+    <div className="accordion-item">
+      <button id="accordion-button-1" aria-expanded="false"><span className="accordion-title">{faq.Questions.Q1}</span><span className="icon" aria-hidden="true"></span></button>
+      <div className="accordion-content">
+        <p>{faq.Responses.R1}</p>
+      </div>
+    </div>
+    <div className="accordion-item">
+      <button id="accordion-button-2" aria-expanded="false"><span className="accordion-title">{faq.Questions.Q2}</span><span className="icon" aria-hidden="true"></span></button>
+      <div className="accordion-content">
+        <p>{faq.Responses.R2}</p>
+      </div>
+    </div>
+    <div className="accordion-item">
+      <button id="accordion-button-3" aria-expanded="false"><span className="accordion-title">{faq.Questions.Q3}</span><span className="icon" aria-hidden="true"></span></button>
+      <div className="accordion-content">
+        <p>{faq.Responses.R3}</p>
+      </div>
+    </div>
+    <div className="accordion-item">
+      <button id="accordion-button-4" aria-expanded="false"><span className="accordion-title">{faq.Questions.Q4}</span><span className="icon" aria-hidden="true"></span></button>
+      <div className="accordion-content">
+        <p>{faq.Responses.R4}</p>
+      </div>
+    </div>
+    <div className="accordion-item">
+      <button id="accordion-button-5" aria-expanded="false"><span className="accordion-title">{faq.Questions.Q5}</span><span className="icon" aria-hidden="true"></span></button>
+      <div className="accordion-content">
+        <p>{faq.Responses.R5}</p>
+      </div>
+    </div>
+  </div>
+  <div className="right-faq">
+    <img src="/assets/FAQ/faq.png" className="faq-img" alt="" />
+  </div>
+</div>
+        </div>
     );
 }

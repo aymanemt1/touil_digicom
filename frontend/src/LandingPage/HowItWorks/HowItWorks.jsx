@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './HowItWorks.css'
+import { Translate } from './HowItworksTrasnlate'
+import { LangueContext } from '../../Context/LangueContext'
 
 export const HowItWorks = () => {
+
+    const {langue}=useContext(LangueContext)
+  
+    const HowItWorks = Translate.HowItWorks.find((lang)=>(
+       lang.id == langue
+     ))
+
+  
     return (
 
         <div className="coomment">
@@ -13,18 +23,18 @@ export const HowItWorks = () => {
 
                 <div className='topEtapes'>
 
-                    <h2>COMMENT ÇA MARCHE ?</h2>
+                    <h2>{HowItWorks.title}</h2>
 
 
                     <div id='etape' className='etape1'>
                         <span className='number-etape'>01.</span>
-                        <h3 className='title-etape'>Analyse des besoins du client et planification stratégique</h3>
+                        <h3 className='title-etape'>{HowItWorks.blogs.blog1} </h3>
                     </div>
 
 
                     <div id='etape' className='etape2'>
                         <span className='number-etape'>02.</span>
-                        <h3 className='title-etape'>Conception et création de contenu</h3>
+                        <h3 className='title-etape'>{HowItWorks.blogs.blog2}</h3>
                     </div>
                 </div>
 
@@ -36,17 +46,17 @@ export const HowItWorks = () => {
                 <div className='etapes'>
                     <div id='etape' className='etape3'>
                         <span className='number-etape'>03.</span>
-                        <h3 className='title-etape'>Mise en œuvre et exécution des campagnes</h3>
+                        <h3 className='title-etape'>{HowItWorks.blogs.blog3}</h3>
                     </div>
 
                     <div id='etape' className='etape4'>
                         <span className='number-etape'>04.</span>
-                        <h3 className='title-etape'>Évaluation des performances et analyse des résultats</h3>
+                        <h3 className='title-etape'>{HowItWorks.blogs.blog4}</h3>
                     </div>
 
                     <div id='etape' className='etape5'>
                         <span className='number-etape'>05.</span>
-                        <h3 className='title-etape'>Communication avec le client et gestion de la relation </h3>
+                        <h3 className='title-etape'>{HowItWorks.blogs.blog5} </h3>
                     </div>
                 </div>
                 <div>  <img src='assets/WhyUs/how2.png' className='image-comment' id='Comment-image2' /></div>
@@ -54,9 +64,9 @@ export const HowItWorks = () => {
 
             <div className='TextHow'>
                 <p>
-                    Sélectionnez la solution digitale qui convient le mieux à votre projet et à votre budget avec Touil Digicom.
+                    {HowItWorks.sous_title}
                 </p>
-                <button className="btnToBlogs">Explorer les solutions</button>
+                <button className="btnToBlogs">{HowItWorks.btn}</button>
             </div>
         </div>
 

@@ -10,8 +10,6 @@ export default function Services() {
 
   const Services = Translate.Services.find((lang)=>(lang.id == langue ));
 
-  console.log(Services);
-
   const id1 =1
   const id2 =2
   const id3 =3

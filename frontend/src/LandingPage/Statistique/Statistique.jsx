@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Statistique.css'
+import { LangueContext } from '../../Context/LangueContext'
+import { Translate } from './statistiqueTranslate'
 
 export const Statistique = () => {
   const [visible, setvisible] = useState(false)
@@ -36,21 +38,26 @@ export const Statistique = () => {
     window.addEventListener('resize', isCardVisible);
   }, [])
 
+  const {langue} = useContext(LangueContext);
+
+  const statistique = Translate.Statistique.find((lang)=>(lang.id == langue ));
+
+
   return (
     <div className='statistique'>
-      <div className='counter' >
-      <span id='count' className={`${visible ? 'count1' : ''}`}>+</span><h3 className='count-title'>Clients Nous Font Confiance</h3>
-        </div>
-      <div className='counter' >
-      <span id='count' className={`${visible ? 'count2' : ''}`}>+</span><h3 className='count-title'>Partenaires Créatifs</h3>
-        </div>
-      <div className='counter' >
-      <span id='count' className={`${visible ? 'count3' : ''}`}>+</span><h3 className='count-title'>Litres de cafés consommés</h3>
-        </div>
-      <div className='counter' >
-      <span id='count' className={`${visible ? 'count4' : ''}`}></span><h3 className='count-title'>Litres de cafés consommés</h3>
-        </div>
-      
-    </div>
+    <div className='counter' >
+    <span id='count' className={`${visible ? 'count1' : ''}`}>+</span><h3 className='count-title'>{statistique.statique1}</h3>
+      </div>
+    <div className='counter' >
+    <span id='count' className={`${visible ? 'count2' : ''}`}>+</span><h3 className='count-title'>{statistique.statique2}</h3>
+      </div>
+    <div className='counter' >
+    <span id='count' className={`${visible ? 'count3' : ''}`}>+</span><h3 className='count-title'>{statistique.statique3}</h3>
+      </div>
+    <div className='counter' >
+    <span id='count' className={`${visible ? 'count4' : ''}`}></span><h3 className='count-title'>{statistique.statique4}</h3>
+      </div>
+    
+  </div>
   )
 }

@@ -31,7 +31,6 @@ window.addEventListener('resize', isCardVisible);
         <div className='references-images'>
          <div id="ref"><img className='ref3' src="assets/refeCTD/jamarek.png" alt="" /></div>
          <div id="ref"><img className='ref2' src="assets/refeCTD/IME.png" alt="" /></div>
-         <div id="ref"><img className='ref5' src="assets/refeCTD/LOGO.png" alt="" /></div>
          <div id="ref"><img className='ref6' src="assets/refeCTD/um5.webp" alt="" /></div>
          <div id="ref"><img className='ref4' src="assets/refeCTD/logo-tijara.png" alt="" /></div>
          <div id="ref"><img className='ref1' src="assets/refeCTD/bewize-logo-1.webp" alt="" /></div>

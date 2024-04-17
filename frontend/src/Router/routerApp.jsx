@@ -3,6 +3,7 @@ import {Routes, Route } from 'react-router-dom';
 import { LandingPage } from '../LandingPage/LandingPage';
 import { Contact } from '../LandingPage/Contact/Contact';
 import Navbar from '../LandingPage/Navbar/navbar';
+import { Servicedetail } from '../LandingPage/ServiceDetail/Servicedetail';
 
 export default function RouterApp(){
     return (
@@ -21,6 +22,12 @@ export default function RouterApp(){
                         path='/contact'
                         element={
                                 <Contact />
+                        }
+                    />
+                    <Route 
+                        path='/service/:id'
+                        element={
+                                <Servicedetail />
                         }
                     />
                 </Routes>

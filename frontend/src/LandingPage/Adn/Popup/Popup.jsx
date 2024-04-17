@@ -31,7 +31,7 @@ const Popup = (props) => {
       description: `${Team.description_text[2]}`,
       email: "sohaibfrihi@gmail.com",
       phone: "+216 53 890 479",
-      img: "./assets/Adn/Sohaib FH.jpg",
+      img: "assets/Adn/Sohaib FH.jpg",
     },
   ];
 

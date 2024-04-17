@@ -5,13 +5,13 @@ export const Translate = {
       link1: 'À propos',
       link2: {
         label: 'Services',
-        dropdown: ['Service 1', 'Service 2', 'Service 3'] 
+        dropdown: ['Marketing & Communication', 'Kafaat', 'Audiovisuel','Événementiel '] 
       },
       link3: 'Blogs',
       link4: 'FAQ',
       link5: 'Contact',
       btn_devis: 'Demander un devis',
-      flag: './assets/Flags/franceFlag.webp'
+      flag: '/assets/Flags/franceFlag.webp'
     },
     {
       id: "ar",
@@ -24,7 +24,7 @@ export const Translate = {
       link4: 'الأسئلة الشائعة',
       link5: 'اتصال',
       btn_devis: 'طلب عرض أسعار',
-      flag: './assets/Flags/moroccoFlag.png'
+      flag: '/assets/Flags/moroccoFlag.png'
     },
   ],
 };

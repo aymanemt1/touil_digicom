@@ -52,6 +52,7 @@ flex-shrink: 0;
 display: block;
 margin-top: 8rem;
 width: 40rem;
+
 }
 .section-4 {
   position: relative;
@@ -59,6 +60,7 @@ width: 40rem;
   margin-top: 13rem;
 
 flex-shrink: 0;
+
 }
 
 .section1-title{
@@ -181,12 +183,12 @@ width: 50rem;
   }
 }
 
-
 .img{
-  width: 100px;
+  width: 90px;
   position: relative;
   top: 3.3rem;
-  left: 2rem;
+  left: 2.3rem;
+
 }
 
 .whyus-image {

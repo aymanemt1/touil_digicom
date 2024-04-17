@@ -1,9 +1,12 @@
 .footer{
     background-color: #1C1C1C;
-   padding: 5rem 5rem 2rem 5rem;
    width: 100%;
+   align-items: center;
+   color: white;
    margin: 0;
+   padding: 2rem 4rem 1rem 4rem;
 }
+
 
 .footer-content{
     display: flex;
@@ -11,32 +14,30 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid grey;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+}
+.footer-content p{
+  margin-top: 1rem;
 }
 .footer-logo{
     width: 250px;
 }
 .footer-socialmedia{
     display: flex;
-    width: 140px;
+    width: 240px;
 }
 .footer-icon:first-child{
   margin: 0 12px;
   font-size: 23px;
   color: white;
-  background-color: #1E293B;
- padding: 9px 13px;
- border-radius: 50%;
+  background-color: #1B67B0;
+  padding: 9px 13px;
+  border-radius: 50%;
 }
-.footer-icon{
-  margin: 0 12px;
-  font-size: 23px;
-  color: white;
-  background-color: #1E293B;
- padding: 9px 11px;
- border-radius: 50%;
- transition: all 0.3s ease-in-out;
+#ytb-icon,#linkdein{
+    padding: 9px 9px;
 }
+
 .footer-icon:hover{
 background-color: #1B67B0;
 cursor: pointer;
@@ -44,7 +45,7 @@ cursor: pointer;
 }
 .footer-copyright {
    text-align: center;
-   padding-top: 30px;
+   padding-top: 20px;
    color: white;
 }
 

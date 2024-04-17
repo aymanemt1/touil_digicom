@@ -1,173 +1,138 @@
-:root {
-    --orangeTouil : #E8451E;
-    --blueTouil : #1B67B0;
-    --blueTouilShadow : #7116e057;
-    --blueBTouilShadow : #1b68b041;
-    --orangeTouilShadow : #e8461e72;
-    --cremaTouil : #F2F2F2;
+
+.faq {
+  width: 90%;
+  margin: 3rem 0 3rem 7rem;
 }
 
-
-.parentSectionFAQ {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    margin: auto;
-    height: 100vh;
+.FAQ-content {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.colImagesFAQ {
-    width: 50%;
+.accordion{
+  width: 53%;
 }
-.imgFAQ1 {
-    width: 500px;
-    transform: rotate(5deg);
+.right-faq{
+  width: 35%;
 }
-
-.imgFAQ2 {
-    position: absolute;
-    width: 300px;
-    left: 6rem;
+.accordion .accordion-item {
+  border-bottom: 1px solid #111928;
 }
 
-.colTextFAQ {
-    width: 50%;
-    padding: 1rem;
+.accordion button[aria-expanded='true'] {
+  border-bottom: 1px solid #111928;
+  padding: 1rem 0;
 }
 
-.ulFAQuestions {
-    padding-top: 1rem;
-}
-.colTextFAQ h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 32px;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: start;
-    white-space: nowrap; 
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #111928;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
 }
 
-.colTextFAQ h1:before {
-    background-color:  var(--orangeTouil);
-    content: '';
-    display: block;
-    height: 3px;
-    width: 30px;
-    position: relative;
-    right: 1rem;
-    margin-bottom: 2px;
-  }
- 
-  .colTextFAQ h1:after {
-    background-color:  var(--orangeTouil);
-    content: '';
-    display: block;
-    position: relative;
-    left: 2rem;
-    bottom: 0;
-    height: 3px;
-    width: 45px;
-    margin-bottom: 0.25em;
-  }
-
-.btnFAQ {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: linear-gradient(42deg, rgb(232,69,30),rgb(232,69,30),rgb(251,137,37));
-    color: white;
-    padding: 0.8rem 1.2rem ;
-    width: 450px;
-    font-size: 1rem;
-    font-weight: 500;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    margin: 0.5rem;
-    cursor: pointer;
-    transition: all .15s;
-}
-.btnFAQ:hover {
-    transform: scale(1.05);
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color:#111928;
 }
 
-.bx-chevrons-down {
-    font-size: 1.2rem;
-    transition: all .3s;
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #111928;
+  border: 1px solid #111928;
 }
 
-
-.descriptionResponse {
-    font-size: 0.8rem ;
-    margin: 1rem;
-}
-.btnFAQ:focus > .bx-chevrons-down {
-    transform: rotate(180deg);
+.accordion .accordion-title {
+  padding: 1em 1.5em 1em 0;
 }
 
-.btnFAQ:not(:focus) > .bx-chevrons-down {
-    transform: rotate(0deg);
+.accordion .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  color: #E8451E;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
 }
 
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.accordion .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
 }
 
-@keyframes fadeDown {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.accordion .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
 }
 
-.slideDownAnimation {
-    animation: slideDown 0.5s ease forwards;
+.accordion button[aria-expanded='true'] {
+  color: #111928;
 }
 
-.fadeDownAnimation {
-    animation: fadeDown 0.5s ease forwards;
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion-content p{
+  padding: 1rem 0;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+}
+
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+}
+
+.faq-img{
+  width: 300px;
 }
 
 
 
-
-    
-@media (max-width : 767px){
-    .colImagesFAQ{
-        display: none;
-    }
-    .ulFAQuestions{
-        width: 80%;
-    }
-    .parentSectionFAQ{
-        margin: 0;
-        width: 100%;
-        height: 55vh;
-        padding: 0;
-    }
-    .colTextFAQ{
-        width: 100%;
-    }
-    .colTextFAQ h1{
-        margin-left: 3rem;
-    }
-    }
+@media (max-width : 766px){
   
-  @media (max-width : 1025px){
-  
-   
+.faq {
+  width: 90%;
+  margin: 2rem 0 2rem 3rem;
+}
+  .FAQ-content {
+    display: block;
   }
+  .accordion{
+    width: 90%;
+  }
+  .right-faq{
+    width: 70%;
+    margin-left: 5rem;
+  }
+}

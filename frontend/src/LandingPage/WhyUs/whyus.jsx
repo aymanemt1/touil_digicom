@@ -74,7 +74,7 @@ export const WhyUs = () => {
                   <div className='section-3'>
                     <div className='Parentellipse' >
                       <div className="ellipses-container">
-                        <img src="assets/WhyUs/icon1.svg" className='img' alt="" />
+                        <img src="assets/WhyUs/icon1.png" className='img' alt="" />
                         <div className="ellipses ellipses__outer--thin">
 
                           <div className="ellipses ellipses__orbit"></div>
@@ -85,7 +85,7 @@ export const WhyUs = () => {
                     </div>
                     <div className='Parentellipse2'>
                       <div className="ellipses-container">
-                        <img src="assets/WhyUs/icon2.svg" className='img' alt="" />
+                        <img src="assets/WhyUs/icon2.png" className='img' alt="" />
                         <div className="ellipses ellipses__outer--thin">
 
                           <div className="ellipses ellipses__orbit"></div>
@@ -101,7 +101,7 @@ export const WhyUs = () => {
                     <div>
                       <div className='Parentellipse3'>
                         <div className="ellipses-container">
-                          <img src="assets/WhyUs/icon3.svg" className='img' alt="" />
+                          <img src="assets/WhyUs/icon3.png" className='img' alt="" />
                           <div className="ellipses ellipses__outer--thin">
 
                             <div className="ellipses ellipses__orbit"></div>
@@ -113,7 +113,7 @@ export const WhyUs = () => {
                     </div>
                     <div className='Parentellipse4'>
                       <div className="ellipses-container">
-                        <img src="assets/WhyUs/icon4.svg" className='img' alt="" />
+                        <img src="assets/WhyUs/icon4.png" className='img' alt="" />
                         <div className="ellipses ellipses__outer--thin">
 
                           <div className="ellipses ellipses__orbit"></div>

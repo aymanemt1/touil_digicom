@@ -7,7 +7,27 @@
     }
     #etape{
         border-radius: 25px;
-        width: 400px;
+        width: 350px;
+        background: rgba(255,255,255,0.2);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.1);
+        animation: anim 1s infinite ease-in-out;
+
+        
+      }
+      #etape:hover{
+        background: rgba(255,255,255,0.2);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.1);
+        cursor: pointer;
+        animation: scaleAnimation 3s infinite;
+
+      }
+      @keyframes scaleAnimation {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
     }
     
     .coomment h2{
@@ -32,26 +52,31 @@
         margin-left: 18rem;
         margin-top: 2rem;
     }
+      .etape4{
+        margin-left: 3rem;
+        margin-top: 5rem;
+    }
     .etape5{
        margin-left: 18rem;
-       margin-top: 6rem;
+       margin-top: 5rem;
     }
     .bottomEtapes{
       justify-content: space-between;
       display: flex;
-      margin-top: 7rem;
+      margin-top: 4rem;
     }
     .number-etape{
       color: #1B67B0;
       font-size: 63px;
-    
+       padding-left: 1rem;
     }
     .title-etape{
     
       width: 322px;
       font-size: 23px;
       text-align: left;
-      padding-left: 4rem;
+      padding-left: 2rem;
+      padding-bottom: 1rem;
       line-height: 30px;
     }
     
@@ -67,6 +92,7 @@
     background-color: white;
     padding: 3rem 0;
     margin-top: 4rem;
+    width: 100%;
     align-items: center;
     text-align: center;
     padding-bottom: 2rem;
@@ -82,7 +108,7 @@
     
 .btnToBlogs{
   color: white;
-  background-color: #10154e;
+  background-color: #1B67B0;
   border: none;
   padding: 0.8rem 0.6rem;
   margin-top: 1.6rem;
@@ -92,7 +118,6 @@
   justify-content: center;
   font-weight: 650;
   outline: none;
-  font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
   border-radius: 0.3rem;
   cursor: pointer;
   width: 12rem;
@@ -125,8 +150,8 @@
 
 #etape{
   border-radius: 25px;
-  width: 200px;
-  margin-left: 2.7rem;
+  width: 190px;
+  margin-left: 2.5rem;
 }
 .image-comment{
   background: linear-gradient(19deg, rgb(232,69,30),rgba(250, 132, 22, 0.087),rgba(251, 201, 37, 0.096)), url('/public/assets/bgServices/marketing.jpg');
@@ -149,6 +174,10 @@ width: 88%;
 }
 .etape2{
   margin-left: 3rem;
+}
+
+.TextHow p{
+width: 90%;
 }
   }
 

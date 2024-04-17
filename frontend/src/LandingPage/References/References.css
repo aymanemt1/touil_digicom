@@ -1,10 +1,10 @@
 .references{
     background-color: #1B67B0;
-    padding: 3rem;
-    margin: 0 5rem;
+    padding: 2.7rem 4rem;
+    margin: 0 6rem;
     border-radius: 37px 37px 37px 37px;
     position: relative;
-    top: 50px;
+    top: 25px;
 }
 
 .references-images{
@@ -16,7 +16,7 @@
   
 
 .ref1,.ref3{
-    width: 65px;
+    width: 70px;
     height: 90px;
     margin-top: -0.9rem;
     opacity: 0.5;

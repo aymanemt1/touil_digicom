@@ -1,5 +1,6 @@
 .contact{
   margin-bottom: 5rem;
+  background-color: white;
 
 }.contact-header{
   background-color: rgb(248, 249, 251);
@@ -44,6 +45,7 @@ line-height: 26px;
 }
 .contact-map{
     display: flex;
+    
     margin-top: 5rem;
     justify-content: center;
 }

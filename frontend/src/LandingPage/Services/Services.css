@@ -23,7 +23,7 @@
     display: block;
     margin-top: -1rem;
     margin-bottom: 2rem;
-    margin-left: 5rem;
+    margin-left: 7rem;
 }
 
 .titleSectionServices h1 {
@@ -209,7 +209,7 @@ input:checked + label .description {
 .btnMoreDetailServices {
     background-color: white;
     padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--orangeTouil);
     text-decoration: none;
     border: 0.02rem solid white;
@@ -235,7 +235,7 @@ input:checked + label .description {
     background-color: transparent;
     color: white;
     padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 5px;
     text-decoration: none;
     border: 0.02rem solid white;
     outline: none;
@@ -259,6 +259,13 @@ input:checked + label .description {
         flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
+    }
+    .titleSectionServices {
+       width: 90%;
+       margin-left:3rem;
+    }
+    .titleSectionServices p{
+       width: 90%;
     }
 }
 

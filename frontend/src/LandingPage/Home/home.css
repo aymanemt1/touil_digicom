@@ -24,9 +24,13 @@
 .reverseContent{
     flex-direction: row-reverse;
 }
+.reverseContent .parentText{
+    margin-right: -1rem;
+}
 
 .reverseContent .parentText h1{
- width: 55rem;
+ margin-right: -12rem;
+ width: 40rem;
 }
 
 .reverseContent .illustrator3{
@@ -68,7 +72,6 @@ width: 42rem;
 }
 .reverseContent .union{
     left: 3.3rem;
-
 }   
 
 .reverseContent .parentBtnsV2{
@@ -97,8 +100,8 @@ width: 42rem;
 .vector1 {
     position: absolute;
     width: 10.5rem;
-    margin-left: -1rem;
-    margin-top: 1.7rem;
+    margin-left: -1.4rem;
+    margin-top: 2.1rem;
 }
 .vector2 {
     position: absolute;
@@ -122,7 +125,7 @@ width: 42rem;
 }
 
 .btnSeeMoreServices {
-    background-image: linear-gradient(224deg, rgb(78,148,252),rgb(27,103,176));
+    background-color: #1B67B0;
     color: white;
     border: none;
     font-size: 1rem;
@@ -187,13 +190,13 @@ width: 42rem;
     position: absolute;
     top: 6rem;
     right: 3.3rem;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 .illustatorHome {
     position: relative;
     width: 370px;
     margin: 0;
-    filter: drop-shadow(0 0 40px var(--blueBTouilShadowIllu));
+    filter: drop-shadow(0 0 30px var(--blueBTouilShadowIllu));
 }
 .illustatorArabe{
     -webkit-transform: scaleX(-1);
@@ -279,6 +282,9 @@ width: 42rem;
         text-align: center;
         width: 100%;
     }
+    .union{
+       top: 33rem;
+    }
    
     .parentText h3 {
        display: none;
@@ -287,7 +293,7 @@ width: 42rem;
 
     .illustatorHome {
         width: 24rem;
-        margin-right: -8.4rem;
+        margin-right: -4.4rem;
         margin-top: -1rem;
     }
     .vector1  {
