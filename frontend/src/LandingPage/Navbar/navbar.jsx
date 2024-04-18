@@ -1,46 +1,40 @@
 import { Fragment, useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { LangueContext } from "../../Context/LangueContext";
 import { Translate } from "./NavbarTranslate";
 import { NavDropdown } from "./NavDropdown";
+import { Link as ScrollLink } from "react-scroll";
 
-export default function Navbar({link}) {
-
-  
+export default function Navbar({ link }) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const {langue,setlangue}=useContext(LangueContext)
-  
-    const Navbar = Translate.Navbar.find((lang)=>(
-       lang.id == langue
-     ))
+  const { langue, setlangue } = useContext(LangueContext);
+
+  const Navbar = Translate.Navbar.find((lang) => lang.id == langue);
 
   const toggleLanguage = () => {
-    setlangue(langue === 'fr' ? 'ar' : 'fr');
+    setlangue(langue === "fr" ? "ar" : "fr");
   };
 
   const navLinks = [
-    { id: 1, to: '/a-props', text: `${Navbar.link1}` },
-    { 
-      id: 2, 
+    { id: 1, to: "/", text: `${Navbar.link1}` },
+    {
+      id: 2,
       text: `${Navbar.link2.label}`,
       dropdown: [
-        { id: 21, to: 'service/1', text: `${Navbar.link2.dropdown[0]}` },
-        { id: 22, to: 'service/2', text: `${Navbar.link2.dropdown[1]}` },
-        { id: 22, to: 'service/3', text: `${Navbar.link2.dropdown[2]}` },
-        { id: 22, to: 'service/4', text: `${Navbar.link2.dropdown[3]}` },
-      ]
+        { id: 21, to: "service/1", text: `${Navbar.link2.dropdown[0]}` },
+        { id: 22, to: "service/2", text: `${Navbar.link2.dropdown[1]}` },
+        { id: 22, to: "service/3", text: `${Navbar.link2.dropdown[2]}` },
+        { id: 22, to: "service/4", text: `${Navbar.link2.dropdown[3]}` },
+      ],
     },
-    { id: 3, to: '/blogs', text: `${Navbar.link3}` },
-    { id: 4, to: '/faq', text: `${Navbar.link4}` },
-    { id: 5, to: '/contact', text: `${Navbar.link5}` },
+    { id: 3, to: "/blogs", text: `${Navbar.link3}` },
+    { id: 4, to: "/", text: `${Navbar.link4}` },
+    { id: 5, to: "/contact", text: `${Navbar.link5}` },
   ];
-  
-    const renderNavLinks = navLinks.map((link) => (
-      <NavDropdown link={link} />
-    ));
 
+  const renderNavLinks = navLinks.map((link) => <NavDropdown link={link} />);
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,31 +50,39 @@ export default function Navbar({link}) {
     };
   }, []);
 
+  const location = useLocation();
+
+  const isSpecialPath =
+    location.pathname === "/blogs" || location.pathname === "/contact";
+
   return (
     <Fragment>
       <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"}>
         <ul className="ulBrandLogo">
-        <Link to="/" id="logo">
+          <Link to="/" id="logo">
             <li>
-                <img
-                  src="/assets/Logo/logo4.png"
-                  alt="Touil Digicom"
-                  className="brandLogo"
-                />
+              <img
+                src="/assets/Logo/logo4.png"
+                alt="Touil Digicom"
+                className="brandLogo"
+              />
             </li>
           </Link>
         </ul>
         <ul className={toggleMenu ? "ulLinks active" : "ulLinks"}>
           {renderNavLinks}
           <div className="parentBtns">
-            <Link to="/demand-de-devis">
-              <button className="demandBtn">{Navbar.btn_devis}</button>
-            </Link>
+            {isSpecialPath ? (
+              <Link to="/">
+                <button className="demandBtn">{Navbar.btn_devis}</button>
+              </Link>
+            ) : (
+              <ScrollLink to="devis" smooth={true} duration={2200}>
+                <button className="demandBtn">{Navbar.btn_devis}</button>
+              </ScrollLink>
+            )}
             <div className="langParent">
-              <button
-                className="langBtn"
-                onClick={toggleLanguage}
-              >
+              <button className="langBtn" onClick={toggleLanguage}>
                 <img className="flag" src={Navbar.flag} alt="FR" />
               </button>
             </div>
@@ -93,7 +95,6 @@ export default function Navbar({link}) {
           className="toggleMenu"
           onChange={(e) => setToggleMenu(!toggleMenu)}
         />
-
         <ul className="burgerMenuUl">
           <button
             className="menuBtn"

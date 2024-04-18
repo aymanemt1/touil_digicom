@@ -9,198 +9,220 @@
 
 
 .parentDevis {
-    height: 100vh;
     width: 80vw;
-    margin: auto;
-    padding: 1rem;
-}
-
-
-.colTitleDevis h1 {
-    color: var(--blueTouil);
-    line-height: 32px;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: start;
-    white-space: nowrap; 
-  }
-.colTitleDevis p {
-    color: black;
-    font-size: 0.9rem;
-    text-decoration: underline;
-    margin: 1rem;
-  }
-
-  .colTitleDevis h1:before {
-    background-color:  var(--blueTouil);
-    content: '';
-    display: block;
-    height: 3px;
-    width: 75px;
-    margin-bottom: 5px;
-  }
- 
-  .colTitleDevis h1:after {
-    background-color:  var(--blueTouil);
-    content: '';
-    display: block;
-    position: relative;
-    left: 9rem;
-    bottom: 0;
-    height: 3px;
-    width: 75px;
-    margin-bottom: 0.25em;
-  }
-
-.parentBgDevis {
-    padding: 1rem;
-    border-radius: 20px;
-    background-image: linear-gradient(37deg, rgb(27,103,176),rgb(73,168,248));
     display: flex;
-    justify-content: space-between;
-    overflow: hidden;
-    width :70vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    overflow-x: hidden;
     margin: auto;
-
 }
 
 
-.colDevis2 img {
-    width: 300px;
+.h1LandingPageDevis {
+    margin: 0;
+    margin-top: 2.5rem;
+}
+
+.h1LandingPageAr {
+    position: relative;
+    left: 65vw;
+}
+
+.serviceDevis {
+    color: white;
+}
+
+.colRightDevis p {
+    width: 75%;
+    font-size: 1rem;
+    margin-top: -1rem;
+    padding-left: 1rem;
+}
+.colRightDevisAr p {
+    text-align: end;
+    width: 100%;
+}
+
+.parentDevis h1 {
+    width: 80%;
+    text-align: start;
+}
+
+.parentTextDevis {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.parentFormDevis {
+    width: 90%;
+    background-color: var(--blueTouil);
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+.parentFormDevisAr {
+    flex-direction: row-reverse;
+}
+
+.colFormDevis {
+    width: 60%;
+    padding: 2rem;
+}
+.colFormPicDevis {
+    width: 40%;
+    overflow: hidden;
+}
+.colFormDevis h2{
+    color: white;
+    margin-bottom: 1rem;
+}
+.colFormDevisAr h2{
+    text-align: end;
+}
+
+.formDevis {
+    padding-top: 2rem;
 }
 
 
-.inputesDevis {
-    font-size: 1.2rem;
+.formDevis table tr td{
+    width: 50%;
+    margin: 1rem;
+}
+.inputDevis, .formDevis select{
+    width: 90%;
     padding: 0.3rem;
+    font-size: 1rem;
     background: transparent;
     border: none;
     outline: none;
-    color: white;
-    font-weight: 600;
-    border-bottom: 0.2rem solid #ffffffdc;
-    margin: 1rem;
-}
-
-
-.inputesDevis::placeholder {
-    color: #ffffffdc;
-    font-weight: 600;
-}
-
-.selectDevis {
-    width: 94%;
-}
-
-.selectDevis  option{
-    background-color: #1B67B0;
+    border-bottom: 0.1rem solid white;
+    margin-bottom: 3rem;
     font-weight: 500;
-}
-
-.imgDevis {
-    margin-right: -3rem;
-}
-
-.btnSubmitDevis {
-
-}
-
-.messageDevis {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-}
-
-.btnContact{
-    color: white;
-    background-color: #10154e;
-    border: none;
-    padding: 0.8rem 0.6rem;
-    margin-top: 1.6rem;
-    margin-left: 0;
-    text-align: left;
     font-size: 1rem;
-    justify-content: center;
-    font-weight: 650;
-    outline: none;
-    font-family: "Raleway", "Noto Kufi Arabic",  sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    width: 8rem;
-    transition: all .1s;
+    color: white;
 }
 
-
-
-.btnContact:hover {
-    animation: anim 1s infinite ease-in-out;
-}
-.btnContact:active { 
-   background-color: black;
-    transform: scale(0.95);
-}
-
-
-.questionContact {
-    margin: auto;
+.formDevis select option {
     background-color: white;
-    padding: 3rem 0;
-    align-items: center;
+    color: var(--blueTouil);
+}
+
+
+.submitDevis {
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: visible;
+    padding: 7px 10px;
+    width: 200px;
     text-align: center;
 }
-
-
-.btnContact span{
-    margin-left: 0.4rem;
+  .submitDevis:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
 }
 
-#iconContact{
+  
+.colFormPicDevis {
+    background-color: white;
+    border: 0.01rem solid white;
+}
+  
+.colFormPicDevis img{
+    width: 140px;
+}
+
+.tableDevis {
+    width: 90%;
+    margin: auto;
+    color: var(--blueTouil);
+    border: 1px solid var(--blueTouil);
+}
+.tableDevis tr th {
+    border: 1px solid var(--blueTouil);
+    padding: 0.5rem;
+}
+.tableDevis tr td {
+    border: 1px solid var(--blueTouil);
+}
+
+.DecriptionDevisCol {
+    width: 50%;
+}
+
+.spaceDevisTd {
+    padding: 1rem;
+}
+
+.colHeaderDevis {
+    background-color: var(--blueTouil);
+    padding: 0.7rem;
+}
+
+.colHeaderDevis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textHeaderDevis {
     color: white;
-    margin-left: 0.8rem;
-    margin-top: -0.1rem;
-    font-size: 1.4rem;
-    position: absolute;
 }
 
-.btnSendToContact:hover {
-    box-shadow: 0 0 15px 10px var(--blueBTouilShadow);
+.colInfoClient {
+    padding: 1rem;
+}
+.colInfoClient h4 {
+    color: var(--blueTouil);
+}
+.colInfoClient p {
+    font-size: 0.8rem;
+    padding-left: 0.3rem;
 }
 
-@media (max-width:776px){
-    .colDevis2 {
-        display: none;
-    }
-    .colDevis1 {
-        width: 100%;
-    }
-    .parentBgDevis {
-        background: transparent;
-    }
-    .colDevis2 img{
-        display: none;
-    }
-    .formDevis {
-        width: 80vw;
-        margin: auto;
-    }
-    .form table {
-        width: 100%;
-        margin: auto;
-    }
-    .inputesDevis {
-        color: var(--blueTouil);
-        border-bottom: 0.2rem solid var(--blueTouil);
-    }
-    .inputesDevis::placeholder {
-        color: var(--blueTouil);
-    }
-}
-@media (max-width:638px){
-    .inputesDevis {
-        font-size: 0.6rem;
-    }
+.colTypeDevis  {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 1.3rem;
 }
 
+.colLeftTypeDevis {
+    font-size: 0.7rem;
+    margin: 1rem;
+}
+.colRightTypeDevis {
+    color: var(--blueTouil);
+}
 
+.colSignataire p{
+    font-family: "Whisper", cursive;
+    color: var(--blueTouil);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.colInformationDevisTouil ul{
+    display: flex;
+    gap: 0.2rem;
+    justify-content: space-between;
+}
+.colInformationDevisTouil ul li{
+    font-size: 0.6rem;
+    color: var(--blueTouil);
+    padding: 0.4rem;
+}

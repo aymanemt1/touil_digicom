@@ -128,6 +128,7 @@
 
 
 
+
  .h1:before {
   background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
   border-radius: 2px;
@@ -281,7 +282,6 @@
   margin: 0.5em 0; 
   color: #111928;
   font-size: 1em;
-  font-family:  'Roboto', sans-serif;
   border-radius: 2px;
   
 }

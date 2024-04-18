@@ -5,11 +5,12 @@ import { Contact } from '../LandingPage/Contact/Contact';
 import Navbar from '../LandingPage/Navbar/navbar';
 import { Servicedetail } from '../LandingPage/ServiceDetail/Servicedetail';
 import  Blog from '../LandingPage/Blogs/blogs';
+import { Footer } from '../LandingPage/Footer/footer';
 
 export default function RouterApp(){
     return (
        <>
-       <Navbar />
+             <Navbar />
                 <Routes>
                     <Route 
                         path='/'
@@ -38,6 +39,7 @@ export default function RouterApp(){
                         }
                     />
                 </Routes>
+            <Footer />
        </>
           
      

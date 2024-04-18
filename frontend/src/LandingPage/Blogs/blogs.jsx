@@ -20,7 +20,6 @@ export default function Blogs() {
         <SectionText />
         <CardsPress />
         <FormBlogs />
-        <Footer />
       </div>
     </Fragment>
   );

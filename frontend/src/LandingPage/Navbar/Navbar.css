@@ -192,15 +192,6 @@ color: #E8451E;
 
 @media (max-width : 644px){
    
-     .langParent{
-   position: absolute;
-   left: 17.7rem;
-   bottom: 0rem;
-   button{
-    width: 2.8rem;
-    height: 2.8rem;
-   }
-    }
     
     .parentNavbar {
         backdrop-filter: blur(20px);
@@ -281,4 +272,11 @@ color: #E8451E;
     100% {
         background-position: 0 50%;
     }
+}
+
+.scrollLink {
+    cursor: pointer;
+}
+.scrollLink:active {
+    color: black;
 }

@@ -11,3 +11,22 @@
     width: 100%;
     color: #111928;
 }
+
+
+.h1LandingPage {
+    display: block;
+    width: 100%;
+    font-size: 30px;
+    margin: 2.5rem 0rem;
+}
+
+
+.h1LandingPage::before{
+    background-image: linear-gradient(12deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
+    content: '';
+    display: block;
+    height: 4px;
+    width: 75px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}

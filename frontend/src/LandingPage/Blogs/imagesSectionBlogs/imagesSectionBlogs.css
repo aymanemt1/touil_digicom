@@ -66,6 +66,16 @@
   justify-content: center;
 }
 
+.div3Ar {
+  text-align: end;
+}
+
+.div3 h4 {
+  width: 100%;
+  font-size: var(--h4-font-size);
+  letter-spacing: var(--h4-letter-spacing);
+}
+
 .div3 h4 {
   width: 100%;
   font-size: var(--h4-font-size);
@@ -78,6 +88,21 @@
   letter-spacing: var(--h1-letter-spacing);
   font-weight: 800;
 }
+
+.div3Ar h4 {
+  width: 100%;
+  font-size: var(--h4-font-size);
+  letter-spacing: 0;
+}
+
+.div3Ar h1 {
+  width: 100%;
+  font-size: var(--h1-font-size);
+  letter-spacing: 0;
+  font-weight: 800;
+}
+
+
   .div4 { 
     grid-area: 3 / 2 / 4 / 4; 
     margin: 0.2rem;

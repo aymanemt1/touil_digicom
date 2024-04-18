@@ -13,6 +13,9 @@
     gap: 3rem;
     padding: 3rem 0rem;
 }
+.formBlogsAr {
+    flex-direction: row-reverse;
+}
 .emailBlogs, .prenomBlogs, .nomBlogs {
     background: transparent;
     border: none;

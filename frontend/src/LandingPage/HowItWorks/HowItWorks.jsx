@@ -23,7 +23,7 @@ export const HowItWorks = () => {
 
                 <div className='topEtapes'>
 
-                    <h2>{HowItWorks.title}</h2>
+                    <h2 className='h1LandingPage'>{HowItWorks.title}</h2>
 
 
                     <div id='etape' className='etape1'>

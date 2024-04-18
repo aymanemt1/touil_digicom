@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import Navbar from "./Navbar/navbar";
-import './LandingPage.css';
-import {Home} from "./Home/home";
+import "./LandingPage.css";
+import { Home } from "./Home/home";
 import Adn from "./Adn/Adn";
 import { WhyUs } from "./WhyUs/whyus";
 import { Footer } from "./Footer/footer";
@@ -14,21 +14,34 @@ import FAQ from "./FAQ/FAQ";
 import Devis from "./Devis/Devis";
 import { LangueContext } from "../Context/LangueContext";
 
+import {
+  Link as ScrollLink,
+  Element,
+  animateScroll as scroll,
+} from "react-scroll";
+
 export const LandingPage = () => {
   return (
     <Fragment>
       <div className="parentLandingPage">
         <Home />
-        <Adn/>
+        <Element name="adn">
+          <Adn />
+        </Element>
+        <Element name="whyUs">
         <WhyUs />
+        </Element>
         <Statistique />
         <HowItWorks />
         <Video />
         <Services />
-        <FAQ />
-        {/* <Devis /> */}
+        <Element name="devis">
+          <Devis />
+        </Element>
+        <Element name="faq">
+          <FAQ />
+        </Element>
         <References />
-        <Footer />
       </div>
     </Fragment>
   );

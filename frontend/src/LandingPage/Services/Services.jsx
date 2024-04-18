@@ -18,8 +18,8 @@ export default function Services() {
 
   return (
     <Fragment>
-          <div className="titleSectionServices">
-            <h1>{Services.title}</h1>
+          <div className={langue == 'fr' ? "titleSectionServices" : "titleSectionServices titleSectionServicesAr"}>
+            <h1 className='h1LandingPage'>{Services.title}</h1>
             <p>{Services.text}</p>
           </div>
       <div className="wrapperServices">

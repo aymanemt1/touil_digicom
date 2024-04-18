@@ -2,7 +2,7 @@ export const Translate = {
     Services: [
         {
           id: "fr",
-          title:`NOS SERVICES`,
+          title:`Nos Services`,
           text:`Découvrez nos quatre services de digicom : création de contenu, gestion des médias sociaux, marketing par e-mail et développement web. Nous sommes là pour booster votre présence en ligne !`,
           card1 : {
             title : 'MARKETING & COMMUNICATION',

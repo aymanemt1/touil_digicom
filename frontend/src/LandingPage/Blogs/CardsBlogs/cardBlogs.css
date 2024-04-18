@@ -23,6 +23,11 @@
   margin: 3rem;
 }
 
+.h1BlogsAr {
+  display: flex;
+  justify-content: end;
+}
+
 .h1Blogs::before {
   background-image: linear-gradient(37deg, rgb(232, 69, 30), rgb(255, 159, 0));
   border-radius: 2px;
@@ -105,6 +110,12 @@
   color: #111928;
   margin-inline: 1rem;
 }
+.h6CardAr {
+  font-size: .8rem;
+  color: #111928;
+  margin-inline: 1rem;
+  text-align: end;
+}
 
 
 .btnCardBlogs {
@@ -128,6 +139,14 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all .15s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.btnCardBlogs button i {
+  font-size: 1rem;
 }
 
 .btnCardBlogs button:active {
@@ -183,6 +202,10 @@
   .h6Card {
     font-size: 0.8rem;
   }
+  .h6CardAr {
+    font-size: .6rem;
+  }
+  
 }
 @media (max-width: 786px) {
   .cardBlog {
