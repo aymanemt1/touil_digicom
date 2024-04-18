@@ -1,13 +1,13 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import Navbar from "./Navbar/navbar";
 import "./LandingPage.css";
-import { Home } from "./Home/home";
+import { Home } from "./Home/Home";
 import Adn from "./Adn/Adn";
 import { WhyUs } from "./WhyUs/whyus";
 import { Footer } from "./Footer/footer";
 import { References } from "./References/References";
 import { Statistique } from "./Statistique/Statistique";
-import { HowItWorks } from "./HowItWorks/HowItWorks";
+import {HowItWorks} from "./HowItWorks/HowItWorks"
 import Services from "./Services/Services";
 import Video from "./Video/Video";
 import FAQ from "./FAQ/FAQ";

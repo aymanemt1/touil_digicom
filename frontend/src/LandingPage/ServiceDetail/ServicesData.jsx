@@ -83,6 +83,24 @@ export const servicedata = [
         title: "Conclusion",
         content: "Que ce soit pour le développement des compétences des employés, le renforcement des capacités des gestionnaires, ou l'optimisation des performances organisationnelles, notre département de Formation KAFAAT est votre partenaire de confiance pour un apprentissage de qualité qui conduit au succès."
       }
+    ],
+    formations: [
+      {
+        id:'1',
+        title: "formation1",
+      },
+      {
+        id:'2',
+        title: "formation2",
+      },
+      {
+        id:'3',
+        title: "formation3",
+      },
+      {
+        id:'4',
+        title: "formation4",
+      },
     ]
   },
   {

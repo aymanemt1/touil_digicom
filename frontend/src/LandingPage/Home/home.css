@@ -143,7 +143,6 @@ width: 42rem;
 }
 
 .btnSeeMoreServices:active { 
-    background-image: linear-gradient(14deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
     transform: scale(0.95);
 }
 .parentBtnsV2 {

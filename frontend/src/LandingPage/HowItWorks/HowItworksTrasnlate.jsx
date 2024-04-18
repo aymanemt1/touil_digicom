@@ -3,7 +3,7 @@ export const Translate = {
     HowItWorks: [
         {
           id: "fr",
-          title:'COMMENT ÇA MARCHE ?',
+          title:'Comment Ça marche ?',
           blogs:{
             blog1:'Analyse des besoins du client et planification stratégique',
             blog2:'Conception et création de contenu',
@@ -17,15 +17,15 @@ export const Translate = {
         },
         {
           id: "ar",
-          title: 'كيف يعمل هذا؟',
+          title: 'كيف تعمل؟ ',
     blogs: {
         blog1: 'تحليل احتياجات العميل والتخطيط الاستراتيجي',
         blog2: 'تصميم وإنشاء المحتوى',
-        blog3: 'تنفيذ وتنفيذ الحملات',
+        blog3: ' تنفيذ الحملة وتنفيذها ',
         blog4: 'تقييم الأداء وتحليل النتائج',
-        blog5: 'التواصل مع العميل وإدارة العلاقات',
+        blog5: ' التواصل مع العملاء وإدارة العلاقات مع العملاء ',
     },
-    sous_title:'اختر الحل الرقمي الذي يناسب مشروعك وميزانيتك مع Touil Digicom.',
+    sous_title:'اختر الحل الرقمي الذي يناسب مشروعك وميزانيتك مع تويل ديجيكوم.',
     btn:'استكشاف الحلول'
         },
 

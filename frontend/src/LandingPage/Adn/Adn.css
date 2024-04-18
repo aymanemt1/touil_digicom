@@ -62,7 +62,7 @@
   transition: all 0.3s ease-in-out;
   padding-block: 0.5rem;
   padding-inline: 1.55rem;
-  background:rgb(240, 48, 0);
+  background:#E8451E;
   border-radius: 7px;
   display: flex;
   align-items: center;
@@ -74,13 +74,29 @@
   border: none;
   outline: none;
   overflow: hidden;
-  margin-top: 35px;
+  margin-top: 25px;
   font-size: 15px;
 }
+.adn-satisfier{
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  
+  padding: 1rem 2rem;
+  background-color: white;
+
+}
+.quote{
+  position: absolute;
+  width: 40px;
+  right: 4.7rem;
+  margin-top: -2.2rem;
+}
+
 
 .icon {
   width: 24px;
   height: 24px;
+  transform: rotate(90deg);
   transition: all 0.3s ease-in-out;
 }
 
@@ -90,6 +106,13 @@
 
 .buttonMore:hover .icon {
   transform: translate(4px);
+  transform: rotate(90deg);
+
+}
+.buttonMore:focus .icon {
+  transform: translate(4px);
+  transform: rotate(90deg);
+
 }
 
 .buttonMore:hover::before {
@@ -125,58 +148,8 @@
     left: 100%;
   }
 }
-
-
-
-
- .h1:before {
-  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
-  border-radius: 2px;
-   content: '';
-   display: block;
-   height: 3px;
-   width: 75px;
-   margin-bottom: 5px;
- }
-
- .h1:after {
-  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
-  border-radius: 2px;
-   content: '';
-   display: block;
-   position: relative;
-   left: 18.3rem;
-   bottom: 0;
-   height: 3px;
-   width: 75px;
-   margin-bottom: 0.25em;
- }
- .h1Adn:before {
-  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
-  border-radius: 2px;
-   content: '';
-   display: block;
-   height: 3px;
-   width: 75px;
-   margin-bottom: 5px;
- }
-
- .h1Adn:after {
-  background-image: linear-gradient(37deg, rgb(232,69,30),rgb(255,159,0));
-  border-radius: 2px;
-   content: '';
-   display: block;
-   position: relative;
-   left: 9rem;
-   bottom: 0;
-   height: 3px;
-   width: 75px;
-   margin-bottom: 0.25em;
- }
-
  .AdnContent{
   height: 85vh;
-  filter: drop-shadow(0 0 10px var(--blueBTouilShadow));
   background-image: url('../../../public/assets/Adn/AdnBg1.png');
   background-repeat: no-repeat;
   background-size: contain;

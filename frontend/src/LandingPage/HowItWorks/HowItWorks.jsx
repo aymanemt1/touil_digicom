@@ -1,7 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './HowItWorks.css'
 import { Translate } from './HowItworksTrasnlate'
 import { LangueContext } from '../../Context/LangueContext'
+import { Link } from 'react-router-dom'
+import { ScrollTrigger } from 'gsap/all'
+import gsap, { Power2 } from 'gsap'
 
 export const HowItWorks = () => {
 
@@ -11,20 +14,48 @@ export const HowItWorks = () => {
        lang.id == langue
      ))
 
+     useEffect(()=>{
+        gsap.registerPlugin(ScrollTrigger);
+
+let revealContainers = document.querySelectorAll(".reveal");
+
+revealContainers.forEach((container) => {
+  let image = container.querySelector(".image-comment");
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      toggleActions: "restart none none reset"
+    }
+  });
+
+  tl.set(container, { autoAlpha: 1 });
+  tl.from(container, 1.5, {
+    xPercent: -100,
+    ease: Power2.out
+  });
+  tl.from(image, 1.5, {
+    xPercent: 100,
+    scale: 1.3,
+    delay: -1.5,
+    ease: Power2.out
+  });
+});
+
+
+     },[])
+
   
     return (
 
         <div className="coomment">
             <div className='entite'>
-                <div>
-
-                    <img src='assets/WhyUs/how1.png' className='image-comment' />
+                <div className='reveal'>
+                    <img src='assets/WhyUs/how1.png' className='image-comment' id='Comment-image1' />
                 </div>
 
                 <div className='topEtapes'>
 
-                    <h2 className='h1LandingPage'>{HowItWorks.title}</h2>
-
+                    <h1 >{HowItWorks.title}</h1>
 
                     <div id='etape' className='etape1'>
                         <span className='number-etape'>01.</span>
@@ -59,14 +90,18 @@ export const HowItWorks = () => {
                         <h3 className='title-etape'>{HowItWorks.blogs.blog5} </h3>
                     </div>
                 </div>
-                <div>  <img src='assets/WhyUs/how2.png' className='image-comment' id='Comment-image2' /></div>
+                <div className='reveal'>
+                <img src='assets/WhyUs/how2.png' className='image-comment' id='Comment-image2' />
+            </div>
             </div>
 
             <div className='TextHow'>
                 <p>
                     {HowItWorks.sous_title}
                 </p>
+                <Link to="/blogs">
                 <button className="btnToBlogs">{HowItWorks.btn}</button>
+                </Link>
             </div>
         </div>
 

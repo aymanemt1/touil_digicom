@@ -18,6 +18,8 @@
     width: 100%;
     font-size: 30px;
     margin: 2.5rem 0rem;
+  filter: drop-shadow(0 0 5px var(--blueBTouilShadow));
+
 }
 
 

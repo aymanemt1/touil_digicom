@@ -1,0 +1,154 @@
+
+.detail-bottom{
+    margin-top: -17rem;
+    margin-left: 1rem;
+
+}
+.card-formation{
+    display: flex;
+    width: 94%;
+    padding: 1rem;
+    background-color: white;
+    margin: 2rem;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+.card-image{
+    width: 40%;
+
+}
+.card-image .cardformation-img{
+width: 490px;
+object-fit: cover;
+height: 280px;
+border-radius: 10px;
+}
+.card-content{
+    width: 55%;
+    padding:1rem 1rem 0 1rem ;
+
+}
+
+.titleformation {
+    width: 100%;
+    margin: auto;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid rgba(161, 161, 161, 0.233);
+}
+
+.infoOwner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.ownerformation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ownerformation img {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.ownerformation h6 {
+  font-size: 1rem;
+}
+
+.descriptionformation {
+    display: flex;
+    width: 83%;
+    margin: auto;
+    gap: 1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+.line {
+    background-color: rgba(0, 0, 0, 0.276);
+    width: 0.5rem;
+    border-radius: 4px;
+}
+.date{
+    font-size: 1.4rem;
+}
+.line p{
+    color: rgb(62, 62, 62);
+    font-size: 1rem;
+    width: 100%;
+}
+
+
+.btnReserve {
+    background-color: #1B67B0;
+       color: white;
+      border: none;
+      padding: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      outline: none;
+      border-radius: 0.3rem;
+      margin: 0 15px;
+      cursor: pointer;
+      width: 120px;
+      transition: all .1s;
+  }
+.btnModels {
+    background-color: #1B67B0;
+       color: white;
+      border: none;
+      padding: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      outline: none;
+      border-radius: 0.3rem;
+      margin: 0 15px;
+      cursor: pointer;
+      width: 160px;
+      transition: all .1s;
+  }
+  
+  .btnReserve:hover,.btnModels:hover {
+      animation: anim 1s infinite ease-in-out;
+  }
+  .buttons-card{
+    justify-content: end;
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+
+      
+@media (max-width : 767px){
+   .card-formation{
+    flex-direction: column;
+    background: white;
+    margin: 0 0 0 1rem;
+
+   }
+   .detail-bottom{
+    margin: 0;
+   }
+   .card-image{
+    width: 100%;
+   }
+  .card-image .cardformation-img{
+    width: 450px;
+    margin: 1.7rem 0;
+   }
+   .titleformation h2{
+    width: 100%;
+   }
+   .card-content{
+    width: 100%;
+    margin-left: 0rem;
+   }
+ }

@@ -1,0 +1,99 @@
+.inscriptionParent {
+    background-color: white;
+}
+.inscription-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    padding: 3rem 0 3rem 0;
+}
+
+
+.inscription-content{
+     width: 89%;
+     margin-top: 2rem;
+     margin-left: 8rem;
+
+     display: flex;
+     font-weight: 500;
+
+}
+::placeholder{
+    color: white;
+}
+::placeholder:focus{
+    opacity: 0.5;
+}
+
+.affiche{
+    width: 540px;
+}
+.inscription-form{
+ width: 40%;
+ background-color: #1B67B0;
+ padding: 2rem 3rem;
+}
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    max-width: 340px;
+  }
+  
+  
+  .coolinput .input-inscription {
+    font-size: 18px;
+    padding: 33px 10px 10px 5px;
+    display: block;
+    width: 340px;
+    border: none;
+    color: white;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+  }
+ 
+
+  
+  .coolinput input[type=text].input-inscription:focus {
+    outline: none;
+   
+  }
+
+  .reserveBtn{
+
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  margin:  40px 5px 10px 0;
+  overflow: visible;
+  padding: 7px 10px;
+  width: 200px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.contact-button:focus {
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  text-decoration: none;
+}
+

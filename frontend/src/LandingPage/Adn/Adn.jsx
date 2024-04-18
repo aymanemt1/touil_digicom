@@ -43,6 +43,10 @@ export const Adn = () => {
             </button>
           </ScrollLink>
           </p>
+          {/* <div className="adn-satisfier">
+            <img className="quote" src="/assets/Adn/quote.png" alt="" />
+          Notre priorité absolue est la satisfaction client. Découvrez les témoignages de nos clients pour en savoir plus sur leur expérience avec nous.
+          </div> */}
         </div>
       </div>
 

@@ -5,7 +5,7 @@ export const Translate = {
       link1: 'À propos',
       link2: {
         label: 'Services',
-        dropdown: ['Marketing & Communication', 'Kafaat', 'Audiovisuel','Événementiel '] 
+        dropdown: ['Marketing & Communication', 'Formation Kafaat', 'Audiovisuel','Événementiel '] 
       },
       link3: 'Blogs',
       link4: 'FAQ',
@@ -18,7 +18,7 @@ export const Translate = {
       link1: 'معلومات',
       link2: {
         label: 'خدمات',
-        dropdown: ['الخدمة 1', 'الخدمة 2', 'الخدمة 3'] 
+        dropdown: ['الاتصالات التسويقية', 'تدريب الكفاءات',  'سمعية وبصرية','الأحداث'] 
       },
       link3: 'المدونات',
       link4: 'الأسئلة الشائعة',
