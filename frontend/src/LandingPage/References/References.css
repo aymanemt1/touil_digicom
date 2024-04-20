@@ -1,66 +1,80 @@
-.references{
-    background-color: #1B67B0;
-    padding: 2.7rem 4rem;
-    margin: 0 6rem;
-    border-radius: 37px 37px 37px 37px;
-    position: relative;
-    top: 25px;
+.references {
+  background-color: #1B67B0;
+  padding: 2.7rem 4rem;
+  margin: 0 6rem;
+  border-radius: 37px 37px 37px 37px;
+  position: relative;
+  top: 25px;
 }
 
-.references-images{
-    display: flex;
-    width:100%;
-    padding: 1rem;
-    justify-content: space-evenly;
+.references-images {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-evenly;
 }
-  
 
-.ref1,.ref3{
-    width: 70px;
-    height: 90px;
-    margin-top: -0.9rem;
-    opacity: 0.5;
-    transition: 0.7s;
-    transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
+
+.ref1,
+.ref3 {
+  width: 70px;
+  height: 90px;
+  margin-top: -0.9rem;
+  opacity: 0.5;
+  transition: 0.7s;
+  transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
 }
-.ref2{
-    filter: brightness(0)invert(1) ;
-    width: 170px;
-    margin-top: 0.2rem;
-    height: 80px;
-    opacity: 0.2;
-    transition: 0.4s;
-    transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
+
+.ref2 {
+  filter: brightness(0)invert(1);
+  width: 170px;
+  margin-top: 0.2rem;
+  height: 80px;
+  opacity: 0.2;
+  transition: 0.4s;
+  transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
 }
-.ref4{
-    filter: brightness(0)invert(1) ;
-    width: 140px;
-    margin-top: 1.5rem;
-    height: 50px;
-    opacity: 0.2;
-    transition: 0.4s;
-    transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
+
+.ref4 {
+  filter: brightness(0)invert(1);
+  width: 140px;
+  margin-top: 1.5rem;
+  height: 50px;
+  opacity: 0.2;
+  transition: 0.4s;
+  transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
 }
-.ref5,.ref6{
-    filter: brightness(0)invert(1) ;
-    width: 120px;
-    height: 80px;
-    margin-top: -0.6rem;
-    opacity: 0.2;
-    transition: 0.4s;
-    transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
+
+.ref5,
+.ref6 {
+  filter: brightness(0)invert(1);
+  width: 120px;
+  height: 80px;
+  margin-top: -0.6rem;
+  opacity: 0.2;
+  transition: 0.4s;
+  transform: rotate(6deg) translate(0, 40px) scaleY(0.6);
 }
+
 
 .card--isVisible img {
   opacity: 1;
   transform: none;
+  transition: all .3s ease;
+  overflow: visible;
+  object-fit: cover;
 }
 
+.card--isVisible img:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px white) brightness(0)invert(1);
+}
 
 @media (max-width: 766px) {
   .references {
-    width: 85%;
-    margin-left: 2rem;
+    width: 70%;
+    margin: auto;
+    position: relative;
   }
 
   .references-images {
@@ -83,16 +97,8 @@
 
 @media (max-width: 374px) {
   .references {
-    width: 100%;
-    margin-left: 1rem;
-  }
-
-
-}
-@media (max-width: 414px) {
-  .references {
-    width: 100%;
-    margin-left: 2rem;
+    width: 80%;
+    margin: auto;
   }
 
 

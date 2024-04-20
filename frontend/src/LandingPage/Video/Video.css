@@ -1,0 +1,27 @@
+.parentVideo {
+    width: 100%;
+    height: 100vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    overflow-x: hidden;
+}
+
+.video video {
+    width: 60%;
+    margin: auto;
+    position: relative;
+    left: 20vw;
+    mask-image: url('../../../public/assets/video/img1.png');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+
+@media (max-width : 733px){
+    .parentVideo {
+        height: 60vh;
+    }
+}

@@ -5,7 +5,6 @@ import { LangueContext } from "../../Context/LangueContext";
 import { Translate } from "./adntranslate";
 import { Link as ScrollLink } from "react-scroll";
 
-
 export const Adn = () => {
   const [btnPopup, setBtnPopup] = useState(false);
   const [name, setName] = useState("");
@@ -26,45 +25,30 @@ export const Adn = () => {
           <h1 className="h1LandingPage">{Adn.title}</h1>
           <p>
             {Adn.text}
-                <ScrollLink
-                to="whyUs"
-                smooth={true}
-                duration={2000}
-              >
-            <button className="buttonMore">
-              {Adn.btn_text}
-              <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
-                <path
-                  clip-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                  fill-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-          </ScrollLink>
+            <ScrollLink to="whyUs" smooth={true} duration={2000}>
+              <button className="buttonMore">
+                {Adn.btn_text}
+                <i className="bx bxs-down-arrow-circle"></i>
+              </button>
+            </ScrollLink>
           </p>
-          {/* <div className="adn-satisfier">
-            <img className="quote" src="/assets/Adn/quote.png" alt="" />
-          Notre priorité absolue est la satisfaction client. Découvrez les témoignages de nos clients pour en savoir plus sur leur expérience avec nous.
-          </div> */}
         </div>
       </div>
-
       <div className="Team">
         <h1 className="h1LandingPage">{Adn.equipe_title}</h1>
-        <div className="card">
-          <div id="bordercom">
-            <div className="card-img" id="com"></div>
-          </div>
-          <h5 className="card-title">Douae Frihi</h5>
-          <p className="p"> {Adn.role[0]}</p>
-          <button
-            title="Détails"
-            className="add-button"
-            onClick={() => openPopup("Douae Frihi")}
-          >
-            <i className="bx bx-plus-circle"></i>
-          </button>
+          <div className="card">
+            <div id="bordercom">
+              <div className="card-img" id="com"></div>
+            </div>
+            <h5 className="card-title">Douae Frihi</h5>
+            <p className="p"> {Adn.role[0]}</p>
+            <button
+              title="Détails"
+              className="add-button"
+              onClick={() => openPopup("Douae Frihi")}
+            >
+              <i className="bx bx-plus-circle"></i>
+            </button>
         </div>
         <div className="card">
           <div id="borderceo">
@@ -76,7 +60,7 @@ export const Adn = () => {
             title="Détails"
             className="add-button"
             onClick={() => openPopup("Omar Touil")}
-          >
+            >
             <i className="bx bx-plus-circle ceo"></i>
           </button>
         </div>
@@ -90,7 +74,7 @@ export const Adn = () => {
             title="Détails"
             className="add-button"
             onClick={() => openPopup("Sohaib Frihi")}
-          >
+            >
             <i className="bx bx-plus-circle"></i>
           </button>
         </div>

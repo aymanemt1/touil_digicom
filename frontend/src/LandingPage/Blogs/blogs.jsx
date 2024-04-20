@@ -19,7 +19,7 @@ export default function Blogs() {
         <CardsBlogs />
         <SectionText />
         <CardsPress />
-        <FormBlogs />
+        {/* <FormBlogs /> */}
       </div>
     </Fragment>
   );

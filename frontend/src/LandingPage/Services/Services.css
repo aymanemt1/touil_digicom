@@ -16,6 +16,7 @@
     justify-content: center;
     background-size: 400% 400%;
     animation: anim 15s infinite ease-in-out;
+    margin-bottom: 1rem;
 }
 
 .titleSectionServices {
@@ -35,7 +36,7 @@
 }
 
 .titleSectionServicesAr .h1LandingPage {
-    width: 100%;
+    width: 90%;
     text-align: end;
 }
 .titleSectionServicesAr p {
@@ -57,6 +58,7 @@
     width: 80vw;
     height: 63vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: start;
 }
 
@@ -261,7 +263,12 @@ input:checked + label .description {
     .containerServices {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
+        gap: 0.5rem;
+        margin: auto;
+        margin-top: 1rem;
+    }
+    .containerServices .cardServices{
+        margin-top: 1rem;
     }
     .titleSectionServices {
        width: 90%;
@@ -269,6 +276,12 @@ input:checked + label .description {
     }
     .titleSectionServices p{
        width: 90%;
+    }
+    .description h4{
+        font-size: 1rem;
+    }
+    .description p{
+        font-size: 0.4rem;
     }
 }
 

@@ -20,7 +20,10 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
-   align-items: flex-end;
+  align-items: flex-end;
+  backdrop-filter: blur(7px);
+  height: fit-content;
+  border-radius: 7px;
  }
 
  .h1Adn {
@@ -167,11 +170,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 3rem;
 }
+
 
 .card {
   padding: 2em 1em;  
-  border-radius: 1em;
+  border-radius: 0.6em;
   text-align: center;
   box-shadow: rgba(61, 106, 151, 0.2) 0px 8px 24px;
   width: 18rem;
@@ -180,22 +185,10 @@
   justify-content: center; 
   align-items: center; 
   overflow: hidden;
+  margin-bottom: 1rem;
+  background-image: repeating-linear-gradient(363deg, transparent 0px, transparent 3px,rgb(255,255,255) 3px, rgb(255,255,255) 32px),repeating-linear-gradient(421deg, transparent 0px, transparent 3px,rgb(255,255,255) 3px, rgb(255,255,255) 32px),linear-gradient(204deg, rgba(27,103,176, 0.19),rgba(155,151,247, 0),rgba(27,103,176, 0.19),rgba(247,151,175, 0),rgba(247,210,151, 0.18),rgba(232,69,30, 0.16),rgba(82,82,82, 0.15));
 }
 
-/* 
-.card::before {
-  position: absolute;
-  z-index: 10;
-  content: '';
-  width: 10%;
-  height: 180%;
-  background-image: linear-gradient(37deg, rgb(20,91,158),rgb(53,196,255));
-  animation: animateRotate 10s ease-in-out infinite;
-}
-.card::after {
-  overflow: hidden;
-  inset: 5px;
-} */
 
 @keyframes animateRotate {
   0% {

@@ -1,364 +1,363 @@
- .container-whyus {
-position: relative;
-}
-
-.space-holder {
-position: relative;
-}
-
-.sticky {
-position: sticky;
-top: 0;
-height: 100vh;
-width: auto;
-overflow-x: hidden;
-}
-
-.horizontal {
-position: absolute;
-height: 100%;
-}
-
-.cards {
-position: relative;
-padding: 0 0 0 50px;
-display: flex;
-flex-flow: row nowrap;
-justify-content: flex-start;
-align-items: center;
-}
-
-.sample-card {
-position: relative;
-height: 300px;
-flex-shrink: 0;
-}
-
-.section-1 {
-  margin-top: 3rem;
-position: relative;
-width: 85rem;
-flex-shrink: 0;
-}
-
-.section2{
-  height: 40vh;
-  margin-top: 4rem;
-  margin-left: 20rem;
-}
-
-
-.section-3 {
-display: block;
-margin-top: 8rem;
-width: 40rem;
-
-}
-.section-4 {
+.container-whyus {
   position: relative;
-  width: 30rem;
-  margin-top: 13rem;
-
-flex-shrink: 0;
-
-}
-
-.section1-title{
-font-size: 27px;
-width: 50rem;
-}
-.section1-text{
-  margin: 2rem 0 0 15rem;
-  width:  40rem;
-  font-size: 18px;
-  line-height: 26px;
-}
-
-.Parentellipse{
-  display: flex;
-  align-items: flex-end; 
-  width: 22rem;
+  }
+  
+  .space-holder {
   position: relative;
-  bottom: 0rem;
-}
-
-
-.sample-card .title{
-  font-size: 24px;
-  margin-left: 1rem;
-  letter-spacing: 2px;
-}
-
-
-.Parentellipse2{
-  display: flex;
-  align-items: flex-end; 
-  width: 36rem;
-  position: relative;
-  bottom: -4rem;
-  left: 23rem;
-}
-
-.Parentellipse3{
-  bottom: 6rem;
-  left: -4rem;
-  display: flex;
-
-  align-items: flex-end; 
-  width: 24rem;
-  position: relative;
-}
-
-.Parentellipse4{
-  bottom: 1rem;
-  left: 24rem;
-  display: flex;
-  align-items: flex-end; 
-  width: 24rem;
-  position: relative;
-}
-
-.ellipses-container {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  position: relative;
-  top: -1rem;
-}
-
-.ellipses {
-  border-radius: 50%;
+  }
+  
+  .sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  overflow-x: hidden;
+  }
+  
+  .horizontal {
   position: absolute;
-  top: 22px;
-  border-style: solid;
-}
-
-.ellipses__outer--thin {
-  filter: drop-shadow(0 0 35px var(--blueBTouilShadow));
-  box-shadow: 0 1px 30px 0 rgba(69, 90, 100, .08);
-  width: 100%;
   height: 100%;
-  border-width: 1px;
-  border-color: rgba(9, 56, 62, 0.1);
-  animation: ellipsesOrbit 15s ease-in-out infinite;
-
-}
-
-.ellipses__outer--thick {
-  width: 99.5%;
-  height: 99.5%;
-  border-color: #1B67B0 transparent;
-  border-width: 2px;
-  transform: rotate(-45deg);
-  animation: ellipsesRotate 10s ease-in-out infinite;
-}
-
-.ellipses__orbit {
-  width: 0.8rem;
-  height: 0.8rem;
-  border-width: 2px;
-  border: none;
-  background-color: #1B67B0;
-  top: 2rem;
-  right:8.8rem;
-}
-
-@keyframes ellipsesRotate {
-  0% {
-      transform: rotate(-45deg);
   }
-
-  100% {
-      transform: rotate(-405deg);
-  }
-}
-
-@keyframes ellipsesOrbit {
-  0% {
-      transform: rotate(0);
-  }
-
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
-.img{
-  width: 90px;
+  
+  .cards {
   position: relative;
-  top: 3.3rem;
-  left: 2.3rem;
-
-}
-
-.whyus-image {
-  width: 90vw;
-  height: 25vh;
-  max-height:50vh;
-  background-color: dodgerblue;
-  background-size: cover;
-  background-position: center;
-}
-
-.banner .whyus-image {
-  background-image: url(https://images.unsplash.com/photo-1592062726182-1c83c3bc4c17?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
-}
-
-.text-container {
-  width: 100vw;
-  height: 10vh;
-  justify-content: center;
+  padding: 0 0 0 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
   align-items: center;
-  pointer-events: none;
-}
-
-.text-wrapper {
-  width: 90vw;
-  max-height: 50vh;
- 
-}
-
-.title-container {
-  overflow: hidden;
-  position: absolute;
-  font-size: 90px;
-  color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
-  width: 100vw;
-  transform: translate(-50%, -50%);
-  left: 40%;
-  top: 60%;
-  text-align: center;
-
-}
-
-@media (max-width : 1025px){
-  .container-whyus {
-    min-height: 100vh;
+  }
+  
+  .sample-card {
+  position: relative;
+  height: 300px;
+  flex-shrink: 0;
+  }
+  
+  .section-1 {
+    margin-top: 3rem;
+  position: relative;
+  width: 85rem;
+  flex-shrink: 0;
+  }
+  
+  .section2{
+    height: 40vh;
+    margin-top: 4rem;
+    margin-left: 20rem;
+  }
+  
+  
+  .section-3 {
+  display: block;
+  margin-top: 8rem;
+  width: 40rem;
+  
+  }
+  .section-4 {
+    position: relative;
+    width: 30rem;
+    margin-top: 13rem;
+  
+  flex-shrink: 0;
+  
+  }
+  
+  .section1-title{
+  font-size: 27px;
+  width: 50rem;
+  }
+  .section1-text{
+    margin: 2rem 0 0 15rem;
+    width:  40rem;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .Parentellipse{
+    display: flex;
+    align-items: flex-end; 
+    width: 22rem;
+    position: relative;
+    bottom: 0rem;
+  }
+  
+  
+  .sample-card .title{
+    font-size: 24px;
+    margin-left: 1rem;
+    letter-spacing: 2px;
+  }
+  
+  
+  .Parentellipse2{
+    display: flex;
+    align-items: flex-end; 
+    width: 36rem;
+    position: relative;
+    bottom: -4rem;
+    left: 23rem;
+  }
+  
+  .Parentellipse3{
+    bottom: 6rem;
+    left: -4rem;
+    display: flex;
+  
+    align-items: flex-end; 
+    width: 24rem;
+    position: relative;
+  }
+  
+  .Parentellipse4{
+    bottom: 1rem;
+    left: 24rem;
+    display: flex;
+    align-items: flex-end; 
+    width: 24rem;
+    position: relative;
+  }
+  
+  .ellipses-container {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    position: relative;
+    top: -1rem;
+  }
+  
+  .ellipses {
+    border-radius: 50%;
+    position: absolute;
+    top: 22px;
+    border-style: solid;
+  }
+  
+  .ellipses__outer--thin {
+    filter: drop-shadow(0 0 35px var(--blueBTouilShadow));
+    box-shadow: 0 1px 30px 0 rgba(69, 90, 100, .08);
+    width: 100%;
+    height: 100%;
+    border-width: 1px;
+    border-color: rgba(9, 56, 62, 0.1);
+    animation: ellipsesOrbit 15s ease-in-out infinite;
+  
+  }
+  
+  .ellipses__outer--thick {
+    width: 99.5%;
+    height: 99.5%;
+    border-color: #1B67B0 transparent;
+    border-width: 2px;
+    transform: rotate(-45deg);
+    animation: ellipsesRotate 10s ease-in-out infinite;
+  }
+  
+  .ellipses__orbit {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-width: 2px;
+    border: none;
+    background-color: #1B67B0;
+    top: 2rem;
+    right:8.8rem;
+  }
+  
+  @keyframes ellipsesRotate {
+    0% {
+        transform: rotate(-45deg);
     }
+  
+    100% {
+        transform: rotate(-405deg);
+    }
+  }
+  
+  @keyframes ellipsesOrbit {
+    0% {
+        transform: rotate(0);
+    }
+  
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  .img{
+    width: 90px;
+    position: relative;
+    top: 3.3rem;
+    left: 2.3rem;
+  
+  }
+  
+  .whyus-image {
+    width: 90vw;
+    height: 25vh;
+    max-height:50vh;
+    background-color: dodgerblue;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .banner .whyus-image {
+    background-image: url(https://images.unsplash.com/photo-1592062726182-1c83c3bc4c17?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+  }
+  
+  .text-container {
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .text-wrapper {
+    width: 90vw;
+    max-height: 50vh;
    
-    .sticky {
-      height: 300vh;
+  }
+  
+  .title-container {
+    overflow: hidden;
+    position: absolute;
+    font-size: 90px;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    width: 100vw;
+    transform: translate(-50%, -50%);
+    left: 40%;
+    top: 60%;
+    text-align: center;
+  
+  }
+  
+  @media (max-width : 1025px){
+    .container-whyus {
+      min-height: 100vh;
       }
-        .cards {
-        display: block;
+     
+      .sticky {
+        height: 300vh;
         }
-       
-       
-        .section-3 {
-          width: 30rem;
-          margin-top: 38rem;
-          }
-          
-        .section-4{
-          width: 30rem;
-          margin-top: -1rem;
-          }
-          .Parentellipse2{
-            left: 25rem;
-            bottom: 11rem;
-          }
-          .Parentellipse4{
-            left: 30rem;
-            bottom: 10rem;
-          }
-          .Parentellipse3{
-            left: 3rem;
-          }
-          .section2{
-            width: 47rem;
-            margin-left: 5rem;
-          }
-          .section1-text{
-            font-size: 23px;
-            width: 47rem;
-            margin-left: 3rem;
+          .cards {
+          display: block;
           }
          
-          .section-1 .whyus-image {
-            height: 25rem;
-          }
-
-          .title-container {
-            width: 50rem;
-            font-size: 7rem;
-    top: 18rem;
-    left: 28rem;
-          }
-      
-}
-
-@media (max-width : 767px){
-  .container-whyus {
-    min-height: 140vh;
-    width: 100%;
-    }
-    .sticky {
-      height: 400vh;
-      }
-          .section-3 .Parentellipse{
-            display: block;
-            left: 8rem;
-          }
-          .section-4 .Parentellipse3{
-            top: 16rem;
-            left: 8rem;
-            display: block;
-          }
-          .section-4 .Parentellipse3 .title,.section-3 .Parentellipse .title{
-            margin-top: 2rem;
-          }
-          .section-4 .Parentellipse4 .title,.section-3 .Parentellipse2 .title{
-            margin-top: 2rem;
-          }
-          .section-3 .Parentellipse2 {
-            display: block;
-            left: 8rem;
-            top:2rem;
-          }
-          .Parentellipse2 .title{
-            margin-left: -5rem;
-          }
-          .section-4 .Parentellipse4{
-            top: 19rem;
-            left: 8rem;
-            display: block;
-          }
-          .section-3{
-            margin-top:45rem;
-            width: 100%;
-          }
-          
-          .section2{
-            margin-left: 0;
-          }
-          .section1-text{
-            width: 60%;
-            text-align: left;
-            margin-left: 0;
-            line-height: 30px;
-          }
-          .section-1{
-           margin-top: 0;
-          }
-          .section1-title{
-            width: 60%;
-            text-align: center;
-            line-height: 3rem;
-          }
-
-          .section-1 .whyus-image {
-            margin-left: -2rem;
-            height: 25rem;
-          }
-
-          .title-container {
-            width: 23rem;
-            font-size: 4rem;
-            top: 18rem;
-            left: 10rem;
-          }
+         
+          .section-3 {
+            width: 30rem;
+            margin-top: 38rem;
+            }
+            
+          .section-4{
+            width: 30rem;
+            margin-top: -1rem;
+            }
+            .Parentellipse2{
+              left: 25rem;
+              bottom: 11rem;
+            }
+            .Parentellipse4{
+              left: 30rem;
+              bottom: 10rem;
+            }
+            .Parentellipse3{
+              left: 3rem;
+            }
+            .section2{
+              width: 47rem;
+              margin-left: 5rem;
+            }
+            .section1-text{
+              font-size: 23px;
+              width: 47rem;
+              margin-left: 3rem;
+            }
+           
+            .section-1 .whyus-image {
+              height: 25rem;
+            }
+  
+            .title-container {
+              width: 50rem;
+              font-size: 7rem;
+      top: 18rem;
+      left: 28rem;
+            }
         
-}
-
+  }
+  
+  @media (max-width : 767px){
+    .container-whyus {
+      min-height: 140vh;
+      width: 100%;
+      }
+      .sticky {
+        height: 400vh;
+        }
+            .section-3 .Parentellipse{
+              display: block;
+              left: 8rem;
+            }
+            .section-4 .Parentellipse3{
+              top: 16rem;
+              left: 8rem;
+              display: block;
+            }
+            .section-4 .Parentellipse3 .title,.section-3 .Parentellipse .title{
+              margin-top: 2rem;
+            }
+            .section-4 .Parentellipse4 .title,.section-3 .Parentellipse2 .title{
+              margin-top: 2rem;
+            }
+            .section-3 .Parentellipse2 {
+              display: block;
+              left: 8rem;
+              top:2rem;
+            }
+            .Parentellipse2 .title{
+              margin-left: -5rem;
+            }
+            .section-4 .Parentellipse4{
+              top: 19rem;
+              left: 8rem;
+              display: block;
+            }
+            .section-3{
+              margin-top:45rem;
+              width: 100%;
+            }
+            
+            .section2{
+              margin-left: 0;
+            }
+            .section1-text{
+              width: 60%;
+              text-align: left;
+              margin-left: 0;
+              line-height: 30px;
+            }
+            .section-1{
+             margin-top: 0;
+            }
+            .section1-title{
+              width: 60%;
+              text-align: center;
+              line-height: 3rem;
+            }
+  
+            .section-1 .whyus-image {
+              margin-left: -2rem;
+              height: 25rem;
+            }
+  
+            .title-container {
+              width: 23rem;
+              font-size: 4rem;
+              top: 18rem;
+              left: 10rem;
+            }
+          
+  }

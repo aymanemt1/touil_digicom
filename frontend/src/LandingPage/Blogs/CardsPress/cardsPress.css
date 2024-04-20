@@ -1,3 +1,11 @@
+:root {
+    --orangeTouil : #E8451E;
+    --orangeTouilOpacity : #f83200bd;
+    --blueTouil : #1B67B0;
+    --blueTouilWhite : #217bd0;
+    --cremaTouil : #F2F2F2;
+}
+
 .parentCardsOfPress {
     width: 90vw;
     margin: auto;
@@ -21,7 +29,7 @@
 }
 
 .cardPress {
-    width: 28%;
+    width: 43%;
     padding: 0.3rem;
     border-radius: 5px;
     background-image: linear-gradient(-45deg, rgb(255,255,255),rgb(241,242,244),rgba(38, 161, 255, 0.381));
@@ -29,7 +37,7 @@
 
 .parentImgCardPress {
     width: 100%;
-    height: 180px;
+    height: 230px;
     display: grid;
     place-items: center;
     border-radius: 7px;
@@ -40,8 +48,9 @@
 
 .parentImgCardPress img {
     width: 120px;
+    right: 35%;
     filter: brightness(0) invert(1);
-
+    display: none;
 }
 
 .cardPress h3 {
@@ -70,7 +79,7 @@
     cursor: pointer;
     transition: all .15s;
     text-decoration: none;
-    background-image: radial-gradient(circle at bottom center, rgba(209,84,14, 0) 0%, rgba(209,84,14, 0) 63%,transparent 63%, transparent 100%),radial-gradient(circle at top right, rgba(195, 195, 195,0.04) 0%, rgba(195, 195, 195,0.04) 73%,transparent 73%, transparent 100%),radial-gradient(circle at center center, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 84%,transparent 84%, transparent 100%),radial-gradient(circle at center center, rgba(11, 11, 11,0.04) 0%, rgba(11, 11, 11,0.04) 28%,transparent 28%, transparent 100%),radial-gradient(circle at center center, rgb(27,103,176) 0%, rgb(27,103,176) 97%,transparent 97%, transparent 100%),linear-gradient(90deg, rgb(27,103,176),rgb(27,103,176)); background-size: 52px 52px;
+    background-color: var(--blueTouil);
     color: white;
     display: flex;
     align-items: center;
@@ -83,9 +92,19 @@
 
 .cardPress a:hover {
     box-shadow: 0 0 10px 1px rgba(91, 91, 91, 0.253) inset;
+    
 }
 .cardPress a:active {
     background-image: radial-gradient(circle at bottom center, rgba(209,84,14, 0) 0%, rgba(209,84,14, 0) 63%,transparent 63%, transparent 100%),radial-gradient(circle at top right, rgba(195, 195, 195,0.04) 0%, rgba(195, 195, 195,0.04) 73%,transparent 73%, transparent 100%),radial-gradient(circle at center center, rgba(248, 248, 248,0.04) 0%, rgba(248, 248, 248,0.04) 84%,transparent 84%, transparent 100%),radial-gradient(circle at center center, rgba(11, 11, 11,0.04) 0%, rgba(11, 11, 11,0.04) 28%,transparent 28%, transparent 100%),radial-gradient(circle at center center, rgb(232,69,30) 0%, rgb(232,69,30) 97%,transparent 97%, transparent 100%),linear-gradient(90deg, rgb(232,69,30),rgb(232,69,30)); background-size: 52px 52px;
+}
+
+#cardpress0 {
+    background-size: cover;
+    background-image:linear-gradient(182deg, rgba(168, 212, 255, 0),rgba(27, 104, 176, 0.708)),  url('/public/assets/PassageTV/medi1.jpg');
+}
+#cardpress1 {
+    background-size: cover;
+    background-image:linear-gradient(182deg, rgba(168, 212, 255, 0),rgba(27, 104, 176, 0.621)),  url('/public/assets/PassageTV/snrt.jpeg');
 }
 
 @media (max-width : 636px){
@@ -94,10 +113,11 @@
         width: 100vw;
     }
     .cardsPress {
-        gap: 0.7rem;
+        width: 100%;
+        gap: 2rem;
     }
     .cardPress {
-        width: 33%;
+        width: 40%;
     }
     .cardPress img {
         width: 80px;

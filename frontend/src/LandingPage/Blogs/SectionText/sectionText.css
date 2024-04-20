@@ -10,131 +10,67 @@
 
 .parentSectionText {
     width: 100vw;
-    background-image: linear-gradient(151deg, rgb(6,180,255),rgb(27,103,176));
+    background-image: repeating-linear-gradient(363deg, transparent 0px, transparent 3px, rgb(255, 255, 255) 3px, rgb(255, 255, 255) 32px), repeating-linear-gradient(421deg, transparent 0px, transparent 3px, rgb(255, 255, 255) 3px, rgb(255, 255, 255) 32px), linear-gradient(204deg, rgba(27, 103, 176, 0.19), rgba(155, 151, 247, 0), rgba(27, 103, 176, 0.19), rgba(247, 151, 175, 0), rgba(247, 210, 151, 0.18), rgba(232, 69, 30, 0.16), rgba(82, 82, 82, 0.15));
     padding: 2rem;
     margin: 6rem 0;
     color: white;
     display: flex;
-    justify-content: space-between;
-
-}
-
-.colTextBlogs h1 {
-    font-size: 2rem;
-    width: 90%;
-    margin-top: -4rem;
-}
-
-.text59 {
-    display: inline-block;
-    font-size: 5rem;
-    transform: rotate(10deg);
-    margin-left: 1rem;
-}
-.textPlus {
-    display: inline-block;
-    font-size: 8rem;
-    transform: rotate(10deg);
-}
-.line2SectionText {
-    position: relative;
-    bottom: 1.2rem;
-}
-
-.colBtnBlogs {
-    width: 30%;
-    display: flex;
     flex-direction: column;
-    justify-content: end;
-    padding: 0.2rem;
-}
-.colBtnBlogs img {
-    width: 150px;
-    position: absolute;
-    margin-bottom: 3rem;
-    margin-left: 5rem;
-    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.btnSectionTextBlogs {
-    color: var(--blueTouil);
-    background-color: white;
-    font-size: 1rem;
-    font-weight: 500;
+.rowTextBlogs {
+    width: 60%;
+}
+.rowTextBlogs h1{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: black;
+}
+.rowinputsSectionText form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.rowinputsSectionText form input {
+    background: none;
     border: none;
-    outline: none ;
-    width: fit-content;
+    outline: none;
+    border: 0.1rem solid var(--blueTouil);
+    font-size: 1.2rem;
     padding: 0.4rem;
-    border-radius: 7px;
+    color: var(--blueTouil);
+    font-weight: 500;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-left: 0.6rem;
+}
+
+.rowinputsSectionText form input::placeholder{
+    color: var(--blueTouil);
+}
+
+
+#submitSectionText {
+    background-color: var(--blueTouil);
+    color: var(--blueTouil);
+    font-weight: 600;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 0.2rem;
     cursor: pointer;
-    border: 0.1rem solid white;
-    transition: all .15s ease-out;
-}
-
-.btnSectionTextBlogs:hover {
-    background: transparent;
     color: white;
+    width: fit-content;
 }
 
-
-
-@media (max-width : 899px){
-    .colTextBlogs h1 {
-        font-size: 1rem;
-    }
-    .text59 {
-        font-size: 3rem;
-    }
-    .textPlus {
-        font-size: 6rem;
-    }
-    .btnSectionTextBlogs {
-        font-size: 0.7rem;
-    }
-}
-@media (max-width : 552px){
-    .colTextBlogs h1 {
-        font-size: 0.7rem;
-    }
-    .text59 {
-        font-size: 2rem;
-    }
-    .textPlus {
-        font-size: 4rem;
-    }
-    .line2SectionText {
-        top: 0rem;
-    }
-    .btnSectionTextBlogs {
-        font-size: 0.5rem;
-    }
-}
-@media (max-width : 443px){
-    .colTextBlogs h1 {
-        position: relative;
-        top: 2.3rem;
-        font-size: 0.5rem;
-    }
-    .text59 {
-        font-size: 1.5rem;
-    }
-    .textPlus {
-        font-size: 2.5rem;
-    }
-    .line2SectionText {
-        top: 0rem;
-    }
-    .btnSectionTextBlogs {
-        font-size: 0.4rem;
-        padding: 0.2rem;
-    }
-}
-@media (max-width : 320px){
-
-    .text59 {
-        font-size: 1.2rem;
-    }
-    .textPlus {
-        font-size: 2rem;
-    }
+.rowinputsSectionTextAr form #submitSectionText{
+    font-size: 0.75rem;
 }

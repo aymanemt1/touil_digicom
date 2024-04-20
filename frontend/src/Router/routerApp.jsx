@@ -6,11 +6,16 @@ import Navbar from '../LandingPage/Navbar/navbar';
 import { Servicedetail } from '../LandingPage/ServiceDetail/Servicedetail';
 import  Blog from '../LandingPage/Blogs/blogs';
 import { Footer } from '../LandingPage/Footer/footer';
+import ScrollToTopButton from '../Components/ScrollTopButton/scrolTopBtn';
+import ProgressScrollBar from '../Components/ProgressBar/progressBar';
+import TeamDev from '../LandingPage/teamDev/teamDev';
 
 export default function RouterApp(){
     return (
        <>
-             <Navbar />
+            <ProgressScrollBar />
+            <Navbar />
+            <ScrollToTopButton />
                 <Routes>
                     <Route 
                         path='/'
@@ -38,6 +43,10 @@ export default function RouterApp(){
                                 <Servicedetail />
                         }
                     />
+                    <Route 
+                        path='team-dev'
+                        element={<TeamDev />}
+                         />
                 </Routes>
             <Footer />
        </>

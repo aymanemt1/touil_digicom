@@ -64,29 +64,30 @@ const Popup = (props) => {
             >
               <div className="left">
                 <img src={profile.img} alt="user" width="100" />
+                <div className="infoPopUpCard">
                 <h4>{profile.name}</h4>
-
                 <p>{profile.role}</p>
                 <div className="social_media">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="#" target="_blanka">
                         <i className="bx bxl-facebook-circle"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="#" target="_blanka">
                         <i className="bx bxl-linkedin"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="#" target="_blanka">
                         <i className="bx bxl-instagram"></i>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
+                </div>
               <div className="right">
                 <button
                   className="close-btn"
@@ -94,7 +95,7 @@ const Popup = (props) => {
                 >
                   &times;
                 </button>
-                <div className="info">
+                <div className={langue == 'fr' ? "info" : "info infoAr"}>
                   <h3>{Team.info}</h3>
                   <div className="info_data">
                     <div className="data">
@@ -111,7 +112,7 @@ const Popup = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="projects">
+                <div className={langue == 'fr' ? "projects" : "projects projectsAr"}>
                   <h3>{Team.description}</h3>
                   <div className="projects_data">
                     <div className="data">

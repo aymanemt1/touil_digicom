@@ -53,10 +53,8 @@ revealContainers.forEach((container) => {
                     <img src='assets/WhyUs/how1.png' className='image-comment' id='Comment-image1' />
                 </div>
 
-                <div className='topEtapes'>
-
-                    <h1 >{HowItWorks.title}</h1>
-
+                <div className={langue == 'fr' ? 'topEtapes' : 'topEtapesAr'}>
+                    <h1 >{HowItWorks.title}</h1> <br />
                     <div id='etape' className='etape1'>
                         <span className='number-etape'>01.</span>
                         <h3 className='title-etape'>{HowItWorks.blogs.blog1} </h3>
@@ -94,14 +92,15 @@ revealContainers.forEach((container) => {
                 <img src='assets/WhyUs/how2.png' className='image-comment' id='Comment-image2' />
             </div>
             </div>
-
             <div className='TextHow'>
                 <p>
                     {HowItWorks.sous_title}
                 </p>
-                <Link to="/blogs">
-                <button className="btnToBlogs">{HowItWorks.btn}</button>
-                </Link>
+                        <Link to="/blogs">
+                <button className="btnSeeMoreServices btnToBlogs">
+                            {HowItWorks.btn}
+                    </button>
+                        </Link>
             </div>
         </div>
 

@@ -9,6 +9,7 @@ export const PresseTouilFr = {
             IconsPress : 'medi1tv.png',
             Nompresse : 'Medi1 TV',
             DescriptionPress : `TOUIL DIGICOM! TOUIL DIGICOM est bien plus qu'une simple entreprise de communication`,
+            img : 'medi1.jpg',
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
         {
@@ -16,13 +17,7 @@ export const PresseTouilFr = {
             IconsPress : 'alaoula.png',
             Nompresse : 'Al Aoula',
             DescriptionPress : `Al Aoula; formerly called RTM, is the first Moroccan public television channel. `,
-            lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
-        },
-        {
-            id : 3,
-            IconsPress : 'capradio.png',
-            Nompresse : 'Cap Radio',
-            DescriptionPress : `Cap Radio is a private Moroccan radio station based in Tangier.`,
+            img : 'snrt.jpeg',
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
     ]
@@ -45,13 +40,6 @@ export const PresseTouilAr = {
             IconsPress : 'alaoula.png',
             Nompresse : 'Al Aoula',
             DescriptionPress : `العولة؛ كانت تسمى سابقا RTM، هي أول قناة تلفزيونية عمومية مغربية. `,
-            lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
-        },
-        {
-            id : 3,
-            IconsPress : 'capradio.png',
-            Nompresse : 'Cap Radio',
-            DescriptionPress : `كاب راديو هي محطة إذاعية مغربية خاصة مقرها في طنجة.`,
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
     ]

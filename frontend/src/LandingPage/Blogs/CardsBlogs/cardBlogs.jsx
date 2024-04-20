@@ -26,10 +26,10 @@ export default function CardsBlogs() {
   return (
     <Fragment>
       <div className="parentCardsOfBlogs">
-        <h1 className={langue == 'fr' ? "h1Blogs" : "h1Blogs h1BlogsAr"}>{blogsData.title1}</h1>
+        <h1 className={langue == 'fr' ? "h1Blogs" : "h1Blogs h1BlogsAr"} data-aos="fade-right">{blogsData.title1}</h1>
         <div className="parentCardBlogs">
           {BlogsOld.map((item, index) => (
-            <div className="cardBlog" key={index}>
+            <div className="cardBlog"  data-aos="fade-left" key={index}>
               <img src={item.img} alt={item.title} />
               <div className="btnCardBlogs">
                 <button onClick={() => handleShowDetails(item)}>
@@ -51,7 +51,7 @@ export default function CardsBlogs() {
         <h1 className="h1BlogsNew">{blogsData.title2}</h1>
         <div className="parentCardBlogs">
           {BlogsNew.map((item, index) => (
-            <div className="cardBlog" key={index}>
+            <div className="cardBlog"  key={index} data-aos="fade-right">
               <img src={item.img} alt={item.title} />
               <div className="btnCardBlogs">
                 <button onClick={() => handleShowDetails(item)}>

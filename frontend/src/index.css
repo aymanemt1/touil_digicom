@@ -20,46 +20,38 @@
 
 }
 
-/* body { 
-    --sb-track-color: #e8451e;
-    --sb-thumb-color: #1b67b0;
-    --sb-size: 6px;
-} */
 
+body {
+  --sb-track-color: #1b67b0;
+  --sb-thumb-color: #f2f2f2;
+  --sb-size: 8px;
+}
 
 body::-webkit-scrollbar {
-    width: var(--sb-size);
-  }
-  
-  body::-webkit-scrollbar-track {
-    background-color: rgb(248, 249, 251);
-    border-radius: 0px;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(248, 249, 251);
+  width: var(--sb-size)
+}
 
-    border-radius: 3px;
-  }
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 2px;
   
-  @supports not selector(::-webkit-scrollbar) {
-    body {
-        scrollbar-color: var(--sb-thumb-color)
-                       var(--sb-track-color);
-    }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
   }
+}
+
 
 .App{
    background-color:rgb(250, 251, 252);
     font-family: "Raleway", sans-serif;
 }
 
-/* html::-webkit-scrollbar {
-  width: .5rem;
-  height: 0.01rem;
-}
-
-html::-webkit-scrollbar-thumb {
-  background: var(--blueTouil);
-  border-radius: 5rem;
-} */

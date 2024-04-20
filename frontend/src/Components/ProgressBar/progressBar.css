@@ -1,0 +1,27 @@
+:root {
+  --orangeTouil : #E8451E;
+  --orangeTouilShadow : #e8461e25;
+  --blueTouil : #1B67B0;
+  --cremaTouil : #F2F2F2;
+  --bgTouil :rgb(250, 251, 252);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: var(--blueTouil);
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 5px;
+    background-color: var(--blueTouil);
+  }
+  
+  .progress-bar {
+    height: 5px;
+    background-color: var(--orangeTouil);
+    width: 0%;
+  }

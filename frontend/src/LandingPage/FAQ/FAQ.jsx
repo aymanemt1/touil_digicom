@@ -29,10 +29,10 @@ export default function FAQ() {
   return (
     <Fragment>
     <div className="faq">
-      <h1 className="h1LandingPage h1FAQ">FAQ</h1>
+      <h1 className="h1LandingPage h1FAQ">{faq.title}</h1>
       <div className="FAQ-content">
         <div className="accordion">
-          <div className="accordion-item">
+          <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-1" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q1}</span>
               <span className="icon" aria-hidden="true"></span>
@@ -41,7 +41,7 @@ export default function FAQ() {
               <p>{faq.Responses.R1}</p>
             </div>
           </div>
-          <div className="accordion-item">
+          <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-2" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q2}</span>
               <span className="icon" aria-hidden="true"></span>
@@ -50,7 +50,7 @@ export default function FAQ() {
               <p>{faq.Responses.R2}</p>
             </div>
           </div>
-          <div className="accordion-item">
+          <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-3" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q3}</span>
               <span className="icon" aria-hidden="true"></span>
@@ -59,7 +59,7 @@ export default function FAQ() {
               <p>{faq.Responses.R3}</p>
             </div>
           </div>
-          <div className="accordion-item">
+          <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-4" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q4}</span>
               <span className="icon" aria-hidden="true"></span>
@@ -68,20 +68,21 @@ export default function FAQ() {
               <p>{faq.Responses.R4}</p>
             </div>
           </div>
-          <div className="accordion-item">
+          <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-5" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q5}</span>
               <span className="icon" aria-hidden="true"></span>
             </button>
-            <div className="accordion-content">
+            <div className="accordion-content" id="lastAccordionContent">
               <p>{faq.Responses.R5}</p>
             </div>
           </div>
         </div>
-        <div className="right-faq">
-          <img src="/assets/FAQ/faq.png" className="faq-img" alt="" />
-        </div>
+      <div className="colImgFAQ">
+        <img src="./assets/illustrationsRemoveBg/i18.png" />
       </div>
+      </div>
+
     </div>
     </Fragment>
   );

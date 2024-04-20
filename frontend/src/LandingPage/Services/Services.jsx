@@ -24,7 +24,7 @@ export default function Services() {
           </div>
       <div className="wrapperServices">
         <div className={langue == 'fr' ? "containerServices" : "containerServicesAr"}>
-          <input className="input" type="radio" name="slide" id="c1"  />
+          <input className="input" type="radio" name="slide" id="c1"  defaultChecked/>
           <label
             htmlFor="c1"
             className="cardServices"
@@ -45,7 +45,7 @@ export default function Services() {
               </div>
             </div>
           </label>
-          <input  className="input" type="radio" name="slide" id="c2" defaultChecked/>
+          <input  className="input" type="radio" name="slide" id="c2" />
           <label
             htmlFor="c2"
             className="cardServices"

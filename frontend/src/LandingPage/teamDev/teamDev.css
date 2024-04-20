@@ -1,0 +1,145 @@
+:root {
+  --orangeTouil: #e8451e;
+  --orangeTouilOpacity: #f83200bd;
+  --blueTouil: #1b67b0;
+  --blueTouilWhite: #217bd0;
+  --cremaTouil: #f2f2f2;
+}
+
+.parentTeamDev {
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.rowTeamDev {
+    display: flex;
+    gap: 1rem;
+}
+
+.colTeamDev {
+    display: flex;
+    width: 50%;
+    gap: 1rem;
+    background-color: rgb(255, 255, 255);
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 0.01rem solid black;
+    padding-right: 1rem;
+}
+
+.imgTeamDev img {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.ulTeamDev {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: -3rem;
+}
+
+
+.infoTeamDev h2{
+    font-size: 1.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.08rem solid rgba(115, 115, 115, 0.103);
+}
+
+.headline {
+    display: flex;
+    justify-content: space-between;
+}
+.headline h5 {
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.headline h5 i{
+    font-size: 1rem;
+}
+
+.badgeTeamDev {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 0.2rem 0.5rem;
+    margin-right: 1rem;
+}
+
+.messageDev span {
+    background-color : black;
+    margin-left: 1rem;
+    padding: 0.3rem;
+    border-top-right-radius:5px ;
+    border-top-left-radius:5px ;
+    color: white;
+}
+.messageDev span i:first-child {
+    margin-right: -0.3rem;
+}
+
+.messageDev p {
+    font-size: 0.6rem;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.ulTeamDev li a {
+    color: white;
+    border:0.1rem solid white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    padding: 0.2rem;
+    font-size:1rem;
+    transform: all .15s ;
+}
+
+.ulTeamDev li a:hover {
+    background-color: white;
+    color: black;
+}
+.ulTeamDev li a:active {
+    background-color:#e8451e;
+    color: black;
+}
+
+@media (max-width:860px) {
+    .rowTeamDev {
+        flex-direction: column;
+    }
+    .colTeamDev {
+        width: 100%;
+    }
+    .parentTeamDev {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (max-width:460px) {
+    .headline h5{
+        font-size: 0.6rem;
+    }
+    
+    #messageDev0 p{
+        font-size: 0.45rem;
+    }
+}

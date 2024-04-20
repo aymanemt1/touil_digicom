@@ -16,18 +16,18 @@ export default function ImagesBlogFirstSection() {
       <div className="parentBlogs">
         <div className="imagesSectionBlogs">
           <div className="parent">
-            <div className="div1"></div>
-            <div className="div2"></div>
-            <div className={langue == 'fr' ? "div3" : "div3 div3Ar"}>
+            <div className="div1" data-aos="fade-right"></div>
+            <div className="div2" data-aos="fade-left"></div>
+            <div className={langue == 'fr' ? "div3" : "div3 div3Ar"} >
                 <h4>{dataSection.title1}</h4>
                 <h1>{dataSection.title2}</h1>
             </div>
-            <div className="div4"></div>
-            <div className="div5"></div>
-            <div className="div6"></div>
-            <div className="div7"></div>
-            <div className="div8"></div>
-            <div className="div9"></div>
+            <div className="div4" data-aos="fade-down-left"></div>
+            <div className="div5" data-aos="fade-down"></div>
+            <div className="div6" data-aos="fade-up-right"></div>
+            <div className="div7" data-aos="fade-down-left"></div>
+            <div className="div8" ></div>
+            <div className="div9" data-aos="fade-up-left"></div>
           </div>
         </div>
       </div>

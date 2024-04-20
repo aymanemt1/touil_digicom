@@ -1,47 +1,47 @@
 import React, { Fragment, useContext, useEffect } from "react";
-import Navbar from "./Navbar/navbar";
 import "./LandingPage.css";
-import { Home } from "./Home/Home";
+import { Home } from "./Home/home";
 import Adn from "./Adn/Adn";
 import { WhyUs } from "./WhyUs/whyus";
-import { Footer } from "./Footer/footer";
 import { References } from "./References/References";
 import { Statistique } from "./Statistique/Statistique";
-import {HowItWorks} from "./HowItWorks/HowItWorks"
+import { HowItWorks } from "./HowItWorks/HowItWorks";
 import Services from "./Services/Services";
 import Video from "./Video/Video";
 import FAQ from "./FAQ/FAQ";
 import Devis from "./Devis/Devis";
-import { LangueContext } from "../Context/LangueContext";
-
-import {
-  Link as ScrollLink,
-  Element,
-  animateScroll as scroll,
-} from "react-scroll";
+import { Link as ScrollLink, Element, animateScroll as scroll, } from "react-scroll";
 
 export const LandingPage = () => {
   return (
     <Fragment>
       <div className="parentLandingPage">
-        <Home />
+        <Element name="home">
+          <Home />
+        </Element>
         <Element name="adn">
           <Adn />
         </Element>
-        <Element name="whyUs">
-        <WhyUs />
-        </Element>
+        {/* <Element name="whyUs">
+          <WhyUs />
+        </Element> */}
         <Statistique />
         <HowItWorks />
-        <Video />
-        <Services />
+        <Element name="video">
+          <Video />
+        </Element>
+        <Element name="services">
+          <Services />
+        </Element>
         <Element name="devis">
           <Devis />
         </Element>
         <Element name="faq">
           <FAQ />
         </Element>
-        <References />
+        <Element name="references">
+          <References />
+        </Element> 
       </div>
     </Fragment>
   );

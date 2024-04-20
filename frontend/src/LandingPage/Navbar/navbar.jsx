@@ -38,7 +38,7 @@ export default function Navbar({ link }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setToggleMenu(window.innerWidth < 644 ? false : true);
+      setToggleMenu(window.innerWidth < 743 ? false : true);
     };
 
     handleResize();
@@ -59,15 +59,32 @@ export default function Navbar({ link }) {
     <Fragment>
       <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"}>
         <ul className="ulBrandLogo">
-          <Link to="/" id="logo">
-            <li>
-              <img
-                src="/assets/Logo/logo4.png"
-                alt="Touil Digicom"
-                className="brandLogo"
-              />
-            </li>
-          </Link>
+          {isSpecialPath ? (
+            <Link to="/" id="logo">
+              <li>
+                <img
+                  src="/assets/Logo/logo4.png"
+                  alt="Touil Digicom"
+                  className="brandLogo"
+                />
+              </li>
+            </Link>
+          ) : (
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={1000}
+              className="scrollLinkHome"
+            >
+              <li>
+                <img
+                  src="/assets/Logo/logo4.png"
+                  alt="Touil Digicom"
+                  className="brandLogo"
+                />
+              </li>
+            </ScrollLink>
+          )}
         </ul>
         <ul className={toggleMenu ? "ulLinks active" : "ulLinks"}>
           {renderNavLinks}
@@ -78,7 +95,9 @@ export default function Navbar({ link }) {
               </Link>
             ) : (
               <ScrollLink to="devis" smooth={true} duration={2200}>
-                <button className="demandBtn">{Navbar.btn_devis}</button>
+                <button className="demandBtn btnSeeMoreServices">
+                  {Navbar.btn_devis}
+                </button>
               </ScrollLink>
             )}
             <div className="langParent">

@@ -1,39 +1,48 @@
+.coomment {  
+  margin: 6rem 1rem;
+  overflow-x: hidden;
+}
 
-    .coomment{
-        margin: 6rem 1rem;
-    }
-    .entite{
-        display: flex;
-    }
-    #etape{
-        border-radius: 25px;
-        width: 350px;
-        background: rgba(255,255,255,0.2);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.1);
-        
-      }
-      #etape:hover{
-        background: rgba(255,255,255,0.2);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.1);
-        cursor: pointer;
+.entite {
+  display: flex;
+}
 
-      }
-  
-      .topEtapes h1{
-        display: block;
-        width: 70%;
-        font-size: 33px;
-        margin: 1rem 12.5rem;
+#etape {
+  border-radius: 25px;
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+#etape:hover {
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+
+}
+
+.topEtapes h1 {
+  width: fit-content;
+  font-size: 33px;
+  text-align: end;
   filter: drop-shadow(0 0 5px var(--blueBTouilShadow));
-      }
-      
+}
 
-.topEtapes h1::before{
-  background-image: linear-gradient(12deg, rgb(232,69,30),rgb(232,69,30),rgb(251,145,37));
+.topEtapesAr h1 {
+  width: 100%;
+  font-size: 33px;
+  margin: 1rem 12.5rem;
+  filter: drop-shadow(0 0 5px var(--blueBTouilShadow));
+}
+
+
+.topEtapes h1::before {
+  background-image: linear-gradient(12deg, rgb(232, 69, 30), rgb(232, 69, 30), rgb(251, 145, 37));
   content: '';
   display: block;
   height: 4px;
@@ -41,95 +50,107 @@
   margin-bottom: 5px;
   border-radius: 3px;
 }
-    .etapes{
-      left: 33rem;
-      display: block;
-      width: 30rem;
-    }
-    .etape1{
-        margin-left: 3rem;
-        margin-top: 3rem;
-      }
-      .etape2{
-        margin-left: 18rem;
-        margin-top: 5rem;
-      }
-      .etape3{
-        margin-left: 18rem;
-        margin-top: 2rem;
-    }
-      .etape4{
-        margin-left: 3rem;
-        margin-top: 5rem;
-    }
-    .etape5{
-       margin-left: 18rem;
-       margin-top: 5rem;
-    }
-    .bottomEtapes{
-      justify-content: space-between;
-      display: flex;
-      margin-top: 4rem;
-    }
-    .number-etape{
-      color: #1B67B0;
-      font-size: 63px;
-       padding-left: 1rem;
-    }
-    .title-etape{
-    
-      width: 322px;
-      font-size: 23px;
-      text-align: left;
-      padding-left: 2rem;
-      padding-bottom: 1rem;
-      line-height: 30px;
-    }
-    
-    .reveal {
-      visibility: hidden;
-      position: relative;
-      width: 80%;
-      height: 80%;
-      max-width: 500px;
-      overflow: hidden;
-    }
 
-    .image-comment{
-      margin-top: 2rem;
-      width: 500px;
-      transform-origin: left;
-      object-fit: cover;
-      position: relative;
-    }
-    
+.etapes {
+  left: 33rem;
+  display: block;
+  width: fit-content;
+}
 
-    .TextHow{
-      margin: auto;
-    background-color: white;
-    padding: 3rem 0;
-    margin-top: 4rem;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 2rem;
-    }
-    .TextHow p{
-      margin: auto;
-      font-size: 19px;
-      text-align: center;
-      width: 490px;
-    
-    }
 
-    
-.btnToBlogs{
+.etape1 {
+  width: fit-content;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+.etape2 {
+  margin-left: 18rem;
+  margin-top: 5rem;
+}
+
+.etape3 {
+  margin-left: 18rem;
+  margin-top: 2rem;
+}
+
+.etape4 {
+  margin-left: 3rem;
+  margin-top: 5rem;
+}
+
+.etape5 {
+  margin-left: 18rem;
+  margin-top: 5rem;
+}
+
+.bottomEtapes {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 4rem;
+}
+
+.number-etape {
+  color: #ffffff;
+  font-size: 63px;
+  padding-left: 1rem;
+  background-image: repeating-linear-gradient(90deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, rgb(27, 103, 176), rgb(27, 103, 176));
+}
+
+.title-etape {
+  width: 322px;
+  font-size: 23px;
+  text-align: left;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  padding-bottom: 1rem;
+  line-height: 30px;
+  border-left: 0.2rem solid #1B67B0;
+}
+
+.reveal {
+  visibility: hidden;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.image-comment {
+  margin-top: 2rem;
+  width: 500px;
+  transform-origin: left;
+  object-fit: cover;
+  position: relative;
+}
+
+
+.TextHow {
+  margin: auto;
+  padding: 3rem 0;
+  background-image: repeating-linear-gradient(363deg, transparent 0px, transparent 3px, rgb(255, 255, 255) 3px, rgb(255, 255, 255) 32px), repeating-linear-gradient(421deg, transparent 0px, transparent 3px, rgb(255, 255, 255) 3px, rgb(255, 255, 255) 32px), linear-gradient(204deg, rgba(27, 103, 176, 0.19), rgba(155, 151, 247, 0), rgba(27, 103, 176, 0.19), rgba(247, 151, 175, 0), rgba(247, 210, 151, 0.18), rgba(232, 69, 30, 0.16), rgba(82, 82, 82, 0.15));
+  margin-top: 4rem;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.TextHow p {
+  margin: auto;
+  font-size: 19px;
+  text-align: center;
+  width: 490px;
+
+}
+
+
+.btnToBlogs {
   color: white;
   background-color: #1B67B0;
   border: none;
   padding: 0.8rem 0.6rem;
-  margin-top: 1.6rem;
-  margin-left: 0;
   text-align: center;
   font-size: 1rem;
   justify-content: center;
@@ -139,6 +160,9 @@
   cursor: pointer;
   width: 12rem;
   transition: all .1s;
+  margin: auto;
+  margin-top: 1rem;
+  text-decoration: underline #1B67B0;
 }
 
 
@@ -146,125 +170,156 @@
 .btnToBlogs:hover {
   animation: anim 1s infinite ease-in-out;
 }
-.btnToBlogs:active { 
- background-color: black;
+
+.btnToBlogs:active {
+  background-color: black;
   transform: scale(0.95);
 }
 
-    
-@media (max-width : 767px){
-  .coomment{
-    margin: 0;
+@media (max-width: 1025px) {
+  #etape {
+    border-radius: 25px;
+    width: fit-content;
 }
-  .coomment h2{
-    width: 100%;
+}
+
+
+@media (max-width : 767px) {
+  .coomment {
+    margin: 0;
+  }
+
+  .coomment h2 {
+    width: 80%;
     margin-top: 4rem;
     margin-left: 0;
     font-size: 28px;
     justify-content: center;
     text-align: center;
-}
-
-#etape{
-  border-radius: 25px;
-  width: 190px;
-  margin-left: 2.5rem;
-}
-.image-comment{
-  background: linear-gradient(19deg, rgb(232,69,30),rgba(250, 132, 22, 0.087),rgba(251, 201, 37, 0.096)), url('/public/assets/bgServices/marketing.jpg');
-
-width: 98%;
-  margin-left: 2rem;
-  margin-top: 2rem;
-}
-.etapes{
-  left: 0;
-  width: 10rem;
-}
-.entite{
-    display: block;
-}
-.bottomEtapes{
-  display: block;
-  width: 90%;
-  margin-top: 2rem;
-}
-.etape2{
-  margin-left: 3rem;
-}
-.etape1{
-  margin-left: 7rem;
-}
-
-.etape3{
-  margin-left: 7rem;
-  margin-top: 4rem;
-}
-.etape4{
-  margin-left: 7rem;
-  margin-top: 6rem;
-}
-.etape5{
-  margin-left: 7rem;
-  margin-top: 6rem;
-}
-
-.TextHow p{
-width: 90%;
-}
   }
 
-@media (max-width : 1025px){
-  .coomment{
-    margin-top: 3rem;
+  #etape {
+    border-radius: 25px;
+    width: 190px;
+    margin-left: 2.5rem;
+  }
+
+  .image-comment {
+    background: linear-gradient(19deg, rgb(232, 69, 30), rgba(250, 132, 22, 0.087), rgba(251, 201, 37, 0.096)), url('/public/assets/bgServices/marketing.jpg');
+
+    width: 98%;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  .etapes {
+    left: 0;
+    width: 10rem;
+  }
+
+  .entite {
+    display: block;
+  }
+
+  .bottomEtapes {
+    display: block;
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .etape2 {
+    margin-left: 3rem;
+  }
+
+  .etape1 {
+    margin-left: 7rem;
+  }
+
+  .etape3 {
+    margin-left: 7rem;
+    margin-top: 4rem;
+  }
+
+  .etape4 {
+    margin-left: 7rem;
+    margin-top: 6rem;
+  }
+
+  .etape5 {
+    margin-left: 7rem;
+    margin-top: 6rem;
+  }
+
+
+  .TextHow p {
+    width: 90%;
+  }
 }
-  .coomment h2{
+
+
+
+
+@media (max-width : 1025px) {
+  .coomment {
+    margin-top: 3rem;
+  }
+
+  .coomment h2 {
     width: 100%;
     margin-top: 4rem;
     margin-left: 0;
     font-size: 34px;
     justify-content: center;
     text-align: center;
-}
-
-#etape{
-  border-radius: 25px;
-  width: 400px;
-}
-.image-comment{
-  width: 98%;
-
-  margin-left: 2rem;
-}
-.etapes{
-  left: 0;
-  width: 10rem;
-}
-.entite{
-    display: block;
-}
-.bottomEtapes{
-  display: flex;
-  flex-direction: column-reverse;
-  width: 95%;
-}
-.etape1{
-  margin-left: 7rem;
-}
-.etape2{
-  margin-left: 7rem;
-}
-.etape3{
-  margin-left: 7rem;
-  margin-top: 4rem;
-}
-.etape4{
-  margin-left: 7rem;
-  margin-top: 6rem;
-}
-.etape5{
-  margin-left: 7rem;
-  margin-top: 6rem;
-}
-
   }
+
+  #etape {
+    border-radius: 25px;
+    width: 400px;
+  }
+
+  .image-comment {
+    width: 98%;
+
+    margin-left: 2rem;
+  }
+
+  .etapes {
+    left: 0;
+    width: fit-content;
+  }
+
+  .entite {
+    display: block;
+  }
+
+  .bottomEtapes {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 95%;
+  }
+
+  .etape1 {
+    margin-left: 7rem;
+  }
+
+  .etape2 {
+    margin-left: 7rem;
+  }
+
+  .etape3 {
+    margin-left: 7rem;
+    margin-top: 4rem;
+  }
+
+  .etape4 {
+    margin-left: 7rem;
+    margin-top: 6rem;
+  }
+
+  .etape5 {
+    margin-left: 7rem;
+    margin-top: 6rem;
+  }
+
+}

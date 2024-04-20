@@ -1,0 +1,49 @@
+:root {
+  --orangeTouil : #E8451E;
+  --blueTouil : #1B67B0;
+  --blueTouilShadow : #1b68b057;
+  --orangeTouilShadow : #e8461e72;
+  --cremaTouil : #F2F2F2;
+}
+
+.scroll-to-top {
+  background-color: var(--orangeTouil);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 3rem;
+    transition: all 0.2s;
+    animation: fadeInUp 0.2s ease-out; 
+    z-index: 20;
+  }
+
+  .scroll-to-top:active{
+    color: #ff5e00;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .scroll-to-top.visible {
+    display: block;
+  }
+  
+
+.bx-arrow-to-top {
+  font-size: 1.5rem;
+}
