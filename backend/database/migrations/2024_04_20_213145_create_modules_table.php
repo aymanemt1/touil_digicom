@@ -11,20 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formations', function (Blueprint $table) {
+        Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->string('titre_fr');
-            $table->string('titre_ar')->default('');
-            $table->text('description_fr');
-            $table->text('description_ar')->default('');
+            $table->string('titre_ar');
             $table->integer('duree');
-            $table->dateTime('date_debut');
-            $table->dateTime('date_fin');
-            $table->integer('capacite')->default(0);
-            $table->string('cover');
-            $table->string('affiche');
+            $table->foreignId('formateur_id')->nullable()->constrained('formateurs')->onDelete('set null');
+            $table->foreignId('formation_id')->nullable()->constrained('formations')->onDelete('cascade'); 
             $table->decimal('prix', 10, 2)->default(0.00);
-            $table->string('ville');
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formations');
+        Schema::dropIfExists('modules');
     }
 };
