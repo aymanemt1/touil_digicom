@@ -9,10 +9,17 @@ export const Translate = {
           adress:'adress',
           Téléphone:'Téléphone',
           nom:'Nom',
-          prenom:'Email',
-          email:'E-mail',
+          prenom:'Prenom',
+          email:'Email',
           msg:'Votre message',
           btn:'Envoyer',
+          errors:{
+            nom:['Le nom est requis','Le nom ne doit pas contenir de chiffres'],
+            prenom:['Le prénom est requis','Le prénom ne doit pas contenir de chiffres'],
+            email:['L\'email est requis','L\'email doit être valide'],
+            message_contact:['Le message de contact est requis']
+        }
+        
         },
         {
             id: "ar",
@@ -27,6 +34,13 @@ export const Translate = {
             email:'بريد إلكتروني',
             msg:'رسالتك',
             btn:'ارسل ',
+            errors:{
+              nom:['الاسم مطلوب','الاسم لا يجب أن يحتوي على أرقام'],
+              prenom:['الاسم الأول مطلوب','الاسم الأول لا يجب أن يحتوي على أرقام'],
+              email:['البريد الإلكتروني مطلوب','يجب أن يكون البريد الإلكتروني صالحًا'],
+              message_contact:['رسالة الاتصال مطلوبة']
+          }
+          
 
   
         },

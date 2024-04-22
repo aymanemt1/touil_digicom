@@ -1,7 +1,9 @@
-import { Fragment, useContext, useRef } from "react";
+import { Fragment, useContext, useRef, useState } from "react";
 import { SectionTextTranslate } from './sectionText_Translate';
 import './sectionText.css'
 import { LangueContext } from "../../../Context/LangueContext";
+import axios from "axios";
+import { Alert } from "../../../Components/Alert/Alert";
 
 export default function SectionText(){
 
@@ -9,18 +11,55 @@ export default function SectionText(){
 
     
     const sectionData = SectionTextTranslate.sectionText.find(item => item.id == langue);
-    console.log(sectionData)
+ 
+    const [Email,setEmail] = useState('')
+    const [Errors,setErrors] = useState({})
+    const [responsemessage,setresponsemessage] = useState("")
+ 
+     
+    
+    const handleChange = (e) => {
+        setEmail(e.target.value);
+        setErrors({ ...Errors, [e.target.name]: '' });
+
+    };
 
 
-    const emailRef = useRef();
+    
+    const validateForm = () => {
 
-    function handleSubmit(e){
-        e.preventDefault();
-        const formData = {
-            email : emailRef.current.value,
+        const validationErrors = {};
+        if (Email.trim() === '') {
+            validationErrors.Email = "L\'email est requis";
+        } else if (!/\S+@\S+\.\S+/.test(Email)) {
+        validationErrors.Email = "L\'email doit être valide";
         }
-    }
+  
+        setErrors(validationErrors);
+  
+        return Object.keys(validationErrors).length === 0;
+    }; 
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    if (!validateForm()) {
+      
+        return; 
+    }
+    const isFormValid = validateForm();
+
+    if (isFormValid) {
+      setresponsemessage('E-mail envoyé avec succès')
+    }
+    try {
+        const response = await axios.post('http://127.0.0.1:8000/api/subscribe', {Email});
+        setEmail('');
+        console.log(response)
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+  }
 
     return (
         <Fragment>
@@ -32,11 +71,18 @@ export default function SectionText(){
                 </div>
                 <div className={langue == 'fr' ? "rowinputsSectionText" : "rowinputsSectionText rowinputsSectionTextAr"}>
                     <form onSubmit={handleSubmit}>
-                        <input type="email" placeholder={sectionData.inputEmail} />
-                        <input type="submit" value={sectionData.inputSubmit} id="submitSectionText" ref={emailRef}/>
+                        <input type="text" placeholder={sectionData.inputEmail} onChange={handleChange} name="email_subscribe" value={Email}/>
+                        
+                        <input type="submit" value={sectionData.inputSubmit} id="submitSectionText"/>
+
                     </form>
+                        <div>
+{Errors.Email && <span  className='errorMessage'>{Errors.Email} <i className='bx bxs-error'></i></span>} 
+
+                        </div>
                 </div>
             </div>
+            { responsemessage && <Alert msg={responsemessage} />}
 
         </Fragment>
     )

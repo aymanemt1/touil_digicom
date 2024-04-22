@@ -3,7 +3,7 @@ import "./Video.css";
 
 const Video = () => {
   return (
-    <div className="parentVideo">
+    <div className="parentVideo" data-aos="fade-up">
       <div className="video">
         <video loop muted autoPlay playsInline>
           <source src="assets/video/V2.mp4" type="video/mp4" />

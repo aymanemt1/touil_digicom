@@ -1,9 +1,9 @@
 :root {
-  --orangeTouil : #E8451E;
-  --orangeTouilOpacity : #f83200bd;
-  --blueTouil : #1B67B0;
-  --blueTouilWhite : #217bd0;
-  --cremaTouil : #F2F2F2;
+  --orangeTouil: #E8451E;
+  --orangeTouilOpacity: #f83200bd;
+  --blueTouil: #1B67B0;
+  --blueTouilWhite: #217bd0;
+  --cremaTouil: #F2F2F2;
 }
 
 .faq {
@@ -40,7 +40,7 @@
 
 .accordion .accordion-item:not(:last-child) {
   border-bottom: 2px solid #55555577;
-  }
+}
 
 #lastAccordionContent {
   background-color: #fafbfc2f;
@@ -185,8 +185,7 @@
   }
 }
 
-@media (max-width:1000px) {
-
+@media (max-width:1030px) {
   .colImgFAQ {
     display: none;
   }

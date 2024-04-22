@@ -58,7 +58,7 @@
     width: 80vw;
     height: 63vh;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: start;
 }
 
@@ -282,6 +282,9 @@ input:checked + label .description {
     }
     .description p{
         font-size: 0.4rem;
+    }
+    .wrapperServices .containerServicesAr {
+        flex-wrap: wrap;
     }
 }
 

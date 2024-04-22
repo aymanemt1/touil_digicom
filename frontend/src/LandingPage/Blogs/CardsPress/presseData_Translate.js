@@ -8,7 +8,7 @@ export const PresseTouilFr = {
             id : 1,
             IconsPress : 'medi1tv.png',
             Nompresse : 'Medi1 TV',
-            DescriptionPress : `TOUIL DIGICOM! TOUIL DIGICOM est bien plus qu'une simple entreprise de communication`,
+            DescriptionPress : `Notre CEO a eu le privilège de participer à l'émission 'مغرب التنمية' sur Medi1 TV, animée par la talentueuse journaliste Asmaa BACHRI. Son intervention spéciale a porté sur le rôle crucial des jeunes dans le développement. Une discussion inspirante qui souligne notre engagement envers la jeunesse et l'avenir du Maroc. `,
             img : 'medi1.jpg',
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
@@ -16,7 +16,7 @@ export const PresseTouilFr = {
             id : 2,
             IconsPress : 'alaoula.png',
             Nompresse : 'Al Aoula',
-            DescriptionPress : `Al Aoula; formerly called RTM, is the first Moroccan public television channel. `,
+            DescriptionPress : `"Notre fondateur a eu l'honneur de partager son expertise lors d'une intervention spéciale sur l'entreprenariat et l'écosystème avec la SNRT. Une opportunité de contribuer au dialogue sur l'avenir économique du Maroc et de soutenir les entrepreneurs émergents. `,
             img : 'snrt.jpeg',
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
@@ -32,14 +32,14 @@ export const PresseTouilAr = {
             id : 1,
             IconsPress : 'medi1tv.png',
             Nompresse : 'Medi1 TV',
-            DescriptionPress : `تويل ديجيكوم! TOUIL DIGICOM هي أكثر من مجرد شركة اتصالات`,
+            DescriptionPress : `حظي مديرنا التنفيذي بشرف المشاركة في برنامج "مغرب التنمية" على قناة Medi1 TV، والذي استضافته الصحفية الموهوبة أسماء البشري. وركزت مداخلته الخاصة على الدور الحاسم للشباب في التنمية. مناقشة ملهمة تسلط الضوء على التزامنا تجاه الشباب ومستقبل المغرب.`,
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
         {
             id : 2,
             IconsPress : 'alaoula.png',
             Nompresse : 'Al Aoula',
-            DescriptionPress : `العولة؛ كانت تسمى سابقا RTM، هي أول قناة تلفزيونية عمومية مغربية. `,
+            DescriptionPress : `لقد حظي مؤسسنا بشرف تبادل خبراته خلال مداخلة خاصة حول ريادة الأعمال والنظام البيئي مع SNRT، وهي فرصة للمساهمة في الحوار حول المستقبل الاقتصادي للمغرب ودعم رواد الأعمال الناشئين.`,
             lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
         },
     ]

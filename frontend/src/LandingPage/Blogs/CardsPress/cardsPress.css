@@ -58,13 +58,14 @@
 }
 
 .cardPress p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: rgb(69, 69, 69);
     margin: 0.5rem 0.6rem;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    /* text-overflow: ellipsis; */
     width: 95%;
+    height: 70px;
 }
 
 
@@ -115,9 +116,10 @@
     .cardsPress {
         width: 100%;
         gap: 2rem;
+        flex-direction: column;
     }
     .cardPress {
-        width: 40%;
+        width: 80%;
     }
     .cardPress img {
         width: 80px;
@@ -125,10 +127,6 @@
     .cardPress a {
         font-size: 0.7rem;
     }
-}
-
-
-@media (max-width : 636px){
     .PresseTitle {
         position: relative;
         right: 2rem;

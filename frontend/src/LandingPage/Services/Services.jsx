@@ -18,11 +18,11 @@ export default function Services() {
 
   return (
     <Fragment>
-          <div className={langue == 'fr' ? "titleSectionServices" : "titleSectionServices titleSectionServicesAr"}>
+          <div className={langue == 'fr' ? "titleSectionServices" : "titleSectionServices titleSectionServicesAr"}  data-aos="fade-up">
             <h1 className='h1LandingPage'>{Services.title}</h1>
             <p>{Services.text}</p>
           </div>
-      <div className="wrapperServices">
+      <div className="wrapperServices" data-aos="fade-up">
         <div className={langue == 'fr' ? "containerServices" : "containerServicesAr"}>
           <input className="input" type="radio" name="slide" id="c1"  defaultChecked/>
           <label

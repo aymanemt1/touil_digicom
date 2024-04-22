@@ -1,0 +1,25 @@
+.parentNotFound {
+    width: 80vw;
+    height: 70vh;
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 4rem;
+}
+
+.notFound h1 {
+    font-size: 10rem;
+}
+
+.notFound button i {
+    color: white;
+    text-decoration: none;
+}

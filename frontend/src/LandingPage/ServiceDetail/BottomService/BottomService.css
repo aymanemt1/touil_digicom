@@ -1,0 +1,75 @@
+:root {
+    --orangeTouil : #E8451E;
+    --blueTouil : #1B67B0;
+    --blueTouilShadow : #1b68b057;
+    --orangeTouilShadow : #e8461e72;
+    --cremaTouil : #F2F2F2;
+} 
+
+.parentBottomServices {
+    width: 83vw;
+    height: 300px;
+    margin: auto;
+    background-size: cover;
+    background-position: 20px;
+    background-image:linear-gradient(135deg, rgba(26, 19, 1, 0.46),rgb(133, 39, 16)), url('/public/assets/bgServices/bottomServices.jpg');
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.bottomService p {
+    font-size: 0.9rem;
+    text-align: center;
+    color: rgb(255, 204, 0);
+}
+
+.bottomService h2 {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.contactServices {
+    margin: 0.5rem 0rem;
+    text-align: center;
+}
+.contactServices h1{
+    text-align: center;
+}
+.bottomService h6{
+    text-align: center;
+    color: rgb(255, 204, 0);
+    font-weight: 400;
+}
+.bottomService button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 1rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-left: 0.4rem;
+    text-decoration: none;
+    transition: all .2s ease-in;
+    position: relative;
+}
+.bottomService button i{
+    background-color: #fd4c20;
+    color: white;
+    padding: 0.2rem;
+    margin-left: 0.4rem;
+    font-size: 2rem;
+}
+
+
+.bottomService button:hover {
+    background-color: #fd4c20;
+    color: white;
+}

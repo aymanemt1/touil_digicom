@@ -5,7 +5,6 @@ import { Translate } from "./homeTranslate";
 import { LangueContext } from "../../Context/LangueContext";
 import { Link as ScrollLink } from "react-scroll";
 
-
 export const Home = () => {
   function handleScroll() {
     const scrollTarget = document.getElementById("scrolbtnFn");
@@ -25,23 +24,23 @@ export const Home = () => {
           <img
             src="./assets/illustrationsRemoveBg/Vector6.png"
             className="vector1"
-          /> 
+          />
           <img
             src="./assets/illustrationsRemoveBg/Vector7.png"
             className="vector2"
           />
           <h3>{Home.sous_title}</h3>
-          <h1 id={langue == 'ar' ? 'titleHomeArabic' : ''}>{Home.title}</h1>
+          <h1 id={langue == "ar" ? "titleHomeArabic" : ""}>{Home.title}</h1>
           <p>{Home.text}</p>
           <div className="parentBtnsV2">
-              <ScrollLink to="services" smooth={true} duration={2000} >
-            <button className="btnSeeMoreServices">
-                {Home.btn} <i className='bx bxs-down-arrow-circle'></i>
-            </button>
-              </ScrollLink>
+            <ScrollLink to="services" smooth={true} duration={2000}>
+              <button className="btnSeeMoreServices">
+                {Home.btn} <i className="bx bxs-down-arrow-circle"></i>
+              </button>
+            </ScrollLink>
             <Link to="/">
               <button
-              title="Scroll Down"
+                title="Scroll Down"
                 className="btnScrollV2"
                 id="scrolbtnFn"
                 onClick={handleScroll}

@@ -7,7 +7,7 @@ export const Footer = () => {
     <div className="footer" data-aos="fade-up" >
       <div className="footer-content">
         <div className="divFooterBtnDev">
-        <img src="assets/Logo/logo3.png" className="footer-logo" alt="" />
+        <img src="/assets/Logo/logo3.png" className="footer-logo" alt="" />
         <Link to='/team-dev'>
           <button>
           <i className='bx bx-link-external' ></i>

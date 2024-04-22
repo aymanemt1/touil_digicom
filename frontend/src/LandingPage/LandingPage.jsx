@@ -22,9 +22,9 @@ export const LandingPage = () => {
         <Element name="adn">
           <Adn />
         </Element>
-        {/* <Element name="whyUs">
+        <Element name="whyUs">
           <WhyUs />
-        </Element> */}
+        </Element>
         <Statistique />
         <HowItWorks />
         <Element name="video">

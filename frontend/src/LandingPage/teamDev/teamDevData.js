@@ -6,7 +6,7 @@ export const teamDevData = {
             img : "youssef.jpg",
             hideline : 'Développeur full-stack',
             role : 'Stagiaire',
-            message : `Ce fut vraiment un plaisir de collaborer avec cette talentueuse équipe de développeurs et l'équipe ADN, dirigée par l'exceptionnel CEO M. Omar. Ensemble, nous avons créé quelque chose de remarquable avec le site Touille Digicom. Dans l'attente de futurs succès !`,
+            message : `Ce fut vraiment un plaisir de collaborer avec cette talentueuse équipe de développeurs et l'équipe ADN, dirigée par l'exceptionnel CEO M. Omar. Ensemble, nous avons créé quelque chose de remarquable avec le site TOUIL DIGICOM. Dans l'attente de futurs succès !`,
             socialMedia : {
                 instgram : 'https://www.instagram.com/youcef.talibi/',
                 whatsapp : 'http://Wa.me/212619388562',
@@ -19,7 +19,7 @@ export const teamDevData = {
             img : "ayman.jpg",
             hideline : 'Développeur full-stack',
             role : 'Stagiaire',
-            message : `C'était vraiment enrichissant de travailler en collaboration avec cette équipe de développeurs talentueux et l'équipe ADN, sous une direction remarquable. Ensemble, nous avons réalisé quelque chose d'extraordinaire avec le site Touille Digicom. J'espère sincèrement que cela augure de nombreux succès à venir !`,
+            message : `C'était vraiment enrichissant de travailler en collaboration avec cette équipe de développeurs talentueux et l'équipe ADN, sous une direction remarquable. Ensemble, nous avons réalisé quelque chose d'extraordinaire avec le site TOUIL DIGICOM. J'espère sincèrement que cela augure de nombreux succès à venir !`,
             socialMedia : {
                 instgram : 'https://www.instagram.com/youcef.talibi/',
                 whatsapp : 'http://Wa.me/212718788365',
@@ -45,7 +45,7 @@ export const teamDevData = {
             img : "marwa.jpg",
             hideline : 'Développeur full-stack',
             role : 'Stagiaire',
-            message : `Ce fut vraiment un plaisir de collaborer avec cette talentueuse équipe de développeurs et l'équipe ADN, dirigée par l'exceptionnel M. Omar. Ensemble, nous avons créé quelque chose de remarquable avec le site Touille Digicom. Dans l'attente de futurs succès !`,
+            message : `Un grand merci à toute l'équipe pour cette aventure incroyable ! Ensemble, stagiaires et membres de l'équipe ADN, sous la direction inspirante de M. Omar Touil, avons créé le fabuleux site Touil Digicom. Et maintenant, place à de nouveaux défis et à encore plus de succès !`,
             socialMedia : {
                 instgram : 'https://www.instagram.com/marwa_mazini?igsh=MWE1azdwY29vaHk4Mw==',
                 whatsapp : 'http://Wa.me/212771467267',

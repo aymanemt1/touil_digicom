@@ -20,38 +20,11 @@
 
 }
 
-
-body {
-  --sb-track-color: #1b67b0;
-  --sb-thumb-color: #f2f2f2;
-  --sb-size: 8px;
-}
-
-body::-webkit-scrollbar {
-  width: var(--sb-size)
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 0px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 2px;
-  
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
-}
-
-
 .App{
    background-color:rgb(250, 251, 252);
     font-family: "Raleway", sans-serif;
 }
 
+img {
+  pointer-events: none;
+}

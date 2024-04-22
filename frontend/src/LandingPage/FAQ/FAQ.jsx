@@ -29,7 +29,7 @@ export default function FAQ() {
   return (
     <Fragment>
     <div className="faq">
-      <h1 className="h1LandingPage h1FAQ">{faq.title}</h1>
+      <h1 className="h1LandingPage h1FAQ"  data-aos="fade-up">{faq.title}</h1>
       <div className="FAQ-content">
         <div className="accordion">
           <div className="accordion-item" data-aos="fade-up" duration='2000'>
@@ -78,7 +78,7 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-      <div className="colImgFAQ">
+      <div className="colImgFAQ" data-aos="fade-up">
         <img src="./assets/illustrationsRemoveBg/i18.png" />
       </div>
       </div>

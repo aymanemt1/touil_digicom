@@ -1,13 +1,11 @@
 
 
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './whyus.css'
 import { LangueContext } from '../../Context/LangueContext';
 import { Translate } from './Whyustranslate';
 
 export const WhyUs = () => {
-
-
 
   useEffect(() => {
     const spaceHolder = document.querySelector('.space-holder');
@@ -33,19 +31,15 @@ export const WhyUs = () => {
     });
   }, [])
 
-
-
   const { langue } = useContext(LangueContext)
 
   const WhyUs = Translate.WhyUs.find((lang) => (
     lang.id == langue
   ))
 
-
   return (
-
     <>
-      <section className="container-whyus">
+      <section className="container-whyus" >
         <div className="space-holder">
           <div className="sticky">
             <div className="horizontal">
@@ -56,7 +50,7 @@ export const WhyUs = () => {
                     <div className="text-container">
                       <div className="text-wrapper">
                         <div className="title-container">
-                          <div className="title-item active">{WhyUs.title}</div>
+                          <div className="title-item active">{WhyUs.title} </div>
                         </div>
                       </div>
                     </div>
@@ -64,18 +58,14 @@ export const WhyUs = () => {
                       <div className="whyus-image"></div>
                     </div>
                   </div>
-                  <div className='section2'>
-                    <h1 className='section1-title'>{WhyUs.section1_title}</h1>
-                    <p className='section1-text'>{WhyUs.section1_text}</p>
-                  </div>
 
                 </article>
                 <article className="sample-card">
                   <div className='section-3'>
                     <div className='Parentellipse' >
-                      <div className="ellipses-container">
+                      <div className="ellipses-container" >
                         <img src="assets/WhyUs/icon1.png" className='img' alt="" />
-                        <div className="ellipses ellipses__outer--thin">
+                        <div className="ellipses ellipses__outer--thin" >
 
                           <div className="ellipses ellipses__orbit"></div>
                         </div>

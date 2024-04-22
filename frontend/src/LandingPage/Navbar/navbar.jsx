@@ -1,4 +1,4 @@
-import { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { LangueContext } from "../../Context/LangueContext";
@@ -52,15 +52,18 @@ export default function Navbar({ link }) {
 
   const location = useLocation();
 
-  const isSpecialPath =
-    location.pathname === "/blogs" || location.pathname === "/contact";
+  const isSpecialPath = location.pathname !== "/" ;
+
+  const closeMenu = () => {
+    setToggleMenu(false);
+  };
 
   return (
     <Fragment>
-      <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"}>
+      <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"} >
         <ul className="ulBrandLogo">
           {isSpecialPath ? (
-            <Link to="/" id="logo">
+            <Link to="/" id="logo" onClick={closeMenu}>
               <li>
                 <img
                   src="/assets/Logo/logo4.png"
@@ -75,6 +78,7 @@ export default function Navbar({ link }) {
               smooth={true}
               duration={1000}
               className="scrollLinkHome"
+              onClick={closeMenu}
             >
               <li>
                 <img
@@ -90,11 +94,11 @@ export default function Navbar({ link }) {
           {renderNavLinks}
           <div className="parentBtns">
             {isSpecialPath ? (
-              <Link to="/">
+              <Link to="/" onClick={closeMenu}>
                 <button className="demandBtn">{Navbar.btn_devis}</button>
               </Link>
             ) : (
-              <ScrollLink to="devis" smooth={true} duration={2200}>
+              <ScrollLink to="devis" smooth={true} duration={2200} onClick={closeMenu}>
                 <button className="demandBtn btnSeeMoreServices">
                   {Navbar.btn_devis}
                 </button>

@@ -28,8 +28,8 @@
 
 .topEtapes h1 {
   width: fit-content;
-  font-size: 33px;
   text-align: end;
+  margin-left: 1rem;
   filter: drop-shadow(0 0 5px var(--blueBTouilShadow));
 }
 
@@ -90,11 +90,45 @@
   margin-top: 4rem;
 }
 
+.pattermHowItWork {
+  background-image: repeating-radial-gradient(circle at center center, rgb(250,251,252) 0px, rgb(250,251,252) 5px,transparent 5px, transparent 7px),linear-gradient(135deg, rgb(27,103,176) 0%,rgb(27,103,176) 39%); background-size: 33px 33px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+}
+.patternHowITWorkReveal {
+  background-image: repeating-radial-gradient(circle at center center, rgb(250,251,252) 0px, rgb(250,251,252) 5px,transparent 5px, transparent 7px),linear-gradient(135deg, rgb(27,103,176) 0%,rgb(27,103,176) 39%); background-size: 33px 33px;
+  width: 100px;
+  height: 150px;
+  margin-left: 70%;
+  margin-top: -7rem;
+  position: relative;
+  z-index: 21;
+}
+.circleHowItWorkPattern {
+  border-radius: 50%;
+  border: 0.1rem solid #1B67B0;
+  background-color: transparent;
+  width: 110px;
+  height: 110px;
+  margin-left: 73%;
+  margin-top: -5.5rem;
+  position: relative;
+  z-index: 20;
+}
+
+
 .number-etape {
   color: #ffffff;
   font-size: 63px;
   padding-left: 1rem;
+  background-size: 400% 400%;
   background-image: repeating-linear-gradient(90deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, rgba(245, 245, 245, 0.17) 0px, rgba(245, 245, 245, 0.17) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, rgb(27, 103, 176), rgb(27, 103, 176));
+  animation: anim 30s infinite ease-in-out;
+  position: relative;
+  z-index: 20;
 }
 
 .title-etape {
@@ -174,6 +208,17 @@
 .btnToBlogs:active {
   background-color: black;
   transform: scale(0.95);
+}
+
+
+.circleHowItWork {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: #80bbff33;
+  border-radius: 50%;
+  filter: blur(20px);
+  margin-top: -3rem;
 }
 
 @media (max-width: 1025px) {
