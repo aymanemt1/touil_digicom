@@ -9,7 +9,7 @@
 }
 
 .parentSectionText {
-    width: 100vw;
+    width: 100%;
     background-image: repeating-linear-gradient(363deg, transparent 0px, transparent 3px, rgb(255, 255, 255) 3px, rgb(255, 255, 255) 32px), repeating-linear-gradient(421deg, transparent 0px, transparent 3px, rgb(255, 255, 255) 3px, rgb(255, 255, 255) 32px), linear-gradient(204deg, rgba(27, 103, 176, 0.19), rgba(155, 151, 247, 0), rgba(27, 103, 176, 0.19), rgba(247, 151, 175, 0), rgba(247, 210, 151, 0.18), rgba(232, 69, 30, 0.16), rgba(82, 82, 82, 0.15));
     padding: 2rem;
     margin: 6rem 0;

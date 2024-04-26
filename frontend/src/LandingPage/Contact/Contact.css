@@ -1,6 +1,7 @@
 .contact{
-  margin-bottom: 5rem;
+  padding-bottom: 8rem;
   background-color: white;
+
 
 }.contact-header{
   background-color: rgb(248, 249, 251);
@@ -10,7 +11,8 @@
     justify-content: space-between;
 }
 .contact-title{
- display: block;
+  color: #1B67B0;
+  display: block;
 }
 .contact-title h2{
  width: 300px;
@@ -36,29 +38,36 @@ line-height: 26px;
     justify-content: space-evenly;
     width: 100%;
     padding: 0 11rem;
+
     margin-top: 3rem;
 }
-.iconemail{
-  width: 200px;
-  height: 200px;
-  color: red;
+.contact-info i{
+  color: #1B67B0;
+
 }
+
 .contact-map{
     display: flex;
-  background-color: #1B67B0;
-  height:28rem ;
+ height: 70vh;
   margin: 2rem auto;
     width: 71%;
-    margin-top: 5rem;
-    padding-bottom: 5rem;
     justify-content: center;
 }
 #after-validation{
   height:34rem ;
 
 }
+#after-validation .contact-forms{
+  height:34rem ;
+
+}
 .contact-forms{
-  color: white;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 60px 0px;
+
+color: #1B67B0;
+background-color:rgb(250, 251, 252);
+height: auto;
+border-radius: 10px;
   padding: 0.7rem 4rem;
 }
 
@@ -75,18 +84,23 @@ line-height: 26px;
   width: 340px;
   margin: 1.2rem 0 0.6rem 0;
   border: none;
-  color: white;
-  border-bottom: 1px solid #ffffff;
+  color: #1B67B0;
+  border-bottom: 1px solid #1B67B0;
   background: transparent;
 
 }
-
+.wave-group input[type=text]::placeholder,.wave-group option::placeholder{
+  color: #1B67B0;
+  font-weight: 600;
+ 
+ }
+ 
 .wave-group .input-contact:focus {
   outline: none;
 }
 
 .wave-group .label {
-  color: #ffffff;
+  color: #1B67B0;
   font-size: 18px;
   opacity: 0;
   font-weight: normal;
@@ -99,15 +113,11 @@ line-height: 26px;
 
 .errorMessage{
   color: red;
-  background-color: white;
-  padding: 0.2rem;
+  width: 250px;
   border-radius: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 } 
-::placeholder {
-  color: #ffffff; 
 
-}
 
 .contact-button {
     appearance: button;
@@ -170,7 +180,7 @@ line-height: 26px;
 .map{
   opacity: 0.8;
   width: 27rem;
-  height:28rem ;
+  height:27rem ;
 }
 
 #Map-After{
@@ -226,8 +236,14 @@ text-align: center;
   padding-left: 1rem;
   padding-bottom: 2rem;
   width: 100%;
+  height: auto;
 
 }
+.errorMessage{
+  color: red;
+  width: 150px;
+  margin-left: 1rem;
+} 
 
 
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./Servicedetail.css";
 import { servicedata } from "./ServicesData";
@@ -7,11 +7,10 @@ import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { FormationCard } from "./FormationCard/FormationCard";
 import { BottomService } from "./BottomService/BottomService";
+import { LangueContext } from "../../Context/LangueContext";
 
 export const Servicedetail = () => {
   const { id } = useParams();
-
-  const service = servicedata.find((department) => department.id == id);
 
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -59,7 +58,7 @@ export const Servicedetail = () => {
       images,
       {
         duration: images.length - 1,
-        xPercent: -200 * (images.length - 1),
+        xPercent: -260 * (images.length - 1),
       },
       0
     );
@@ -78,12 +77,27 @@ export const Servicedetail = () => {
             toggleActions: "play reverse play reverse",
             trigger: ".pin-spacer",
             start: "top 20%",
-            end: "bottom 0",
+            end: "top 20%",
           },
         }
       );
     });
   }, []);
+
+
+const { langue } = useContext(LangueContext)
+
+let filteredServices = [];
+
+Object.keys(servicedata).forEach(serviceKey => {
+  const service = servicedata[serviceKey];
+  const foundLang = service.langs.find(langObj => langObj.lang === langue);
+  if (foundLang) {
+    filteredServices.push(foundLang);
+  }
+});
+
+const service = filteredServices.find(service => service.id == id);
 
   return (
     <div className="servicedetail">
@@ -102,12 +116,14 @@ export const Servicedetail = () => {
     url("/assets/bgServices/${service.cover}")
   `,
         }}
-      ></div>
+      >
+            <h1 className="covertitle">{service.name}</h1>
+
+      </div>
 
       <div className="servicedetailcontent">
         <div className="detail-top">
           <div className="left-detail">
-            <h1 className="title-service h1LandingPage">{service.name}</h1>
 
             <p className="servicedetailtext">
               {truncateDescription(service.description, 172)}
@@ -188,5 +204,6 @@ export const Servicedetail = () => {
         {service.id != 2 ? <BottomService /> : <FormationCard />}
       </div>
     </div>
+
   );
 };

@@ -1,0 +1,28 @@
+.parentSubscriptions {
+    background-color: #1B67B0;
+    width: fit-content;
+    color: white;
+    padding: 0.6rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.parentSubscriptions table {
+    border-color: white;
+}
+
+.parentSubscriptions table td {
+    padding: 0.3rem;
+}
+
+.actionSubscription {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: auto;
+}

@@ -8,7 +8,8 @@
 
 .parentLandingPage {
     width: 100%;
-   background-color: #fafbfc;
+    background-color:rgb(250, 251, 252);
+
     color: #111928;
 }
 
@@ -21,6 +22,7 @@
   filter: drop-shadow(0 0 5px var(--blueBTouilShadow));
 
 }
+
 
 
 .h1LandingPage::before{

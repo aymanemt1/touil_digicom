@@ -44,7 +44,7 @@ export const Statistique = () => {
 
 
   return (
-    <div className='statistique'   data-aos="flip-left">
+    <div className='statistique' >
     <div className='counter' >
     <span id='count' className={`${visible ? 'count1' : ''}`}>+</span><h3 className='count-title'>{statistique.statique1}</h3>
       </div>

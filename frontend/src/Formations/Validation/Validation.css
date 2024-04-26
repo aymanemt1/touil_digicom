@@ -1,0 +1,215 @@
+.validationEntit{
+    width: 45%;
+    background-color: #111928;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    padding: 6rem 0;
+}
+.validationParent{
+    height: 70vh;
+    align-items: center;
+
+}
+
+.validationForm{
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    color: white;
+    width: 40%;
+    margin: 2rem auto;
+    
+}
+#reserved{
+    display: none;
+}
+
+
+#Afterreserved{
+    transition: width 0.7s ease;
+    width: 100%;
+    margin: 0;
+}
+.validation{
+    width: 70%;
+    background-color:white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 60px 0px;
+
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+#removingbg{
+    background:none;
+}
+.validationForm label{
+    color: #1B67B0;
+    font-weight: 600;
+   margin-right: 1rem;
+}
+.formtime,.formdate{
+    width: 500px;
+}
+
+
+
+
+#date,
+#time {
+    width: 260px;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 0.1rem solid #1B67B0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #1B67B0;
+}
+
+#date option,
+#time option {
+    cursor: pointer;
+    background-color: white;
+    color:  #1B67B0;
+}
+
+
+
+.validationButton{
+
+    appearance: button;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    margin:  20px 5px 10px 3px;
+    overflow: visible;
+    padding: 7px 10px;
+    width: 150px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+ .msgreservation{
+    font-size: 45px;
+ }
+ .afterErrors{
+   padding: 7.4rem 3rem;
+ }
+ 
+ #disabledbtn{
+    opacity: 0.5; 
+    cursor: none; 
+ }
+ 
+
+ .errorValidation{
+    color: red;
+    margin-top: -1rem;
+ }
+
+ .btnsAfterReserved{
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-around;
+ }
+
+  .backServicebtn{
+    color: #111928;
+    background-color: white;
+    border: none;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    font-size: 1rem;
+    justify-content: center;
+    font-weight: 650;
+    outline: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 12rem;
+    transition: all .1s;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  .ticketBtn{
+    color: #111928;
+    background-color: white;
+    border: none;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    font-size: 1rem;
+    justify-content: center;
+    font-weight: 650;
+    outline: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 17rem;
+    transition: all .1s;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  
+  
+@media (max-width : 767px){
+    .validation{
+      width: 100%;
+      
+      flex-direction: column-reverse;
+    }
+    #Afterreserved{
+        height: 120vw;
+    }
+    .btnsAfterReserved{
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+    .backServicebtn{
+        margin-left: 2.2rem;
+    }
+
+
+    #date,#time{
+        display: block;
+
+        width: 300px;
+        margin-left: 0;
+    }
+    .formdate,.formtime{
+        width: 100%;
+        margin: 0;
+    }
+    .validationForm{
+        width: 100%;
+        margin-left: 2rem;
+    }
+    .validationEntit{
+        width:100%;
+        margin: 0;
+        padding: 3rem;
+    }
+}

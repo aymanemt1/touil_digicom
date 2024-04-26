@@ -12,8 +12,6 @@ export const BottomService = () => {
 
   const navigate = useNavigate();
 
-
-
   function goTp(){
     navigate('/contact');
   }

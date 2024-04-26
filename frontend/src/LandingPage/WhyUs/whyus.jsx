@@ -4,6 +4,8 @@ import React, { useContext, useEffect } from 'react'
 import './whyus.css'
 import { LangueContext } from '../../Context/LangueContext';
 import { Translate } from './Whyustranslate';
+import { ScrollTrigger } from "gsap/all";
+import gsap, { Power2 } from "gsap";
 
 export const WhyUs = () => {
 

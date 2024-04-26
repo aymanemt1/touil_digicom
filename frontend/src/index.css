@@ -21,8 +21,9 @@
 }
 
 .App{
-   background-color:rgb(250, 251, 252);
     font-family: "Raleway", sans-serif;
+    color: #111928;
+    background-color:rgb(250, 251, 252);
 }
 
 img {

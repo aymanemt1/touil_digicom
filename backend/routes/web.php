@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FormateurController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\ticketController;
 use App\Mail\ContactFormMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +26,11 @@ Route::get('/', function () {
 });
 
 
+Route::get('/ajouterFormation', [FormationController::class, 'create']);
 
+Route::get('/ajouterFormateur', [FormateurController::class, 'create']);
 
+Route::get('/ajouterModule', [ModuleController::class, 'create']);
 
 
 

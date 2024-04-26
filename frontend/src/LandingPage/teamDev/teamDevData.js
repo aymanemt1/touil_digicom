@@ -15,15 +15,15 @@ export const teamDevData = {
         },
         {
             id : '2',
-            fullname : 'Aymane MOUTOUT',
+            fullname : 'Aymane MOUTOUTE',
             img : "ayman.jpg",
             hideline : 'Développeur full-stack',
             role : 'Stagiaire',
             message : `C'était vraiment enrichissant de travailler en collaboration avec cette équipe de développeurs talentueux et l'équipe ADN, sous une direction remarquable. Ensemble, nous avons réalisé quelque chose d'extraordinaire avec le site TOUIL DIGICOM. J'espère sincèrement que cela augure de nombreux succès à venir !`,
             socialMedia : {
-                instgram : 'https://www.instagram.com/youcef.talibi/',
-                whatsapp : 'http://Wa.me/212718788365',
-                linkedin : 'https://www.linkedin.com/in/youssef-talibi-b0a0b8238/',
+                instgram : 'https://www.instagram.com/aymeen.mt/',
+                whatsapp : 'http://Wa.me/718788365',
+                linkedin : 'https://www.linkedin.com/in/aymanemoutoute1',
             }
         },
         {

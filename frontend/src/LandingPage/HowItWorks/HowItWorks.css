@@ -329,10 +329,7 @@
     margin-left: 2rem;
   }
 
-  .etapes {
-    left: 0;
-    width: fit-content;
-  }
+  
 
   .entite {
     display: block;
@@ -344,27 +341,6 @@
     width: 95%;
   }
 
-  .etape1 {
-    margin-left: 7rem;
-  }
 
-  .etape2 {
-    margin-left: 7rem;
-  }
-
-  .etape3 {
-    margin-left: 7rem;
-    margin-top: 4rem;
-  }
-
-  .etape4 {
-    margin-left: 7rem;
-    margin-top: 6rem;
-  }
-
-  .etape5 {
-    margin-left: 7rem;
-    margin-top: 6rem;
-  }
 
 }

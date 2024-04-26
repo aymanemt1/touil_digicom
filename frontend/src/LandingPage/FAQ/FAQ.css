@@ -170,6 +170,9 @@
     width: 90%;
     margin: 2rem 0 2rem 3rem;
   }
+  .accordion .icon {
+    top: 46px;
+  }
 
   .FAQ-content {
     display: block;

@@ -1,0 +1,260 @@
+import React, { Fragment, useState } from "react";
+import "./modal.css";
+import axios from "axios";
+import { Alert } from "../../../../../Components/Alert/Alert";
+
+export default function ModalAddClient({ onClose, setResponseMessage }) {
+  const [formData, setFormData] = useState({
+    nom: "",
+    prenom: "",
+    date_naissance: "",
+    ville: "",
+    email: "",
+    numero_telephone: "",
+    numero_whatsapp: "",
+    niveau_etude: "",
+    experiences_formatives: "",
+  });
+
+  const [errors, setErrors] = useState({
+    nom: "",
+    prenom: "",
+    date_naissance: "",
+    ville: "",
+    email: "",
+    numero_telephone: "",
+    numero_whatsapp: "",
+    niveau_etude: "",
+    experiences_formatives: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let error = "";
+
+    if (value.trim() === "") {
+      error = "Ce champ est obligatoire";
+    }
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    setErrors({
+      ...errors,
+      [name]: error,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let isValid = true;
+    const newErrors = { ...errors };
+
+    for (const key in formData) {
+      if (formData[key].trim() === "") {
+        newErrors[key] = "Ce champ est obligatoire";
+        isValid = false;
+      } else {
+        newErrors[key] = "";
+      }
+    }
+
+    if (!isValid) {
+      setErrors(newErrors);
+      return;
+    }
+
+    axios
+      .post("http://127.0.0.1:8000/api/clients", formData)
+      .then((response) => {
+        setFormData({
+          nom: "",
+          prenom: "",
+          date_naissance: "",
+          ville: "",
+          email: "",
+          numero_telephone: "",
+          numero_whatsapp: "",
+          niveau_etude: "",
+          experiences_formatives: "",
+        });
+        setResponseMessage(response.data.message);
+        onClose();
+      })
+      .catch((error) => {
+        if (error.response) {
+          setErrors({
+            ...errors,
+            email: "Email déjà existant",
+          });
+        } else {
+          console.error(error);
+        }
+      });
+  };
+
+  return (
+    <Fragment>
+      <div className="parentModalAddFormation">
+        <div className="modalAddFormation">
+          <div className="headerModal">
+            <h1>Ajouter Client</h1>
+            <button onClick={onClose}>
+              <i className="bx bx-x"></i>
+            </button>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <table cellSpacing="15">
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="nom"
+                      value={formData.nom}
+                      onChange={handleChange}
+                      placeholder="Nom"
+                    />
+                    {errors.nom && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.nom}
+                      </span>
+                    )}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="prenom"
+                      value={formData.prenom}
+                      onChange={handleChange}
+                      placeholder="Prénom"
+                    />
+                    {errors.prenom && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.prenom}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="date"
+                      name="date_naissance"
+                      value={formData.date_naissance}
+                      onChange={handleChange}
+                      placeholder="Date de naissance"
+                    />
+                    {errors.date_naissance && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.date_naissance}
+                      </span>
+                    )}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="ville"
+                      value={formData.ville}
+                      onChange={handleChange}
+                      placeholder="Ville"
+                    />
+                    {errors.ville && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.ville}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Email"
+                    />
+                    {errors.email && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.email}
+                      </span>
+                    )}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="numero_telephone"
+                      value={formData.numero_telephone}
+                      onChange={handleChange}
+                      placeholder="Numéro de téléphone"
+                    />
+                    {errors.numero_telephone && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.numero_telephone}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="numero_whatsapp"
+                      value={formData.numero_whatsapp}
+                      onChange={handleChange}
+                      placeholder="Numéro WhatsApp"
+                    />
+                    {errors.numero_whatsapp && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.numero_whatsapp}
+                      </span>
+                    )}
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="niveau_etude"
+                      value={formData.niveau_etude}
+                      onChange={handleChange}
+                      placeholder="Niveau d'étude"
+                    />
+                    {errors.niveau_etude && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.niveau_etude}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan="2">
+                    <input
+                      name="experiences_formatives"
+                      value={formData.experiences_formatives}
+                      onChange={handleChange}
+                      placeholder="Expériences formatives"
+                    />
+                    {errors.experiences_formatives && (
+                      <span className="errorModal">
+                        <i className="bx bxs-error"></i> {errors.experiences_formatives}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td className="tdBtnAjoute">
+                    <input type="submit" value="Ajouter" id="btnAjoute" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </Fragment>
+  );
+}

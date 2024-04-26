@@ -1,0 +1,134 @@
+.parentHomeDashboard {
+    width: 78.5vw;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 2rem;
+}
+
+.chemin {
+    width: 100%;
+}
+
+.chemin h6 {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: rgb(174, 174, 174);
+}
+
+.TitleDashboard {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+.TitleDashboard h1{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.keys {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.keys p {
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.2rem;
+}
+
+
+.greenDiv {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    background-color: greenyellow;
+}
+.orangeDiv {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    background-color: #ff8c00;
+}
+
+.Statics {
+    width: 100%;
+}
+
+.Statics ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.triangleStatic {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    width: 280px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    background-color: #1B67B0;
+    color: white;
+    padding-right: 1rem;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.triangleStatic:hover {
+    background-color: #2182dc;
+}
+
+.triangleStatic i {
+    font-size: 2.5rem;
+}
+
+.textStatic h3 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.textStatic div {
+    display: flex;
+    gap:0.5rem ;
+}
+
+.textStatic div h2:first-child {
+    color: greenyellow;
+}
+.textStatic div h2:last-child {
+    color: #ff8c00;
+}
+
+.textStatic h2{
+    margin-top: -0.3rem;
+}
+
+
+.parentSecondStatics {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+#myChart {
+    width: 48vw;
+}
+
+@media (max-width:430px) {
+    .parentHomeDashboard {
+        width: 100%;
+    }
+    .Statics ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .triangleStatic {
+        width: 80vw;
+    }
+}

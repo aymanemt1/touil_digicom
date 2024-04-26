@@ -1,4 +1,6 @@
 .blogs {
     width: 100vw;
+    background-color:rgb(250, 251, 252);
+
     overflow-x: hidden;
 }

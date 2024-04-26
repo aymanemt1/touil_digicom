@@ -4,11 +4,11 @@
     width: 100%;
     justify-content: space-around;
     display: flex;
-    margin-top: 3.5rem;
+    margin-top: 5.5rem;
     color: white;
     background-color: #1B67B0;
     flex-shrink: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     }
     .counter:not(:last-child) {
       border-right: 1px solid white;

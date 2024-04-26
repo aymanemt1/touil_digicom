@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('affiche');
             $table->decimal('prix', 10, 2)->default(0.00);
             $table->string('ville');
+            $table->string('location'); 
             $table->timestamps();
         });
     }

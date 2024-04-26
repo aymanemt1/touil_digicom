@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { LangueContext } from "../../Context/LangueContext";
@@ -23,10 +23,10 @@ export default function Navbar({ link }) {
       id: 2,
       text: `${Navbar.link2.label}`,
       dropdown: [
-        { id: 21, to: "service/1", text: `${Navbar.link2.dropdown[0]}` },
-        { id: 22, to: "service/2", text: `${Navbar.link2.dropdown[1]}` },
-        { id: 22, to: "service/3", text: `${Navbar.link2.dropdown[2]}` },
-        { id: 22, to: "service/4", text: `${Navbar.link2.dropdown[3]}` },
+        { id: 21, to: "/service/1", text: `${Navbar.link2.dropdown[0]}` },
+        { id: 22, to: "/service/2", text: `${Navbar.link2.dropdown[1]}` },
+        { id: 22, to: "/service/3", text: `${Navbar.link2.dropdown[2]}` },
+        { id: 22, to: "/service/4", text: `${Navbar.link2.dropdown[3]}` },
       ],
     },
     { id: 3, to: "/blogs", text: `${Navbar.link3}` },
@@ -38,7 +38,7 @@ export default function Navbar({ link }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setToggleMenu(window.innerWidth < 743 ? false : true);
+      setToggleMenu(window.innerWidth < 644 ? false : true);
     };
 
     handleResize();
@@ -52,56 +52,33 @@ export default function Navbar({ link }) {
 
   const location = useLocation();
 
-  const isSpecialPath = location.pathname !== "/" ;
-
-  const closeMenu = () => {
-    setToggleMenu(false);
-  };
+  const isSpecialPath =
+    location.pathname === "/blogs" || location.pathname === "/contact";
 
   return (
     <Fragment>
-      <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"} >
+      <nav className={toggleMenu ? "parentNavbar" : "parentNavbarMenu"}>
         <ul className="ulBrandLogo">
-          {isSpecialPath ? (
-            <Link to="/" id="logo" onClick={closeMenu}>
-              <li>
-                <img
-                  src="/assets/Logo/logo4.png"
-                  alt="Touil Digicom"
-                  className="brandLogo"
-                />
-              </li>
-            </Link>
-          ) : (
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={1000}
-              className="scrollLinkHome"
-              onClick={closeMenu}
-            >
-              <li>
-                <img
-                  src="/assets/Logo/logo4.png"
-                  alt="Touil Digicom"
-                  className="brandLogo"
-                />
-              </li>
-            </ScrollLink>
-          )}
+          <Link to="/" id="logo">
+            <li>
+              <img
+                src="/assets/Logo/logo4.png"
+                alt="Touil Digicom"
+                className="brandLogo"
+              />
+            </li>
+          </Link>
         </ul>
         <ul className={toggleMenu ? "ulLinks active" : "ulLinks"}>
           {renderNavLinks}
           <div className="parentBtns">
             {isSpecialPath ? (
-              <Link to="/" onClick={closeMenu}>
+              <Link to="/">
                 <button className="demandBtn">{Navbar.btn_devis}</button>
               </Link>
             ) : (
-              <ScrollLink to="devis" smooth={true} duration={2200} onClick={closeMenu}>
-                <button className="demandBtn btnSeeMoreServices">
-                  {Navbar.btn_devis}
-                </button>
+              <ScrollLink to="devis" smooth={true} duration={2200}>
+                <button className="demandBtn">{Navbar.btn_devis}</button>
               </ScrollLink>
             )}
             <div className="langParent">

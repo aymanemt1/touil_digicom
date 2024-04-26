@@ -1,23 +1,27 @@
 .inscriptionParent {
     background-color: white;
+    margin-bottom: 7rem;
 }
 .inscription-title{
     text-align: center;
     font-weight: 600;
-    font-size: 28px;
+    color: #E8451E;
+    font-size: 30px;
     padding: 3rem 0 3rem 0;
 }
 
 
 .inscription-content{
-     width: 89%;
-     margin-top: 2rem;
-     margin-left: 8rem;
-
+     width: 79%;
+     margin: 1rem auto ;
      display: flex;
      font-weight: 500;
 
 }
+#after-clicked{
+  height: 90vh;
+}
+
 ::placeholder{
     color: white;
 }
@@ -26,38 +30,80 @@
 }
 
 .affiche{
-    width: 540px;
+    width: 480px;
+    height: auto;
 }
 .inscription-form{
- width: 40%;
- background-color: #1B67B0;
- padding: 2rem 3rem;
+ width: 70%;
+ background-color:rgb(250, 251, 252);
+ padding: 2rem 0;
+ box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 60px 0px;
+ 
+ border-radius: 5px;
 }
 .coolinput {
     display: flex;
+    margin-left: 2rem;
+    color: #000;
     flex-direction: column;
-    width: fit-content;
-    position: static;
-    max-width: 340px;
   }
+  .coolinput ::placeholder{
+    color: #1B67B0;
+    font-weight: 600;
+  }
+  
+  #date_naissance{
+    color: #1B67B0;
+    
+    font-weight: 600;
+  }
+
+
   
   
   .coolinput .input-inscription {
     font-size: 18px;
-    padding: 33px 10px 10px 5px;
+    padding: 13px 10px 10px 5px;
     display: block;
-    width: 340px;
+    margin-bottom: 0.9rem;
+    width: 220px;
     border: none;
-    color: white;
-    border-bottom: 1px solid #ffffff;
+    color: #000;
+    border-bottom: 1px solid #1B67B0;
     background: transparent;
   }
- 
+
 
   
   .coolinput input[type=text].input-inscription:focus {
     outline: none;
    
+  }
+  .coolinput input[type=text].input-inscription:focus {
+    outline: none;
+   
+  }
+  .coolinput input[type=date].input-inscription:focus {
+    outline: none;
+  }
+
+  #ville{
+    margin-top: 0.6rem;
+    width: 90%;
+     font-size: 18px;
+     font-weight: 600;
+    padding: 0.3rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1B67B0;
+    border-bottom: 0.1rem solid #1B67B0;
+  
+  }
+  #ville option{
+   
+    color: #1B67B0;
+  
   }
 
   .reserveBtn{
@@ -76,10 +122,10 @@
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
-  margin:  40px 5px 10px 0;
+  margin:  30px 5px 10px 45px;
   overflow: visible;
   padding: 7px 10px;
-  width: 200px;
+  width: 170px;
   text-align: center;
   text-transform: none;
   touch-action: manipulation;
@@ -89,11 +135,52 @@
   white-space: nowrap;
 }
 
-.contact-button:focus {
-  text-decoration: none;
-}
 
-.contact-button:hover {
-  text-decoration: none;
-}
 
+
+@media (max-width : 767px){
+  .inscription-affiche{
+    width: 100%;
+    height: auto;
+  }
+  .affiche{
+    width: 100%;
+    height: auto;
+  }
+  .inscriptionParent{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .inscription-content{
+    width: 100%;
+    margin-bottom: 11rem;
+  }
+  .reserveBtn{
+    margin-left: 1rem;
+    width: 120px;
+  }
+  .coolinput .input-inscription{
+    width: 170px;
+    font-size: 16px;
+    margin-left: 0.9rem;
+    
+  }
+  .coolinput{
+    margin-left: 0;
+  }
+  #after-clicked{
+    height: auto;
+  }
+ 
+
+  .inscription-form{
+    width: 100%;
+    
+  }
+  .inscription-content{
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  }
+}

@@ -1,0 +1,29 @@
+.parentNavbarDashboard {
+    padding: 1rem;
+    border-bottom: 0.01rem solid rgba(155, 155, 155, 0.34);
+}
+
+.navbarDashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+}
+
+.brandLogoDashboard img {
+    width: 200px;
+}
+
+
+.linksNavbarDashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.linksNavbarDashboard {
+    
+}

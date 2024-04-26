@@ -7,22 +7,24 @@
 } 
 
 .parentBottomServices {
-    width: 83vw;
+    width: 86vw;
     height: 300px;
     margin: auto;
     background-size: cover;
     background-position: 20px;
     background-image:linear-gradient(135deg, rgba(26, 19, 1, 0.46),rgb(133, 39, 16)), url('/public/assets/bgServices/bottomServices.jpg');
-    display: grid;
     place-items: center;
-    border-radius: 10px;
+    display: grid;
+    border-radius: 6px;
     color: white;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
+    margin-top:-12rem;
 }
 
 .bottomService p {
-    font-size: 0.9rem;
+    font-size: 1.8rem;
     text-align: center;
+    margin-bottom: 1rem;
     color: rgb(255, 204, 0);
 }
 
@@ -41,7 +43,8 @@
 .bottomService h6{
     text-align: center;
     color: rgb(255, 204, 0);
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 .bottomService button {
     display: flex;
@@ -72,4 +75,12 @@
 .bottomService button:hover {
     background-color: #fd4c20;
     color: white;
+}
+
+      
+@media (max-width : 767px){
+   .parentBottomServices{
+    margin-top: 0;
+   }
+    
 }

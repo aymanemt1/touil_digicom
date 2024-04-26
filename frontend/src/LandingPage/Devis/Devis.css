@@ -58,15 +58,16 @@
 }
 
 .parentFormDevis {
-    width: 90%;
-    background-color: var(--blueTouil);
+background-color: white;
     display: flex;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     align-items: center;
 }
 
 .parentFormDevisAr {
     flex-direction: row-reverse;
 }
+
 
 .colFormDevis {
     width: 60%;
@@ -77,7 +78,8 @@
     overflow: hidden;
 }
 .colFormDevis h2{
-    color: white;
+    color: #1B67B0;
+    font-size: 33px;
     margin-bottom: 1rem;
 }
 .colFormDevisAr h2{
@@ -86,6 +88,12 @@
 
 .formDevis {
     padding-top: 2rem;
+    
+}
+.formDevis input[type=text]::placeholder,.formDevis option::placeholder{
+ color: #1B67B0;
+ font-weight: 600;
+
 }
 
 
@@ -103,8 +111,8 @@
     width: 340px;
     margin: 1.5rem 0 0.6rem 0;
     border: none;
-    color: white;
-    border-bottom: 1px solid #ffffff;
+    color: #1B67B0;
+    border-bottom: 1px solid #1B67B0;
     background: transparent;
   
 }
@@ -112,21 +120,22 @@
 .inputDevis, .formDevis select{
     width: 90%;
     margin: 1.2rem 0 0.7rem 0 ;
-
+     font-size: 18px;
+     font-weight: 600;
     padding: 0.3rem;
     background: transparent;
     border: none;
     outline: none;
-    border-bottom: 0.1rem solid white;
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: white;
+    color: #1B67B0;
+    border-bottom: 0.1rem solid #1B67B0;
+  
 }
 
 .formDevis select option {
     background-color: white;
-    color: var(--blueTouil);
+    color: #1B67B0;
 }
+
 
 
 .submitDevis {
@@ -154,7 +163,10 @@
   
 .colFormPicDevis {
     background-color: white;
-    border: 0.01rem solid white;
+    border-right: none;
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    filter: drop-shadow(0 0 10px var(--blueBTouilShadowIllu));
+
 }
   
 .colFormPicDevis img{
@@ -164,15 +176,15 @@
 .tableDevis {
     width: 90%;
     margin: auto;
-    color: var(--blueTouil);
-    border: 1px solid var(--blueTouil);
+    color: #1B67B0;
+    border: 1px solid #1B67B0;
 }
 .tableDevis tr th {
-    border: 1px solid var(--blueTouil);
+    border: 1px solid #1B67B0;
     padding: 0.5rem;
 }
 .tableDevis tr td {
-    border: 1px solid var(--blueTouil);
+    border: 1px solid #1B67B0;
 }
 
 .DecriptionDevisCol {
@@ -184,7 +196,7 @@
 }
 
 .colHeaderDevis {
-    background-color: var(--blueTouil);
+    background-color: #1B67B0;
     padding: 0.7rem;
 }
 
@@ -196,15 +208,20 @@
 
 .textHeaderDevis {
     color: white;
+
+}
+::placeholder{
+    color: #1B67B0;
 }
 
 .colInfoClient {
     padding: 1rem;
 }
 .colInfoClient h4 {
-    color: var(--blueTouil);
+    color: #1B67B0;
 }
 .colInfoClient p {
+    color: #1B67B0;
     font-size: 0.8rem;
     padding-left: 0.3rem;
 }
@@ -219,14 +236,15 @@
 .colLeftTypeDevis {
     font-size: 0.7rem;
     margin: 1rem;
+    color:#1B67B0;
 }
 .colRightTypeDevis {
-    color: var(--blueTouil);
+    color:#1B67B0;
 }
 
 .colSignataire p{
     font-family: "Whisper", cursive;
-    color: var(--blueTouil);
+    color: #1B67B0;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1rem;
@@ -239,7 +257,7 @@
 }
 .colInformationDevisTouil ul li{
     font-size: 0.6rem;
-    color: var(--blueTouil);
+    color:#1B67B0;
     padding: 0.4rem;
 }
 

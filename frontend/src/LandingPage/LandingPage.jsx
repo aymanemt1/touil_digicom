@@ -39,9 +39,6 @@ export const LandingPage = () => {
         <Element name="faq">
           <FAQ />
         </Element>
-        <Element name="references">
-          <References />
-        </Element> 
       </div>
     </Fragment>
   );

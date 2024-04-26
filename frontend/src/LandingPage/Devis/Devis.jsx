@@ -36,37 +36,38 @@ export default function Devis() {
       const validationErrors = {};
 
       if (DevisData.nom_devis.trim() === '') {
-          validationErrors.nom_devis = 'Nom is required';
-      }else if (/\d/.test(DevisData.nom_devis)) {
-        validationErrors.nom_devis = 'Nom should not contain numbers';
-      }
-      if (DevisData.prenom_devis.trim() === '') {
-          validationErrors.prenom_devis = 'Prenom is required';
-      }else if (/\d/.test(DevisData.prenom_devis)) {
-        validationErrors.prenom_devis = 'Prenom should not contain numbers';
-      }
-      if (DevisData.email_devis.trim() === '') {
-          validationErrors.email_devis = 'Email is required';
-      } else if (!/\S+@\S+\.\S+/.test(DevisData.email_devis)) {
-      validationErrors.email_devis = 'Email is invalid';
-      }
-
-      if (DevisData.adress_devis.trim() === '') {
-          validationErrors.adress_devis = 'Adress is required';
-      }else if (/\d/.test(DevisData.adress_devis)) {
-        validationErrors.adress_devis = 'Adress should not contain numbers';
-      }
-       if (DevisData.service_devis.trim() === '') {
-        validationErrors.service_devis = 'service is required';
+        validationErrors.nom_devis = 'Le nom est requis';
+    } else if (/\d/.test(DevisData.nom_devis)) {
+        validationErrors.nom_devis = 'Le nom ne doit pas contenir de chiffres';
     }
-       if (DevisData.telephone_devis.trim() === '') {
-        validationErrors.telephone_devis = 'Telephone is required';
-    } 
-      setErrors(validationErrors);
-
-      return Object.keys(validationErrors).length === 0;
-  };
-
+    if (DevisData.prenom_devis.trim() === '') {
+        validationErrors.prenom_devis = 'Le prénom est requis';
+    } else if (/\d/.test(DevisData.prenom_devis)) {
+        validationErrors.prenom_devis = 'Le prénom ne doit pas contenir de chiffres';
+    }
+    if (DevisData.email_devis.trim() === '') {
+        validationErrors.email_devis = 'L\'email est requis';
+    } else if (!/\S+@\S+\.\S+/.test(DevisData.email_devis)) {
+        validationErrors.email_devis = `L'email n'est pas valide`;
+    }
+    
+    if (DevisData.adress_devis.trim() === '') {
+        validationErrors.adress_devis = `L'adresse est requise`;
+    } else if (/\d/.test(DevisData.adress_devis)) {
+        validationErrors.adress_devis = `L'adresse ne doit pas contenir de chiffres`;
+    }
+    if (DevisData.service_devis.trim() === '') {
+        validationErrors.service_devis = 'Le service est requis';
+    }
+    if (DevisData.telephone_devis.trim() === '') {
+        validationErrors.telephone_devis = 'Le téléphone est requis';
+    }
+    
+    setErrors(validationErrors);
+    
+    return Object.keys(validationErrors).length === 0;
+    };
+    
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -135,7 +136,7 @@ if (isFormValid) {
                 </tr>
                 <tr>
                   <td>
-                    <input type="number" placeholder={Devis.telephone} className="inputDevis" 
+                    <input type="text" placeholder={Devis.telephone} className="inputDevis" 
                      value={DevisData.telephone_devis} 
                      name="telephone_devis"
                      onChange={handleChange}/>
@@ -162,6 +163,7 @@ if (isFormValid) {
                       <option value="AUDIOVISUEL" >{Devis.option3}</option>
                       <option value="ÉVÉNEMENTIEL" >{Devis.option4}</option>
                     </select>
+                    <br />
                 {Errors.service_devis && <span className='errorMessage'>{Errors.service_devis}<i className='bx bxs-error'></i></span>} 
 
                   </td>
@@ -186,7 +188,7 @@ if (isFormValid) {
           <div className="colFormPicDevis">
             <div className="colHeaderDevis">
               <div className="brandLogoDevis">
-                <img src="./assets/Logo/logo3.png"  />
+                <img  src="/assets/Logo/logo3.png" />
                 <h5 className="serviceDevis">{DevisData.service_devis}</h5>
               </div>
               <div className="textHeaderDevis">

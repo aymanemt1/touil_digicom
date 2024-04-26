@@ -1,0 +1,217 @@
+.formations{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.formations div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.trash {
+    background-color: white;
+    color: #1B67B0;
+    border: 0.01rem solid #1B67B0;
+}
+
+.rowControlsFormation {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btnFilter {
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.1rem 0.2rem;
+    transition: all .15s ease;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.btnFilter:hover {
+    background-color: rgb(211, 222, 232);
+}
+
+.formSearchFormation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 0.1rem solid #1B67B0;
+}
+
+.formSearchFormation  input {
+    color: white;
+    font-size: 1.2rem;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: black;
+    padding-left: 0.5rem;
+}
+
+.formSearchFormation  input::placeholder {
+    color: grey;
+    font-size: 0.8rem;
+}
+.formSearchFormation  button {
+    background-color: #1B67B0;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    padding: 0.2rem;
+    height: 30px;
+    cursor: pointer;
+    transition: all .15s ease;
+}
+
+.formSearchFormation  button:hover {
+    background-color: #0a4f8f;
+}
+
+.parentTableFormations {
+
+}
+
+.parentTableFormations table {
+    border-color: #1B67B0;
+    width: 100%;
+}
+
+.parentTableFormations table th {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    background-color: #1B67B0;
+    color: white;
+    border-color: white;
+}
+.parentTableFormations table td {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+    text-align: center;
+    border-color: #1B67B0;
+}
+
+.parentTableFormations table tr:hover {
+    background-color: rgba(196, 217, 236, 0.295);
+}
+
+.parentTableFormations table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+#tdImgFormations {
+    padding: 0;
+}
+
+.parentTableFormations table td h4 {
+    text-align: start;
+    font-weight: 400;
+}
+
+.parentTableFormations table td p {
+    font-size: 0.55rem;
+    text-align: start;
+}
+
+.tdActions div{
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnEdit {
+    color: white;
+    background-color: green;
+    font-size: 1.4rem;
+    padding: 0.2rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.btnEdit:hover {
+    background-color: rgb(0, 89, 0);
+}
+
+.btnDelete {
+    color: white;
+    background-color: red;
+    font-size: 1.4rem;
+    padding: 0.2rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btnDelete:hover {
+    background-color: rgb(207, 0, 0);
+}
+
+.typeSort {
+    font-size: .8rem;
+}
+
+.inputFile {
+    display: none;
+}
+
+
+.bxs-check-square {
+    color: green;
+    font-size: 2rem;
+}
+
+.bxs-x-square {
+    color: red;
+    font-size: 2rem;
+}
+
+
+.buttonInfoClient {
+    background: none;
+    outline: none;
+    border: none;
+    text-decoration: underline;
+    margin-left: 0.4rem;
+    cursor: pointer;
+}
+
+.buttonInfoClient i {
+    text-decoration: underline;
+}
+
+#tableInfoClient  {
+    background-color: black;
+}
+
+#tableInfoClient tr td{
+    text-align: start;
+    color: white;
+}
+
+.spanNomUppercase {
+    text-transform: uppercase;
+}
+
+@media (max-width:430px) {
+    .rowControlsFormation {
+        width: 80%;
+        justify-content: start;
+    }
+}

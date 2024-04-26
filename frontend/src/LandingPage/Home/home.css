@@ -26,9 +26,7 @@
     flex-direction: row-reverse;
 }
 
-.reverseContent .parentText {
-    /* margin-right: -1rem; */
-}
+
 
 .reverseContent .parentText h1 {
     width: 100%;
@@ -93,6 +91,10 @@
 
 .reverseContent .parentBtnsV2 {
     flex-direction: row-reverse;
+}
+.reverseContent .parentimg .illustatorHome{
+   transform: scaleX(-1);
+   animation: none;
 }
 
 
@@ -263,10 +265,7 @@
 }
 
 
-.illustatorArabe {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
+
 
 
 .illustrator1 {
@@ -417,6 +416,9 @@
     .illustrator5 {
         width: 60px;
         right: 1rem;
+    }
+    .parentHomev2 {
+        margin-top: -4rem;
     }
 }
 

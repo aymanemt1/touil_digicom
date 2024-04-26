@@ -2,9 +2,9 @@ export const BottomServiceTranslate = {
     BottomService : [
         {
             id : 'fr',
-            title1 : `- Contactez-nous maintenant -`,
+            title1 : `Contactez-nous maintenant `,
             title2 : `Si besoin d'aide`,
-            title3 : `ou allez sur le formulaire de contact :`,
+            title3 : `Ou allez sur le formulaire de contact :`,
             link : `Commençons maintenant`,
         },
         {

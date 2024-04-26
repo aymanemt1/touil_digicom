@@ -53,9 +53,7 @@ export const Home = () => {
         <div className="parentimg">
           <img
             src="./assets/illustrationsRemoveBg/illu.png"
-            className={`illustatorHome ${
-              langue === "ar" ? "illustatorArabe" : ""
-            }`}
+          className="illustatorHome"
           />
           <img src="./assets/GradientEffect/union.png" className="union" />
 
