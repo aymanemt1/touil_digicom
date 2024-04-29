@@ -11,6 +11,8 @@ import "./blogs.css";
 export default function Blogs() {
 
   document.body.style.overflowX = 'hidden';
+  document.title = 'Touil digicom - Blogs'
+
 
   return (
     <Fragment>

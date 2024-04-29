@@ -154,6 +154,7 @@ export const Inscription = () => {
     getallformations();
   }, []);
 
+  
   return (
     <>
       {!validationScreen ? (

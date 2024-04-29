@@ -6,7 +6,9 @@ import { LangueContext } from '../../Context/LangueContext'
 import { Translate } from './contacttranslate'
 import axios from "axios"
 import { Alert } from '../../Components/Alert/Alert'
+
 export const Contact = () => {
+  document.title = 'Touil digicom - Contact'
   
   const {langue}=useContext(LangueContext)
   

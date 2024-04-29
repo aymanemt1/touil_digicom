@@ -156,7 +156,6 @@ export default function FormationDashboard() {
                                 <th>DESCRIPTION(FR)</th>
                                 <th>DESCRIPTION(AR)</th>
                                 <th>VILLE</th>
-                                <th>LOCALISATION</th>
                                 <th>CAPACITE</th>
                                 <th>DATEDEBUT</th>
                                 <th>DATEFIN</th>
@@ -181,7 +180,6 @@ export default function FormationDashboard() {
                                     <td>
                                         <p>{item.description_ar}</p>
                                     </td>
-                                    <td>{item.ville}</td>
                                     <td>{item.ville}</td>
                                     <td>{item.capacite}</td>
                                     <td>{item.date_debut}</td>

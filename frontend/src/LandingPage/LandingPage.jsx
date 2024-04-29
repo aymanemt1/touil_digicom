@@ -14,6 +14,7 @@ import { Link as ScrollLink, Element, animateScroll as scroll, } from "react-scr
 import { LangueContext } from "../Context/LangueContext";
 
 export const LandingPage = () => {
+  document.title = 'Touil digicom - Home'
   return (
     <Fragment>
       <div className="parentLandingPage">

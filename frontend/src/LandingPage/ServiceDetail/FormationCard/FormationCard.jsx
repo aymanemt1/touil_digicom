@@ -41,40 +41,58 @@ export const FormationCard = () => {
 
   const currentDate = new Date();
   const [formations, setFormations] = useState([]);
+  const [filtredformations, setfiltredformations] = useState([])
+
   const [loading, setLoading] = useState(true);
-  const [count, setCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
 
-  useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/api/formationsdata?page=${currentPage}`)
-      .then((response) => {
-        console.log(response.data);
-        setFormations(response.data.formations.data);
-        setCount(response.data.FormationCount);
-      })
-      .catch((error) => {
-        console.error("Error fetching formations:", error);
-      });
-  }, [currentPage]);
-  console.log(formations);
+  console.log(formations)
 
-  const handlePageChange = (event, page) => {
-    setCurrentPage(page);
+    // pour pagination 
+    const [count, setCount] = useState();
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 2;
+
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:8000/api/formationsdata?page=${currentPage}`);
+      setCount(response.data.formationCount)
+      setFormations(response.data.formations.data);
+  console.log(response)
+      console.log(response)
+     
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
   };
 
-  const totalPages = Math.ceil(count / itemsPerPage);
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const slicedFormations = formations.slice(startIndex, endIndex);
+ useEffect(() => {
+    fetchData();
+}, [])
+  
+  
+   
+    useEffect(() => {
+      if (Array.isArray(formations) && formations.length > 0) {
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const slicedFormations = formations.slice(startIndex, endIndex);
+        setfiltredformations(slicedFormations);
+      }
+    }, [currentPage, formations, itemsPerPage]);
+    
+    const handlePageChange = (event, page) => {
+      setCurrentPage(page);
+    };
+   
+    const totalPages = Math.ceil(count / itemsPerPage);
+    console.log(count)
 
   return (
     <Fragment>
       <div className="detail-bottom">
         <h2 className="titleformations">Notre Formations </h2>
-        {slicedFormations.map((formation) => (
+        {filtredformations.map((formation) => (
           <>
             <div className="card-formation" key={formation.id}>
               <div className="card-image">
@@ -164,7 +182,7 @@ export const FormationCard = () => {
             )}
           </>
         ))}
-        {formations.length > 3 ? (
+        {formations.length >2 ? (
           <Paginate
             currentPage={currentPage}
             totalPages={totalPages}

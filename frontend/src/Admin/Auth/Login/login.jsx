@@ -67,7 +67,7 @@ export default function Login() {
       const admin = response.data.admin;
       Cookies.set('token', token);
       Cookies.set('adminname', admin.fullname);
-      navigate('/dashboard/statistiques');
+      navigate('/touil_team_dashboard/statistiques');
     } catch (error) {
       console.log(error.response.data)
      

@@ -6,5 +6,5 @@ import Cookies from 'js-cookie'
 
     const token = Cookies.get('token') 
 
-    return token ? <Outlet /> : <Navigate to='/login' />;
+    return token ? <Outlet /> : <Navigate to='/touil_team_login' />;
     }

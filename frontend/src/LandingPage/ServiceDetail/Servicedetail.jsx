@@ -10,7 +10,10 @@ import { BottomService } from "./BottomService/BottomService";
 import { LangueContext } from "../../Context/LangueContext";
 
 export const Servicedetail = () => {
+  document.title = 'Touil digicom - Services'
+
   const { id } = useParams();
+
 
   const [showFullDescription, setShowFullDescription] = useState(false);
 

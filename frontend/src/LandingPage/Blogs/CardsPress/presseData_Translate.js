@@ -10,7 +10,7 @@ export const PresseTouilFr = {
             Nompresse : 'Medi1 TV',
             DescriptionPress : `Notre CEO a eu le privilège de participer à l'émission 'مغرب التنمية' sur Medi1 TV, animée par la talentueuse journaliste Asmaa BACHRI. Son intervention spéciale a porté sur le rôle crucial des jeunes dans le développement. Une discussion inspirante qui souligne notre engagement envers la jeunesse et l'avenir du Maroc. `,
             img : 'medi1.jpg',
-            lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
+            lienPress : 'https://www.instagram.com/p/C6I_-KQN7vS/'  
         },
         {
             id : 2,
@@ -18,7 +18,7 @@ export const PresseTouilFr = {
             Nompresse : 'Al Aoula',
             DescriptionPress : `"Notre fondateur a eu l'honneur de partager son expertise lors d'une intervention spéciale sur l'entreprenariat et l'écosystème avec la SNRT. Une opportunité de contribuer au dialogue sur l'avenir économique du Maroc et de soutenir les entrepreneurs émergents. `,
             img : 'snrt.jpeg',
-            lienPress : 'https://www.linkedin.com/posts/omar-touil-2402941b5_engagement-avenir-activity-7046135534334668802-WmsL/'  
+            lienPress : 'https://www.instagram.com/p/C6JBdJstMAL/'  
         },
     ]
 }

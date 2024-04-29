@@ -11,7 +11,7 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     description_ar: "",
     cover: "",
     affiche: "",
-    location: "",
+    location: "null",
     ville: "",
     capacite: "",
     date_debut: "",
@@ -25,7 +25,6 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     description_ar: "",
     cover: "",
     affiche: "",
-    location: "",
     ville: "",
     capacite: "",
     date_debut: "",
@@ -135,7 +134,6 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
         description_ar: "",
         cover: "",
         affiche: "",
-        location: "",
         ville: "",
         capacite: "",
         date_debut: "",
@@ -280,20 +278,7 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    <input
-                      type="text"
-                      name="location"
-                      value={formData.location}
-                      onChange={handleChange}
-                      placeholder="Localisation"
-                    />
-                    {errors.location && (
-                      <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.location}
-                      </span>
-                    )}
-                  </td>
+                  
                   <td id="tdDouble">
                     <div>
                     <select

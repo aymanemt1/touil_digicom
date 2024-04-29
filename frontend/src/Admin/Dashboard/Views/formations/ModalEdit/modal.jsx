@@ -13,7 +13,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
     description_ar: "",
     cover: "",
     affiche: "",
-    localisation: "",
     ville: "",
     capacite: "",
     date_debut: "",
@@ -27,7 +26,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
     description_ar: "",
     cover: "",
     affiche: "",
-    localisation: "",
     ville: "",
     capacite: "",
     date_debut: "",
@@ -45,7 +43,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
           description_fr: response.data.description_fr,
           description_ar: response.data.description_ar,
           cover: response.data.cover,
-          localisation: response.data.ville,
           ville: response.data.ville,
           capacite: response.data.capacite,
           date_debut: response.data.date_debut,
@@ -210,21 +207,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                  <label className="label_edit">Localisation</label>
-                    <input
-                      type="text"
-                      name="localisation"
-                      value={formData.localisation}
-                      onChange={handleChange}
-                      placeholder="Localisation"
-                    />
-                    {errors.localisation && (
-                      <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.localisation}
-                      </span>
-                    )}
-                  </td>
                   <td id="tdDouble">
                  
                     <div>

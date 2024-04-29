@@ -109,7 +109,7 @@ export default function RouterApp() {
         />
 
         <Route
-          path="/login"
+          path="/touil_team_login"
           element={
             token ? (
               <Navigate to="/dashboard/statistiques" />
@@ -123,7 +123,7 @@ export default function RouterApp() {
           }
         />
         <Route
-          path="/register"
+          path="/touil_team_register"
           element={
             <Fragment>
               <Navbar />
@@ -132,7 +132,7 @@ export default function RouterApp() {
           }
         />
         <Route element={<RequiredAuth />}>
-          <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="/touil_team_dashboard" element={<Dashboard />}>
             <Route path="statistiques" element={<StatistiquesDashboard />} />
             <Route path="formations" element={<FormationDashboard />} />
             <Route path="formateurs" element={<FormateurDashboard />} />

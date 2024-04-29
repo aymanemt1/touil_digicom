@@ -5,6 +5,7 @@ import axios from 'axios';
 import { LangueContext } from '../../../Context/LangueContext';
 
 export const Modules = (props) => {
+    console.log(props.modules)
 
     const nav = useNavigate()
 
@@ -37,7 +38,8 @@ export const Modules = (props) => {
        nav(`/formation/${props.formationId}`);
 
     };
- console.log(props)
+
+    
     return (
         <div className='modules-parent'>
      {
@@ -60,8 +62,20 @@ export const Modules = (props) => {
                             <h4 className='title'>{langue === 'fr' ? module.titre_fr : module.titre_ar }  </h4>
                             <div className="card-content">
                                 <div className='info-personne'>
-                                    <img src='/assets/DetailService/service1-img3.jpg' className="profile" alt="profile" />
-                                    <p>{module.formateur.nom} {module.formateur.prenom}</p>
+                                    {module.formateur ? (
+                                        <>
+                                <img
+                                 className="profile"
+                                 src={`http://localhost:8000/storage/formateurs/${module.formateur.profile}`}
+                                 onError={(e) => {
+                                     e.target.src = "/assets/altImage/alt-img.jpg";
+                                   }}
+                               />
+                                        <p>{module.formateur.nom} {module.formateur.prenom}</p>
+                                        </>
+
+                                    ) : ''
+                                }
                                 </div>
                                 <div className='module-info'>
                                     <b>Durée: {module.duree}H</b>
