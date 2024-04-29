@@ -3,8 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { Link as ScrollLink } from "react-scroll";
 
-export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
+export const NavDropdown = ({ link, setToggleMenu, toggleMenu }) => {
+  function handleClickMenuOff() {
+    setToggleMenu(false);
+  }
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const location = useLocation();
 
   const handleMouseEnter = () => {
@@ -15,9 +20,6 @@ export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
     setIsDropdownOpen(false);
   };
 
-  console.log(toggleMenu)
-
-
   return (
     <li
       key={link.id}
@@ -26,7 +28,7 @@ export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
     >
       {link.dropdown ? (
         <div>
-          <Link className="cool-link" to={link.to} >
+          <Link className="cool-link" to={link.to}>
             {link.text}
             <i className="bx bxs-down-arrow arrow"></i>
           </Link>
@@ -35,7 +37,7 @@ export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
             <ul>
               {link.dropdown.map((dropdownItem) => (
                 <li className="items" key={dropdownItem.id}>
-                  <Link className="cool-link-child" to={dropdownItem.to}  >
+                  <Link className="cool-link-child" to={dropdownItem.to} onClick={window.innerWidth < 644 ? handleClickMenuOff : null}>
                     {dropdownItem.text}
                   </Link>
                 </li>
@@ -45,7 +47,7 @@ export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
         </div>
       ) : link.id === 1 ? (
         location.pathname === "/blogs" || location.pathname === "/contact" ? (
-          <Link id={link.id} className="cool-link" to={link.to} >
+          <Link id={link.id} className="cool-link" to={link.to} onClick={window.innerWidth < 644 ? handleClickMenuOff : null}>
             {link.text}
           </Link>
         ) : (
@@ -54,13 +56,14 @@ export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
             to="adn"
             smooth={true}
             duration={500}
-          >
+            onClick={window.innerWidth < 644 ? handleClickMenuOff : null}
+            >
             {link.text}
           </ScrollLink>
         )
-      ) : link.id === 4 ? (
+        ) : link.id === 4 ? (
         location.pathname === "/blogs" || location.pathname === "/contact" ? (
-          <Link id={link.id} className="cool-link" to={link.to} >
+          <Link id={link.id} className="cool-link" to={link.to} onClick={window.innerWidth < 644 ? handleClickMenuOff : null}>
             {link.text}
           </Link>
         ) : (
@@ -69,17 +72,16 @@ export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
             to="faq"
             smooth={true}
             duration={2000}
+            onClick={window.innerWidth < 644 ? handleClickMenuOff : null}
           >
             {link.text}
           </ScrollLink>
         )
       ) : (
-        <Link id={link.id} className="cool-link" to={link.to} >
+        <Link id={link.id} className="cool-link" to={link.to} onClick={window.innerWidth < 644 ? handleClickMenuOff : null}>
           {link.text}
         </Link>
       )}
-  
     </li>
-
   );
 };

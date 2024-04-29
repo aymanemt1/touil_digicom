@@ -8,8 +8,8 @@ export const LangueContext = createContext()
    const [formation_id,setformation_id]=useState(null)
    const [valuesModel,SetvaluesModel] = useState({});
    const [selectAll,setselectall] = useState(false);
-   const[calcPrix,setCalcPrix]=useState(0)
-   const[validationScreen,setvalidationScreen]=useState(false)
+   const [calcPrix,setCalcPrix]=useState(0)
+   const [validationScreen,setvalidationScreen]=useState(false)
    
   return (
 

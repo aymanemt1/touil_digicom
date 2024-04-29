@@ -8,6 +8,8 @@ import Cookies from 'js-cookie';
 export default function NavbarDashboard(){
 
     const navigate = useNavigate();
+    const admin = Cookies.get('adminname') 
+
 
     const handleLogout = async () => {
         try {
@@ -43,7 +45,7 @@ export default function NavbarDashboard(){
                     </Link>
                 </div>
                 <div className="linksNavbarDashboard">
-                <h4>Bonjour, Omar</h4>
+                <h4>Bonjour, {admin}</h4>
                     <button className="btnSeeMoreServices" onClick={handleLogout}>Se déconnecter</button>
                 </div>
                 </div>

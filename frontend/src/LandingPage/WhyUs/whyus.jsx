@@ -48,7 +48,6 @@ export const WhyUs = () => {
               <section className="cards">
                 <article className="sample-card">
                   <div className='section-1'>
-
                     <div className="text-container">
                       <div className="text-wrapper">
                         <div className="title-container">
@@ -64,7 +63,7 @@ export const WhyUs = () => {
                 </article>
                 <article className="sample-card">
                   <div className='section-3'>
-                    <div className='Parentellipse' data-aos="fade-right">
+                    <div className='Parentellipse'>
                       <div className="ellipses-container" >
                         <img src="assets/WhyUs/icon1.png" className='img' alt="" />
                         <div className="ellipses ellipses__outer--thin" >

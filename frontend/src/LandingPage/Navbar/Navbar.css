@@ -11,8 +11,8 @@
     background-color: var(--bgTouil);
     width: 100%;
     display: flex;
-    top: 3px;
-   z-index: 1500;
+    top: 0px;
+    z-index: 1500;
     justify-content: space-around;
     padding: 1rem;
     position: sticky;

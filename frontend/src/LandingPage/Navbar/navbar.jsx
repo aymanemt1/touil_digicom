@@ -9,6 +9,10 @@ import { Link as ScrollLink } from "react-scroll";
 export default function Navbar({ link }) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  function handleClickMenuOff() {
+    setToggleMenu(false);
+  }
+
   const { langue, setlangue } = useContext(LangueContext);
 
   const Navbar = Translate.Navbar.find((lang) => lang.id == langue);
@@ -34,7 +38,13 @@ export default function Navbar({ link }) {
     { id: 5, to: "/contact", text: `${Navbar.link5}` },
   ];
 
-  const renderNavLinks = navLinks.map((link) => <NavDropdown toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} link={link} />);
+  const renderNavLinks = navLinks.map((link) => (
+    <NavDropdown
+      toggleMenu={toggleMenu}
+      setToggleMenu={setToggleMenu}
+      link={link}
+    />
+  ));
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,9 +72,10 @@ export default function Navbar({ link }) {
           <Link to="/" id="logo">
             <li>
               <img
-                src="/assets/Logo/logo4.png"
+                src="/assets/Logo/logoLandige.png"
                 alt="Touil Digicom"
                 className="brandLogo"
+                onClick={window.innerWidth < 744 ? handleClickMenuOff : null}
               />
             </li>
           </Link>
@@ -73,16 +84,32 @@ export default function Navbar({ link }) {
           {renderNavLinks}
           <div className="parentBtns">
             {isSpecialPath ? (
-              <Link to="/">
+              <Link
+                to="/"
+                onClick={window.innerWidth < 744 ? handleClickMenuOff : null}
+              >
                 <button className="demandBtn">{Navbar.btn_devis}</button>
               </Link>
             ) : (
-          <ScrollLink to="devis" smooth={true} duration={2200} >
+              <ScrollLink
+                to="devis"
+                smooth={true}
+                duration={2200}
+                onClick={window.innerWidth < 744 ? handleClickMenuOff : null}
+              >
                 <button className="demandBtn">{Navbar.btn_devis}</button>
               </ScrollLink>
             )}
             <div className="langParent">
-              <button className="langBtn" onClick={toggleLanguage}>
+              <button
+                className="langBtn"
+                onClick={() => {
+                  toggleLanguage();
+                  if (window.innerWidth < 744) {
+                    handleClickMenuOff();
+                  }
+                }}
+              >
                 <img className="flag" src={Navbar.flag} alt="FR" />
               </button>
             </div>

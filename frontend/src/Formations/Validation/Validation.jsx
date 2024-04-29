@@ -87,8 +87,8 @@ export const Validation = ({formData}) => {
             const reservationResponse = await axios.post('http://127.0.0.1:8000/api/reservation', updatedFormData);
             if (reservationResponse.status === 200) {
                 setreserved(true);
-                setresponsemessage('success')
-    
+                setresponsemessage('votre réservation a été ajoutée avec succès')
+
                 try {
                     const emailResponse = await axios.post('http://127.0.0.1:8000/api/sendmail-reservaion', updatedFormData);
                     if (emailResponse.status === 200) {

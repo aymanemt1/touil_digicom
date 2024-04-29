@@ -18,7 +18,7 @@ export const BottomService = () => {
 
   return (
     <div>
-      <div className="parentBottomServices" data-aos="fade-up">
+      <div className="parentBottomServices">
         <div className="bottomService">
           <p>{BottomService.title1}</p>
           <h2>{BottomService.title2}</h2>

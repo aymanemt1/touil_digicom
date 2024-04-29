@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <div className="footer" data-aos="fade-up" >
+    <div className="footer">
       <div className="footer-content">
         <div className="divFooterBtnDev">
         <img src="/assets/Logo/logo3.png" className="footer-logo" alt="" />

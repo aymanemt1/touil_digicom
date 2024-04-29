@@ -8,7 +8,6 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
     prenom: "",
     specialite: "",
     email: "",
-    profile: "",
   });
 
   const [errors, setErrors] = useState({
@@ -16,7 +15,6 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
     prenom: "",
     email: "",
     specialite: "",
-    profile: "",
   });
 
 
@@ -32,41 +30,9 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
   }, [formateurId]);
 
 
-
-
-  
-  const [profilePreview, setProfilePreview] = useState(null);
-
-
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
+    const { name, value} = e.target;
     let error = "";
-  
-    if (type === "file") {
-      const file = files[0];
-      setFormData({
-        ...formData,
-        [name]: file ? file.name : null, 
-      });
-  
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          if (name === "profile") {
-            setProfilePreview(reader.result);
-          }
-        };
-        reader.readAsDataURL(file);
-      }
-    } else {
-      if (value.trim() === "") {
-        error = "Ce champ est obligatoire";
-      }
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
   
     setErrors({
       ...errors,
@@ -170,31 +136,7 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
                     )}
                   </td>
                 </tr>
-                <tr>
-                  <td colSpan="2">
-                  <label className="label_edit">Profile</label>
-                    <div className="labelFile">
-                      <label htmlFor="profile">
-                        <i className="bx bx-cloud-upload"></i> { formData.profile ? formData.profile : 'Profile' }
-                        {profilePreview && (
-                          <img src={profilePreview} alt="Profile Preview" className="imgReloadInput"/>
-                        )}
-                      </label>
-                      <input
-                        type="file"
-                        name="profile"
-                        id="profile"
-                        onChange={handleChange}
-                        className="inputFile"
-                      />
-                      {errors.profile && (
-                        <span className="errorModal">
-                          <i className="bx bxs-error"></i> {errors.profile}
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
+              
                 <tr>
                   <td></td>
                   <td className="tdBtnAjoute">

@@ -27,11 +27,16 @@
 
 .h1LandingPageAr {
     position: relative;
-    left: 65vw;
+    left: 60vw;
+    width: 100%;
 }
 
 .serviceDevis {
     color: white;
+}
+
+.parentDevisAr .colLeftDevis {
+    width: 100%;
 }
 
 .colRightDevis p {
@@ -303,4 +308,22 @@ background-color: white;
     }
    
   
+}
+
+@media (max-width:760px){
+    .h1LandingPageAr {
+        left: 50vw;
+    }
+    .colRightDevisAr {
+        width:100%;
+        
+    }
+    .colRightDevisAr p{
+        width:100%;
+    }
+}
+@media (max-width:524px){
+    .h1LandingPageAr {
+        left: 40vw;
+    }
 }

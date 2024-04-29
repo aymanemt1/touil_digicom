@@ -40,12 +40,12 @@ export const Adn = () => {
             <div id="bordercom">
               <div className="card-img" id="com"></div>
             </div>
-            <h5 className="card-title">Douae Frihi</h5>
+            <h5 className="card-title">Douae FRIHI</h5>
             <p className="p"> {Adn.role[0]}</p>
             <button
               title="Détails"
               className="add-button"
-              onClick={() => openPopup("Douae Frihi")}
+              onClick={() => openPopup("Douae FLIHI")}
             >
               <i className="bx bx-plus-circle"></i>
             </button>
@@ -54,12 +54,12 @@ export const Adn = () => {
           <div id="borderceo">
             <div className="card-img" id="ceo"></div>
           </div>
-          <h5 className="card-title">Omar Touil</h5>
+          <h5 className="card-title">Omar TOUIL</h5>
           <p className="p-ceo">{Adn.role[1]}</p>
           <button
             title="Détails"
             className="add-button"
-            onClick={() => openPopup("Omar Touil")}
+            onClick={() => openPopup("Omar TOUIL")}
             >
             <i className="bx bx-plus-circle ceo"></i>
           </button>
@@ -68,12 +68,12 @@ export const Adn = () => {
           <div id="borderdesign">
             <div className="card-img" id="design"></div>
           </div>
-          <h5 className="card-title">Sohaib Frihi</h5>
+          <h5 className="card-title">Sohaib FLIHI</h5>
           <p className="p">{Adn.role[2]}</p>
           <button
             title="Détails"
             className="add-button"
-            onClick={() => openPopup("Sohaib Frihi")}
+            onClick={() => openPopup("Sohaib FLIHI")}
             >
             <i className="bx bx-plus-circle"></i>
           </button>

@@ -18,13 +18,12 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
     client_id: "",
     date_validation: "",
     time_validation: "",
-    prix: "",
   });
   const [errors, setErrors] = useState({
     formation_id: "",
     client_id: "",
     date_validation: "",
-    prix: "",
+   
     time_validation: "",
   });
 
@@ -83,6 +82,7 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+
   
     let isValid = true;
     const newErrors = { ...errors };
@@ -113,7 +113,7 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
     axios
       .post("http://127.0.0.1:8000/api/reservations", formData)
       .then((response) => {
-        console.log(response.data.message)
+        console.log(response.data)
         setResponseMessage(response.data.message);
         onClose();
       })
@@ -199,7 +199,7 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
                   <select id="time" name='time_validation'  value={formData.time_validation}
             onChange={handleChange}>
       <option value="" selected disabled>
-    <label for="time">Heur de confirmation :</label>
+    <label htmlFor="time">Heur de confirmation :</label>
       </option>
       <option value="11:00">11:00</option>
       <option value="13:00">13:00</option>
@@ -213,22 +213,7 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
                     )}
                   </td>
                 </tr>
-                <tr>
-                <td>
-                    <input
-                      type="number"
-                      name="prix"
-                      value={formData.prix}
-                      onChange={handleChange}
-                      placeholder="Prix"
-                    />
-                    {errors.prix && (
-                      <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.prix}
-                      </span>
-                    )}
-                  </td>
-                </tr>
+               
                 <tr>
                   <td></td>
                   <td className="tdBtnAjoute">

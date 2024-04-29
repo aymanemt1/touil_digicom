@@ -45,7 +45,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
           description_fr: response.data.description_fr,
           description_ar: response.data.description_ar,
           cover: response.data.cover,
-          affiche: response.data.affiche,
           localisation: response.data.ville,
           ville: response.data.ville,
           capacite: response.data.capacite,
@@ -58,36 +57,12 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
       });
   }, [formationId]);
 
-  const [coverPreview, setCoverPreview] = useState(null);
-  const [affichePreview, setAffichePreview] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
+    const { name, value } = e.target;
     let error = "";
 
-    if (type === "file") {
-      const allowedExtensions = ["png", "jpeg", "jpg"];
-      const file = files[0];
-      const extension = file.name.split(".").pop().toLowerCase();
-
-      if (!allowedExtensions.includes(extension)) {
-        error = "Veuillez sélectionner un fichier PNG, JPEG ou JPG";
-      } else {
-        const reader = new FileReader();
-        reader.onload = () => {
-          if (name === "cover") {
-            setCoverPreview(reader.result);
-          } else if (name === "affiche") {
-            setAffichePreview(reader.result);
-          }
-          setFormData({
-            ...formData,
-            [name]: file.name,
-          });
-        };
-        reader.readAsDataURL(file); 
-      }
-    } else {
+   
       if (value.trim() === "") {
         error = "Ce champ est obligatoire";
       } else if (name === "date_debut" || name === "date_fin") {
@@ -113,7 +88,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
           [name]: value,
         });
       }
-    }
 
     setErrors({
       ...errors,
@@ -236,56 +210,6 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                   </td>
                 </tr>
                 <tr>
-                <td>
-                <label className="label_edit">Cover</label>
-                    <div>
-                      <div className="labelFile">
-                        <label htmlFor="cover">
-                          <i className="bx bx-cloud-upload"></i> {formData.cover ? <p className="cheminImageReload">{formData.cover}</p> : <p className="cheminImageReload">Cover</p>}
-                        </label>
-                        <input
-                          type="file"
-                          name="cover"
-                          id="cover"
-                          onChange={handleChange}
-                        />
-                        {coverPreview && (
-                          <img src={coverPreview} alt="Cover" className="imgReloadInput"/>
-                        )}
-                      </div>
-                      {errors.cover && (
-                        <span className="errorModal">
-                          <i className="bx bxs-error"></i> {errors.cover}
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                  <td>
-                  <label className="label_edit">Affiche</label>
-                    <div>
-                      <div className="labelFile">
-                        <label htmlFor="affiche">
-                          <i className="bx bx-cloud-upload"></i> {formData.affiche ? <p className="cheminImageReload">{formData.affiche}</p> : <p className="cheminImageReload">Affiche</p>}
-                        </label>
-                        <input
-                          type="file"
-                          name="affiche"
-                          id="affiche"
-                          onChange={handleChange}
-                        />
-                        {affichePreview && (
-                          <img src={affichePreview} alt="affiche" className="imgReloadInput"/>
-                        )}
-                      </div>
-                      {errors.affiche && (
-                        <span className="errorModal">
-                          <i className="bx bxs-error"></i> {errors.affiche}
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
                   <td>
                   <label className="label_edit">Localisation</label>
                     <input
@@ -302,15 +226,51 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                     )}
                   </td>
                   <td id="tdDouble">
-                  <label className="label_edit">Ville</label>
+                 
                     <div>
-                      <input
-                        type="text"
-                        name="ville"
-                        value={formData.ville}
-                        onChange={handleChange}
-                        placeholder="Ville"
-                      />
+                    <select
+        id="ville"
+        className="input-inscription"
+        name="ville"
+        value={formData.ville}
+        onChange={handleChange}
+    >
+        <option value="" disabled selected>Selectionner une ville</option>
+        <option value="Agadir">Agadir</option>
+        <option value="Al Hoceima">Al Hoceima</option>
+        <option value="Asilah">Asilah</option>
+        <option value="Azemmour">Azemmour</option>
+        <option value="Beni Mellal">Beni Mellal</option>
+        <option value="Bouznika">Bouznika</option>
+        <option value="Casablanca">Casablanca</option>
+        <option value="Chefchaouen">Chefchaouen</option>
+        <option value="Dakhla">Dakhla</option>
+        <option value="El Jadida">El Jadida</option>
+        <option value="Essaouira">Essaouira</option>
+        <option value="Fes">Fes</option>
+        <option value="Fnideq">Fnideq</option>
+        <option value="Guelmim">Guelmim</option>
+        <option value="Ifrane">Ifrane</option>
+        <option value="Kénitra">Kénitra</option>
+        <option value="Khouribga">Khouribga</option>
+        <option value="Laayoune">Laayoune</option>
+        <option value="Larache">Larache</option>
+        <option value="Marrakech">Marrakech</option>
+        <option value="Meknes">Meknes</option>
+        <option value="Mohammedia">Mohammedia</option>
+        <option value="Nador">Nador</option>
+        <option value="Ouarzazate">Ouarzazate</option>
+        <option value="Oujda">Oujda</option>
+        <option value="Rabat">Rabat</option>
+        <option value="Safi">Safi</option>
+        <option value="Salé">Salé</option>
+        <option value="Tanger">Tanger</option>
+        <option value="Taroudant">Taroudant</option>
+        <option value="Taza">Taza</option>
+        <option value="Témara">Témara</option>
+        <option value="Tetouan">Tetouan</option>
+        <option value="Tiznit">Tiznit</option>
+    </select>
                       {errors.ville && (
                         <span className="errorModal">
                           <i className="bx bxs-error"></i> {errors.ville}

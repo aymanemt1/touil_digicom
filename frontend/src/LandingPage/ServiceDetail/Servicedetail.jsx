@@ -118,7 +118,6 @@ const service = filteredServices.find(service => service.id == id);
         }}
       >
             <h1 className="covertitle">{service.name}</h1>
-
       </div>
 
       <div className="servicedetailcontent">

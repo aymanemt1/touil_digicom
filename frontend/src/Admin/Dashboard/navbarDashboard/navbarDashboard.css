@@ -9,13 +9,12 @@
     align-items: center;
     flex-wrap: wrap;
     margin: auto;
-    width: 80%;
+    width: 93%;
 }
 
 .brandLogoDashboard img {
-    width: 200px;
+    width: 220px;
 }
-
 
 .linksNavbarDashboard {
     display: flex;

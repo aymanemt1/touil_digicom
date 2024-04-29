@@ -51,7 +51,7 @@ export default function ModalBlogs({ blogs, onClose }) {
             </div>
             <div className={langue == 'fr' ? "infoOwner" : "infoOwner infoOwnerAr"}>
               <div className={langue == 'fr' ? "ownerblog" : "ownerblog ownerblogAr"}>
-                <img src="./assets/Team/Pic/Omar TL.jpg" />
+                <img src='/assets/illustrationsRemoveBg/i1.png' />
                 <h6>{blog.postOwner}</h6>
               </div>
               <div className="dateBlogs">

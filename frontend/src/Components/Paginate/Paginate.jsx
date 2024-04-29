@@ -7,17 +7,17 @@ export default function Paginate({ currentPage, totalPages, handlePageChange }) 
         <div className="pagination">
             <button 
                 onClick={() => handlePageChange(null, currentPage - 1)} 
-                disabled={currentPage === 1}
+                disabled={currentPage == 1}
                 className="pagination-button"
             >
-                Previous
+                <i className='bx bx-left-arrow-alt' ></i> Précédente 
             </button>
             <button 
                 onClick={() => handlePageChange(null, currentPage + 1)} 
-                disabled={currentPage === totalPages}
+                disabled={currentPage == totalPages}
                 className="pagination-button"
             >
-                Next
+                Suivante <i className='bx bx-right-arrow-alt'></i>
             </button>
         </div>
     );

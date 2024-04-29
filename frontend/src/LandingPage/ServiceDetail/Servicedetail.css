@@ -16,13 +16,16 @@
 
 }
 .covertitle{
-    text-align: center;
-    font-size: 70px;
-    padding: 5rem 0;
-    opacity: 0.7;
-  margin: auto;
-  letter-spacing: 0.3rem;
+text-align: center;
+font-size: 70px;
+padding: 5rem 0;
+margin: auto;
+letter-spacing: 0.3rem;
+color: transparent;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: rgb(255, 255, 255);
 }
+
 .servicedetailtext {
     padding: 1rem;
     border-radius: 5px;

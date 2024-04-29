@@ -55,7 +55,6 @@ export default function FormationDashboard() {
         axios.get('http://127.0.0.1:8000/api/formations/')
             .then(response => {
                 setFormations(response.data);
-                console.log(response)
             })
             .catch(error => {
                 console.error(error);
@@ -158,7 +157,6 @@ export default function FormationDashboard() {
                                 <th>DESCRIPTION(AR)</th>
                                 <th>VILLE</th>
                                 <th>LOCALISATION</th>
-                                <th>PRIX (DH)</th>
                                 <th>CAPACITE</th>
                                 <th>DATEDEBUT</th>
                                 <th>DATEFIN</th>
@@ -185,7 +183,6 @@ export default function FormationDashboard() {
                                     </td>
                                     <td>{item.ville}</td>
                                     <td>{item.ville}</td>
-                                    <td>{item.prix}</td>
                                     <td>{item.capacite}</td>
                                     <td>{item.date_debut}</td>
                                     <td>{item.date_fin}</td>

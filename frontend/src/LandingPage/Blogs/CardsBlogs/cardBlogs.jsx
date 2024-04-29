@@ -16,7 +16,7 @@ export default function CardsBlogs() {
   const [selectedBlog, setSelectedBlog] = useState(null); 
 
   const BlogsOld = [blogsData.blogs[0], blogsData.blogs[1], blogsData.blogs[2]];
-  const BlogsNew = [blogsData.blogs[3], blogsData.blogs[4], blogsData.blogs[1]];
+  const BlogsNew = [blogsData.blogs[3], blogsData.blogs[4], blogsData.blogs[5]];
 
   const handleShowDetails = (blog) => {
     setSelectedBlog(blog);

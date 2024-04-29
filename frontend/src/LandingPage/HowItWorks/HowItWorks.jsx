@@ -95,6 +95,13 @@ export const HowItWorks = () => {
             <div className="circleHowItWork"></div>
             <h3 className="title-etape">{HowItWorks.blogs.blog5} </h3>
           </div>
+          <div id="etape" className="etape1" data-aos="fade-up">
+            <div className="pattermHowItWork"></div>
+
+            <span className="number-etape">06.</span>
+            <div className="circleHowItWork"></div>
+            <h3 className="title-etape">{HowItWorks.blogs.blog6} </h3>
+          </div>
         </div>
         <div className="reveal">
           <img
