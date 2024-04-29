@@ -8,7 +8,7 @@
     width: 94%;
     padding: 1rem 0;
     background-color: white;
-    margin: 3rem auto;
+    margin: 4rem auto;
     border-radius: 20px;
 }
 .card-image{
@@ -198,6 +198,12 @@ font-size: 25px;
     color: #ddd;
 }
 
+.titleformations{
+ 
+    font-size: 30px;
+    margin-left: 3rem;
+  filter: drop-shadow(0 0 5px var(--blueBTouilShadow));
+}
 
       
 @media (max-width : 767px){

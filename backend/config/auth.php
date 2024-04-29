@@ -37,16 +37,9 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'admins',
-        ],
-
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'admins',
-            'hash' => false,
+            'provider' => 'users', 
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -63,13 +56,13 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
+ 
+    
     'providers' => [
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Admin::class, // Update this line with your Admin model
+            'model' => App\Models\Admin::class,
         ],
-
 
         'users' => [
             'driver' => 'database',

@@ -3,28 +3,34 @@ import { Link, useNavigate } from "react-router-dom";
 import './navbarDashboard.css'
 import axios from "axios";
 import { LangueContext } from "../../../Context/LangueContext";
+import Cookies from 'js-cookie';
 
 export default function NavbarDashboard(){
 
     const navigate = useNavigate();
 
-    const {setisauth ,isauth} = useContext(LangueContext);
-
-    // const [token,seToken] = useState(localStorage.getItem('token'))
-
-
-
-    // const handleLogout = async () => {
+    const handleLogout = async () => {
+        try {
+            // Retrieve the token from the cookie
+            const token = Cookies.get("token");
     
-    //         sessionStorage.removeItem('token');
-    //         sessionStorage.removeItem('admin');
-    //         sessionStorage.removeItem('valid');
+            if (!token) {
+                console.error("Token not found");
+                return;
+            }
+            await axios.post('http://127.0.0.1:8000/api/logout', null, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
     
-    //         setToken(null); 
-    //         navigate('/login');
-    //         setisauth(false);
-
-    // };
+            Cookies.remove("token");
+            Cookies.remove("admin_active");
+            navigate('/');
+        } catch (error) {
+            console.error("Error logging out:", error);
+        }
+    }
     
 
     return (
@@ -38,7 +44,7 @@ export default function NavbarDashboard(){
                 </div>
                 <div className="linksNavbarDashboard">
                 <h4>Bonjour, Omar</h4>
-                    <button className="btnSeeMoreServices" >Se déconnecter</button>
+                    <button className="btnSeeMoreServices" onClick={handleLogout}>Se déconnecter</button>
                 </div>
                 </div>
             </div>

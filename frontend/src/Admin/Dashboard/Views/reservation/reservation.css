@@ -175,11 +175,13 @@
 .bxs-check-square {
     color: green;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .bxs-x-square {
     color: red;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 

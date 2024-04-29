@@ -11,6 +11,7 @@ import Video from "./Video/Video";
 import FAQ from "./FAQ/FAQ";
 import Devis from "./Devis/Devis";
 import { Link as ScrollLink, Element, animateScroll as scroll, } from "react-scroll";
+import { LangueContext } from "../Context/LangueContext";
 
 export const LandingPage = () => {
   return (

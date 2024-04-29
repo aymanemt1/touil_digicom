@@ -34,7 +34,7 @@ export default function Navbar({ link }) {
     { id: 5, to: "/contact", text: `${Navbar.link5}` },
   ];
 
-  const renderNavLinks = navLinks.map((link) => <NavDropdown link={link} />);
+  const renderNavLinks = navLinks.map((link) => <NavDropdown toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} link={link} />);
 
   useEffect(() => {
     const handleResize = () => {
@@ -77,7 +77,7 @@ export default function Navbar({ link }) {
                 <button className="demandBtn">{Navbar.btn_devis}</button>
               </Link>
             ) : (
-              <ScrollLink to="devis" smooth={true} duration={2200}>
+          <ScrollLink to="devis" smooth={true} duration={2200} >
                 <button className="demandBtn">{Navbar.btn_devis}</button>
               </ScrollLink>
             )}

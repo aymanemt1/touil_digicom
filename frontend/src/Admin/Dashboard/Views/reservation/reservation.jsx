@@ -8,6 +8,7 @@ import ModalTrashedReservations from "./ModalTrashed/modal";
 
 export default function ReservationDashboard() {
   const [reservations, setReservations] = useState([]);
+  const [reservationsValidate, setreservationsValidate] = useState([]);
   const [toggleAddReservation, setToggleAddReservation] = useState(false);
   const [toggleEditReservation, setToggleEditReservation] = useState(false);
   const [editReservationId, setEditReservationId] = useState();
@@ -16,6 +17,7 @@ export default function ReservationDashboard() {
   const [sortOrder, setSortOrder] = useState("asc");
   const [responseMessage, setResponseMessage] = useState();
   const [toggleInfoClient, setToggleInfoClient] = useState(false);
+  const [validate, setvalidate] = useState(false);
 
   // Open & close Modal Add
   function openAddReservation() {
@@ -41,8 +43,27 @@ export default function ReservationDashboard() {
   function closeTrashedReservations() {
     setTogglePoubelle(false);
   }
+  const handleValidate = async (formationId, clientId) => {
 
-  //Function for open info client
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/checkReservation', {
+        formation_id: formationId,
+        client_id: clientId
+      });
+    setvalidate(!validate)
+     
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  useEffect(() => {
+    const { formation, client } = reservations;
+    if (formation && client) {
+      handleValidate(formation.id, client.id);
+    }
+  }, [reservations]);
+ 
   function openInfoClient(reservationId) {
     setToggleInfoClient(
       reservationId === toggleInfoClient ? null : reservationId
@@ -62,7 +83,7 @@ export default function ReservationDashboard() {
     axios
       .get("http://127.0.0.1:8000/api/reservations/")
       .then((response) => {
-        setReservations(response.data);
+        setReservations(response.data);   
       })
       .catch((error) => {
         console.error(error);
@@ -112,7 +133,7 @@ export default function ReservationDashboard() {
       })
     : [];
 
-  // Sort reservations by date_validation & time_validation
+  // Sort reservations by date_validation & timeValidation
   const sortedReservations = [...filteredReservations].sort((a, b) => {
     const dateA = new Date(`${a.date_validation}T${a.time_validation}`);
     const dateB = new Date(`${b.date_validation}T${b.time_validation}`);
@@ -247,12 +268,15 @@ export default function ReservationDashboard() {
                     <td>{reservation.time_validation}</td>
                     <td>{reservation.prix}</td>
                     <td>
-                      {reservation.validate ? (
-                        <i className="bx bxs-check-square"></i>
+                      {reservation.validate == 0 ?(
+                        <i className="bx bxs-x-square" onClick={() => handleValidate(reservation.formation.id, reservation.client.id)}></i>
+                        
                       ) : (
-                        <i class="bx bxs-x-square"></i>
+                        <i  className="bx bxs-check-square" onClick={() => handleValidate(reservation.formation.id, reservation.client.id)}></i>
+
                       )}
-                    </td>
+</td>
+
                     <td className="tdActions">
                       <div>
                         <button

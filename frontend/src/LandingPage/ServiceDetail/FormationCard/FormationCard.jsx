@@ -12,7 +12,7 @@ export const FormationCard = () => {
     const [visibleFormationId, setVisibleFormationId] = useState(null);
 
     const handleVisible = (formationId) => {
-        setVisibleFormationId((prevId) => (prevId === formationId ? null : formationId));
+        setVisibleFormationId((prevId) => (prevId == formationId ? null : formationId));
     };
 const nav = useNavigate()
 
@@ -36,16 +36,19 @@ const reserveFormation = (id) => {
     const itemsPerPage = 3;
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/formations?page=${currentPage}`)
+        axios.get(`http://127.0.0.1:8000/api/formationsdata?page=${currentPage}`)
             .then((response) => {
+                console.log(response.data)
                 setFormations(response.data.formations.data);
                 setCount(response.data.FormationCount);
-                setLoading(false);
             })
             .catch((error) => {
                 console.error('Error fetching formations:', error);
             });
     }, [currentPage]);
+    console.log(formations)
+
+ 
 
     const handlePageChange = (event, page) => {
         setCurrentPage(page);
@@ -57,33 +60,12 @@ const reserveFormation = (id) => {
     const endIndex = startIndex + itemsPerPage;
     const slicedFormations = formations.slice(startIndex, endIndex);
 
-    
+
     return (
         <div className='detail-bottom'>
-        {loading ? (
-            <div className="skeleton-container">
-                {[...Array(1)].map((_, index) => (
-                    <div className="card-formation skeleton-card" key={index}>
-                        <div className='card-image skeleton-image'></div>
-                        <div className='card-content'>
-                            <div className="titleformation skeleton-title"></div>
-                            <div className="descriptionformation">
-                                <div className="line"></div>
-                                <div className="skeleton-description"></div>
-                                <div className="skeleton-description"></div>
-                            </div>
-                            <div className='buttons-card'>
-                                <div className='skeleton-select'></div>
-                                <div className='btnReserve skeleton-buttons'></div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        ) : (
-            <>
                 {slicedFormations.map((formation) => (
                     <>
+                    <h2 className='titleformations'>Notre Formations </h2>
                         <div className='card-formation' key={formation.id}>
                             <div className='card-image'>
                                 <img className='cardformation-img' src='/assets/DetailService/service1-img1.jpg' alt='service-Image' />
@@ -137,8 +119,6 @@ const reserveFormation = (id) => {
                         <Paginate currentPage={currentPage} totalPages={totalPages} handlePageChange={handlePageChange} />
                     ) : ''
                 }
-            </>
-        )}
     </div>
     
     );

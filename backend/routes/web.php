@@ -32,6 +32,7 @@ Route::get('/ajouterFormateur', [FormateurController::class, 'create']);
 
 Route::get('/ajouterModule', [ModuleController::class, 'create']);
 
+Route::get('/formationsdata', [FormationController::class, 'index']);
 
 
 

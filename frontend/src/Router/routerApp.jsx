@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Fragment, useContext } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { LandingPage } from "../LandingPage/LandingPage";
 import { Contact } from "../LandingPage/Contact/Contact";
 import Navbar from "../LandingPage/Navbar/navbar";
@@ -19,10 +19,15 @@ import ModuleDashboard from "../Admin/Dashboard/Views/module/module";
 import ReservationDashboard from "../Admin/Dashboard/Views/reservation/reservation";
 import ClientDashboard from "../Admin/Dashboard/Views/client/client";
 import StatistiquesDashboard from "../Admin/Dashboard/Views/home/home";
+import { RegisterForm } from "../Admin/Register/Register";
 import RequiredAuth from "./requiredAuth";
+import { LangueContext } from "../Context/LangueContext";
+import Cookies from 'js-cookie'
 
 
 export default function RouterApp() {
+  const token = Cookies.get('token') 
+
   return (
     <>
       <ScrollToTopButton />
@@ -44,6 +49,7 @@ export default function RouterApp() {
             <Fragment>
               <Navbar />
               <Contact />
+              <References />
 
               <Footer />
             </Fragment>
@@ -55,7 +61,9 @@ export default function RouterApp() {
             <Fragment>
               <Navbar />
               <Blog />
+             <References />
               <Footer />
+
 
             </Fragment>
           }
@@ -81,7 +89,6 @@ export default function RouterApp() {
               <Navbar />
               <Inscription />
              <References />
-
               <Footer />
             </Fragment>
           }
@@ -97,14 +104,28 @@ export default function RouterApp() {
           }
         />
      
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={
+          
+          <Fragment>
+              <Navbar />
+              <NotFound />
+              <Footer />
+            </Fragment>
+        } />
 
-       {/* {isauth == false && (
-            <Route path="/login" element={<Login />} />
-          )}  */}
 
-<Route path="/login" element={<Login />} />
-          <Route element={<RequiredAuth/>}>
+<Route path="/login" element={
+  token ? 
+  <Navigate to='/dashboard/statistiques' />
+  : <Fragment>
+  <Navbar />
+  <Login />
+  <Footer />
+</Fragment>
+} />
+<Route path="/register" element={<RegisterForm />} />
+        <Route  element={<RequiredAuth />}>
+
           <Route path="/dashboard" element={<Dashboard />} >
             <Route path="statistiques" element={<StatistiquesDashboard />} />
             <Route path="formations" element={<FormationDashboard />} />

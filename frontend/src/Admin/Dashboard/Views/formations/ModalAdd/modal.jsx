@@ -41,26 +41,23 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     let error = "";
 
     if (type === "file") {
-      const allowedExtensions = ["png", "jpeg", "jpg"];
       const file = files[0];
-      const extension = file.name.split(".").pop().toLowerCase();
-
-      if (!allowedExtensions.includes(extension)) {
-        error = "Veuillez sélectionner un fichier PNG, JPEG ou JPG";
-      } else {
+      setFormData({
+        ...formData,
+        [name]: file, 
+      });
+  
+      if (file) {
         const reader = new FileReader();
         reader.onload = () => {
           if (name === "cover") {
             setCoverPreview(reader.result);
-          } else if (name === "affiche") {
+          }
+          if (name === "affiche") {
             setAffichePreview(reader.result);
           }
-          setFormData({
-            ...formData,
-            [name]: file,
-          });
         };
-        reader.readAsDataURL(file); 
+        reader.readAsDataURL(file);
       }
     } else {
       if (value.trim() === "") {
@@ -96,6 +93,8 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     });
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let isValid = true;
@@ -122,29 +121,42 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     }
 
     console.log(formData);
-
     axios
-      .post("http://127.0.0.1:8000/api/formations", formData)
-      .then((response) => {
-        setFormData({
-          titre_fr: "",
-          titre_ar: "",
-          description_fr: "",
-          description_ar: "",
-          cover: "",
-          affiche: "",
-          ville: "",
-          capacite: "",
-          date_debut: "",
-          date_fin: "",
-        });
-        setResponseMessage(response.data.message);
-        onClose();
-      })
-      .catch((error) => {
-        console.error(error);
+    .post("http://127.0.0.1:8000/api/formations", formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then((response) => {
+      setFormData({
+        titre_fr: "",
+        titre_ar: "",
+        description_fr: "",
+        description_ar: "",
+        cover: "",
+        affiche: "",
+        location: "",
+        ville: "",
+        capacite: "",
+        date_debut: "",
+        date_fin: "",
       });
-  };
+      setResponseMessage(response.data.message);
+      onClose();
+    })
+    .catch((error) => {
+      if (error.response) {
+        setErrors({
+          ...errors,
+          email: "Email déjà existant",
+        });
+      } else {
+        console.error(error);
+      }
+    });
+};
+
+
 
   return (
     <Fragment>
@@ -224,7 +236,7 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                     <div>
                       <div className="labelFile">
                         <label htmlFor="cover">
-                          <i className="bx bx-cloud-upload"></i> <p className="cheminImageReload">Cover</p>
+                          <i className="bx bx-cloud-upload"></i><p className="cheminImageReload">Cover</p>
                         </label>
                         <input
                           type="file"
@@ -247,7 +259,7 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                     <div>
                       <div className="labelFile">
                         <label htmlFor="affiche">
-                          <i className="bx bx-cloud-upload"></i> <p className="cheminImageReload">Affiche</p>
+                          <i className="bx bx-cloud-upload"></i>  <p className="cheminImageReload">Affiche</p>
                         </label>
                         <input
                           type="file"

@@ -7,6 +7,7 @@ export default function ModalTrashedFormateurs({ onClose }) {
   const [formateurs, setFormateurs] = useState([]);
   const [responseMessage, setResponseMessage] = useState();
 
+      
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/trashed-formateurs")

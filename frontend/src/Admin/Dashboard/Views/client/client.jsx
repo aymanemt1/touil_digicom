@@ -71,6 +71,7 @@ export default function ClientDashboard() {
                 })
                 .catch(error => {
                     console.error(error);
+                    setResponseMessage(error.response.data.message);
                 });
         }
     }

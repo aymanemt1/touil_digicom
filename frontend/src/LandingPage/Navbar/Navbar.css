@@ -12,9 +12,9 @@
     width: 100%;
     display: flex;
     top: 3px;
-   z-index: 1400;
+   z-index: 1500;
     justify-content: space-around;
-    padding: 0.3rem 1rem;
+    padding: 1rem;
     position: sticky;
 }
 
@@ -31,10 +31,6 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all .2s;
-}
-
-.menuBtn:hover {
-    box-shadow: 0 0 10px 10px var(--orangeTouilShadow);
 }
 
 
@@ -196,7 +192,7 @@ li ul li {
 @media (max-width : 743px) {
     .parentNavbar {
         backdrop-filter: blur(20px);
-        height: 100vh;
+        height: 120vh;
         position: fixed;
         z-index: 10;
         width: 100%;

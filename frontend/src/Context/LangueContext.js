@@ -9,10 +9,8 @@ export const LangueContext = createContext()
    const [valuesModel,SetvaluesModel] = useState({});
    const [selectAll,setselectall] = useState(false);
    const[calcPrix,setCalcPrix]=useState(0)
-   const [isauth,setisauth]=useState(false)
    const[validationScreen,setvalidationScreen]=useState(false)
-
-
+   
   return (
 
     <LangueContext.Provider value={{langue,setlangue,
@@ -21,7 +19,6 @@ export const LangueContext = createContext()
     formation_id,selectAll,
     setselectall,calcPrix,setCalcPrix
     ,validationScreen,setvalidationScreen,
-    isauth,setisauth
     }}>
      {children}
     </LangueContext.Provider>

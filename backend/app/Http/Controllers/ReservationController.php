@@ -26,7 +26,7 @@ class ReservationController extends Controller
         $niveau_etude = $request->input('niveau_etude');
         $experiences_formatives = $request->input('experiences_formatives');
         $date_validation = $request->input('date_validation');
-$time_validation = $request->input('time_validation');
+        $time_validation = $request->input('time_validation');
 
         // Check if the email has already made a reservation for the formation
         $formationId = $request->input('formationId');
@@ -84,7 +84,8 @@ $time_validation = $request->input('time_validation');
             $reservation = new Reservation();
             $reservation->client_id = $client->id;
             $reservation->formation_id = $formationId;
-            $reservation->date_validation = now();
+            $reservation->date_validation = $date_validation;
+            $reservation->time_validation = $time_validation;
             $reservation->prix = $totalPrice;
             $reservation->validate = 0;
             $reservation->save();

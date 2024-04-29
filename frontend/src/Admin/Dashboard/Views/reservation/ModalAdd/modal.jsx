@@ -17,17 +17,15 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
     formation_id: "",
     client_id: "",
     date_validation: "",
+    time_validation: "",
     prix: "",
-    validate: false,
-    timeValidation: "",
   });
   const [errors, setErrors] = useState({
     formation_id: "",
     client_id: "",
     date_validation: "",
     prix: "",
-    validate: "",
-    timeValidation: "",
+    time_validation: "",
   });
 
   
@@ -67,7 +65,7 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
   
     setErrors((prevErrors) => ({
       ...prevErrors,
-      [name]: typeof selectedValue === 'string' && selectedValue.trim() === "" && name !== "validate" ? "Ce champ est obligatoire" : "",
+      [name]: typeof selectedValue === 'string' && selectedValue.trim() === "" 
     }));
   
     if (name === "formation_id") {
@@ -83,36 +81,15 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
     }
   };
   
-
-
-  const checkReservation = async () => {
-    try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/check-reservation?client_id=${formData.client_id}&formation_id=${formData.formation_id}`);
-      return response.data.exists; 
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
-  };
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     let isValid = true;
     const newErrors = { ...errors };
 
-
-    const reservationExists = await checkReservation();
-
-    if (reservationExists) {
-      window.alert("Ce client a déjà réservé cette formation.");
-      return;
-    }
-  
     const currentDate = new Date();
     const selectedDate = new Date(formData.date_validation);
-    const selectedTime = formData.timeValidation.split(":");
-    const selectedDateTime = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate(), selectedTime[0], selectedTime[1]);
+    const selectedDateTime = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate());
   
     if (selectedDateTime < currentDate || selectedDateTime > new Date(maxDate)) {
       window.alert("La date de validation doit être entre la date actuelle et la date de début de la formation.");
@@ -136,10 +113,12 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
     axios
       .post("http://127.0.0.1:8000/api/reservations", formData)
       .then((response) => {
+        console.log(response.data.message)
         setResponseMessage(response.data.message);
         onClose();
       })
       .catch((error) => {
+      
         console.error(error);
       });
   };
@@ -217,16 +196,19 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
                     )}
                   </td>
                   <td>
-                    <input
-                      type=""
-                      name="timeValidation"
-                      value={formData.timeValidation}
-                      onChange={handleChange}
-                      placeholder="Time Validation"
-                    />
-                    {errors.timeValidation && (
+                  <select id="time" name='time_validation'  value={formData.time_validation}
+            onChange={handleChange}>
+      <option value="" selected disabled>
+    <label for="time">Heur de confirmation :</label>
+      </option>
+      <option value="11:00">11:00</option>
+      <option value="13:00">13:00</option>
+      <option value="15:00">15:00</option>
+      <option value="17:00">17:00</option>
+    </select>
+                    {errors.time_validation && (
                       <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.timeValidation}
+                        <i className="bx bxs-error"></i> {errors.time_validation}
                       </span>
                     )}
                   </td>
@@ -245,15 +227,6 @@ export default function ModalAddReservation({ onClose, setResponseMessage }) {
                         <i className="bx bxs-error"></i> {errors.prix}
                       </span>
                     )}
-                  </td>
-                  <td className="tdValidated"> 
-                    <label>Valide</label>
-                    <input
-                      type="checkbox"
-                      name="validate"
-                      checked={formData.validate}
-                      onChange={handleChange}
-                      />
                   </td>
                 </tr>
                 <tr>

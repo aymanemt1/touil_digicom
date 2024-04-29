@@ -3,7 +3,7 @@ import "./modal.css";
 import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
-export default function ModalEditModule({ onClose, moduleId, setResponseMessage }) {
+export default function ModalAddModule({ onClose, setResponseMessage }) {
   const [formations, setFormations] = useState([]);
   const [formateurs, setFormateurs] = useState([]);
 
@@ -42,15 +42,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
       .catch((error) => {
         console.error(error);
       });
-    axios
-      .get(`http://127.0.0.1:8000/api/modules/${moduleId}`)
-      .then((response) => {
-        setFormData(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [moduleId]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,7 +84,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
     }
 
     axios
-      .put(`http://127.0.0.1:8000/api/modules/${moduleId}`, formData)
+      .post(`http://127.0.0.1:8000/api/modules`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();
@@ -107,7 +99,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
       <div className="parentModalAddFormation">
         <div className="modalAddFormation">
           <div className="headerModal">
-            <h1>Modifier Module</h1>
+            <h1>Ajouter Module</h1>
             <button onClick={onClose}>
               <i className="bx bx-x"></i>
             </button>
@@ -120,7 +112,6 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     <input
                       type="text"
                       name="titre_fr"
-                      value={formData.titre_fr}
                       onChange={handleChange}
                       placeholder="Titre (fr)"
                     />
@@ -134,7 +125,6 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     <input
                       type="text"
                       name="titre_ar"
-                      value={formData.titre_ar}
                       onChange={handleChange}
                       placeholder="Titre (ar)"
                     />
@@ -150,7 +140,6 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     <select
                       name="formation_id"
                       className="selectModal"
-                      value={formData.formation_id}
                       onChange={handleChange}
                     >
                       <option value="" hidden>
@@ -172,7 +161,6 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     <select
                       name="formateur_id"
                       className="selectModal"
-                      value={formData.formateur_id}
                       onChange={handleChange}
                     >
                       <option value="" hidden>
@@ -196,7 +184,6 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     <input
                       type="number"
                       name="duree"
-                      value={formData.duree}
                       onChange={handleChange}
                       placeholder="Duree"
                     />
@@ -210,7 +197,6 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     <input
                       type="text"
                       name="prix"
-                      value={formData.prix}
                       onChange={handleChange}
                       placeholder="Prix"
                     />
@@ -224,7 +210,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                 <tr>
                   <td></td>
                   <td className="tdBtnAjoute">
-                    <input type="submit" value="Modifier" id="btnAjoute" />
+                    <input type="submit" value="Ajouter" id="btnAjoute" />
                   </td>
                 </tr>
               </tbody>

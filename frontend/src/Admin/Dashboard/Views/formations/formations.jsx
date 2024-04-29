@@ -55,6 +55,7 @@ export default function FormationDashboard() {
         axios.get('http://127.0.0.1:8000/api/formations/')
             .then(response => {
                 setFormations(response.data);
+                console.log(response)
             })
             .catch(error => {
                 console.error(error);
@@ -98,6 +99,24 @@ export default function FormationDashboard() {
         setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     }
 
+
+       
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/formations');
+        setImages(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  console.log(images)
     return (
         <Fragment>
             <div className="parentHomeDashboard">
@@ -131,8 +150,8 @@ export default function FormationDashboard() {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>AFFICHE</th>
                                 <th>COVER</th>
+                                <th>AFFICHE</th>
                                 <th>TITRE(FR)</th>
                                 <th>TITRE(AR)</th>
                                 <th>DESCRIPTION(FR)</th>
@@ -151,11 +170,10 @@ export default function FormationDashboard() {
                                 <tr key={index}>
                                     <td>{item.id}</td>
                                     <td id="tdImgFormations">
-                                    <img src={`http://127.0.0.1:8000/storage/formations/affiche/${item.affiche}`} />
-
+                                    <img src={`http://localhost:8000/storage/formations/cover/${item.cover}`} />
                                     </td>
                                     <td id="tdImgFormations">
-                                    <img src={`http://127.0.0.1:8000/storage/formations/cover/${item.cover}`} />
+                                    <img src={`http://localhost:8000/storage/formations/affiche/${item.affiche}`} />
                                     </td>
                                     <td><h4>{item.titre_fr}</h4></td>
                                     <td><h4>{item.titre_ar}</h4></td>
@@ -166,7 +184,7 @@ export default function FormationDashboard() {
                                         <p>{item.description_ar}</p>
                                     </td>
                                     <td>{item.ville}</td>
-                                    <td>{item.location}</td>
+                                    <td>{item.ville}</td>
                                     <td>{item.prix}</td>
                                     <td>{item.capacite}</td>
                                     <td>{item.date_debut}</td>

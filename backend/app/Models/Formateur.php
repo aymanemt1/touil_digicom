@@ -20,8 +20,8 @@ class Formateur extends Model
         'profile',
     ];
 
-    public function modules()
+   public function module()
     {
-        return $this->hasMany(Module::class);
+        return $this->belongsTo(Module::class);
     }
 }

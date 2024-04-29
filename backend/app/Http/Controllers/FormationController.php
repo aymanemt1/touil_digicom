@@ -44,6 +44,8 @@ return response('ajouter avec success');
     ]);
 
 }
+
+
  public function index()
 {
     $formations = Formation::with('modules.formateur')->paginate();
@@ -54,6 +56,8 @@ return response('ajouter avec success');
     ]);
 
 }
+
+
 public function GetformationDate($formationId)
 {
     $formation = Formation::find($formationId);

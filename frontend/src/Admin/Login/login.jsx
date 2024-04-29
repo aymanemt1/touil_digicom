@@ -3,15 +3,13 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./login.css";
 import { LangueContext } from "../../Context/LangueContext";
-
+import Cookies from 'js-cookie';
 export default function Login() {
   document.title = "Touil Digicom - Login";
 
-  const {setisauth ,isauth} = useContext(LangueContext);
-
-
   const navigate = useNavigate();
 
+  const [responseMessage,setresponsemessage]=useState('Email or password incorrect')
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -52,42 +50,27 @@ export default function Login() {
       }));
       isValid = false;
     }
+
   
     if (!validatePassword(formData.password)) {
       setErrors((prevState) => ({
         ...prevState,
         passwordError: "Le mot de passe doit contenir au moins 1 caractère",
       }));
-      isValid = false;
     }
-  
-    if (isValid) {
-      try {
-        const response = await axios.post(
-          "http://127.0.0.1:8000/api/login",
-          formData
-        );
-  
-        const { valid } = response.data;
-  
-        if (valid) {
-          const { admin, token, valid } = response.data;
-
-  
-          sessionStorage.setItem('token', token);
-          sessionStorage.setItem('valid', valid);
-          sessionStorage.setItem('admin', JSON.stringify(admin));
-  
-          setisauth(valid ? true : false);
-  
-          navigate('/dashboard/statistiques');
-        } else {
-          alert('Email or password incorrect');
-        }
-      } catch (error) {
-        alert('Email ou mot de passe incorrect');
-        console.error("Error sending email:", error);
-      }
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/signin",
+        formData
+      );
+      const token = response.data.token;
+      const admin = response.data.admin_active;
+      Cookies.set('token', token);
+      Cookies.set('admin_active', admin);
+      navigate('/dashboard/statistiques');
+    } catch (error) {
+      console.log(error.response.data)
+     
     }
   };
   

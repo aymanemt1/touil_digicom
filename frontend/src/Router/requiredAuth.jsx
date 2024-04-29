@@ -1,25 +1,10 @@
-    import { useContext, useEffect } from "react";
+    import { useContext, useEffect, useState } from "react";
     import { Navigate, Outlet, useNavigate } from "react-router-dom";
     import { LangueContext } from "../Context/LangueContext";
-
+import Cookies from 'js-cookie'
     export default function RequiredAuth() {
-        const { isauth, setisauth } = useContext(LangueContext);
-        const navigate = useNavigate();
-      
-        useEffect(() => {
-          const token = sessionStorage.getItem("token");
-          const valid = sessionStorage.getItem("valid") === "true";
-      
-          if (token && valid) {
-            setisauth(true);
-          } else {
-            navigate("/login");
-          }
-        }, [navigate, setisauth]);
-      
-        if (isauth ) {
-          return <Outlet />;
-        } else {
-          return <Navigate to="/login" />;
-        }
-      }
+
+    const token = Cookies.get('token') 
+
+    return token ? <Outlet /> : <Navigate to='/login' />;
+    }

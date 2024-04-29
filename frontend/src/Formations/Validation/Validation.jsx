@@ -79,6 +79,7 @@ export const Validation = ({formData}) => {
         if (!validateForm()) {
             return;
         }
+        
     
         const isFormValid = validateForm();
     
@@ -152,7 +153,7 @@ export const Validation = ({formData}) => {
         }
     };
 
-    console.log(dataFormation)
+    console.log(validationData)
   return (
     <div className='validationParent' >
  

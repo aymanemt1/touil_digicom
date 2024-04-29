@@ -75,18 +75,23 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
   };
   
 
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/formateurs/${formateurId}`, formData);
-      setResponseMessage(response.data.message);
-      onClose(); 
-    } catch (error) {
-      console.error(error);
-    }
+    console.log(formData)
+     
+  try {
+    const response = await axios.put(`http://127.0.0.1:8000/api/formateurs/${formateurId}`, formData);
+    setResponseMessage(response.data.message);
+    onClose(); 
+    console.log(response)
+  } catch (error) {
+    console.error(error);
+  }
+
   };
+
+
+
 
   return (
     <Fragment>

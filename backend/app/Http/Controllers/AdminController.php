@@ -13,61 +13,12 @@ use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
 class AdminController extends Controller
 {
-
-  
-    public function login(Request $request){
-        // Hash password
-        $record = Admin::find(2);
-        $record->password = Hash::make($record->password);;
-        $record->save();
-
-         $credentials = ['email' => $request->email, 'password' => $request->password];
-
-
-if (!Auth::attempt($credentials)) {
-                return response()->json([
-                        'status' => 404,
-                        'message' => 'Email or password incorrect',
-                    ], 404);
-                } else {
-                        $admin = Auth::user();
-                        $token = Str::random(60);
-
-                        $admin->api_token = hash('sha256', $token);
-
-                        if ($admin) {
-                return response()->json([
-                        'status' => 200,
-                    'valid' => true,
-                    'admin' => $admin,
-                    'token' => $token
-                ], 200);
-            } else {
-                    return response()->json([
-                            'status' => 500,
-                            'message' => 'Failed to save token',
-                        ], 500);
-                    }
-                }
-    }
-
-
-    // Function Logout
-    // public function logout(Request $request)
-    // {
-    //     $request->user()->tokens()->delete();
-
-    //     return response()->json([
-    //         'message' => 'Déconnecté avec succès'
-    //     ]);
-    // }
-
-
 
     // Functions Formations
     public function fetchFormations() {
@@ -133,6 +84,8 @@ if (!Auth::attempt($credentials)) {
         }
     }
 
+    
+
 
     public function deleteFormation($id)
     {
@@ -184,15 +137,37 @@ if (!Auth::attempt($credentials)) {
         return response()->json($formateur);
     }
 
-
     public function updateFormateur(Request $request, $id) {
         $formateur = Formateur::find($id);
-        if (!$formateur) {
-            return response()->json(['message' => 'Formateur not found'], 404);
+        if ($formateur) {
+            
+        $formateur->nom = $request->input('nom');
+        $formateur->prenom = $request->input('prenom');
+        $formateur->email = $request->input('email');
+        $formateur->specialite = $request->input('specialite');
+        
+        if ($request->hasFile('profile')) {
+            $profileImage = $request->file('profile');
+            $imageName = date('His') . '.' . $profileImage->getClientOriginalExtension();
+            
+            $profileImage->move(public_path('storage/formateurs'), $imageName);
+            
+            $requestData['profile'] = $imageName;
+
         }
+      
         $formateur->update($request->all());
-        return response()->json(['message' => 'Formateur mis à jour avec succès']);
+
+    }else{
+        return response()->json(['message' => 'Formateur not found'], 404);
+
     }
+    
+        return response()->json(['message' => 'Formateur mise à jour avec succès']);
+    }
+    
+
+    
     public function storeFormateur(Request $request)
     {
         $requestData = $request->all();
@@ -227,13 +202,15 @@ if (!Auth::attempt($credentials)) {
 
     public function deleteFormateur($id) {
         $formateur = Formateur::find($id);
+    
         if (!$formateur) {
             return response()->json(['message' => 'Formateur not found'], 404);
         }
+    
         $formateur->delete();
         return response()->json(['message' => 'Formateur déplacé vers la corbeille'], 200);
     }
-
+    
     public function fetchTrashedFormateurs() {
         $trashedFormateurs = Formateur::onlyTrashed()->get();
         return response()->json($trashedFormateurs, 200);
@@ -345,9 +322,17 @@ if (!Auth::attempt($credentials)) {
     }
 
     public function storeReservation(Request $request) {
-    $reservation = Reservation::create($request->all());
-    return response()->json(['message' => 'Reservation créée avec succès'], 201);
+        $existingReservation = Reservation::where('client_id', $request->input('client_id'))
+                                           ->where('formation_id', $request->input('formation_id'))
+                                           ->first();
+        if ($existingReservation) {
+            return response()->json(['message' => 'Client has already reserved this formation'], 400);
+        }
+    
+        $reservation = Reservation::create($request->all());
+        return response()->json(['message' => 'Reservation créée avec succès'], 201);
     }
+    
 
     public function deleteReservation($id)
     {
@@ -388,18 +373,46 @@ if (!Auth::attempt($credentials)) {
     public function checkReservation(Request $request) {
         $client_id = $request->input('client_id');
         $formation_id = $request->input('formation_id');
-
+    
         $reservation = Reservation::where('client_id', $client_id)
                                   ->where('formation_id', $formation_id)
                                   ->first();
-
+    
         if ($reservation) {
-            return response()->json(['exists' => true]);
+            if ($reservation->validate == 0) {
+                $reservation->update([
+                    'validate' => 1
+                ]);
+    
+                $formation = Formation::find($formation_id);
+                if ($formation) {
+                    $formation->update([
+                        'capacite' => $formation->capacite - 1
+                    ]);
+                }
+            } elseif ($reservation->validate == 1) {
+                $reservation->update([
+                    'validate' => 0
+                ]);
+    
+                $formation = Formation::find($formation_id);
+                if ($formation) {
+                    $formation->update([
+                        'capacite' => $formation->capacite + 1
+                    ]);
+                }
+            }
+    
+            return response()->json([
+                'exists' => true,
+                'reservation' => $reservation,
+            ]);
         } else {
             return response()->json(['exists' => false]);
         }
     }
-
+    
+    
 
     // Functions Clients
     public function fetchClients()
@@ -433,13 +446,19 @@ if (!Auth::attempt($credentials)) {
     public function deleteClient($id)
     {
         $client = Client::find($id);
+    
         if (!$client) {
             return response()->json(['message' => 'Client not found'], 404);
         }
+    
+        if ($client->reservations()->exists()) {
+            return response()->json(['message' => 'Client has reservations and cannot be deleted'], 400);
+        }
+    
         $client->delete();
         return response()->json(['message' => 'Client déplacé vers la corbeille'], 200);
     }
-
+    
     public function fetchTrashedClients()
     {
         $trashedClients = Client::onlyTrashed()->get();

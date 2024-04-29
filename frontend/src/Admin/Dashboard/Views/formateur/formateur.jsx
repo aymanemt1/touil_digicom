@@ -88,18 +88,18 @@ export default function FormateurDashboard() {
                 })
                 .catch(error => {
                     console.error(error);
+                    console.log(error.response.data);
+
                 });
         }
     }
-
-    
 
 
     // Search bar function
     const filteredFormateurs = formateurs.filter(formateur => {
         return formateur.nom.toLowerCase().includes(searchQuery.toLowerCase()) ||
                formateur.prenom.toLowerCase().includes(searchQuery.toLowerCase()) ||
-               formateur.Email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+               formateur.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
                formateur.specialite.toLowerCase().includes(searchQuery.toLowerCase());
     });
 
@@ -166,11 +166,11 @@ export default function FormateurDashboard() {
                                 <tr key={index}>
                                     <td>{formateur.id}</td>
                                     <td>
-                                        <img src={`http://127.0.0.1:8000/storage/formateurs/${formateur.profile}`} />
+                                        <img src={`http://localhost:8000/storage/formateurs/${formateur.profile}`} />
                                     </td>
                                     <td><span className="spanNomUppercase">{formateur.nom}</span></td>
                                     <td>{formateur.prenom}</td>
-                                    <td>{formateur.Email}</td>
+                                    <td>{formateur.email}</td>
                                     <td>{formateur.specialite}</td>
                                     <td className="tdActions">
                                         <div>

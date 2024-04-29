@@ -37,11 +37,16 @@ export const Modules = (props) => {
        nav(`/formation/${props.formationId}`);
 
     };
- 
+ console.log(props)
     return (
         <div className='modules-parent'>
+     {
+     props.modules.length > 0 ? (
+        <>
             <div className='modules'>
-                {props.modules.map((module, index) => (
+
+              
+                 {props.modules.map((module, index) => (
                             <label key={index} htmlFor={`checkbox-${module.id}`} className="checkbox-card">
                     <div className={`card-content-wrapper ${selectedValues.includes(module.id) ? 'checked' : ''}`}>
                         <input
@@ -85,6 +90,10 @@ export const Modules = (props) => {
                 ) : ''}
 
             </div>
+        </>
+
+                  ) : <div> <h1 className='pasmodules'>Il n'y a pas de modules</h1> </div>
+                }
         </div>
     );
 };

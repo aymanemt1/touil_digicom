@@ -16,8 +16,7 @@ export default function ModalEditReservation({
     formation_id: "",
     date_validation: "",
     prix: "",
-    validate: false,
-    timeValidation: "",
+    time_validation: "",
   });
 
   const [errors, setErrors] = useState({
@@ -25,8 +24,7 @@ export default function ModalEditReservation({
     formation_id: "",
     date_validation: "",
     prix: "",
-    validate: "",
-    timeValidation: "",
+    time_validation: "",
   });
 
 
@@ -69,10 +67,6 @@ export default function ModalEditReservation({
     }
 
     let error = "";
-
-    if (selectedValue.trim() === "" && name !== "validate") {
-      error = "Ce champ est obligatoire";
-    }
 
     setFormData((prevState) => ({
       ...prevState,
@@ -212,29 +206,16 @@ export default function ModalEditReservation({
                     <label className="label_edit">Heure de confirmation</label>
                     <input
                       type="text"
-                      name="timeValidation"
-                      value={formData.timeValidation}
+                      name="time_validation"
+                      value={formData.time_validation}
                       onChange={handleChange}
                       placeholder="Time Validation"
                     />
-                    {errors.timeValidation && (
+                    {errors.time_validation && (
                       <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.timeValidation}
+                        <i className="bx bxs-error"></i> {errors.time_validation}
                       </span>
                     )}
-                  </td>
-                </tr>
-                <tr>
-                  <td colSpan="2">
-                    <label>Valide</label>
-                    <input
-                      type="checkbox"
-                      name="validate"
-                      checked={formData.validate}
-                      onChange={(e) =>
-                        setFormData({ ...formData, validate: e.target.checked })
-                      }
-                    />
                   </td>
                 </tr>
                 <tr>

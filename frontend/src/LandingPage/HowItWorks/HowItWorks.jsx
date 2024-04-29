@@ -40,7 +40,7 @@ export const HowItWorks = () => {
   }, []);
 
   return (
-    <div className="coomment">
+    <div className="coomment" >
       <div className="entite">
         <div className="reveal">
           <img

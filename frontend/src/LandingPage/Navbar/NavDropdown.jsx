@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { Link as ScrollLink } from "react-scroll";
 
-export const NavDropdown = ({ link }) => {
+export const NavDropdown = ({ link ,setToggleMenu,toggleMenu}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
 
@@ -15,6 +15,9 @@ export const NavDropdown = ({ link }) => {
     setIsDropdownOpen(false);
   };
 
+  console.log(toggleMenu)
+
+
   return (
     <li
       key={link.id}
@@ -23,7 +26,7 @@ export const NavDropdown = ({ link }) => {
     >
       {link.dropdown ? (
         <div>
-          <Link className="cool-link" to={link.to}>
+          <Link className="cool-link" to={link.to} >
             {link.text}
             <i className="bx bxs-down-arrow arrow"></i>
           </Link>
@@ -32,7 +35,7 @@ export const NavDropdown = ({ link }) => {
             <ul>
               {link.dropdown.map((dropdownItem) => (
                 <li className="items" key={dropdownItem.id}>
-                  <Link className="cool-link-child" to={dropdownItem.to}>
+                  <Link className="cool-link-child" to={dropdownItem.to}  >
                     {dropdownItem.text}
                   </Link>
                 </li>
@@ -42,7 +45,7 @@ export const NavDropdown = ({ link }) => {
         </div>
       ) : link.id === 1 ? (
         location.pathname === "/blogs" || location.pathname === "/contact" ? (
-          <Link id={link.id} className="cool-link" to={link.to}>
+          <Link id={link.id} className="cool-link" to={link.to} >
             {link.text}
           </Link>
         ) : (
@@ -57,7 +60,7 @@ export const NavDropdown = ({ link }) => {
         )
       ) : link.id === 4 ? (
         location.pathname === "/blogs" || location.pathname === "/contact" ? (
-          <Link id={link.id} className="cool-link" to={link.to}>
+          <Link id={link.id} className="cool-link" to={link.to} >
             {link.text}
           </Link>
         ) : (
@@ -71,10 +74,12 @@ export const NavDropdown = ({ link }) => {
           </ScrollLink>
         )
       ) : (
-        <Link id={link.id} className="cool-link" to={link.to}>
+        <Link id={link.id} className="cool-link" to={link.to} >
           {link.text}
         </Link>
       )}
+  
     </li>
+
   );
 };

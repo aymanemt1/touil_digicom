@@ -18,6 +18,12 @@ hr {
       animation: fadeIn 0.5s ease;
   }
   
+  .pasmodules{
+    text-align: center;
+    opacity: 0.9;
+    font-size: 26px;
+    color: #1B67B0;
+  }
   @keyframes fadeIn {
     from {
         opacity: 0;
