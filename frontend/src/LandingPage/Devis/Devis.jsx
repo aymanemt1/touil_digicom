@@ -116,7 +116,7 @@ if (isFormValid) {
             <table cellSpacing='3'>
               <tbody>
                 <tr>
-                  <td>
+                  <td className="devisInp">
                     <input type="text" placeholder={Devis.nom} className="inputDevis" 
                     value={DevisData.nom_devis} 
                     name="nom_devis"
@@ -124,7 +124,7 @@ if (isFormValid) {
                     />
                 {Errors.nom_devis && <span className='errorMessage'>{Errors.nom_devis}<i className='bx bxs-error'></i></span>} 
                   </td>
-                  <td>
+                  <td className="devisInp">
                     <input type="text" placeholder={Devis.prenom} className="inputDevis" 
                      value={DevisData.prenom_devis} 
                      name="prenom_devis"
@@ -135,7 +135,7 @@ if (isFormValid) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td className="devisInp">
                     <input type="text" placeholder={Devis.telephone} className="inputDevis" 
                      value={DevisData.telephone_devis} 
                      name="telephone_devis"
@@ -143,7 +143,7 @@ if (isFormValid) {
                 {Errors.telephone_devis && <span className='errorMessage'>{Errors.telephone_devis}<i className='bx bxs-error'></i></span>} 
 
                   </td>
-                  <td>
+                  <td className="devisInp">
                     <input type="text" placeholder={Devis.email} className="inputDevis" 
                      value={DevisData.email_devis} 
                      name="email_devis"
@@ -153,7 +153,7 @@ if (isFormValid) {
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td className="devisInp">
                     <select   
                      name="service_devis"
                      onChange={handleChange}>
@@ -167,7 +167,7 @@ if (isFormValid) {
                 {Errors.service_devis && <span className='errorMessage'>{Errors.service_devis}<i className='bx bxs-error'></i></span>} 
 
                   </td>
-                  <td>
+                  <td className="devisInp">
                     <input type="text" placeholder={Devis.adress} className="inputDevis" 
                       value={DevisData.adress_devis} 
                       name="adress_devis"

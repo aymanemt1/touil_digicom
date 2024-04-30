@@ -292,6 +292,16 @@ background-color: white;
     width: 370px;
     line-height: 27px;
 }
+.formDevis table tr td{
+    width: 100%;
+    display: block;
+}
+.formDevis table tr{
+    margin: 2rem 0;
+}
+.formDevis{
+    margin-left: -1rem;
+}
 }
 
 
@@ -343,17 +353,15 @@ background-color: white;
         width: 100% !important;
     }
 
-    .inputDevis{
-        font-size: 18px;
-        padding: 3px 10px 10px 5px;
-        display: block;
+    .formDevis table tr td{
         width: 100%;
-        margin: 1.5rem 0 0.6rem 0;
-        border: none;
-        color: #1B67B0;
-        border-bottom: 1px solid #1B67B0;
-        background: transparent;
-      
+        display: block;
+    }
+    .formDevis table tr{
+        margin: 2rem 0;
+    }
+    .formDevis{
+        margin-left: -1rem;
     }
 }
 
@@ -382,6 +390,13 @@ background-color: white;
     .parentTextDevis{
         margin-left: -2rem;
     }
+    .formDevis table tr{
+        margin: 0;
+    }
+    .tableDevis tr td {
+      width: 2rem;
+    }
+    
   }
 
 

@@ -123,7 +123,7 @@
     color: black;
 }
 
-@media (max-width:860px) {
+@media (max-width:767px) {
     .rowTeamDev {
         flex-direction: column;
     }
@@ -133,12 +133,16 @@
     .parentTeamDev {
         padding-top: 3rem;
         padding-bottom: 3rem;
+        height: auto;
     }
 }
 
-@media (max-width:460px) {
+@media (max-width:390px) {
     .headline h5{
         font-size: 0.6rem;
+    }
+    .parentTeamDev{
+        height: auto;
     }
     
     #messageDev0 p{
