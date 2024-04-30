@@ -352,3 +352,22 @@
     left: 12rem;
   }
 }
+
+
+@media (min-width:1340px){
+
+
+  .section-1 {
+    width: 140rem;
+  }
+
+  .section-3 {
+    padding-top:5rem;
+  }
+  
+  .section-4 {
+    padding-top:5rem;
+  }
+
+
+} 

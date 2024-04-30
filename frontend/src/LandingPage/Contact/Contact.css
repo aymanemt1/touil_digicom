@@ -52,6 +52,7 @@ line-height: 26px;
   margin: 2rem auto;
     width: 71%;
     justify-content: center;
+    align-items: center;
 }
 #after-validation{
   height:34rem ;
@@ -67,7 +68,6 @@ line-height: 26px;
 color: #1B67B0;
 background-color:rgb(250, 251, 252);
 height: auto;
-border-radius: 10px;
   padding: 0.7rem 4rem;
 }
 
@@ -250,7 +250,77 @@ text-align: center;
 
 @media (max-width : 1025px){
 
+  .contact-info {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .map{
     height:500px ;
+  }
+}
+
+
+@media (min-width:1340px){
+
+  .contact-header {
+    font-size: 1.7rem;
+  }
+
+  .contact-title h2 {
+    width: fit-content;
+  }
+
+  .contact-text {
+    width: 50%;
+    line-height: 33px;
+  }
+
+  .contact-info {
+    font-size: 1.7rem;
+  }
+
+  .contact-info p {
+    font-size: 1.4rem;
+    width: fit-content;
+  }
+
+  #contact-icon i{
+    font-size: 4rem;
+  }
+
+  .contact-map {
+    width: 85%;
+    padding: 2rem;
+  }
+
+  .contact-forms {
+    font-size: 1.7rem;
+  }
+
+  .google-map {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .map {
+    height: 85%;
+  }
+
+  .contact-forms h1 {
+    font-size: 2rem;
+    width: fit-content;
+  }
+
+  .wave-group .input-contact {
+    font-size: 1.7rem;
+    margin: 1.5rem;
+  
+  }
+
+  .contact-button {
+    font-size: 1.7rem;
+    padding: 1rem 0.5rem;
   }
 }

@@ -8,13 +8,15 @@
 
 .parentTeamDev {
   width: 90vw;
+  height: 100vh;
   margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
   gap: 1rem;
-  padding-top: 2rem;
 }
 
 .rowTeamDev {
@@ -142,4 +144,47 @@
     #messageDev0 p{
         font-size: 0.45rem;
     }
+}
+
+
+
+@media (min-width:1340px) {
+
+    .imgTeamDev img{
+        width: 280px;
+    }
+
+    .infoTeamDev h2 {
+        font-size: 2rem;
+
+    }
+
+    .parentTeamDev {
+        font-size: 1.7rem;
+        gap: 3rem;
+    }
+
+    .rowTeamDev  {
+        gap: 3rem;
+    }
+
+    .messageDev p {
+        font-size: 1.3rem;
+
+    }
+
+    .messageDev {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    .ulTeamDev {
+        margin-top: -5rem;
+    }
+
+    .ulTeamDev li a i {
+        font-size: 2rem;
+    }
+
 }

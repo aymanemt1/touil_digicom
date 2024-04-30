@@ -341,6 +341,67 @@
     width: 95%;
   }
 
+}
 
+
+
+@media (min-width:1340px){
+
+  .coomment {
+    font-size: 1.7rem;
+  }
+
+  .number-etape {
+    font-size: 5.7rem;
+  }
+
+  .title-etape {
+    font-size: 1.6rem;
+  }
+
+  .entite {
+    width: 100%;
+  }
+  .reveal {
+    width: 80vw;
+    height: 120%;
+  }
+
+  .image-comment {
+    width: 800px;
+    height: 600px;
+  }
+
+  .etape2  {
+    margin-left: 42rem;
+    margin-top: -5rem;
+  }
+  .etape3  {
+    margin-left: 60rem;
+    margin-top: -5rem;
+  }
+  .etape4  {
+    margin-left: 10rem;
+    margin-top: -2rem;
+  }
+  .etape5  {
+    margin-left: 40rem;
+    margin-top: -2rem;
+  }
+
+  .TextHow  {
+    padding: 4rem 1rem ;
+  }
+
+
+  .TextHow p  {
+    font-size: 1.7rem;
+    width: 50%;
+  }
+
+  .btnToBlogs {
+    font-size: 1.7rem;
+    width: fit-content;
+  }
 
 }

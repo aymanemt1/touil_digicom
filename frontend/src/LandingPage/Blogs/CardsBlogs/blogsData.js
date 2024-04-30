@@ -14,7 +14,7 @@ export const blogsDataFr = {
                 'Effectuer une analyse approfondie de la situation actuelle du client, de son marché, de ses concurrents et de son public cible.',
                 `Développer une stratégie de communication et de marketing sur mesure en fonction des insights obtenus, en mettant l'accent sur les objectifs à atteindre et les mesures de succès.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '01 - 11 - 2023',
         },
         {
@@ -27,7 +27,7 @@ export const blogsDataFr = {
                 `Développement de contenu multimédia, y compris des visuels, des vidéos, des messages publicitaires, des articles de blog, etc.`,
                 `Validation du contenu avec le client et ajustements si nécessaire pour assurer l'alignement avec la vision et les objectifs du projet.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '12 - 10 - 2023',
         },
         {
@@ -40,7 +40,7 @@ export const blogsDataFr = {
                 `Gestion des budgets alloués à chaque campagne et optimisation des ressources pour maximiser le retour sur investissement.`,
                 `Lancement des campagnes et suivi en temps réel des performances pour identifier les opportunités d'optimisation et d'amélioration continue.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '10 - 10 - 2023',
         },
         {
@@ -53,7 +53,7 @@ export const blogsDataFr = {
                 `Évaluation de l'efficacité des campagnes en fonction des objectifs prédéfinis et des indicateurs de performance clés.`,
                 `Production de rapports détaillés pour présenter les résultats obtenus, les insights découverts et les recommandations pour l'avenir.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '12 - 04 - 2024',
         },
         {
@@ -66,7 +66,7 @@ export const blogsDataFr = {
                 `Communication proactive pour tenir le client informé des développements importants, des changements de plan ou des nouvelles opportunités.`,
                 `Fourniture d'un service client de haute qualité en répondant rapidement aux demandes, en offrant des conseils stratégiques et en maintenant une relation de confiance à long terme.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '16 - 04 - 2024',
         },
         {
@@ -102,7 +102,7 @@ export const blogsDataAr = {
                 'إجراء تحليل متعمق للوضع الحالي للعميل وسوقه ومنافسيه وجمهوره المستهدف.',
                 `تطوير استراتيجية اتصالات وتسويق مصممة خصيصًا بناءً على الأفكار التي تم الحصول عليها، مع التركيز على الأهداف المراد تحقيقها ومقاييس النجاح.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '01 - 11 - 2023',
         },
         {
@@ -115,7 +115,7 @@ export const blogsDataAr = {
                 `تطوير محتوى الوسائط المتعددة، بما في ذلك المرئيات ومقاطع الفيديو والإعلانات التجارية ومنشورات المدونات وما إلى ذلك.`,
                 `التحقق من صحة المحتوى مع العميل وإجراء التعديلات إذا لزم الأمر لضمان التوافق مع رؤية وأهداف المشروع.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '12 - 10 - 2023',
         },
         {
@@ -128,7 +128,7 @@ export const blogsDataAr = {
                 `إدارة الميزانيات المخصصة لكل حملة وتحسين الموارد لتحقيق أقصى قدر من العائد على الاستثمار.`,
                 `إطلاق الحملات ومراقبة الأداء في الوقت الفعلي لتحديد فرص التحسين والتحسين المستمر.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '10 - 10 - 2023',
         },
         {
@@ -141,7 +141,7 @@ export const blogsDataAr = {
                 `تقييم فعالية الحملات بناءً على الأهداف المحددة مسبقًا ومؤشرات الأداء الرئيسية.`,
                 `إنتاج تقارير مفصلة لعرض النتائج التي تم الحصول عليها والأفكار المكتشفة والتوصيات للمستقبل.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '12 - 04 - 2024',
         },
         {
@@ -154,7 +154,7 @@ export const blogsDataAr = {
                 `التواصل الاستباقي لإبقاء العميل على اطلاع بالتطورات المهمة أو التغييرات في الخطط أو الفرص الجديدة.`,
                 `تقديم خدمة عملاء عالية الجودة من خلال الرد السريع على الاستفسارات وتقديم المشورة الإستراتيجية والحفاظ على علاقة موثوقة طويلة الأمد.`,
             ],
-            postOwner : 'Omar Touil',
+            postOwner : 'Service RH',
             date : '16 - 04 - 2024',
         },
         {

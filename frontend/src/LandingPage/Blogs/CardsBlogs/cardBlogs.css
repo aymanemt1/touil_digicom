@@ -220,17 +220,29 @@
   .lineInfoCard {
     font-size: 0.6rem;
   }
-  .parentCardBlogs {
+  /* .parentCardBlogs {
     display: flex;
     gap: 2.3rem;
     flex-direction: column;
     width: 100%;
     margin: auto;
-  }
+  } */
   .cardBlog {
-    width: 100%;
+    width: 80%;
     height: 330px;
-    font-size: 50px;
+  } 
+  .cardBlog img {
+    height: 230px;
+  }
+  .btnCardBlogs {
+    height: 230px;
+    width: 77%;
+  }
+  .h6Card {
+    font-size: 1.2rem;
+  }
+  .lineInfoCard {
+    font-size: 1rem;
   }
 }
 
@@ -255,6 +267,53 @@
   }
   .btnCardBlogs button{
     font-size: 0.4rem;
-    
+  }
+  .cardBlog {
+    width: 80%;
+    height: 330px;
+  } 
+  .cardBlog img {
+    height: 230px;
+  }
+  .btnCardBlogs {
+    height: 230px;
+    width: 77%;
+  }
+  .h6Card {
+    font-size: 1.2rem;
+  }
+  .lineInfoCard {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:1340px){
+
+  .div3 h4 {
+    font-size: 2rem;
+  }
+  .div3 h1 {
+    width: 100%;
+    font-size: 5.4rem;
+  }
+
+  .h1Blogs  {
+    font-size: 2.4rem;
+  }
+
+  .cardBlog  {
+    height: 420px;
+  }
+
+  .h6Card {
+    font-size: 1.6rem;
+  }
+
+  .lineInfoCard {
+    font-size: 1.3rem;
+  }
+
+  .h1BlogsNew {
+    font-size: 1.4rem;
   }
 }

@@ -99,36 +99,15 @@
   height: 1.5rem;
   border: 1.5px solid;
   border-radius: 50%;
+  transform: rotate(0deg);
 }
 
-.accordion .icon::before {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
+.icon::after {
+  transform: rotate(45deg);
 }
 
-.accordion .icon::after {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
-}
-
-.accordion button[aria-expanded='true'] {
-  color: #111928;
-}
-
-.accordion button[aria-expanded='true'] .icon::after {
-  width: 0;
+.icon.rotate {
+  transform: rotate(180deg);
 }
 
 .accordion-content p {
@@ -212,4 +191,39 @@
     align-items: center;
     gap: 1rem;
   }
+}
+
+@media (min-width:1340px){
+
+  .faq {
+    font-size: 1.7rem;
+  }
+
+  .h1FAQ  {
+    margin-bottom: -4rem;
+  }
+
+  .accordion .accordion-title  {
+    font-size: 2rem;
+  }
+
+  .accordion { 
+    padding: 3rem 0.3rem;
+  }
+
+  .accordion button {
+    font-size: 1.7rem;
+  }
+
+  .accordion .icon {
+    width: 2rem;
+    height: 2rem;
+    top: 30px;
+    padding-right: 1rem;
+  }
+
+  .colImgFAQ img {
+    width: 640px;
+  }
+
 }

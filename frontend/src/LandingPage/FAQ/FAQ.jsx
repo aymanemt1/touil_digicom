@@ -4,23 +4,32 @@ import { LangueContext } from "../../Context/LangueContext";
 import "./FAQ.css";
 
 export default function FAQ() {
+
   useEffect(() => {
     const items = document.querySelectorAll(".accordion button");
-
+  
     function toggleAccordion() {
       const itemToggle = this.getAttribute("aria-expanded");
-
+  
       for (let i = 0; i < items.length; i++) {
         items[i].setAttribute("aria-expanded", "false");
       }
-
-      if (itemToggle == "false") {
+  
+      if (itemToggle === "false") {
         this.setAttribute("aria-expanded", "true");
+        this.querySelector(".icon").classList.add("rotate");
+      } else {
+        this.querySelector(".icon").classList.remove("rotate");
       }
     }
-
+  
     items.forEach((item) => item.addEventListener("click", toggleAccordion));
+  
+    return () => {
+      items.forEach((item) => item.removeEventListener("click", toggleAccordion));
+    };
   }, []);
+  
 
   const { langue } = useContext(LangueContext);
 
@@ -35,7 +44,9 @@ export default function FAQ() {
           <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-1" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q1}</span>
-              <span className="icon" aria-hidden="true"></span>
+              <span className="icon" aria-hidden="true">
+                <i className='bx bx-chevrons-down'></i>
+              </span>
             </button>
             <div className="accordion-content">
               <p>{faq.Responses.R1}</p>
@@ -44,7 +55,9 @@ export default function FAQ() {
           <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-2" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q2}</span>
-              <span className="icon" aria-hidden="true"></span>
+              <span className="icon" aria-hidden="true">
+                <i className='bx bx-chevrons-down'></i>
+              </span>
             </button>
             <div className="accordion-content">
               <p>{faq.Responses.R2}</p>
@@ -53,7 +66,9 @@ export default function FAQ() {
           <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-3" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q3}</span>
-              <span className="icon" aria-hidden="true"></span>
+              <span className="icon" aria-hidden="true">
+                <i className='bx bx-chevrons-down'></i>
+              </span>
             </button>
             <div className="accordion-content">
               <p>{faq.Responses.R3}</p>
@@ -62,7 +77,9 @@ export default function FAQ() {
           <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-4" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q4}</span>
-              <span className="icon" aria-hidden="true"></span>
+              <span className="icon" aria-hidden="true">
+                <i className='bx bx-chevrons-down'></i>
+              </span>
             </button>
             <div className="accordion-content">
               <p>{faq.Responses.R4}</p>
@@ -71,7 +88,9 @@ export default function FAQ() {
           <div className="accordion-item" data-aos="fade-up" duration='2000'>
             <button id="accordion-button-5" aria-expanded="false">
               <span className="accordion-title">{faq.Questions.Q5}</span>
-              <span className="icon" aria-hidden="true"></span>
+              <span className="icon" aria-hidden="true">
+                <i className='bx bx-chevrons-down'></i>
+              </span>
             </button>
             <div className="accordion-content" id="lastAccordionContent">
               <p>{faq.Responses.R5}</p>

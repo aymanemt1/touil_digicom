@@ -295,3 +295,20 @@ li ul li {
 .scrollLink:active {
     color: black;
 }
+
+
+@media (min-width:1340px){
+    .parentNavbar {
+        font-size: 1.7rem;
+    }
+    .brandLogo {
+        width: 350px;
+    }
+    .demandBtn {
+        font-size: 1.7rem;
+    }
+    .langBtn {
+        width: 55px;
+        height: 55px;
+    }
+}

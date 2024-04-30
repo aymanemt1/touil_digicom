@@ -299,3 +299,41 @@ input:checked + label .description {
         background-position: 0 20%;
     }
 }
+
+
+
+@media (min-width:1340px){
+
+    .titleSectionServices p{
+        width: 110%;
+        font-size: 1.7rem;
+    }
+  
+    .description h4 {
+        font-size: 2rem;
+    }
+
+    .description p {
+        font-size: 1.3rem ;
+        width: 100%;
+    }
+    .cardServices > .rowServices > .description  {
+        width: 80%;
+        margin-top: -3rem;
+        padding-left: 0.3rem;
+    }
+
+    .btnMoreDetailServices, .btnMoreDetailServices2 {
+        font-size: 1.7rem;
+    }
+
+    .cardServices > .rowServices > .iconServices {
+        font-size: 3.5rem;
+        width: 70px;
+        height: 70px;
+        padding: 0;
+        margin-left: 0.7rem;
+        padding-bottom: 1rem;
+        margin-top: -2rem;
+    }
+  }

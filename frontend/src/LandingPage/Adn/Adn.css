@@ -392,3 +392,59 @@
     padding: 2.5em 1em; 
   }
 }
+
+
+@media (min-width:1340px){
+
+  .h1LandingPage {
+    font-size: 3.4rem;
+  } 
+
+  .AdnContent {
+    height: 75vh;
+  }
+
+  .AdnText {
+    margin-right: 2rem;
+  }
+
+  .AdnText p {
+    font-size: 1.7rem;
+    text-align: start;
+    line-height: 35px ;
+    width: 98%;
+  } 
+
+  .buttonMore {
+    font-size: 1.9rem;
+  }
+
+  .card {
+    font-size: 1.8rem;
+    width: 30%;
+}
+#borderdesign {
+    width: 315px;
+    height: 315px;
+}
+#borderceo {
+    width: 315px;
+    height: 315px;
+}
+#bordercom {
+    width: 315px;
+    height: 315px;
+}
+.card-img {
+    width: 300px;
+    height: 300px;
+}
+.bx-plus-circle {
+    font-size: 4.5rem;
+}
+.card .p {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+}

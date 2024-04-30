@@ -79,3 +79,19 @@
 .rowinputsSectionTextAr form #submitSectionText{
     font-size: 0.75rem;
 }
+
+
+@media (min-width:1340px){
+
+    .parentSectionText  {
+        padding: 4rem 1rem ;
+    }
+
+    .rowTextBlogs h1 {
+        font-size: 1.7rem;
+    }
+    .rowinputsSectionText form input {
+        font-size: 1.7rem;
+    }
+
+}

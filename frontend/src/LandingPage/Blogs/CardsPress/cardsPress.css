@@ -133,3 +133,19 @@
     }
 }
 
+
+
+@media (min-width:1340px){
+
+    .cardPress h3 {
+        font-size: 1.7rem;
+    }
+    .cardPress p {
+        font-size: 1rem;
+    }
+
+    .cardPress a {
+        font-size: 1.3rem;
+    }
+
+}

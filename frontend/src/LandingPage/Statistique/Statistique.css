@@ -109,3 +109,15 @@
     padding: 2rem 0;
   }
 }
+
+
+@media (min-width:1340px){
+
+  .statistique {
+    font-size: 2rem;
+    padding: 2.8rem 1rem;
+  }
+
+  
+
+}

@@ -40,7 +40,7 @@ export const Adn = () => {
             <div id="bordercom">
               <div className="card-img" id="com"></div>
             </div>
-            <h5 className="card-title">Douae FRIHI</h5>
+            <h5 className="card-title">Douae FLIHI</h5>
             <p className="p"> {Adn.role[0]}</p>
             <button
               title="Détails"

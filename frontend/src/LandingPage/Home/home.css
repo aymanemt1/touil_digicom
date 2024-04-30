@@ -495,10 +495,67 @@
         margin-top: 7rem;
         margin-left: 1rem;
     }
-
+    
     .illustatorHome {
         width: 23rem;
         margin-left: -5rem;
     }
 }
- 
+
+
+@media (min-width:1340px){
+    .parentText h3 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-top: -0.3rem;
+    }
+    .parentText h1 {
+        font-size: 5.8rem;
+        line-height: 5.3rem;
+    }
+    .vector1 {
+        width: 280px;
+    }
+    .vector2 {
+        width: 290px;
+        margin-top: 9rem;
+        margin-left: 44rem;
+    }
+    .parentText p{
+        font-size: 1.5rem;
+    }
+    .btnSeeMoreServices {
+        font-size: 1.9rem;
+    }
+    #scrolbtnFn {
+        width: 40px;
+        height: 60px;
+        border-radius: 30px;
+    }
+    .pointV2 {
+        font-size: 1.9rem;
+    }
+    .illustatorHome {
+        width: 600px;
+    }
+    .illustrator2 {
+        width: 80px;
+        margin-top: 25rem;
+        margin-right: 10rem;
+    }
+    .illustrator5 {
+        width: 80px;
+        margin-top: 2rem;
+    }
+    .illustrator4 {
+        width: 80px;
+        margin-right: 7rem;
+    }
+}
+
+
+@media (min-width: 1340px) and (max-width: 1970px) {
+    .vector2 {
+        display: none;
+    }
+}
