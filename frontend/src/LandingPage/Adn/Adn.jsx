@@ -34,7 +34,7 @@ export const Adn = () => {
           </p>
         </div>
       </div>
-      <div className="Team" data-aos="flip-up">
+      <div className="Team" >
         <h1 className="h1LandingPage">{Adn.equipe_title}</h1>
           <div className="card">
             <div id="bordercom">

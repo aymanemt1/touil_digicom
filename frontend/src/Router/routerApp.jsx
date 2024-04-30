@@ -48,7 +48,6 @@ export default function RouterApp() {
             <Fragment>
               <Navbar />
               <Contact />
-              <References />
               <Footer />
             </Fragment>
           }
@@ -59,7 +58,6 @@ export default function RouterApp() {
             <Fragment>
               <Navbar />
               <Blog />
-              <References />
               <Footer />
             </Fragment>
           }
@@ -70,7 +68,6 @@ export default function RouterApp() {
             <Fragment>
               <Navbar />
               <Servicedetail />
-              <References />
               <Footer />
             </Fragment>
           }
@@ -81,7 +78,6 @@ export default function RouterApp() {
             <Fragment>
               <Navbar />
               <Inscription />
-              <References />
               <Footer />
             </Fragment>
           }
@@ -112,7 +108,7 @@ export default function RouterApp() {
           path="/touil_team_login"
           element={
             token ? (
-              <Navigate to="/dashboard/statistiques" />
+              <Navigate to="/touil_team_dashboard/statistiques" />
             ) : (
               <Fragment>
                 <Navbar />

@@ -55,7 +55,6 @@ export const Home = () => {
             src="./assets/illustrationsRemoveBg/illu.png"
           className="illustatorHome"
           />
-          <img src="./assets/GradientEffect/union.png" className="union" />
 
           <img
             src="./assets/illustrationsRemoveBg/i9.png"

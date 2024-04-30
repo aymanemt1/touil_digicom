@@ -60,7 +60,6 @@
   opacity: 1;
   transform: none;
   transition: all .3s ease;
-  overflow: visible;
   object-fit: cover;
 }
 

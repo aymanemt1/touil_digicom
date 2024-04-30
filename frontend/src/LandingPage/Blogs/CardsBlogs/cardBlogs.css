@@ -220,38 +220,20 @@
   .lineInfoCard {
     font-size: 0.6rem;
   }
-}
-@media (max-width: 661px) {
-  .h6Card {
-    font-size: 0.6rem;
+  .parentCardBlogs {
+    display: flex;
+    gap: 2.3rem;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
   }
   .cardBlog {
-    height: 180px;
-  }
-  .cardBlog img {
-    height: 100px;
-  }
-  .btnCardBlogs {
-    height: 100px;
+    width: 100%;
+    height: 330px;
+    font-size: 50px;
   }
 }
-@media (max-width: 661px) {
-  .h6Card {
-    font-size: 0.6rem;
-  }
-  .cardBlog {
-    height: 180px;
-  }
-  .cardBlog img {
-    height: 100px;
-  }
-  .btnCardBlogs {
-    height: 100px;
-  }
-  .lineInfoCard {
-    font-size: 0.4rem;
-  }
-}
+
 @media (max-width: 430px) {
   .h6Card {
     font-size: 0.3rem;

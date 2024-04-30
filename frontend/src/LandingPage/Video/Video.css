@@ -27,3 +27,11 @@
         height: 60vh;
     }
 }
+
+@media (max-width:524px){
+    .parentVideo {
+        height: 70vh;
+        width: 80vh;
+    }
+   
+}

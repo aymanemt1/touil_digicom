@@ -13,31 +13,35 @@ export const servicedata = {
         {
           icon: "/marketing_icons/icon1",
           title: "Stratégie de marketing digital",
-          content: `Propulsez votre marque vers de nouveaux sommets avec notre expertise en stratégie de marketing digital`,
+          content: `Notre agence développe des stratégies sur mesure pour nos clients, en utilisant les canaux numériques les plus pertinents pour atteindre leurs objectifs commerciaux spécifiques. Nous travaillons sur des tactiques comme les médias sociaux, le marketing par e-mail, la publicité en ligne, et bien plus encore, afin d'accroître leur visibilité en ligne et d'optimiser leur retour sur investissement. `,
         },
         {
           icon: "/marketing_icons/icon2",
           title: "Gestion de campagnes publicitaires en ligne",
-          content: `Optimisez votre retour sur investissement avec notre service de gestion de campagnes publicitaires en ligne. En nous appuyant sur des données précises et une analyse approfondie`,
+          content: `Nous gérons et optimisons les campagnes publicitaires en ligne de nos clients sur différentes plateformes telles que Google Ads, Facebook Ads et LinkedIn Ads. En définissant des objectifs clairs, en ciblant efficacement leur public et en créant des annonces percutantes, nous maximisons leurs chances de toucher leur audience cible et d'obtenir des résultats tangibles.
+          `,
         },
         {
           icon: "/marketing_icons/icon3",
           title: "Développement de stratégies de branding",
-          content: `"Façonnez une identité de marque forte et mémorable avec notre service de développement de stratégies de branding`,
+          content: `Nous aidons nos clients à définir et à renforcer leur identité de marque pour se démarquer dans leur secteur. En travaillant sur la personnalité de la marque, ses valeurs fondamentales et son image visuelle, nous visons à créer une connexion émotionnelle avec leur public cible et à renforcer leur positionnement sur le marché.
+          `,
         },
         {
           icon: "/marketing_icons/icon4",
           title: "Analyse de marché et recherche concurrentielle",
-          content:`"Gagnez un avantage concurrentiel grâce à notre service d'analyse de marché et de recherche concurrentielle.`,
+          content:`Notre équipe effectue une analyse approfondie du marché dans lequel nos clients évoluent, ainsi qu'une étude minutieuse de leurs concurrents. En comprenant les tendances du marché, les comportements des consommateurs et les forces et faiblesses de la concurrence, nous sommes en mesure de recommander les meilleures stratégies pour garantir leur succès sur le marché.
+          `,
         },
         {
           icon: "/marketing_icons/icon5",
           title: "Marketing de contenu",
-          content: "Engagez votre audience et renforcez votre autorité dans votre domaine grâce à notre service de marketing de contenu",
+          content: "Nous créons et distribuons du contenu de qualité pour nos clients, afin de susciter l'intérêt de leur public cible et de renforcer leur autorité dans leur domaine. Grâce à des articles de blog, des vidéos, des infographies et d'autres formats de contenu engageants, nous les aidons à attirer des prospects qualifiés et à fidéliser leur clientèle existante.",
         },
         {
           icon: "/marketing_icons/icon6",
           title: "Optimisation des moteurs de recherche (SEO)",
+          content: "Nous améliorons la visibilité en ligne de nos clients en optimisant leur présence sur les moteurs de recherche. En optimisant leur contenu, leur structure de site et leur profil de backlinks, nous les aidons à atteindre des classements plus élevés dans les résultats de recherche organique, ce qui génère un trafic qualifié et des opportunités de conversion accrues.",
         }
       ],
       text2:`Que ce soit pour établir une présence en ligne efficace, générer des leads qualifiés ou renforcer la notoriété de votre marque, notre équipe est là pour vous accompagner à chaque étape de votre parcours marketing. Confiez-nous votre vision et laissez-nous vous aider à atteindre vos objectifs avec succès.`,
@@ -101,38 +105,35 @@ export const servicedata = {
         {
           icon: "/kafaat_icons/icon1",
           title: "Engagement envers l'excellence",
-          content: "Nous sommes engagés à fournir des formations de qualité supérieure qui répondent aux besoins spécifiques de nos participants et qui sont alignées sur les meilleures pratiques de l'industrie."
+          content: "Nos formateurs sont des experts dans leur domaine respectif, apportant une richesse d'expérience pratique et de connaissances approfondies pour garantir une formation pertinente et de haute qualité"
         },
         {
           icon: "/kafaat_icons/icon2",
           title: "Expertise spécialisée",
-          content: "Nos formateurs sont des experts dans leur domaine respectif, apportant une richesse d'expérience pratique et de connaissances approfondies pour garantir une formation pertinente et de haute qualité."
+          content: `Nos formateurs sont des experts dans leur domaine respectif, apportant une richesse d'expérience pratique et de connaissances approfondies pour garantir une formation pertinente et de haute qualité`
         },
         {
           icon: "/kafaat_icons/icon3",
           title: "Diversité des domaines",
-          content: "Nous proposons une gamme diversifiée de formations couvrant un large éventail de domaines, y compris la gestion, le leadership, la technologie de l'information, les compétences interpersonnelles, l’éducation et bien plus encore, pour répondre aux besoins variés de nos clients."
+          content: ` Nous proposons une gamme diversifiée de formations couvrant un large éventail de domaines, y compris la gestion, le leadership, la technologie de l'information, les compétences interpersonnelles, l’education et bien plus encore, pour répondre aux besoins variés de nos clients.
+          `
         },
         {
           icon: "/kafaat_icons/icon4",
           title: "Approche pédagogique innovante",
-          content: "Nous adoptons des méthodes d'enseignement innovantes et interactives qui favorisent l'engagement des participants, favorisent la rétention des connaissances et encouragent l'application pratique des compétences acquises."
+          content: `Nous adoptons des méthodes d'enseignement innovantes et interactives qui favorisent l'engagement des participants, favorisent la rétention des connaissances et encouragent l'application pratique des compétences acquises.
+          `
         },
         {
           icon: "/kafaat_icons/icon5",
           title: "Personnalisation des programmes",
-          content: "Nous travaillons en étroite collaboration avec nos clients pour concevoir des programmes de formation sur mesure qui répondent à leurs objectifs spécifiques et qui sont adaptés à leur culture organisationnelle et à leur contexte opérationnel."
+          content: `Nous travaillons en étroite collaboration avec nos clients pour concevoir des programmes de formation sur mesure qui répondent à leurs objectifs spécifiques et qui sont adaptés à leur culture organisationnelle et à leur contexte opérationnel.`
         },
         {
           icon: "/kafaat_icons/icon6",
           title: "Suivi et évaluation",
           content: "Nous assurons un suivi régulier et une évaluation continue de nos programmes de formation pour garantir leur efficacité et leur pertinence, tout en fournissant des feedbacks constructifs pour favoriser l'amélioration continue."
         },
-        {
-          icon: "/kafaat_icons/icon7",
-          title: "Conclusion",
-          content: "Que ce soit pour le développement des compétences des employés, le renforcement des capacités des gestionnaires, ou l'optimisation des performances organisationnelles, notre département de Formation KAFAAT est votre partenaire de confiance pour un apprentissage de qualité qui conduit au succès."
-        }
       ],
       formations: [
         
