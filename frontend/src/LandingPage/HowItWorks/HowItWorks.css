@@ -230,6 +230,12 @@
 
 
 @media (max-width : 767px) {
+  .patternHowITWorkReveal {
+    width: 70px;
+    height: 80px;
+   margin-left: 80%;
+   margin-top: -4rem;
+  }
   .coomment {
     margin: 0;
   }
@@ -345,6 +351,23 @@
 
 
 
+
+@media (max-width : 390px) {
+  .patternHowITWorkReveal {
+    width: 70px;
+    height: 80px;
+   margin-left: 80%;
+   margin-top: -4rem;
+  }
+  .TextHow p {
+    margin: auto;
+    font-size: 16px;
+    text-align: center;
+    width: 490px;
+  
+  }
+}
+
 @media (min-width:1340px){
 
   .coomment {
@@ -359,16 +382,14 @@
     font-size: 1.6rem;
   }
 
-  .entite {
-    width: 100%;
-  }
+ 
   .reveal {
-    width: 80vw;
+    width: 50%;
     height: 120%;
   }
 
   .image-comment {
-    width: 800px;
+    width: 77vh;
     height: 600px;
   }
 
@@ -403,5 +424,16 @@
     font-size: 1.7rem;
     width: fit-content;
   }
+  .topEtapes{
+    margin-left: 2rem;
+    width: 40%;
+  }
+  .entite{
+    gap: 100px;
+   
+      width: 100%;
+    }
+
+  
 
 }

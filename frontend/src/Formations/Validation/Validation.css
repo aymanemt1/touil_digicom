@@ -213,3 +213,31 @@
         padding: 3rem;
     }
 }
+@media (min-width : 1340px){
+    .validation{
+     margin-top: 6rem;
+      margin-bottom: 0;
+      height: 50vh;
+    }
+    .validationEntit ,.afterErrors{
+        padding: 11.8rem 3rem;
+    }
+    .validationEntit h1{
+        font-size: 40px;
+    }
+    .validationForm{
+        height: 30vh;
+    }
+    #date,#time{
+        font-size: 28px;
+        width: 30rem;
+    }
+    .btnsAfterReserved{
+        gap: 12px;
+        width: 50%;
+    }
+    .backServicebtn{
+        margin-left: 3rem;
+    }
+}
+

@@ -172,8 +172,8 @@
   #after-clicked{
     height: auto;
   }
- 
-
+  
+  
   .inscription-form{
     width: 100%;
     
@@ -181,6 +181,21 @@
   .inscription-content{
     flex-direction: column;
     flex-wrap: wrap;
+
+  }
+}
+
+@media (min-width : 1340px){
+  .inscriptionParent{
+    height: 80vh;
+    margin-bottom: 0;
+  }
+  .inscription-form{
+    width: 40%;
+    margin-left: 10rem;
+  }
+  #after-clicked{
+    height: 57vh;
 
   }
 }

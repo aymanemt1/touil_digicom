@@ -270,3 +270,48 @@ font-size: 25px;
     width: 96%;
    }
  }
+
+ @media (min-width : 1340px){
+  
+  .titleformations{
+    font-size: 37px;
+    margin-left: 3rem;
+  }
+  .detail-bottom{
+    margin-bottom: 10rem;
+  }
+  .card-formation{
+    height: 38vh;
+  }
+  .card-image{
+    width: 40%;
+  }
+  .card-image .cardformation-img{
+  width: 633px;
+  height: 330px;
+  }
+.titleformation h4{
+    font-size: 32px;
+    width: 60%;
+  }
+  .titleformation{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .righttitle{
+    width: 25%;
+  }
+  .descriptionformation{
+    font-size: 24px;
+  }
+  .btnChoisirModules{
+    font-size: 1.2rem;
+    width: 100%;
+  }
+  .btnReserve{
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  
+}

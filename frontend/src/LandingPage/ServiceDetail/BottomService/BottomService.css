@@ -84,3 +84,13 @@
    }
     
 }
+
+
+
+@media (min-width : 1340px){
+  
+  
+    .parentBottomServices{
+        margin: 7rem auto;
+    }
+  }

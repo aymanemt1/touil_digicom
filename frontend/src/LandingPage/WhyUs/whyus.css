@@ -354,11 +354,24 @@
 }
 
 
+
+@media (max-width: 390px) {
+  .Parentellipse2 .title {
+    margin-left: -4.4rem;
+    width: 290px;
+    text-align: center;
+  }
+}
+
+
 @media (min-width:1340px){
 
 
   .section-1 {
     width: 140rem;
+  }
+  .Parentellipse{
+    font-size: 44px;
   }
 
   .section-3 {

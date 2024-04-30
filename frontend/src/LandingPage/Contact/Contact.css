@@ -215,7 +215,8 @@ height: auto;
   .contact-map{
     margin-top: 5rem;
     flex-wrap: wrap;
-    width: 100%;
+    width: 97%;
+    padding: 0.5rem;
     height: 60rem;
 }
 .map{

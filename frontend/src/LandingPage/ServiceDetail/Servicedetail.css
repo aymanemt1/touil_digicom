@@ -322,7 +322,13 @@ color: transparent;
         height: 1500px;
     }
 
-    .service-img {
-        width: 250px;
+    #service-img {
+        width: 450px;
+        height: 300px;
+    }
+    .left-detail{
+     display: flex;
+     flex-direction: column;
+     gap: 83px;
     }
 }

@@ -305,10 +305,14 @@ li ul li {
         width: 350px;
     }
     .demandBtn {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
     }
+    
     .langBtn {
         width: 55px;
         height: 55px;
+    }
+    .arrow{
+        font-size: 20px;
     }
 }
