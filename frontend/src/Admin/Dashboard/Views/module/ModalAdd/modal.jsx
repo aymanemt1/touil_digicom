@@ -27,7 +27,7 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/formations/")
+      .get("https://touildigicom.ma/api/formations/")
       .then((response) => {
         setFormations(response.data);
       })
@@ -35,7 +35,7 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
         console.error(error);
       });
     axios
-      .get("http://127.0.0.1:8000/api/formateurs/")
+      .get("https://touildigicom.ma/api/formateurs/")
       .then((response) => {
         setFormateurs(response.data);
       })
@@ -84,7 +84,7 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
     }
 
     axios
-      .post(`http://127.0.0.1:8000/api/modules`, formData)
+      .post(`https://touildigicom.ma/api/modules`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();

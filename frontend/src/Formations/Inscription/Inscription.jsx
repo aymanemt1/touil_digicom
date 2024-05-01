@@ -64,7 +64,7 @@ export const Inscription = () => {
     }
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/sendmailvalidation",
+        "https://touildigicom.ma/api/sendmailvalidation",
         {
           email: formData.email,
           formationId: formData.formationId,
@@ -139,7 +139,7 @@ export const Inscription = () => {
   const getallformations = async () => {
     try {
       axios
-        .get(`http://127.0.0.1:8000/api/formations/${id}`)
+        .get(`https://touildigicom.ma/api/formations/${id}`)
         .then((response) => {
           setformations(response.data);
         })

@@ -9,7 +9,7 @@ export default function ModalTrashedClients({ onClose }) {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/trashed-clients")
+      .get("https://touildigicom.ma/api/trashed-clients")
       .then((response) => {
         setClients(response.data);
       })
@@ -20,7 +20,7 @@ export default function ModalTrashedClients({ onClose }) {
 
   const handleRestoreClient = (id) => {
     axios
-      .put(`http://127.0.0.1:8000/api/clients/${id}/restore`)
+      .put(`https://touildigicom.ma/api/clients/${id}/restore`)
       .then((response) => {
         setClients(clients.filter((client) => client.id !== id));
         setResponseMessage(response.data.message);
@@ -33,7 +33,7 @@ export default function ModalTrashedClients({ onClose }) {
   const handleForceDeleteClient = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer ce client?")) {
       axios
-        .delete(`http://127.0.0.1:8000/api/trashed-clients/${id}`)
+        .delete(`https://touildigicom.ma/api/trashed-clients/${id}`)
         .then((response) => {
           setClients(clients.filter((client) => client.id !== id));
           setResponseMessage(response.data.message);

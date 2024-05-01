@@ -27,7 +27,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
 
   useEffect(() => {
     axios
-    .get("http://127.0.0.1:8000/api/formations/")
+    .get("https://touildigicom.ma/api/formations/")
     .then((response) => {
       setFormations(response.data);
     })
@@ -35,7 +35,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
       console.error(error);
     });
     axios
-    .get("http://127.0.0.1:8000/api/formateurs/")
+    .get("https://touildigicom.ma/api/formateurs/")
     .then((response) => {
       setFormateurs(response.data);
     })
@@ -43,7 +43,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
       console.error(error);
     });
     axios
-    .get(`http://127.0.0.1:8000/api/modules/${moduleId}`)
+    .get(`https://touildigicom.ma/api/modules/${moduleId}`)
     .then((response) => {
       setFormData(response.data);
     })
@@ -75,7 +75,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/modules/${moduleId}`, formData);
+      const response = await axios.put(`https://touildigicom.ma/api/modules/${moduleId}`, formData);
       setResponseMessage(response.data.message);
       onClose(); 
     } catch (error) {

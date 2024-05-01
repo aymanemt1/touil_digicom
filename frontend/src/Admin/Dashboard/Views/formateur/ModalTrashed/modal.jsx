@@ -10,7 +10,7 @@ export default function ModalTrashedFormateurs({ onClose }) {
       
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/trashed-formateurs")
+      .get("https://touildigicom.ma/api/trashed-formateurs")
       .then((response) => {
         setFormateurs(response.data);
       })
@@ -21,7 +21,7 @@ export default function ModalTrashedFormateurs({ onClose }) {
 
   const handleRestoreFormation = (id) => {
     axios
-      .put(`http://127.0.0.1:8000/api/formateurs/${id}/restore`)
+      .put(`https://touildigicom.ma/api/formateurs/${id}/restore`)
       .then((response) => {
         setFormateurs(formateurs.filter((formateur) => formateur.id !== id));
         setResponseMessage(response.data.message);
@@ -34,7 +34,7 @@ export default function ModalTrashedFormateurs({ onClose }) {
   const handleForceDeleteFormation = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cette formation?")) {
       axios
-        .delete(`http://127.0.0.1:8000/api/trashed-formateurs/${id}`)
+        .delete(`https://touildigicom.ma/api/trashed-formateurs/${id}`)
         .then((response) => {
           setFormateurs(formateurs.filter((formateur) => formateur.id !== id));
           setResponseMessage(response.data.message);

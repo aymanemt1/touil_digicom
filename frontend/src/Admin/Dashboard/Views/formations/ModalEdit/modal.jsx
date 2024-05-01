@@ -34,7 +34,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/formations/${formationId}`)
+      .get(`https://touildigicom.ma/api/formations/${formationId}`)
       .then((response) => {
         setFormation(response.data);
         setFormData({
@@ -121,7 +121,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
     }
   
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/formations/${formationId}`, formData);
+      const response = await axios.put(`https://touildigicom.ma/api/formations/${formationId}`, formData);
       setResponseMessage(response.data.message);
       onClose(); 
     } catch (error) {

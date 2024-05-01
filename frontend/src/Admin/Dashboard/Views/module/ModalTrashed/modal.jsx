@@ -9,7 +9,7 @@ export default function ModalTrashedModule({ onClose }) {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/trashed-modules")
+      .get("https://touildigicom.ma/api/trashed-modules")
       .then((response) => {
         setFormateurs(response.data);
       })
@@ -20,7 +20,7 @@ export default function ModalTrashedModule({ onClose }) {
 
   const handleRestoreFormation = (id) => {
     axios
-      .put(`http://127.0.0.1:8000/api/modules/${id}/restore`)
+      .put(`https://touildigicom.ma/api/modules/${id}/restore`)
       .then((response) => {
         setFormateurs(modules.filter((module) => module.id !== id));
         setResponseMessage(response.data.message);
@@ -33,7 +33,7 @@ export default function ModalTrashedModule({ onClose }) {
   const handleForceDeleteFormation = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cette Module?")) {
       axios
-        .delete(`http://127.0.0.1:8000/api/trashed-modules/${id}`)
+        .delete(`https://touildigicom.ma/api/trashed-modules/${id}`)
         .then((response) => {
           setFormateurs(modules.filter((module) => module.id !== id));
           setResponseMessage(response.data.message);

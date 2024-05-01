@@ -20,7 +20,7 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/formateurs/${formateurId}`)
+      .get(`https://touildigicom.ma/api/formateurs/${formateurId}`)
       .then((response) => {
         setFormData(response.data);
       })
@@ -46,7 +46,7 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
     console.log(formData)
      
   try {
-    const response = await axios.put(`http://127.0.0.1:8000/api/formateurs/${formateurId}`, formData);
+    const response = await axios.put(`https://touildigicom.ma/api/formateurs/${formateurId}`, formData);
     setResponseMessage(response.data.message);
     onClose(); 
     console.log(response)

@@ -10,7 +10,7 @@ export default function ModalTrashedFormation({ onClose }) {
 
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/trashed-formations')
+    axios.get('https://touildigicom.ma/api/trashed-formations')
         .then(response => {
           setFormations(response.data);
         })
@@ -20,7 +20,7 @@ export default function ModalTrashedFormation({ onClose }) {
   }, []);
 
   const handleRestoreFormation = (id) => {
-    axios.put(`http://127.0.0.1:8000/api/formations/${id}/restore`)
+    axios.put(`https://touildigicom.ma/api/formations/${id}/restore`)
       .then(response => {
         setFormations(formations.filter(formation => formation.id !== id));
         setResponseMessage(response.data.message);
@@ -32,7 +32,7 @@ export default function ModalTrashedFormation({ onClose }) {
 
   const handleForceDeleteFormation = (id) => {
     if(window.confirm("Êtes-vous sûr de vouloir supprimer cette formation?")){
-      axios.delete(`http://127.0.0.1:8000/api/trashed-formations/${id}`)
+      axios.delete(`https://touildigicom.ma/api/trashed-formations/${id}`)
       .then(response => {
         setFormations(formations.filter(formation => formation.id !== id));
         setResponseMessage(response.data.message);

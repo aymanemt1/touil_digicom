@@ -68,7 +68,7 @@ export default function ModalAddClient({ onClose, setResponseMessage }) {
     }
 
     axios
-      .post("http://127.0.0.1:8000/api/clients", formData)
+      .post("https://touildigicom.ma/api/clients", formData)
       .then((response) => {
         setFormData({
           nom: "",

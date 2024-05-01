@@ -9,7 +9,7 @@ export default function ModalTrashedReservation({ onClose }) {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/trashed-reservations")
+      .get("https://touildigicom.ma/api/trashed-reservations")
       .then((response) => {
         setReservations(response.data);
       })
@@ -20,7 +20,7 @@ export default function ModalTrashedReservation({ onClose }) {
 
   const handleRestoreReservation = (id) => {
     axios
-      .put(`http://127.0.0.1:8000/api/reservations/${id}/restore`)
+      .put(`https://touildigicom.ma/api/reservations/${id}/restore`)
       .then((response) => {
         setReservations(
           reservations.filter((reservation) => reservation.id !== id)
@@ -37,7 +37,7 @@ export default function ModalTrashedReservation({ onClose }) {
       window.confirm("Êtes-vous sûr de vouloir supprimer cette réservation?")
     ) {
       axios
-        .delete(`http://127.0.0.1:8000/api/trashed-reservations/${id}`)
+        .delete(`https://touildigicom.ma/api/trashed-reservations/${id}`)
         .then((response) => {
           setReservations(
             reservations.filter((reservation) => reservation.id !== id)

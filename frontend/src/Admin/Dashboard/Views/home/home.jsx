@@ -9,7 +9,7 @@ export default function StatistiquesDashboard() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/statistics")
+      .get("https://touildigicom.ma/api/statistics")
       .then((response) => {
         setStatics(response.data);
       })

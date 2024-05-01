@@ -95,7 +95,7 @@ export default function ModalAddFormateur({ onClose, setResponseMessage }) {
     console.log(formDataWithFile);
   
     axios
-      .post("http://127.0.0.1:8000/api/formateurs", formDataWithFile, {
+      .post("https://touildigicom.ma/api/formateurs", formDataWithFile, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

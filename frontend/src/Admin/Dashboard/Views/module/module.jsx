@@ -51,7 +51,7 @@ export default function ModuleDashboard() {
     }, [responseMessage]);
 
     const fetchModules = () => {
-        axios.get('http://127.0.0.1:8000/api/modules/')
+        axios.get('https://touildigicom.ma/api/modules/')
             .then(response => {
                 setModules(response.data);
             })
@@ -63,7 +63,7 @@ export default function ModuleDashboard() {
     // Delete module function
     function deleteModule(id) {
         if (window.confirm("Êtes-vous sûr de vouloir supprimer ce module ?")) {
-            axios.delete(`http://127.0.0.1:8000/api/modules/${id}`)
+            axios.delete(`https://touildigicom.ma/api/modules/${id}`)
                 .then(response => {
                     setModules(prevModules => prevModules.filter(module => module.id !== id));
                     setResponseMessage(response.data.message);
