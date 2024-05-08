@@ -9,7 +9,7 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
 
   useEffect(() => {
     // Fetch client data based on clientId and set formData
-    axios.get(`http://127.0.0.1:8000/api/clients/${clientId}`)
+    axios.get(`https://touildigicom.ma/api/clients/${clientId}`)
       .then(response => {
         setFormData(response.data);
       })
@@ -45,7 +45,7 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
     }
   
     axios
-      .put(`http://127.0.0.1:8000/api/clients/${clientId}`, formData)
+      .put(`https://touildigicom.ma/api/clients/${clientId}`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();

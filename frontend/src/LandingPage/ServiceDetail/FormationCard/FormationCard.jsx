@@ -55,7 +55,7 @@ export const FormationCard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/formationsdata?page=${currentPage}`);
+      const response = await axios.get(`https://touildigicom.ma/api/formationsdata?page=${currentPage}`);
       setCount(response.data.formationCount)
       setFormations(response.data.formations.data);
   console.log(response)
@@ -98,7 +98,7 @@ export const FormationCard = () => {
               <div className="card-image">
                 <img
                   className="cardformation-img"
-                  src={`http://localhost:8000/storage/formations/cover/${formation.cover}`}
+                  src={`https://touildigicom.ma/storage/formations/cover/${formation.cover}`}
                   alt="service-Image"
                   onError={(e) => {
                     e.target.src = "/assets/altImage/alt-img.jpg";

@@ -10,7 +10,7 @@ export default function Subscriptions(){
 
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/subscriptions')
+        axios.get('https://touildigicom.ma/api/subscriptions')
             .then(response => {
                 setSubscriptions(response.data);
             })
@@ -22,7 +22,7 @@ export default function Subscriptions(){
     const deleteSubscription = async (id) => {
         if(window.confirm('Êtes-vous sûr de supprimer cet abonnement ?')){
             try {
-                await axios.delete(`http://127.0.0.1:8000/api/subscriptions/${id}`);
+                await axios.delete(`https://touildigicom.ma/api/subscriptions/${id}`);
                 setResponseMessage('Abonnement supprimé avec succès');
                 setSubscriptions(subscriptions.filter(subscription => subscription.id !== id));
             } catch (error) {

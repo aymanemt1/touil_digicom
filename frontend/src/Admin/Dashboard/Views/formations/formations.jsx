@@ -52,7 +52,7 @@ export default function FormationDashboard() {
     }, [responseMessage]);
 
     const fetchFormations = () => {
-        axios.get('http://127.0.0.1:8000/api/formations/')
+        axios.get('https://touildigicom.ma/api/formations/')
             .then(response => {
                 setFormations(response.data);
             })
@@ -64,7 +64,7 @@ export default function FormationDashboard() {
     // delete formation function
     function deleteFormation(id) {
         if (window.confirm("Êtes-vous sûr de vouloir supprimer cette formation?")) {
-            axios.delete(`http://127.0.0.1:8000/api/formations/${id}`)
+            axios.delete(`https://touildigicom.ma/api/formations/${id}`)
                 .then(response => {
                     setFormations(prevFormations => prevFormations.filter(formation => formation.id !== id));
                     setResponseMessage(response.data.message);
@@ -98,24 +98,6 @@ export default function FormationDashboard() {
         setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     }
 
-
-       
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/formations');
-        setImages(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchImages();
-  }, []);
-
-  console.log(images)
     return (
         <Fragment>
             <div className="parentHomeDashboard">
@@ -167,10 +149,10 @@ export default function FormationDashboard() {
                                 <tr key={index}>
                                     <td>{item.id}</td>
                                     <td id="tdImgFormations">
-                                    <img src={`http://localhost:8000/storage/formations/cover/${item.cover}`} />
+                                    <img src={`https://touildigicom/storage/formations/cover/${item.cover}`} />
                                     </td>
                                     <td id="tdImgFormations">
-                                    <img src={`http://localhost:8000/storage/formations/affiche/${item.affiche}`} />
+                                    <img src={`https://touildigicom/storage/formations/affiche/${item.affiche}`} />
                                     </td>
                                     <td><h4>{item.titre_fr}</h4></td>
                                     <td><h4>{item.titre_ar}</h4></td>

@@ -66,7 +66,7 @@ export const Modules = (props) => {
                                         <>
                                 <img
                                  className="profile"
-                                 src={`http://localhost:8000/storage/formateurs/${module.formateur.profile}`}
+                                 src={`https://touildigicom.ma/storage/formateurs/${module.formateur.profile}`}
                                  onError={(e) => {
                                      e.target.src = "/assets/altImage/alt-img.jpg";
                                    }}

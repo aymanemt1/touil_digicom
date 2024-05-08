@@ -32,7 +32,7 @@ export default function ModalEditReservation({
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/formations/")
+      .get("https://touildigicom.ma/api/formations/")
       .then((response) => {
         setFormations(response.data);
       })
@@ -40,7 +40,7 @@ export default function ModalEditReservation({
         console.error(error);
       });
     axios
-      .get("http://127.0.0.1:8000/api/clients/")
+      .get("https://touildigicom.ma/api/clients/")
       .then((response) => {
         setClients(response.data);
       })
@@ -48,7 +48,7 @@ export default function ModalEditReservation({
         console.error(error);
       });
     axios
-      .get(`http://127.0.0.1:8000/api/reservations/${reservationId}`)
+      .get(`https://touildigicom.ma/api/reservations/${reservationId}`)
       .then((response) => {
         setFormData(response.data);
       })
@@ -113,7 +113,7 @@ export default function ModalEditReservation({
     }
 
     axios
-      .put(`http://127.0.0.1:8000/api/reservations/${reservationId}`, formData)
+      .put(`https://touildigicom.ma/api/reservations/${reservationId}`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();

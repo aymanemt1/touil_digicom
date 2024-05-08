@@ -5,7 +5,7 @@ const MultiLineChart = () => {
     const [chartData, setChartData] = useState(null);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/statistics')
+        fetch('https://touildigicom.ma/api/statistics')
             .then(response => response.json())
             .then(data => {
                 const filteredData = Object.entries(data)

@@ -60,7 +60,7 @@ export const RegisterForm = () => {
       }
            try {
              console.log(formData)
-                const response = await axios.post('http://127.0.0.1:8000/api/signup',formData)
+                const response = await axios.post('https://touildigicom.ma/api/signup',formData)
                 const token = response.data.token;
                 const admin = response.data.admin;
                 Cookies.set('token', token);

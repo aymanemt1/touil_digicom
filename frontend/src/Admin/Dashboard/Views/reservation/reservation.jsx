@@ -46,7 +46,7 @@ export default function ReservationDashboard() {
   const handleValidate = async (formationId, clientId) => {
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/checkReservation', {
+      const response = await axios.post('https://touildigicom.ma/api/checkReservation', {
         formation_id: formationId,
         client_id: clientId
       });
@@ -81,7 +81,7 @@ export default function ReservationDashboard() {
 
   const fetchReservations = () => {
     axios
-      .get("http://127.0.0.1:8000/api/reservations/")
+      .get("https://touildigicom.ma/api/reservations/")
       .then((response) => {
         setReservations(response.data);   
       })
@@ -96,7 +96,7 @@ export default function ReservationDashboard() {
       window.confirm("Êtes-vous sûr de vouloir supprimer cette Réservation?")
     ) {
       axios
-        .delete(`http://127.0.0.1:8000/api/reservations/${id}`)
+        .delete(`https://touildigicom.ma/api/reservations/${id}`)
         .then((response) => {
           setReservations((prevReservations) =>
             prevReservations.filter((reservation) => reservation.id !== id)

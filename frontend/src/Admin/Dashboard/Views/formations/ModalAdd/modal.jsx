@@ -121,7 +121,7 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
 
     console.log(formData);
     axios
-    .post("http://127.0.0.1:8000/api/formations", formData, {
+    .post("https://touildigicom.ma/api/formations", formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

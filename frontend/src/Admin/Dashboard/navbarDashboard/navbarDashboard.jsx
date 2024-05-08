@@ -20,7 +20,7 @@ export default function NavbarDashboard(){
                 console.error("Token not found");
                 return;
             }
-            await axios.post('http://127.0.0.1:8000/api/logout', null, {
+            await axios.post('https://touildigicom.ma/api/logout', null, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

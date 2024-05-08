@@ -51,7 +51,7 @@ export default function ClientDashboard() {
     }, [responseMessage]);
 
     const fetchClients = () => {
-        axios.get('http://127.0.0.1:8000/api/clients/')
+        axios.get('https://touildigicom.ma/api/clients/')
             .then(response => {
                 setClients(response.data);
             })
@@ -63,7 +63,7 @@ export default function ClientDashboard() {
     // Delete client function
     function deleteClient(id) {
         if (window.confirm("Êtes-vous sûr de vouloir supprimer ce client?")) {
-            axios.delete(`http://127.0.0.1:8000/api/clients/${id}`)
+            axios.delete(`https://touildigicom.ma/api/clients/${id}`)
                 .then(response => {
                     setClients(prevClients => prevClients.filter(client => client.id !== id));
                     setResponseMessage(response.data.message);

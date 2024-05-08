@@ -52,7 +52,7 @@ export default function FormateurDashboard() {
     }, [responseMessage]);
 
     const fetchFormateurs = () => {
-        axios.get('http://127.0.0.1:8000/api/formateurs/')
+        axios.get('https://touildigicom.ma/api/formateurs/')
             .then(response => {
                 setFormateurs(response.data);
             })
@@ -64,7 +64,7 @@ export default function FormateurDashboard() {
     // Delete formateur function
     function deleteFormateur(id) {
         if (window.confirm("Êtes-vous sûr de vouloir supprimer ce formateur?")) {
-            axios.delete(`http://127.0.0.1:8000/api/formateurs/${id}`)
+            axios.delete(`https://touildigicom.ma/api/formateurs/${id}`)
                 .then(response => {
                     setFormateurs(prevFormateurs => prevFormateurs.filter(formateur => formateur.id !== id));
                     setResponseMessage(response.data.message);
@@ -150,7 +150,7 @@ export default function FormateurDashboard() {
                                 <tr key={index}>
                                     <td>{formateur.id}</td>
                                     <td>
-                                        <img src={`http://localhost:8000/storage/formateurs/${formateur.profile}`} />
+                                        <img src={`https://touildigicom.ma/storage/formateurs/${formateur.profile}`} />
                                     </td>
                                     <td><span className="spanNomUppercase">{formateur.nom}</span></td>
                                     <td>{formateur.prenom}</td>

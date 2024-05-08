@@ -84,13 +84,13 @@ export const Validation = ({formData}) => {
         const isFormValid = validateForm();
     
         try {
-            const reservationResponse = await axios.post('http://127.0.0.1:8000/api/reservation', updatedFormData);
+            const reservationResponse = await axios.post('https://touildigicom.ma/api/reservation', updatedFormData);
             if (reservationResponse.status === 200) {
                 setreserved(true);
                 setresponsemessage('votre réservation a été ajoutée avec succès')
 
                 try {
-                    const emailResponse = await axios.post('http://127.0.0.1:8000/api/sendmail-reservaion', updatedFormData);
+                    const emailResponse = await axios.post('https://touildigicom.ma/api/sendmail-reservaion', updatedFormData);
                     if (emailResponse.status === 200) {
                         console.log('Email sent to admin');
                     } else {
@@ -128,7 +128,7 @@ export const Validation = ({formData}) => {
     const ticketBtn = async () => {
         const ticketData = { ...formData, ...validationData };
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/ticket', ticketData, {
+            const response = await axios.post('https://touildigicom.ma/api/ticket', ticketData, {
                 responseType: 'blob' // Set response type to blob
             });
     
