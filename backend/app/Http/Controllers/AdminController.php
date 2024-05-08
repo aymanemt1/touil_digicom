@@ -85,7 +85,7 @@ class AdminController extends Controller
         }
     }
 
-    
+
 
 
 
@@ -137,8 +137,6 @@ class AdminController extends Controller
     }
 
 
-
-
     public function fetchFormateurById(Request $request) {
         $formateur = Formateur::find($request->id);
         return response()->json($formateur);
@@ -147,34 +145,34 @@ class AdminController extends Controller
     public function updateFormateur(Request $request, $id) {
         $formateur = Formateur::find($id);
         if ($formateur) {
-            
+
         $formateur->nom = $request->input('nom');
         $formateur->prenom = $request->input('prenom');
         $formateur->email = $request->input('email');
         $formateur->specialite = $request->input('specialite');
-        
+
         if ($request->hasFile('profile')) {
             $profileImage = $request->file('profile');
             $imageName = date('His') . '.' . $profileImage->getClientOriginalExtension();
-            
+
             $profileImage->move(public_path('/storage/news'), $imageName);
-            
+
             $formateur['profile'] = $imageName;
 
         }
-      
+
         $formateur->update($request->all());
 
     }else{
         return response()->json(['message' => 'Formateur not found'], 404);
 
     }
-    
+
         return response()->json(['message' => 'Formateur mise à jour avec succès']);
     }
-    
 
-    
+
+
     public function storeFormateur(Request $request)
     {
         $requestData = $request->all();
@@ -214,8 +212,11 @@ public function deleteFormateur($id)
         return response()->json(['message' => 'Formateur not found'], 404);
     }
 
+    $formateur->delete();
+
     return response()->json(['message' => 'VOUS NE POUVEZ PAS SUPPRIMER CE FORMATEUR APRÈS AVOIR SUPPRIMÉ LE MODULE'], 200);
 }
+
 
     public function fetchTrashedFormateurs() {
         $trashedFormateurs = Formateur::onlyTrashed()->get();
@@ -274,11 +275,11 @@ public function deleteFormateur($id)
         if (!$module) {
             return response()->json(['message' => 'Module not found'], 404);
         }
-        $formateur = $module->formateur;
+        // $formateur = $module->formateur;
         $module->delete();
-    
-        $formateur->delete();
-    
+
+        // $formateur->delete();
+
         return response()->json(['message' => 'Module and associated formateur deleted successfully'], 200);
     }
 
@@ -350,7 +351,7 @@ public function deleteFormateur($id)
         $formation = Formation::find($formation_id);
         $modulePrices = $formation->modules->pluck('prix');
         $totalPrice = $modulePrices->sum();
-    
+
         $existingReservation = new Reservation();
         $existingReservation->client_id = $client_id;
         $existingReservation->formation_id = $formation_id;
@@ -361,7 +362,7 @@ public function deleteFormateur($id)
 
         return response()->json(['message' => 'Reservation créée avec succès'], 201);
     }
-    
+
 
     public function deleteReservation($id)
     {
@@ -402,17 +403,17 @@ public function deleteFormateur($id)
     public function checkReservation(Request $request) {
         $client_id = $request->input('client_id');
         $formation_id = $request->input('formation_id');
-    
+
         $reservation = Reservation::where('client_id', $client_id)
                                   ->where('formation_id', $formation_id)
                                   ->first();
-    
+
         if ($reservation) {
             if ($reservation->validate == 0) {
                 $reservation->update([
                     'validate' => 1
                 ]);
-    
+
                 $formation = Formation::find($formation_id);
                 if ($formation) {
                     $formation->update([
@@ -423,7 +424,7 @@ public function deleteFormateur($id)
                 $reservation->update([
                     'validate' => 0
                 ]);
-    
+
                 $formation = Formation::find($formation_id);
                 if ($formation) {
                     $formation->update([
@@ -431,7 +432,7 @@ public function deleteFormateur($id)
                     ]);
                 }
             }
-    
+
             return response()->json([
                 'exists' => true,
                 'reservation' => $reservation,
@@ -440,8 +441,8 @@ public function deleteFormateur($id)
             return response()->json(['exists' => false]);
         }
     }
-    
-    
+
+
 
     // Functions Clients
     public function fetchClients()
@@ -475,19 +476,19 @@ public function deleteFormateur($id)
     public function deleteClient($id)
     {
         $client = Client::find($id);
-    
+
         if (!$client) {
             return response()->json(['message' => 'Client not found'], 404);
         }
-    
+
         if ($client->reservations()->exists()) {
             return response()->json(['message' => 'Client has reservations and cannot be deleted'], 400);
         }
-    
+
         $client->delete();
         return response()->json(['message' => 'Client déplacé vers la corbeille'], 200);
     }
-    
+
     public function fetchTrashedClients()
     {
         $trashedClients = Client::onlyTrashed()->get();

@@ -31,12 +31,10 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
 
 
   const handleChange = (e) => {
-    const { name, value} = e.target;
-    let error = "";
-  
-    setErrors({
-      ...errors,
-      [name]: error,
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
   };
   

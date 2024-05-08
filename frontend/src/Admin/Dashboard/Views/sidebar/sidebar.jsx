@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import './sidebar.css';
 
 export default function SideBar(){
+    
     const location = useLocation();
 
     return (

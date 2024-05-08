@@ -152,7 +152,7 @@ export default function ModuleDashboard() {
                                     <td>{module.id}</td>
                                     <td>{module.titre_fr}</td>
                                     <td>{module.titre_ar}</td>
-                                    <td>{module.formation.titre_fr}</td>
+                                    <td>{module.formation ? module.formation.titre_fr : null}</td>
                                     <td>{module.formateur ? module.formateur.nom : `N'existe pas` } {module.formateur ? module.formateur.prenom : ``}</td>
                                     <td>{module.duree}</td>
                                     <td>{module.prix}</td>

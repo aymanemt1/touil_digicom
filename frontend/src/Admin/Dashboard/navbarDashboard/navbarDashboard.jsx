@@ -40,8 +40,8 @@ export default function NavbarDashboard(){
             <div className="parentNavbarDashboard">
                 <div className="navbarDashboard">
                 <div className="brandLogoDashboard">
-                    <Link to='/dashboard/statistiques'>
-                        <img src="/assets/Logo/logo4.png" alt="" />
+                    <Link to='/touil_team_dashboard/statistiques'>
+                        <img src="/assets/Logo/logoLandige.png" alt="" />
                     </Link>
                 </div>
                 <div className="linksNavbarDashboard">

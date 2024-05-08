@@ -72,8 +72,8 @@ export default function ModalTrashedModule({ onClose }) {
                   <tr key={index}>
                     <td>{module.id}</td>
                     <td>{module.titre_fr}</td>
-                    <td>{module.formation.titre_fr}</td>
-                    <td>{module.formateur.nom} {module.formateur.prenom}</td>
+                    <td>{module.formation ? module.formation.titre_fr : null}</td>
+                    {module.formateur ? <td>{module.formateur.nom} {module.formateur.prenom}</td> : null}
                     <td>{module.duree}</td>
                     <td>{module.prix}</td>
                     <td className="tdButtonsPoubelle">

@@ -59,7 +59,7 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
         reader.readAsDataURL(file);
       }
     } else {
-      if (value.trim() === "") {
+      if (value.trim() == "") {
         error = "Ce champ est obligatoire";
       } else if (name === "date_debut" || name === "date_fin") {
         setFormData({

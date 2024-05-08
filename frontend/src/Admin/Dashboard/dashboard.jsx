@@ -7,6 +7,7 @@ import { LangueContext } from "../../Context/LangueContext";
 export default function Dashboard(){
 
     document.title = 'Touil Digicom - Dashboard';
+    
     return (
         <Fragment>
             <div className="parentDashboard">

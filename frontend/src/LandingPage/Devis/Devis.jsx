@@ -82,7 +82,7 @@ if (isFormValid) {
 }
 
   try {
-      const response = await axios.post('http://127.0.0.1:8000/api/send-devis', DevisData);
+      const response = await axios.post('https://touildigicom.ma/api/send-devis', DevisData);
       console.log(response.data.message);
       setDevisData({
           prenom_devis: '',
