@@ -3,7 +3,9 @@ import "./modal.css";
 import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
-export default function ModalAddFormation({ onClose, setResponseMessage  }) {
+export default function ModalAddFormation({ onClose, setResponseMessage }) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [formData, setFormData] = useState({
     titre_fr: "",
     titre_ar: "",
@@ -31,7 +33,6 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     date_fin: "",
   });
 
-
   const [coverPreview, setCoverPreview] = useState(null);
   const [affichePreview, setAffichePreview] = useState(null);
 
@@ -43,9 +44,9 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
       const file = files[0];
       setFormData({
         ...formData,
-        [name]: file, 
+        [name]: file,
       });
-  
+
       if (file) {
         const reader = new FileReader();
         reader.onload = () => {
@@ -92,8 +93,6 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
     });
   };
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     let isValid = true;
@@ -121,40 +120,38 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
 
     console.log(formData);
     axios
-    .post("https://touildigicom.ma/api/formations", formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    .then((response) => {
-      setFormData({
-        titre_fr: "",
-        titre_ar: "",
-        description_fr: "",
-        description_ar: "",
-        cover: "",
-        affiche: "",
-        ville: "",
-        capacite: "",
-        date_debut: "",
-        date_fin: "",
-      });
-      setResponseMessage(response.data.message);
-      onClose();
-    })
-    .catch((error) => {
-      if (error.response) {
-        setErrors({
-          ...errors,
-          email: "Email déjà existant",
+      .post(`${apiUrl}/api/formations`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        setFormData({
+          titre_fr: "",
+          titre_ar: "",
+          description_fr: "",
+          description_ar: "",
+          cover: "",
+          affiche: "",
+          ville: "",
+          capacite: "",
+          date_debut: "",
+          date_fin: "",
         });
-      } else {
-        console.error(error);
-      }
-    });
-};
-
-
+        setResponseMessage(response.data.message);
+        onClose();
+      })
+      .catch((error) => {
+        if (error.response) {
+          setErrors({
+            ...errors,
+            email: "Email déjà existant",
+          });
+        } else {
+          console.error(error);
+        }
+      });
+  };
 
   return (
     <Fragment>
@@ -234,7 +231,8 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                     <div>
                       <div className="labelFile">
                         <label htmlFor="cover">
-                          <i className="bx bx-cloud-upload"></i><p className="cheminImageReload">Cover</p>
+                          <i className="bx bx-cloud-upload"></i>
+                          <p className="cheminImageReload">Cover</p>
                         </label>
                         <input
                           type="file"
@@ -243,7 +241,11 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                           onChange={handleChange}
                         />
                         {coverPreview && (
-                          <img src={coverPreview} alt="Cover" className="imgReloadInput"/>
+                          <img
+                            src={coverPreview}
+                            alt="Cover"
+                            className="imgReloadInput"
+                          />
                         )}
                       </div>
                       {errors.cover && (
@@ -257,7 +259,8 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                     <div>
                       <div className="labelFile">
                         <label htmlFor="affiche">
-                          <i className="bx bx-cloud-upload"></i>  <p className="cheminImageReload">Affiche</p>
+                          <i className="bx bx-cloud-upload"></i>{" "}
+                          <p className="cheminImageReload">Affiche</p>
                         </label>
                         <input
                           type="file"
@@ -266,7 +269,11 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                           onChange={handleChange}
                         />
                         {affichePreview && (
-                          <img src={affichePreview} alt="affiche" className="imgReloadInput"/>
+                          <img
+                            src={affichePreview}
+                            alt="affiche"
+                            className="imgReloadInput"
+                          />
                         )}
                       </div>
                       {errors.affiche && (
@@ -278,52 +285,53 @@ export default function ModalAddFormation({ onClose, setResponseMessage  }) {
                   </td>
                 </tr>
                 <tr>
-                  
                   <td id="tdDouble">
                     <div>
-                    <select
-        id="ville"
-        className="input-inscription"
-        name="ville"
-        value={formData.ville}
-        onChange={handleChange}
-    >
-        <option value="" disabled selected>Selectionner une ville</option>
-        <option value="Agadir">Agadir</option>
-        <option value="Al Hoceima">Al Hoceima</option>
-        <option value="Asilah">Asilah</option>
-        <option value="Azemmour">Azemmour</option>
-        <option value="Beni Mellal">Beni Mellal</option>
-        <option value="Bouznika">Bouznika</option>
-        <option value="Casablanca">Casablanca</option>
-        <option value="Chefchaouen">Chefchaouen</option>
-        <option value="Dakhla">Dakhla</option>
-        <option value="El Jadida">El Jadida</option>
-        <option value="Essaouira">Essaouira</option>
-        <option value="Fes">Fes</option>
-        <option value="Fnideq">Fnideq</option>
-        <option value="Guelmim">Guelmim</option>
-        <option value="Ifrane">Ifrane</option>
-        <option value="Kénitra">Kénitra</option>
-        <option value="Khouribga">Khouribga</option>
-        <option value="Laayoune">Laayoune</option>
-        <option value="Larache">Larache</option>
-        <option value="Marrakech">Marrakech</option>
-        <option value="Meknes">Meknes</option>
-        <option value="Mohammedia">Mohammedia</option>
-        <option value="Nador">Nador</option>
-        <option value="Ouarzazate">Ouarzazate</option>
-        <option value="Oujda">Oujda</option>
-        <option value="Rabat">Rabat</option>
-        <option value="Safi">Safi</option>
-        <option value="Salé">Salé</option>
-        <option value="Tanger">Tanger</option>
-        <option value="Taroudant">Taroudant</option>
-        <option value="Taza">Taza</option>
-        <option value="Témara">Témara</option>
-        <option value="Tetouan">Tetouan</option>
-        <option value="Tiznit">Tiznit</option>
-    </select>
+                      <select
+                        id="ville"
+                        className="input-inscription"
+                        name="ville"
+                        value={formData.ville}
+                        onChange={handleChange}
+                      >
+                        <option value="" disabled selected>
+                          Selectionner une ville
+                        </option>
+                        <option value="Agadir">Agadir</option>
+                        <option value="Al Hoceima">Al Hoceima</option>
+                        <option value="Asilah">Asilah</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Beni Mellal">Beni Mellal</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Chefchaouen">Chefchaouen</option>
+                        <option value="Dakhla">Dakhla</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Essaouira">Essaouira</option>
+                        <option value="Fes">Fes</option>
+                        <option value="Fnideq">Fnideq</option>
+                        <option value="Guelmim">Guelmim</option>
+                        <option value="Ifrane">Ifrane</option>
+                        <option value="Kénitra">Kénitra</option>
+                        <option value="Khouribga">Khouribga</option>
+                        <option value="Laayoune">Laayoune</option>
+                        <option value="Larache">Larache</option>
+                        <option value="Marrakech">Marrakech</option>
+                        <option value="Meknes">Meknes</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Nador">Nador</option>
+                        <option value="Ouarzazate">Ouarzazate</option>
+                        <option value="Oujda">Oujda</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Safi">Safi</option>
+                        <option value="Salé">Salé</option>
+                        <option value="Tanger">Tanger</option>
+                        <option value="Taroudant">Taroudant</option>
+                        <option value="Taza">Taza</option>
+                        <option value="Témara">Témara</option>
+                        <option value="Tetouan">Tetouan</option>
+                        <option value="Tiznit">Tiznit</option>
+                      </select>
                       {errors.ville && (
                         <span className="errorModal">
                           <i className="bx bxs-error"></i> {errors.ville}

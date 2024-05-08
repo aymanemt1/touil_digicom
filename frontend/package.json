@@ -13,6 +13,7 @@
     "axios": "^1.6.8",
     "chart.js": "^4.4.2",
     "cookie-universal": "^2.2.2",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.0.25",
     "gsap": "^3.12.5",
     "js-cookie": "^3.0.5",

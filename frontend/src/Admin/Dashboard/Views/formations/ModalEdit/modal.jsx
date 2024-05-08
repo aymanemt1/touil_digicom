@@ -3,7 +3,13 @@ import "./modal.css";
 import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
-export default function ModalEditFormation({ onClose, formationId, setResponseMessage }) {
+export default function ModalEditFormation({
+  onClose,
+  formationId,
+  setResponseMessage,
+}) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [formation, setFormation] = useState();
 
   const [formData, setFormData] = useState({
@@ -34,7 +40,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
 
   useEffect(() => {
     axios
-      .get(`https://touildigicom.ma/api/formations/${formationId}`)
+      .get(`${apiUrl}/api/formations/${formationId}`)
       .then((response) => {
         setFormation(response.data);
         setFormData({
@@ -54,37 +60,35 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
       });
   }, [formationId]);
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     let error = "";
 
-   
-      if (value.trim() === "") {
-        error = "Ce champ est obligatoire";
-      } else if (name === "date_debut" || name === "date_fin") {
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-      } else if (name === "date_debut") {
-        const currentDate = new Date();
-        const selectedDate = new Date(value);
-        if (selectedDate <= currentDate) {
-          error = "La date de début doit être postérieure à la date actuelle";
-        }
-      } else if (name === "date_fin") {
-        const startDate = new Date(formData.date_debut);
-        const endDate = new Date(value);
-        if (endDate <= startDate) {
-          error = "La date de fin doit être postérieure à la date de début";
-        }
-      } else {
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
+    if (value.trim() === "") {
+      error = "Ce champ est obligatoire";
+    } else if (name === "date_debut" || name === "date_fin") {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    } else if (name === "date_debut") {
+      const currentDate = new Date();
+      const selectedDate = new Date(value);
+      if (selectedDate <= currentDate) {
+        error = "La date de début doit être postérieure à la date actuelle";
       }
+    } else if (name === "date_fin") {
+      const startDate = new Date(formData.date_debut);
+      const endDate = new Date(value);
+      if (endDate <= startDate) {
+        error = "La date de fin doit être postérieure à la date de début";
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
 
     setErrors({
       ...errors,
@@ -92,38 +96,38 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
     });
   };
 
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     let isValid = true;
     const newErrors = { ...errors };
-  
+
     const currentDate = new Date();
     const startDate = new Date(formData.date_debut);
     const endDate = new Date(formData.date_fin);
-  
+
     if (startDate <= currentDate) {
       newErrors.date_debut = "La date doit être dans le futur";
       isValid = false;
     }
-  
+
     if (endDate <= startDate) {
       newErrors.date_fin =
         "La date de fin doit être postérieure à la date de début";
       isValid = false;
     }
-  
+
     if (!isValid) {
       setErrors(newErrors);
       return;
     }
-  
+
     try {
-      const response = await axios.put(`https://touildigicom.ma/api/formations/${formationId}`, formData);
+      const response = await axios.put(
+        `${apiUrl}/api/formations/${formationId}`,
+        formData
+      );
       setResponseMessage(response.data.message);
-      onClose(); 
+      onClose();
     } catch (error) {
       console.error(error);
     }
@@ -159,7 +163,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                     )}
                   </td>
                   <td>
-                  <label className="label_edit">Titre(AR)</label>
+                    <label className="label_edit">Titre(AR)</label>
                     <input
                       type="text"
                       name="titre_ar"
@@ -176,7 +180,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                 </tr>
                 <tr>
                   <td>
-                  <label className="label_edit">Description(FR)</label>
+                    <label className="label_edit">Description(FR)</label>
                     <input
                       type="text"
                       name="description_fr"
@@ -191,7 +195,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                     )}
                   </td>
                   <td>
-                  <label className="label_edit">Description(AR)</label>
+                    <label className="label_edit">Description(AR)</label>
                     <input
                       type="text"
                       name="description_ar"
@@ -208,51 +212,52 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                 </tr>
                 <tr>
                   <td id="tdDouble">
-                 
                     <div>
-                    <select
-        id="ville"
-        className="input-inscription"
-        name="ville"
-        value={formData.ville}
-        onChange={handleChange}
-    >
-        <option value="" disabled selected>Selectionner une ville</option>
-        <option value="Agadir">Agadir</option>
-        <option value="Al Hoceima">Al Hoceima</option>
-        <option value="Asilah">Asilah</option>
-        <option value="Azemmour">Azemmour</option>
-        <option value="Beni Mellal">Beni Mellal</option>
-        <option value="Bouznika">Bouznika</option>
-        <option value="Casablanca">Casablanca</option>
-        <option value="Chefchaouen">Chefchaouen</option>
-        <option value="Dakhla">Dakhla</option>
-        <option value="El Jadida">El Jadida</option>
-        <option value="Essaouira">Essaouira</option>
-        <option value="Fes">Fes</option>
-        <option value="Fnideq">Fnideq</option>
-        <option value="Guelmim">Guelmim</option>
-        <option value="Ifrane">Ifrane</option>
-        <option value="Kénitra">Kénitra</option>
-        <option value="Khouribga">Khouribga</option>
-        <option value="Laayoune">Laayoune</option>
-        <option value="Larache">Larache</option>
-        <option value="Marrakech">Marrakech</option>
-        <option value="Meknes">Meknes</option>
-        <option value="Mohammedia">Mohammedia</option>
-        <option value="Nador">Nador</option>
-        <option value="Ouarzazate">Ouarzazate</option>
-        <option value="Oujda">Oujda</option>
-        <option value="Rabat">Rabat</option>
-        <option value="Safi">Safi</option>
-        <option value="Salé">Salé</option>
-        <option value="Tanger">Tanger</option>
-        <option value="Taroudant">Taroudant</option>
-        <option value="Taza">Taza</option>
-        <option value="Témara">Témara</option>
-        <option value="Tetouan">Tetouan</option>
-        <option value="Tiznit">Tiznit</option>
-    </select>
+                      <select
+                        id="ville"
+                        className="input-inscription"
+                        name="ville"
+                        value={formData.ville}
+                        onChange={handleChange}
+                      >
+                        <option value="" disabled selected>
+                          Selectionner une ville
+                        </option>
+                        <option value="Agadir">Agadir</option>
+                        <option value="Al Hoceima">Al Hoceima</option>
+                        <option value="Asilah">Asilah</option>
+                        <option value="Azemmour">Azemmour</option>
+                        <option value="Beni Mellal">Beni Mellal</option>
+                        <option value="Bouznika">Bouznika</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Chefchaouen">Chefchaouen</option>
+                        <option value="Dakhla">Dakhla</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Essaouira">Essaouira</option>
+                        <option value="Fes">Fes</option>
+                        <option value="Fnideq">Fnideq</option>
+                        <option value="Guelmim">Guelmim</option>
+                        <option value="Ifrane">Ifrane</option>
+                        <option value="Kénitra">Kénitra</option>
+                        <option value="Khouribga">Khouribga</option>
+                        <option value="Laayoune">Laayoune</option>
+                        <option value="Larache">Larache</option>
+                        <option value="Marrakech">Marrakech</option>
+                        <option value="Meknes">Meknes</option>
+                        <option value="Mohammedia">Mohammedia</option>
+                        <option value="Nador">Nador</option>
+                        <option value="Ouarzazate">Ouarzazate</option>
+                        <option value="Oujda">Oujda</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Safi">Safi</option>
+                        <option value="Salé">Salé</option>
+                        <option value="Tanger">Tanger</option>
+                        <option value="Taroudant">Taroudant</option>
+                        <option value="Taza">Taza</option>
+                        <option value="Témara">Témara</option>
+                        <option value="Tetouan">Tetouan</option>
+                        <option value="Tiznit">Tiznit</option>
+                      </select>
                       {errors.ville && (
                         <span className="errorModal">
                           <i className="bx bxs-error"></i> {errors.ville}
@@ -260,7 +265,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                       )}
                     </div>
                     <div>
-                    <label className="label_edit">Capacite</label>
+                      <label className="label_edit">Capacite</label>
                       <input
                         type="number"
                         name="capacite"
@@ -278,7 +283,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                 </tr>
                 <tr>
                   <td>
-                  <label className="label_edit">Date debut</label>
+                    <label className="label_edit">Date debut</label>
                     <input
                       type="datetime-local"
                       name="date_debut"
@@ -294,7 +299,7 @@ export default function ModalEditFormation({ onClose, formationId, setResponseMe
                     )}
                   </td>
                   <td>
-                  <label className="label_edit">Date fin</label>
+                    <label className="label_edit">Date fin</label>
                     <input
                       type="datetime-local"
                       name="date_fin"

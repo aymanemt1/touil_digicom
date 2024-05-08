@@ -5,7 +5,10 @@ import axios from 'axios';
 import { LangueContext } from '../../../Context/LangueContext';
 
 export const Modules = (props) => {
-    console.log(props.modules)
+
+    const apiUrl = process.env.REACT_APP_API_URL;
+
+    // console.log(props.modules)
 
     const nav = useNavigate()
 
@@ -66,7 +69,7 @@ export const Modules = (props) => {
                                         <>
                                 <img
                                  className="profile"
-                                 src={`https://touildigicom.ma/storage/formateurs/${module.formateur.profile}`}
+                                 src={`${apiUrl}/storage/formateurs/${module.formateur.profile}`}
                                  onError={(e) => {
                                      e.target.src = "/assets/altImage/alt-img.jpg";
                                    }}

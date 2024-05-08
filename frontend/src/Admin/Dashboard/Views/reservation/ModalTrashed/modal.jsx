@@ -4,12 +4,17 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalTrashedReservation({ onClose }) {
+
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+
   const [reservations, setReservations] = useState([]);
   const [responseMessage, setResponseMessage] = useState();
 
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/trashed-reservations")
+      .get(`${apiUrl}/api/trashed-reservations`)
       .then((response) => {
         setReservations(response.data);
       })
@@ -20,7 +25,7 @@ export default function ModalTrashedReservation({ onClose }) {
 
   const handleRestoreReservation = (id) => {
     axios
-      .put(`https://touildigicom.ma/api/reservations/${id}/restore`)
+      .put(`${apiUrl}/api/reservations/${id}/restore`)
       .then((response) => {
         setReservations(
           reservations.filter((reservation) => reservation.id !== id)
@@ -37,7 +42,7 @@ export default function ModalTrashedReservation({ onClose }) {
       window.confirm("Êtes-vous sûr de vouloir supprimer cette réservation?")
     ) {
       axios
-        .delete(`https://touildigicom.ma/api/trashed-reservations/${id}`)
+        .delete(`${apiUrl}/api/trashed-reservations/${id}`)
         .then((response) => {
           setReservations(
             reservations.filter((reservation) => reservation.id !== id)

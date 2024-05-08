@@ -5,11 +5,13 @@ import Subscriptions from "./subscription/subscriptions";
 import MultiLineChart from "./Chart/chart";
 
 export default function StatistiquesDashboard() {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [statics, setStatics] = useState();
 
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/statistics")
+      .get(`${apiUrl}/api/statistics`)
       .then((response) => {
         setStatics(response.data);
       })
@@ -128,8 +130,8 @@ export default function StatistiquesDashboard() {
         </div>
 
         <div className="parentSecondStatics">
-            <MultiLineChart />
-            <Subscriptions />
+          <MultiLineChart />
+          <Subscriptions />
         </div>
       </div>
     </Fragment>

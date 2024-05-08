@@ -10,10 +10,9 @@ import { BottomService } from "./BottomService/BottomService";
 import { LangueContext } from "../../Context/LangueContext";
 
 export const Servicedetail = () => {
-  document.title = 'Touil digicom - Services'
+  document.title = "Touil digicom - Services";
 
   const { id } = useParams();
-
 
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -87,20 +86,19 @@ export const Servicedetail = () => {
     });
   }, []);
 
+  const { langue } = useContext(LangueContext);
 
-const { langue } = useContext(LangueContext)
+  let filteredServices = [];
 
-let filteredServices = [];
+  Object.keys(servicedata).forEach((serviceKey) => {
+    const service = servicedata[serviceKey];
+    const foundLang = service.langs.find((langObj) => langObj.lang === langue);
+    if (foundLang) {
+      filteredServices.push(foundLang);
+    }
+  });
 
-Object.keys(servicedata).forEach(serviceKey => {
-  const service = servicedata[serviceKey];
-  const foundLang = service.langs.find(langObj => langObj.lang === langue);
-  if (foundLang) {
-    filteredServices.push(foundLang);
-  }
-});
-
-const service = filteredServices.find(service => service.id == id);
+  const service = filteredServices.find((service) => service.id == id);
 
   return (
     <div className="servicedetail">
@@ -120,13 +118,12 @@ const service = filteredServices.find(service => service.id == id);
   `,
         }}
       >
-            <h1 className="covertitle">{service.name}</h1>
+        <h1 className="covertitle">{service.name}</h1>
       </div>
 
       <div className="servicedetailcontent">
         <div className="detail-top">
           <div className="left-detail">
-
             <p className="servicedetailtext">
               {truncateDescription(service.description, 172)}
 
@@ -206,6 +203,5 @@ const service = filteredServices.find(service => service.id == id);
         {service.id != 2 ? <BottomService /> : <FormationCard />}
       </div>
     </div>
-
   );
 };

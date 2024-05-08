@@ -4,6 +4,9 @@ import axios from "axios";
 
 export default function ModalEditModule({ onClose, moduleId, setResponseMessage }) {
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+
   const [formations, setFormations] = useState([]);
   const [formateurs, setFormateurs] = useState([]);
 
@@ -27,7 +30,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
 
   useEffect(() => {
     axios
-    .get("https://touildigicom.ma/api/formations/")
+    .get(`${apiUrl}/api/formations/`)
     .then((response) => {
       setFormations(response.data);
     })
@@ -35,7 +38,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
       console.error(error);
     });
     axios
-    .get("https://touildigicom.ma/api/formateurs/")
+    .get(`${apiUrl}/api/formateurs/`)
     .then((response) => {
       setFormateurs(response.data);
     })
@@ -43,7 +46,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
       console.error(error);
     });
     axios
-    .get(`https://touildigicom.ma/api/modules/${moduleId}`)
+    .get(`${apiUrl}/api/modules/${moduleId}`)
     .then((response) => {
       setFormData(response.data);
     })
@@ -75,7 +78,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`https://touildigicom.ma/api/modules/${moduleId}`, formData);
+      const response = await axios.put(`${apiUrl}/api/modules/${moduleId}`, formData);
       setResponseMessage(response.data.message);
       onClose(); 
     } catch (error) {
@@ -98,7 +101,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
               <tbody>
                 <tr>
                   <td>
-                    <label className="label_edit">TItre(FR)</label>
+                    <label className="label_edit">Titre(FR)</label>
                     <input
                       type="text"
                       name="titre_fr"
@@ -113,7 +116,7 @@ export default function ModalEditModule({ onClose, moduleId, setResponseMessage 
                     )}
                   </td>
                   <td>
-                    <label className="label_edit">TItre(AR)</label>
+                    <label className="label_edit">Titre(AR)</label>
                     <input
                       type="text"
                       name="titre_ar"

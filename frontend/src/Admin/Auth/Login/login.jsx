@@ -3,13 +3,22 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../auth.css";
 import { LangueContext } from "../../../Context/LangueContext";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
+
+
+
 export default function Login() {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+  // console.log(process.env.REACT_APP_API_URL) 
+
   document.title = "Touil Digicom - Login";
 
   const navigate = useNavigate();
 
-  const [responseMessage,setresponsemessage]=useState('Email or password incorrect')
+  const [responseMessage, setresponsemessage] = useState(
+    "Email or password incorrect"
+  );
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -35,14 +44,14 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     setErrors({
       emailError: "",
       passwordError: "",
     });
-  
+
     let isValid = true;
-  
+
     if (!validateEmail(formData.email)) {
       setErrors((prevState) => ({
         ...prevState,
@@ -51,7 +60,6 @@ export default function Login() {
       isValid = false;
     }
 
-  
     if (!validatePassword(formData.password)) {
       setErrors((prevState) => ({
         ...prevState,
@@ -59,21 +67,16 @@ export default function Login() {
       }));
     }
     try {
-      const response = await axios.post(
-        "https://touildigicom.ma/api/signin",
-        formData
-      );
+      const response = await axios.post(`${apiUrl}/api/signin`, formData);
       const token = response.data.token;
       const admin = response.data.admin;
-      Cookies.set('token', token);
-      Cookies.set('adminname', admin.fullname);
-      navigate('/touil_team_dashboard/statistiques');
+      Cookies.set("token", token);
+      Cookies.set("adminname", admin.fullname);
+      navigate("/touil_team_dashboard/statistiques");
     } catch (error) {
-      console.log(error.response.data)
-     
+      console.log(error.response.data);
     }
   };
-  
 
   return (
     <Fragment>
@@ -126,7 +129,7 @@ export default function Login() {
                   )}
                 </td>
               </tr>
-              
+
               <tr>
                 <td>
                   <input

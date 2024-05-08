@@ -7,6 +7,10 @@ import ModalEditModule from "./ModalEdit/modal";
 import ModalTrashedModules from "./ModalTrashed/modal";
 
 export default function ModuleDashboard() {
+
+    const apiUrl = process.env.REACT_APP_API_URL;
+
+
     const [modules, setModules] = useState([]);
     const [toggleAddModule, setToggleAddModule] = useState(false);
     const [toggleEditModule, setToggleEditModule] = useState(false);
@@ -51,7 +55,7 @@ export default function ModuleDashboard() {
     }, [responseMessage]);
 
     const fetchModules = () => {
-        axios.get('https://touildigicom.ma/api/modules/')
+        axios.get(`${apiUrl}/api/modules`)
             .then(response => {
                 setModules(response.data);
             })
@@ -63,7 +67,7 @@ export default function ModuleDashboard() {
     // Delete module function
     function deleteModule(id) {
         if (window.confirm("Êtes-vous sûr de vouloir supprimer ce module ?")) {
-            axios.delete(`https://touildigicom.ma/api/modules/${id}`)
+            axios.delete(`${apiUrl}/api/modules/${id}`)
                 .then(response => {
                     setModules(prevModules => prevModules.filter(module => module.id !== id));
                     setResponseMessage(response.data.message);

@@ -4,12 +4,14 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalTrashedClients({ onClose }) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [clients, setClients] = useState([]);
   const [responseMessage, setResponseMessage] = useState();
 
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/trashed-clients")
+      .get(`${apiUrl}/api/trashed-clients`)
       .then((response) => {
         setClients(response.data);
       })
@@ -20,7 +22,7 @@ export default function ModalTrashedClients({ onClose }) {
 
   const handleRestoreClient = (id) => {
     axios
-      .put(`https://touildigicom.ma/api/clients/${id}/restore`)
+      .put(`${apiUrl}/api/clients/${id}/restore`)
       .then((response) => {
         setClients(clients.filter((client) => client.id !== id));
         setResponseMessage(response.data.message);
@@ -33,7 +35,7 @@ export default function ModalTrashedClients({ onClose }) {
   const handleForceDeleteClient = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer ce client?")) {
       axios
-        .delete(`https://touildigicom.ma/api/trashed-clients/${id}`)
+        .delete(`${apiUrl}/api/trashed-clients/${id}`)
         .then((response) => {
           setClients(clients.filter((client) => client.id !== id));
           setResponseMessage(response.data.message);

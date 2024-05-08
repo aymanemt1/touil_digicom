@@ -4,6 +4,8 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalAddModule({ onClose, setResponseMessage }) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [formations, setFormations] = useState([]);
   const [formateurs, setFormateurs] = useState([]);
 
@@ -27,7 +29,7 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
 
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/formations/")
+      .get(`${apiUrl}/api/formations/`)
       .then((response) => {
         setFormations(response.data);
       })
@@ -35,7 +37,7 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
         console.error(error);
       });
     axios
-      .get("https://touildigicom.ma/api/formateurs/")
+      .get(`${apiUrl}/api/formateurs/`)
       .then((response) => {
         setFormateurs(response.data);
       })
@@ -48,7 +50,11 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
     const { name, value } = e.target;
     let error = "";
 
-    if (value.trim() === "" && name !== "formation_id" && name !== "formateur_id") {
+    if (
+      value.trim() === "" &&
+      name !== "formation_id" &&
+      name !== "formateur_id"
+    ) {
       error = "Ce champ est obligatoire";
     }
 
@@ -84,7 +90,7 @@ export default function ModalAddModule({ onClose, setResponseMessage }) {
     }
 
     axios
-      .post(`https://touildigicom.ma/api/modules`, formData)
+      .post(`${apiUrl}/api/modules`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();

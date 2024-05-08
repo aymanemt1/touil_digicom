@@ -4,44 +4,47 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalTrashedFormation({ onClose }) {
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const [formations, setFormations] = useState([]);
   const [responseMessage, setResponseMessage] = useState();
 
-
   useEffect(() => {
-    axios.get('https://touildigicom.ma/api/trashed-formations')
-        .then(response => {
-          setFormations(response.data);
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    axios
+      .get(`${apiUrl}/api/trashed-formations`)
+      .then((response) => {
+        setFormations(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   const handleRestoreFormation = (id) => {
-    axios.put(`https://touildigicom.ma/api/formations/${id}/restore`)
-      .then(response => {
-        setFormations(formations.filter(formation => formation.id !== id));
+    axios
+      .put(`${apiUrl}/api/formations/${id}/restore`)
+      .then((response) => {
+        setFormations(formations.filter((formation) => formation.id !== id));
         setResponseMessage(response.data.message);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   };
 
   const handleForceDeleteFormation = (id) => {
-    if(window.confirm("Êtes-vous sûr de vouloir supprimer cette formation?")){
-      axios.delete(`https://touildigicom.ma/api/trashed-formations/${id}`)
-      .then(response => {
-        setFormations(formations.filter(formation => formation.id !== id));
-        setResponseMessage(response.data.message);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    };
-  }
+    if (window.confirm("Êtes-vous sûr de vouloir supprimer cette formation?")) {
+      axios
+        .delete(`${apiUrl}/api/trashed-formations/${id}`)
+        .then((response) => {
+          setFormations(formations.filter((formation) => formation.id !== id));
+          setResponseMessage(response.data.message);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
 
   return (
     <Fragment>
@@ -54,7 +57,7 @@ export default function ModalTrashedFormation({ onClose }) {
             </button>
           </div>
           <div className="parentTabkeTrashed">
-            <table border='1' cellSpacing='0'>
+            <table border="1" cellSpacing="0">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -72,38 +75,48 @@ export default function ModalTrashedFormation({ onClose }) {
                 </tr>
               </thead>
               <tbody>
-                {
-                  formations.map((item, index) => (
-                    <tr key={index}>
-                      <td>{item.id}</td>
-                      <td><img src={`/assets/formations/${item.affiche}`} /></td>
-                      <td><img src={`/assets/formations/${item.cover}`} /></td>
-                      <td>{item.titre_fr}</td>
-                      <td>{item.description_fr}</td>
-                      <td>{item.ville}</td>
-                      <td>{item.ville}</td>
-                      <td>{item.prix}</td>
-                      <td>{item.capacite}</td>
-                      <td>{item.date_debut}</td>
-                      <td>{item.date_fin}</td>
-                      <td className="tdButtonsPoubelle">
-                        <div>
-                        <button className="replyButton" onClick={() => handleRestoreFormation(item.id)} title="Entonnoir de suppression">
-                          <i className='bx bx-reply' ></i>
+                {formations.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.id}</td>
+                    <td>
+                      <img src={`/assets/formations/${item.affiche}`} />
+                    </td>
+                    <td>
+                      <img src={`/assets/formations/${item.cover}`} />
+                    </td>
+                    <td>{item.titre_fr}</td>
+                    <td>{item.description_fr}</td>
+                    <td>{item.ville}</td>
+                    <td>{item.ville}</td>
+                    <td>{item.prix}</td>
+                    <td>{item.capacite}</td>
+                    <td>{item.date_debut}</td>
+                    <td>{item.date_fin}</td>
+                    <td className="tdButtonsPoubelle">
+                      <div>
+                        <button
+                          className="replyButton"
+                          onClick={() => handleRestoreFormation(item.id)}
+                          title="Entonnoir de suppression"
+                        >
+                          <i className="bx bx-reply"></i>
                         </button>
-                        <button className="trashForceButton" onClick={() => handleForceDeleteFormation(item.id)} title="forcer la suppression">
-                          <i className='bx bxs-trash-alt' ></i>
+                        <button
+                          className="trashForceButton"
+                          onClick={() => handleForceDeleteFormation(item.id)}
+                          title="forcer la suppression"
+                        >
+                          <i className="bx bxs-trash-alt"></i>
                         </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))
-                }
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
-        { responseMessage && <Alert msg={responseMessage} />}
+        {responseMessage && <Alert msg={responseMessage} />}
       </div>
     </Fragment>
   );

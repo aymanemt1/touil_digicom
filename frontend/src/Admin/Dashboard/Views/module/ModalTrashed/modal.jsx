@@ -4,12 +4,16 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalTrashedModule({ onClose }) {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+
   const [modules, setFormateurs] = useState([]);
   const [responseMessage, setResponseMessage] = useState();
 
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/trashed-modules")
+      .get(`${apiUrl}/api/trashed-modules`)
       .then((response) => {
         setFormateurs(response.data);
       })
@@ -20,7 +24,7 @@ export default function ModalTrashedModule({ onClose }) {
 
   const handleRestoreFormation = (id) => {
     axios
-      .put(`https://touildigicom.ma/api/modules/${id}/restore`)
+      .put(`${apiUrl}/api/modules/${id}/restore`)
       .then((response) => {
         setFormateurs(modules.filter((module) => module.id !== id));
         setResponseMessage(response.data.message);
@@ -33,7 +37,7 @@ export default function ModalTrashedModule({ onClose }) {
   const handleForceDeleteFormation = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cette Module?")) {
       axios
-        .delete(`https://touildigicom.ma/api/trashed-modules/${id}`)
+        .delete(`${apiUrl}/api/trashed-modules/${id}`)
         .then((response) => {
           setFormateurs(modules.filter((module) => module.id !== id));
           setResponseMessage(response.data.message);
@@ -72,8 +76,8 @@ export default function ModalTrashedModule({ onClose }) {
                   <tr key={index}>
                     <td>{module.id}</td>
                     <td>{module.titre_fr}</td>
-                    <td>{module.formation ? module.formation.titre_fr : null}</td>
-                    {module.formateur ? <td>{module.formateur.nom} {module.formateur.prenom}</td> : null}
+                    <td>{module.formation ? module.formation.titre_fr : <span>Ne pas exister</span>}</td>
+                    {module.formateur ? <td>{module.formateur.nom} {module.formateur.prenom}</td> : <span>Ne pas exister</span>}
                     <td>{module.duree}</td>
                     <td>{module.prix}</td>
                     <td className="tdButtonsPoubelle">

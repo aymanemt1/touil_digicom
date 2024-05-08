@@ -2,7 +2,32 @@
     width: 78.5vw;
     height: 100vh;
     padding: 2rem;
+    overflow: scroll;
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #1b67b0;
+    --sb-size: 1px;
 }
+
+.parentHomeDashboard::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+  
+  .parentHomeDashboard::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 2px;
+  }
+  
+  .parentHomeDashboard::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 2px;
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    .parentHomeDashboard {
+        scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
 
 .chemin {
     width: 100%;

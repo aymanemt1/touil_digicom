@@ -8,6 +8,11 @@ export default function ModalEditReservation({
   reservationId,
   setResponseMessage,
 }) {
+
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+
   const [formations, setFormations] = useState([]);
   const [clients, setClients] = useState([]);
 
@@ -32,7 +37,7 @@ export default function ModalEditReservation({
 
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/formations/")
+      .get(`${apiUrl}/api/formations/`)
       .then((response) => {
         setFormations(response.data);
       })
@@ -40,7 +45,7 @@ export default function ModalEditReservation({
         console.error(error);
       });
     axios
-      .get("https://touildigicom.ma/api/clients/")
+      .get(`${apiUrl}/api/clients/`)
       .then((response) => {
         setClients(response.data);
       })
@@ -48,7 +53,7 @@ export default function ModalEditReservation({
         console.error(error);
       });
     axios
-      .get(`https://touildigicom.ma/api/reservations/${reservationId}`)
+      .get(`${apiUrl}/api/reservations/${reservationId}`)
       .then((response) => {
         setFormData(response.data);
       })
@@ -113,7 +118,7 @@ export default function ModalEditReservation({
     }
 
     axios
-      .put(`https://touildigicom.ma/api/reservations/${reservationId}`, formData)
+      .put(`${apiUrl}/api/reservations/${reservationId}`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();

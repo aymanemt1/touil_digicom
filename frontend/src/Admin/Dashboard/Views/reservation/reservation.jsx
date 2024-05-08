@@ -7,6 +7,8 @@ import ModalEditReservation from "./ModalEdit/modal";
 import ModalTrashedReservations from "./ModalTrashed/modal";
 
 export default function ReservationDashboard() {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [reservations, setReservations] = useState([]);
   const [reservationsValidate, setreservationsValidate] = useState([]);
   const [toggleAddReservation, setToggleAddReservation] = useState(false);
@@ -44,16 +46,14 @@ export default function ReservationDashboard() {
     setTogglePoubelle(false);
   }
   const handleValidate = async (formationId, clientId) => {
-
     try {
-      const response = await axios.post('https://touildigicom.ma/api/checkReservation', {
+      const response = await axios.post(`${apiUrl}/api/checkReservation`, {
         formation_id: formationId,
-        client_id: clientId
+        client_id: clientId,
       });
-    setvalidate(!validate)
-     
+      setvalidate(!validate);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -63,7 +63,7 @@ export default function ReservationDashboard() {
       handleValidate(formation.id, client.id);
     }
   }, [reservations]);
- 
+
   function openInfoClient(reservationId) {
     setToggleInfoClient(
       reservationId === toggleInfoClient ? null : reservationId
@@ -81,9 +81,9 @@ export default function ReservationDashboard() {
 
   const fetchReservations = () => {
     axios
-      .get("https://touildigicom.ma/api/reservations/")
+      .get(`${apiUrl}/api/reservations`)
       .then((response) => {
-        setReservations(response.data);   
+        setReservations(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -96,7 +96,7 @@ export default function ReservationDashboard() {
       window.confirm("Êtes-vous sûr de vouloir supprimer cette Réservation?")
     ) {
       axios
-        .delete(`https://touildigicom.ma/api/reservations/${id}`)
+        .delete(`${apiUrl}/api/reservations/${id}`)
         .then((response) => {
           setReservations((prevReservations) =>
             prevReservations.filter((reservation) => reservation.id !== id)
@@ -268,14 +268,28 @@ export default function ReservationDashboard() {
                     <td>{reservation.time_validation}</td>
                     <td>{reservation.prix}</td>
                     <td>
-                      {reservation.validate == 0 ?(
-                        <i className="bx bxs-x-square" onClick={() => handleValidate(reservation.formation.id, reservation.client.id)}></i>
-                        
+                      {reservation.validate == 0 ? (
+                        <i
+                          className="bx bxs-x-square"
+                          onClick={() =>
+                            handleValidate(
+                              reservation.formation.id,
+                              reservation.client.id
+                            )
+                          }
+                        ></i>
                       ) : (
-                        <i  className="bx bxs-check-square" onClick={() => handleValidate(reservation.formation.id, reservation.client.id)}></i>
-
+                        <i
+                          className="bx bxs-check-square"
+                          onClick={() =>
+                            handleValidate(
+                              reservation.formation.id,
+                              reservation.client.id
+                            )
+                          }
+                        ></i>
                       )}
-</td>
+                    </td>
 
                     <td className="tdActions">
                       <div>

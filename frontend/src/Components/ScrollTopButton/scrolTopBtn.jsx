@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './scrolTopBtn.css';
+import React, { useState, useEffect } from "react";
+import "./scrolTopBtn.css";
 
-export default function ScrollToTopButton(){
-
+export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
@@ -11,21 +10,22 @@ export default function ScrollToTopButton(){
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <button
-      className={`scroll-to-top ${isVisible ? 'visible' : ''}`}
-      onClick={scrollToTop}>
-      <i className='bx bx-arrow-to-top' ></i>
+      className={`scroll-to-top ${isVisible ? "visible" : ""}`}
+      onClick={scrollToTop}
+    >
+      <i className="bx bx-arrow-to-top"></i>
     </button>
   );
-};
+}

@@ -2,7 +2,13 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./modal.css";
 import axios from "axios";
 
-export default function ModalEditFormateur({ onClose, formateurId, setResponseMessage }) {
+export default function ModalEditFormateur({
+  onClose,
+  formateurId,
+  setResponseMessage,
+}) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -17,10 +23,9 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
     specialite: "",
   });
 
-
   useEffect(() => {
     axios
-      .get(`https://touildigicom.ma/api/formateurs/${formateurId}`)
+      .get(`${apiUrl}/api/formateurs/${formateurId}`)
       .then((response) => {
         setFormData(response.data);
       })
@@ -29,7 +34,6 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
       });
   }, [formateurId]);
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -37,25 +41,23 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
       [name]: value,
     });
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData)
-     
-  try {
-    const response = await axios.put(`https://touildigicom.ma/api/formateurs/${formateurId}`, formData);
-    setResponseMessage(response.data.message);
-    onClose(); 
-    console.log(response)
-  } catch (error) {
-    console.error(error);
-  }
+    console.log(formData);
 
+    try {
+      const response = await axios.put(
+        `${apiUrl}/api/formateurs/${formateurId}`,
+        formData
+      );
+      setResponseMessage(response.data.message);
+      onClose();
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
-
-
-
 
   return (
     <Fragment>
@@ -68,11 +70,11 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
             </button>
           </div>
           <form onSubmit={handleSubmit}>
-          <table cellSpacing="15">
+            <table cellSpacing="15">
               <tbody>
                 <tr>
                   <td>
-                  <label className="label_edit">Nom</label>
+                    <label className="label_edit">Nom</label>
                     <input
                       type="text"
                       name="nom"
@@ -134,7 +136,7 @@ export default function ModalEditFormateur({ onClose, formateurId, setResponseMe
                     )}
                   </td>
                 </tr>
-              
+
                 <tr>
                   <td></td>
                   <td className="tdBtnAjoute">

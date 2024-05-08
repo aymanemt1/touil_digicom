@@ -4,13 +4,17 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalTrashedFormateurs({ onClose }) {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+
   const [formateurs, setFormateurs] = useState([]);
   const [responseMessage, setResponseMessage] = useState();
 
       
   useEffect(() => {
     axios
-      .get("https://touildigicom.ma/api/trashed-formateurs")
+      .get(`${apiUrl}/api/trashed-formateurs`)
       .then((response) => {
         setFormateurs(response.data);
       })
@@ -21,7 +25,7 @@ export default function ModalTrashedFormateurs({ onClose }) {
 
   const handleRestoreFormation = (id) => {
     axios
-      .put(`https://touildigicom.ma/api/formateurs/${id}/restore`)
+      .put(`${apiUrl}/api/formateurs/${id}/restore`)
       .then((response) => {
         setFormateurs(formateurs.filter((formateur) => formateur.id !== id));
         setResponseMessage(response.data.message);
@@ -34,7 +38,7 @@ export default function ModalTrashedFormateurs({ onClose }) {
   const handleForceDeleteFormation = (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cette formation?")) {
       axios
-        .delete(`https://touildigicom.ma/api/trashed-formateurs/${id}`)
+        .delete(`${apiUrl}/api/trashed-formateurs/${id}`)
         .then((response) => {
           setFormateurs(formateurs.filter((formateur) => formateur.id !== id));
           setResponseMessage(response.data.message);
@@ -73,10 +77,9 @@ export default function ModalTrashedFormateurs({ onClose }) {
                   <tr key={index}>
                     <td>{formateur.id}</td>
                     <td>
-                      <img
-                        src={`/assets/formations/${formateur.profile}`}
-                        alt=""
-                      />
+                    <img
+                      src={`${apiUrl}/storage/formateurs/${formateur.profile}`}
+                    />
                     </td>
                     <td>{formateur.nom}</td>
                     <td>{formateur.prenom}</td>

@@ -7,7 +7,7 @@ import { Modules } from "../ModulesCard/Modules";
 import { LangueContext } from "../../../Context/LangueContext";
 
 export const FormationCard = () => {
-
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const {
     setformation_id,
@@ -15,7 +15,7 @@ export const FormationCard = () => {
     selectAll,
     SetvaluesModel,
     setvalidationScreen,
-    lang
+    lang,
   } = useContext(LangueContext);
 
   const [visibleFormationId, setVisibleFormationId] = useState(null);
@@ -25,7 +25,7 @@ export const FormationCard = () => {
       prevId == formationId ? null : formationId
     );
   };
-  
+
   const nav = useNavigate();
 
   const reserveFormation = (id) => {
@@ -41,52 +41,50 @@ export const FormationCard = () => {
 
   const currentDate = new Date();
   const [formations, setFormations] = useState([]);
-  const [filtredformations, setfiltredformations] = useState([])
+  const [filtredformations, setfiltredformations] = useState([]);
 
   const [loading, setLoading] = useState(true);
 
-  console.log(formations)
+  console.log(formations);
 
-    // pour pagination 
-    const [count, setCount] = useState();
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 2;
-
+  // pour pagination
+  const [count, setCount] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 2;
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://touildigicom.ma/api/formationsdata?page=${currentPage}`);
-      setCount(response.data.formationCount)
+      const response = await axios.get(
+        `${apiUrl}/api/formationsdata?page=${currentPage}`
+      );
+      setCount(response.data.formationCount);
       setFormations(response.data.formations.data);
-  console.log(response)
-      console.log(response)
-     
+      console.log(response);
+      console.log(response);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error("Error fetching products:", error);
     }
   };
 
- useEffect(() => {
+  useEffect(() => {
     fetchData();
-}, [])
-  
-  
-   
-    useEffect(() => {
-      if (Array.isArray(formations) && formations.length > 0) {
-        const startIndex = (currentPage - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
-        const slicedFormations = formations.slice(startIndex, endIndex);
-        setfiltredformations(slicedFormations);
-      }
-    }, [currentPage, formations, itemsPerPage]);
-    
-    const handlePageChange = (event, page) => {
-      setCurrentPage(page);
-    };
-   
-    const totalPages = Math.ceil(count / itemsPerPage);
-    console.log(count)
+  }, []);
+
+  useEffect(() => {
+    if (Array.isArray(formations) && formations.length > 0) {
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const slicedFormations = formations.slice(startIndex, endIndex);
+      setfiltredformations(slicedFormations);
+    }
+  }, [currentPage, formations, itemsPerPage]);
+
+  const handlePageChange = (event, page) => {
+    setCurrentPage(page);
+  };
+
+  const totalPages = Math.ceil(count / itemsPerPage);
+  console.log(count);
 
   return (
     <Fragment>
@@ -98,7 +96,7 @@ export const FormationCard = () => {
               <div className="card-image">
                 <img
                   className="cardformation-img"
-                  src={`https://touildigicom.ma/storage/formations/cover/${formation.cover}`}
+                  src={`${apiUrl}/storage/formations/cover/${formation.cover}`}
                   alt="service-Image"
                   onError={(e) => {
                     e.target.src = "/assets/altImage/alt-img.jpg";
@@ -107,7 +105,7 @@ export const FormationCard = () => {
               </div>
               <div className="card-formation-content">
                 <div className="titleformation">
-                  <h4>{ formation.titre_fr }</h4>
+                  <h4>{formation.titre_fr}</h4>
                   {/* <h4>{ lang == 'fr' ?  formation.titre_fr : formation.titre_ar }</h4> */}
                   <div className="righttitle">
                     <div className="locationdetail">
@@ -182,7 +180,7 @@ export const FormationCard = () => {
             )}
           </>
         ))}
-        {formations.length >2 ? (
+        {formations.length > 2 ? (
           <Paginate
             currentPage={currentPage}
             totalPages={totalPages}

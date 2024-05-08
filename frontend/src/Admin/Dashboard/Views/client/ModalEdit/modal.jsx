@@ -3,17 +3,24 @@ import "./modal.css";
 import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
-export default function ModalEditClient({ clientId, onClose, setResponseMessage }) {
+export default function ModalEditClient({
+  clientId,
+  onClose,
+  setResponseMessage,
+}) {
+  
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    // Fetch client data based on clientId and set formData
-    axios.get(`https://touildigicom.ma/api/clients/${clientId}`)
-      .then(response => {
+    axios
+      .get(`${apiUrl}/api/clients/${clientId}`)
+      .then((response) => {
         setFormData(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching client data:", error);
       });
   }, [clientId]);
@@ -28,24 +35,24 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     let isValid = true;
     const newErrors = {};
-  
+
     for (const key in formData) {
-      if (typeof formData[key] === 'string' && formData[key].trim() === "") {
+      if (typeof formData[key] === "string" && formData[key].trim() === "") {
         newErrors[key] = "Ce champ est obligatoire";
         isValid = false;
       }
     }
-  
+
     if (!isValid) {
       setErrors(newErrors);
       return;
     }
-  
+
     axios
-      .put(`https://touildigicom.ma/api/clients/${clientId}`, formData)
+      .put(`${apiUrl}/api/clients/${clientId}`, formData)
       .then((response) => {
         setResponseMessage(response.data.message);
         onClose();
@@ -61,7 +68,6 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
         }
       });
   };
-  
 
   return (
     <Fragment>
@@ -75,10 +81,10 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
           </div>
           <form onSubmit={handleSubmit}>
             <table cellSpacing="15">
-            <tbody>
+              <tbody>
                 <tr>
                   <td>
-                  <label className="label_edit">Nom</label>
+                    <label className="label_edit">Nom</label>
                     <input
                       type="text"
                       name="nom"
@@ -125,49 +131,51 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
                     )}
                   </td>
                   <td>
-                  <select
-        id="ville"
-        className="input-inscription"
-        name="ville"
-        value={formData.ville}
-        onChange={handleChange}
-    >
-        <option value="" disabled selected>Selectionner une ville</option>
-        <option value="Agadir">Agadir</option>
-        <option value="Al Hoceima">Al Hoceima</option>
-        <option value="Asilah">Asilah</option>
-        <option value="Azemmour">Azemmour</option>
-        <option value="Beni Mellal">Beni Mellal</option>
-        <option value="Bouznika">Bouznika</option>
-        <option value="Casablanca">Casablanca</option>
-        <option value="Chefchaouen">Chefchaouen</option>
-        <option value="Dakhla">Dakhla</option>
-        <option value="El Jadida">El Jadida</option>
-        <option value="Essaouira">Essaouira</option>
-        <option value="Fes">Fes</option>
-        <option value="Fnideq">Fnideq</option>
-        <option value="Guelmim">Guelmim</option>
-        <option value="Ifrane">Ifrane</option>
-        <option value="Kénitra">Kénitra</option>
-        <option value="Khouribga">Khouribga</option>
-        <option value="Laayoune">Laayoune</option>
-        <option value="Larache">Larache</option>
-        <option value="Marrakech">Marrakech</option>
-        <option value="Meknes">Meknes</option>
-        <option value="Mohammedia">Mohammedia</option>
-        <option value="Nador">Nador</option>
-        <option value="Ouarzazate">Ouarzazate</option>
-        <option value="Oujda">Oujda</option>
-        <option value="Rabat">Rabat</option>
-        <option value="Safi">Safi</option>
-        <option value="Salé">Salé</option>
-        <option value="Tanger">Tanger</option>
-        <option value="Taroudant">Taroudant</option>
-        <option value="Taza">Taza</option>
-        <option value="Témara">Témara</option>
-        <option value="Tetouan">Tetouan</option>
-        <option value="Tiznit">Tiznit</option>
-    </select>
+                    <select
+                      id="ville"
+                      className="input-inscription"
+                      name="ville"
+                      value={formData.ville}
+                      onChange={handleChange}
+                    >
+                      <option value="" disabled selected>
+                        Selectionner une ville
+                      </option>
+                      <option value="Agadir">Agadir</option>
+                      <option value="Al Hoceima">Al Hoceima</option>
+                      <option value="Asilah">Asilah</option>
+                      <option value="Azemmour">Azemmour</option>
+                      <option value="Beni Mellal">Beni Mellal</option>
+                      <option value="Bouznika">Bouznika</option>
+                      <option value="Casablanca">Casablanca</option>
+                      <option value="Chefchaouen">Chefchaouen</option>
+                      <option value="Dakhla">Dakhla</option>
+                      <option value="El Jadida">El Jadida</option>
+                      <option value="Essaouira">Essaouira</option>
+                      <option value="Fes">Fes</option>
+                      <option value="Fnideq">Fnideq</option>
+                      <option value="Guelmim">Guelmim</option>
+                      <option value="Ifrane">Ifrane</option>
+                      <option value="Kénitra">Kénitra</option>
+                      <option value="Khouribga">Khouribga</option>
+                      <option value="Laayoune">Laayoune</option>
+                      <option value="Larache">Larache</option>
+                      <option value="Marrakech">Marrakech</option>
+                      <option value="Meknes">Meknes</option>
+                      <option value="Mohammedia">Mohammedia</option>
+                      <option value="Nador">Nador</option>
+                      <option value="Ouarzazate">Ouarzazate</option>
+                      <option value="Oujda">Oujda</option>
+                      <option value="Rabat">Rabat</option>
+                      <option value="Safi">Safi</option>
+                      <option value="Salé">Salé</option>
+                      <option value="Tanger">Tanger</option>
+                      <option value="Taroudant">Taroudant</option>
+                      <option value="Taza">Taza</option>
+                      <option value="Témara">Témara</option>
+                      <option value="Tetouan">Tetouan</option>
+                      <option value="Tiznit">Tiznit</option>
+                    </select>
                     {errors.ville && (
                       <span className="errorModal">
                         <i className="bx bxs-error"></i> {errors.ville}
@@ -202,7 +210,8 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
                     />
                     {errors.numero_telephone && (
                       <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.numero_telephone}
+                        <i className="bx bxs-error"></i>{" "}
+                        {errors.numero_telephone}
                       </span>
                     )}
                   </td>
@@ -219,7 +228,8 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
                     />
                     {errors.numero_whatsapp && (
                       <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.numero_whatsapp}
+                        <i className="bx bxs-error"></i>{" "}
+                        {errors.numero_whatsapp}
                       </span>
                     )}
                   </td>
@@ -250,7 +260,8 @@ export default function ModalEditClient({ clientId, onClose, setResponseMessage 
                     />
                     {errors.experiences_formatives && (
                       <span className="errorModal">
-                        <i className="bx bxs-error"></i> {errors.experiences_formatives}
+                        <i className="bx bxs-error"></i>{" "}
+                        {errors.experiences_formatives}
                       </span>
                     )}
                   </td>

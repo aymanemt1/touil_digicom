@@ -4,6 +4,8 @@ import axios from "axios";
 import { Alert } from "../../../../../Components/Alert/Alert";
 
 export default function ModalAddFormateur({ onClose, setResponseMessage }) {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -22,19 +24,17 @@ export default function ModalAddFormateur({ onClose, setResponseMessage }) {
 
   const [profilePreview, setProfilePreview] = useState(null);
 
-
-
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     let error = "";
-  
+
     if (type === "file") {
       const file = files[0];
       setFormData({
         ...formData,
-        [name]: file, 
+        [name]: file,
       });
-  
+
       if (file) {
         const reader = new FileReader();
         reader.onload = () => {
@@ -53,22 +53,19 @@ export default function ModalAddFormateur({ onClose, setResponseMessage }) {
         [name]: value,
       });
     }
-  
+
     setErrors({
       ...errors,
       [name]: error,
     });
   };
-  
 
-
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     let isValid = true;
     const newErrors = { ...errors };
-  
+
     for (const key in formData) {
       if (key !== "profile") {
         if (formData[key].trim() === "") {
@@ -79,26 +76,26 @@ export default function ModalAddFormateur({ onClose, setResponseMessage }) {
         }
       }
     }
-  
+
     if (!isValid) {
       setErrors(newErrors);
       return;
     }
-  
+
     const formDataWithFile = new FormData();
-    formDataWithFile.append('nom', formData.nom);
-    formDataWithFile.append('prenom', formData.prenom);
-    formDataWithFile.append('email', formData.email);
-    formDataWithFile.append('specialite', formData.specialite);
-    formDataWithFile.append('profile', formData.profile);
-  
+    formDataWithFile.append("nom", formData.nom);
+    formDataWithFile.append("prenom", formData.prenom);
+    formDataWithFile.append("email", formData.email);
+    formDataWithFile.append("specialite", formData.specialite);
+    formDataWithFile.append("profile", formData.profile);
+
     console.log(formDataWithFile);
-  
+
     axios
-      .post("https://touildigicom.ma/api/formateurs", formDataWithFile, {
+      .post(`${apiUrl}/api/formateurs`, formDataWithFile, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((response) => {
         setFormData({
@@ -123,10 +120,6 @@ export default function ModalAddFormateur({ onClose, setResponseMessage }) {
       });
   };
 
-
-
-  
-  
   return (
     <Fragment>
       <div className="parentModalAddFormation">
@@ -204,9 +197,13 @@ export default function ModalAddFormateur({ onClose, setResponseMessage }) {
                   <td colSpan="2">
                     <div className="labelFile">
                       <label htmlFor="profile">
-                        <i className="bx bx-cloud-upload"></i> Profile 
+                        <i className="bx bx-cloud-upload"></i> Profile
                         {profilePreview && (
-                          <img src={profilePreview} alt="Profile Preview" className="imgReloadInput"/>
+                          <img
+                            src={profilePreview}
+                            alt="Profile Preview"
+                            className="imgReloadInput"
+                          />
                         )}
                       </label>
                       <input

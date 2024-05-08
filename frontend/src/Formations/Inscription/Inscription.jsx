@@ -8,6 +8,10 @@ import { Validation } from "../Validation/Validation";
 import { Alert } from "../../Components/Alert/Alert";
 import { Translate } from "./InscriptionTranslate";
 export const Inscription = () => {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+
   const {
     valuesModel,
     selectAll,
@@ -64,7 +68,7 @@ export const Inscription = () => {
     }
     try {
       const response = await axios.post(
-        "https://touildigicom.ma/api/sendmailvalidation",
+        `${apiUrl}/api/sendmailvalidation`,
         {
           email: formData.email,
           formationId: formData.formationId,
@@ -139,7 +143,7 @@ export const Inscription = () => {
   const getallformations = async () => {
     try {
       axios
-        .get(`https://touildigicom.ma/api/formations/${id}`)
+        .get(`${apiUrl}/api/formations/${id}`)
         .then((response) => {
           setformations(response.data);
         })
@@ -399,7 +403,7 @@ export const Inscription = () => {
             >
               <img
                 className="affiche"
-                src={`http://localhost:8000/storage/formations/affiche/${formations.affiche}`}
+                src={`${apiUrl}/storage/formations/affiche/${formations.affiche}`}
                 onError={(e) => {
                     e.target.src = "/assets/altImage/alt-img.jpg";
                   }}
