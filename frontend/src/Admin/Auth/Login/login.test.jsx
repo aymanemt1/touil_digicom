@@ -1,9 +1,24 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import axios from "axios";
 import Login from "./login";
 
-jest.mock("axios");
+const mockNavigate = jest.fn();
+
+jest.mock("axios", () => ({
+  __esModule: true,
+  default: {
+    post: jest.fn(),
+  },
+}));
+
+jest.mock("react-router-dom", () => {
+  const actual = jest.requireActual("react-router-dom");
+  return {
+    ...actual,
+    useNavigate: () => mockNavigate,
+  };
+});
 
 function renderLogin() {
   return render(
@@ -15,6 +30,7 @@ function renderLogin() {
 
 beforeEach(() => {
   axios.post.mockReset();
+  mockNavigate.mockReset();
 });
 
 test("does not sign in when the email or password is invalid", () => {
@@ -32,7 +48,7 @@ test("does not sign in when the email or password is invalid", () => {
   expect(axios.post).not.toHaveBeenCalled();
 });
 
-test("signs in when the email and password are valid", () => {
+test("signs in when the email and password are valid", async () => {
   axios.post.mockResolvedValue({
     data: { token: "token", admin: { fullname: "Ada" } },
   });
@@ -44,10 +60,15 @@ test("signs in when the email and password are valid", () => {
   fireEvent.change(screen.getByPlaceholderText("Mot de passe"), {
     target: { name: "password", value: "secret" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "Se connecter" }));
+  await act(async () => {
+    fireEvent.click(screen.getByRole("button", { name: "Se connecter" }));
+  });
 
   expect(axios.post).toHaveBeenCalledWith(
     expect.stringMatching(/\/api\/signin$/),
     { email: "ada@example.com", password: "secret" }
+  );
+  expect(mockNavigate).toHaveBeenCalledWith(
+    "/touil_team_dashboard/statistiques"
   );
 });
