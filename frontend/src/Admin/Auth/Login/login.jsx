@@ -65,7 +65,13 @@ export default function Login() {
         ...prevState,
         passwordError: "Le mot de passe doit contenir au moins 1 caractère",
       }));
+      isValid = false;
     }
+
+    if (!isValid) {
+      return;
+    }
+
     try {
       const response = await axios.post(`${apiUrl}/api/signin`, formData);
       const token = response.data.token;
